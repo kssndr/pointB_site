@@ -311,6 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Создание заявки для отправки по итогам работы клиента с калькулятором + отправка
 //==============================================================================
 
+// версия не работает
 // document.addEventListener('DOMContentLoaded', function () {
 //   const requestProgramButton = document.getElementById('request_program');
 //   const thankYouMessage = document.getElementById('thank-you-message');
@@ -351,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const requestProgramButton = document.getElementById('request_program');
   const thankYouMessage = document.getElementById('thank-you-message');
-  const programForm = document.querySelector('.program');  // Предполагая, что ваш <section> имеет класс "program"
+  const programForm = document.querySelector('.program-form');  // Предполагая, что ваш <section> имеет класс "program"
 
 
   // Один обработчик для клика по кнопке "Записаться на собеседование"
@@ -413,7 +414,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
       document.getElementById('close_button').addEventListener('click', function() {
         // Находим элемент с ID "program" и устанавливаем его свойство "display" в "none", чтобы скрыть его
-        document.getElementById('program').style.display = 'none';
+        document.getElementById('program-form').style.display = 'none';
       });
   });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Ваша остальная логика здесь...
+
+  // Находим кнопку по ID и добавляем к ней обработчик события click
+  let closeButton = document.getElementById("close_button");
+  let programRequestButton = document.getElementById("program-request");
+  let programForm = document.getElementById("program-form");
+
+  if(closeButton && programForm) {
+      closeButton.addEventListener("click", function() {
+          programForm.style.display = "none"; // скрываем элемент
+      });
+  }
+
+  if(programRequestButton && programForm) {
+      programRequestButton.addEventListener("click", function() {
+          programForm.style.display = "block"; // показываем элемент
+      });
+  }
 });
