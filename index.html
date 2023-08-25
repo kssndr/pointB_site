@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&family=Roboto+Slab:wght@200;300;400;600&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Point B</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container_header">
+            <div class="header__title">
+                <div class="Logo" >
+                    <div class="Logostar" >
+                        <img src="img/logostar.svg" alt="Logostar">
+                    </div>
+                    <div class="Name">
+                        <div class="PointB">Point B</div>
+                        <div class="Point"></div>
+                    </div>
+                  </div>
+                <div class="Menu-block">
+                    <nav class="navbar">
+                        <button class="hamburger" id="hamburger">&#9776;</button>
+                        <div class="hidden-block"></div>
+                        <ul class="menu" id="menu">
+                        <li class="menu-item">Модули</li>
+                        <li class="menu-item">Кейсы</li>
+                        <li class="menu-item">О нас</li>
+                        <li class="menu-item">Вопрос-Ответ</li>
+                        <li class="menu-item">Блог</li>
+                        <li class="menu-item">Контакты</li>
+                        </ul>
+                    </nav>
+                    <li class="menu-item social-link">
+                        <a href="https://www.example.com/social" target="_blank">
+                            <img src="img/button_wsap.svg">
+                        <a href="https://www.example.com/social" target="_blank">
+                            <img src="img/button_telegram.svg">
+                        </a>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- Первый блок сайта(после меню) -->
+    <section class="Main">
+        <div class="container_main">
+            <div class="about">
+                <div class="hi">
+                    <div class="text-h1">Бизнес-акселератор Point B</div>
+                    <div class="block">Для тех, у кого есть мечты и цели</div>
+                </div>
+                <div class="offer">
+                    <div class="offer_text">Помогаем собственникам бизнеса 
+                        и первым лицам достигать поставленных целей и реализовывать потенциал их бизнеса через наш партнерский и эффективный подход 
+                        в коучинге.</div>
+                    <button class="request" id="request">Записаться на собеседование</button>
+                </div>
+                <div class="picture">        
+                    <div class="image-container">
+                        <img src="img/rich_lists.svg" alt="rich_lists" class="rich_lists">  
+                    </div>
+                    <img src="img/cubok.svg" alt="cubok" class="cubok">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Overlay for Text Display -->
+    <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent"></div>
+    </div>
+
+
+
+    <!-- Блок про Модули ------------------------------------------------------>
+    <section class="Modules">
+        <div class="title">Модули программы:</div>
+        <div class="container_Modules">
+            <div class="left-column" id="left-column">
+              <div class="left-buttons"id="left-buttons"></div>
+            </div>
+            <div class="column">
+              <img class="Logostar_big" src="img/logostar_big.svg" alt="Image">
+            </div>
+            <div class="right-column" id="right-column">
+              <div class="right-buttons" id="right-buttons"></div>
+            </div>
+        </div>
+
+        <div class="text-display-container" id="text-display-container" style="display: none;">
+            <div class="for_columns">
+                <div class="l-column">
+                    <div class="title_small" id="title_small">Модуль</div>
+                    <div class="button-name" id="button-name"></div>
+                </div>
+                <div class="r-column">
+                    <div class="text-content" id="text-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <class class="h2">Программа бизнесс-акселератора</class>
+        <button class="request" id="program-request">Настроить программу для себя</button>
+        <div class="text-block">
+            <p>Заполните анкету и получите подробный отчет о подходящих модулях и программу их прохождения</p>
+        </div>
+    </section>
+    <!-- Блок конструирования программы ----------------------------------------->
+    <section class="program" id="program-form" style="display: block;">
+        <div class="program-container">
+            <div class="container-close-button">
+                <button id="close_button">
+                    <svg width="36" height="36" viewBox="0 0 36 36">
+                        <line x1="5" y1="5" x2="35" y2="35" stroke="#FFF" stroke-width="2"/>
+                        <line x1="35" y1="5" x2="5" y2="35" stroke="#FFF" stroke-width="2"/>
+                      </svg>
+                  </button>
+            </div>
+            <div class="program-title">Настройка программы коучинга*</div>
+            <div class="settings-field">
+                <div class="modules-choose">
+                    <div class="sett-title">Выберите модули*</div>
+                    <div class="modules-checkbox">
+                        <div class="button-container">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="client-settings">
+                    <div class="staff-top">
+                        <div class="client-data">
+                            <div class="sett-title">Ваше имя*</div>
+                            <input type="text" id="username" name="username" class="module-input">          
+                            <div class="sett-title" style="padding-top: 22px">Удобный вид связи*</div>
+                            <div class="checkbox-container">
+                                <div class="checkbox-container">
+                                    <div class="checkbox-item">
+                                      <input type="checkbox" class="custom-checkbox-contact" id="option1" name="option1" value="E-mail">
+                                      <label class="checkbox-label" for="option1">E-mail</label>
+                                    </div>
+                                    
+                                    <div class="checkbox-item">
+                                      <input type="checkbox" class="custom-checkbox-contact" id="option2" name="option2" value="номер">
+                                      <label class="checkbox-label" for="option2">WhatsApp</label>
+                                    </div>
+                                    
+                                    <div class="checkbox-item">
+                                      <input type="checkbox" class="custom-checkbox-contact" id="option3" name="option3" value="ник(+номер)">
+                                      <label class="checkbox-label" for="option3">Telegram</label>
+                                    </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="program-data">
+                            <div class="sett-title">Удобное количество сессий*</div>
+                            <select id="meeting-frequency" name="meeting-frequency">
+                                <option value="1">1 сессия в неделю</option>
+                                <option value="2">2 сессии в неделю</option>
+                                <option value="3">3 сессии в неделю</option>
+                              </select>
+                            <output id="sett-title-output">-</output>
+                                <input type="text" id="contacts" name="contacts" class="module-input" style="width: 300px;"> 
+
+                        </div>
+                    </div>
+                    <div class="staff-bottom">
+                        <div class="sett-title" style="padding-top: 22px">Примечание</div>
+                        <input type="text" id="notes" name="notes" class="module-input" style="width: 690px;"> 
+                        <div class="summary">
+                            <div class="summary_names">
+                                <div class="sett-title" style="padding-top: 32px" >Сроки прохождения</div>
+                                <div class="sett-title" style="padding-top: 30px" >Рассчетная стоимость</div>
+                            </div>
+                            <div class="summary_data">
+                                <output id="time-result">-</output>
+                                <div class="money">
+                                    <output id="money-result">0</output>
+                                    <select id="currency" name="currency">
+                                        <option value="15000">₽</option>
+                                        <option value="150">€</option>
+                                        <option value="70000">₸</option>
+                                      </select>
+                                </div>
+
+                                </div>
+                               
+                            
+                        </div>
+                    </div>
+                    <button class="request" id="request_program" style="margin-top: 20px;">Записаться на собеседование</button>
+                    <div class="text-block" id="abou_oferta">
+                        <p>*Данный рассчет не является офертой</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <div class=message-block id="thank-you-message" style="display: none;">
+        <div class="message-block-background"></div>
+        <div class="message-title">Спасибо за запрос!<br> Мы скоро свяжемся с вами.</div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
