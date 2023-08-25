@@ -651,9 +651,9 @@ transition: opacity 1s ease-out; /* Длительность 1 секунда */
 }
 
 
-.modules-checkbox {
+/* .modules-checkbox {
 
-}
+} */
 
 /* создание чек боксов с подсказаками */
 
@@ -966,8 +966,8 @@ select {
     height: 40px;
 }
 
-.request {
-}
+/* .request {
+} */
 
 #abou_oferta {
     color: #B9B9B9;
