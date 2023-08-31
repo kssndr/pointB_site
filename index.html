@@ -1,212 +1,438 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&family=Roboto+Slab:wght@200;300;400;600&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&family=Roboto+Slab:wght@200;300;400;600&family=Rubik:wght@300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Point B</title>
 </head>
+
 <body>
     <header class="header">
         <div class="container_header">
             <div class="header__title">
-                <div class="Logo" >
-                    <div class="Logostar" >
+                <div class="Logo">
+                    <div class="Logostar">
                         <img src="img/logostar.svg" alt="Logostar">
                     </div>
                     <div class="Name">
                         <div class="PointB">Point B</div>
                         <div class="Point"></div>
                     </div>
-                  </div>
+                </div>
                 <div class="Menu-block">
                     <nav class="navbar">
                         <button class="hamburger" id="hamburger">&#9776;</button>
                         <div class="hidden-block"></div>
                         <ul class="menu" id="menu">
-                        <li class="menu-item">Модули</li>
-                        <li class="menu-item">Кейсы</li>
-                        <li class="menu-item">О нас</li>
-                        <li class="menu-item">Вопрос-Ответ</li>
-                        <li class="menu-item">Блог</li>
-                        <li class="menu-item">Контакты</li>
+                            <li class="menu-item">Модули</li>
+                            <li class="menu-item">Кейсы</li>
+                            <li class="menu-item">О нас</li>
+                            <li class="menu-item">Вопрос-Ответ</li>
+                            <li class="menu-item">Блог</li>
+                            <li class="menu-item">Контакты</li>
                         </ul>
                     </nav>
                     <li class="menu-item social-link">
                         <a href="https://www.example.com/social" target="_blank">
                             <img src="img/button_wsap.svg">
-                        <a href="https://www.example.com/social" target="_blank">
-                            <img src="img/button_telegram.svg">
-                        </a>
+                            <a href="https://www.example.com/social" target="_blank">
+                                <img src="img/button_telegram.svg">
+                            </a>
                 </div>
             </div>
         </div>
     </header>
-<!-- Первый блок сайта(после меню) -->
-    <section class="Main">
-        <div class="container_main">
-            <div class="about">
-                <div class="hi">
-                    <div class="text-h1">Бизнес-акселератор Point B</div>
-                    <div class="block">Для тех, у кого есть мечты и цели</div>
-                </div>
-                <div class="offer">
-                    <div class="offer_text">Помогаем собственникам бизнеса 
-                        и первым лицам достигать поставленных целей и реализовывать потенциал их бизнеса через наш партнерский и эффективный подход 
-                        в коучинге.</div>
-                    <button class="request" id="request">Записаться на собеседование</button>
-                </div>
-                <div class="picture">        
-                    <div class="image-container">
-                        <img src="img/rich_lists.svg" alt="rich_lists" class="rich_lists">  
-                    </div>
-                    <img src="img/cubok.svg" alt="cubok" class="cubok">
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal Overlay for Text Display -->
-    <div class="modal-overlay" id="modalOverlay">
-    <div class="modal-content" id="modalContent"></div>
-    </div>
-
-
-
-    <!-- Блок про Модули ------------------------------------------------------>
-    <section class="Modules">
-        <div class="title">Модули программы:</div>
-        <div class="container_Modules">
-            <div class="left-column" id="left-column">
-              <div class="left-buttons"id="left-buttons"></div>
-            </div>
-            <div class="column">
-              <img class="Logostar_big" src="img/logostar_big.svg" alt="Image">
-            </div>
-            <div class="right-column" id="right-column">
-              <div class="right-buttons" id="right-buttons"></div>
-            </div>
-        </div>
-
-        <div class="text-display-container" id="text-display-container" style="display: none;">
-            <div class="for_columns">
-                <div class="l-column">
-                    <div class="title_small" id="title_small">Модуль</div>
-                    <div class="button-name" id="button-name"></div>
-                </div>
-                <div class="r-column">
-                    <div class="text-content" id="text-content"></div>
-                </div>
-            </div>
-        </div>
-
-        <class class="h2">Программа бизнесс-акселератора</class>
-        <button class="request" id="program-request">Настроить программу для себя</button>
-        <div class="text-block">
-            <p>Заполните анкету и получите подробный отчет о подходящих модулях и программу их прохождения</p>
-        </div>
-    </section>
-    <!-- Блок конструирования программы ----------------------------------------->
-    <section class="program" id="program-form" style="display: none;">
-        <div class="program-container">
-            <div class="container-close-button">
-                <button id="close_button">
-                    <svg width="36" height="36" viewBox="0 0 36 36">
-                        <line x1="5" y1="5" x2="35" y2="35" stroke="#FFF" stroke-width="2"/>
-                        <line x1="35" y1="5" x2="5" y2="35" stroke="#FFF" stroke-width="2"/>
-                      </svg>
-                  </button>
-            </div>
-            <div class="program-title">Настройка программы коучинга*</div>
-            <div class="settings-field">
-                <div class="modules-choose">
-                    <div class="sett-title">Выберите модули*</div>
-                    <div class="modules-checkbox">
-                        <div class="button-container">
-
+    <div class="container">
+        <main>
+            <!-- Первый блок сайта ВВЕДЕНИЕ -->
+            <section id="introduction">
+                <div class="container_main">
+                    <div class="about">
+                        <div class="hi">
+                            <div class="text-h1">Бизнес-акселератор Point B</div>
+                            <div class="block">Для тех, у кого есть мечты и цели</div>
                         </div>
-                    </div>
-                </div>
-                <div class="client-settings">
-                    <div class="staff-top">
-                        <div class="client-data">
-                            <div class="sett-title">Ваше имя*</div>
-                            <input type="text" id="username" name="username" class="module-input">          
-                            <div class="sett-title" style="padding-top: 22px">Удобный вид связи*</div>
-                            <div class="checkbox-container">
-                                <div class="checkbox-container">
-                                    <div class="checkbox-item">
-                                      <input type="checkbox" class="custom-checkbox-contact" id="option1" name="option1" value="E-mail">
-                                      <label class="checkbox-label" for="option1">E-mail</label>
-                                    </div>
-                                    
-                                    <div class="checkbox-item">
-                                      <input type="checkbox" class="custom-checkbox-contact" id="option2" name="option2" value="номер">
-                                      <label class="checkbox-label" for="option2">WhatsApp</label>
-                                    </div>
-                                    
-                                    <div class="checkbox-item">
-                                      <input type="checkbox" class="custom-checkbox-contact" id="option3" name="option3" value="ник(+номер)">
-                                      <label class="checkbox-label" for="option3">Telegram</label>
-                                    </div>
-                                </div>
-                              </div>
+                        <div class="offer">
+                            <div class="offer_text">Помогаем собственникам бизнеса
+                                и первым лицам достигать поставленных целей и реализовывать потенциал их бизнеса через
+                                наш
+                                партнерский и эффективный подход
+                                в коучинге.</div>
+                            <button class="request" id="request">Записаться на собеседование</button>
                         </div>
-                        <div class="program-data">
-                            <div class="sett-title">Удобное количество сессий*</div>
-                            <select id="meeting-frequency" name="meeting-frequency">
-                                <option value="1">1 сессия в неделю</option>
-                                <option value="2">2 сессии в неделю</option>
-                                <option value="3">3 сессии в неделю</option>
-                              </select>
-                            <output id="sett-title-output">-</output>
-                                <input type="text" id="contacts" name="contacts" class="module-input" style="width: 300px;"> 
-
-                        </div>
-                    </div>
-                    <div class="staff-bottom">
-                        <div class="sett-title" style="padding-top: 22px">Примечание</div>
-                        <input type="text" id="notes" name="notes" class="module-input" style="width: 690px;"> 
-                        <div class="summary">
-                            <div class="summary_names">
-                                <div class="sett-title" style="padding-top: 32px" >Сроки прохождения</div>
-                                <div class="sett-title" style="padding-top: 30px" >Рассчетная стоимость</div>
+                        <div class="picture">
+                            <div class="image-container">
+                                <img src="img/rich_lists.svg" alt="rich_lists" class="rich_lists">
                             </div>
-                            <div class="summary_data">
-                                <output id="time-result">-</output>
-                                <div class="money">
-                                    <output id="money-result">0</output>
-                                    <select id="currency" name="currency">
-                                        <option value="15000">₽</option>
-                                        <option value="150">€</option>
-                                        <option value="70000">₸</option>
-                                      </select>
-                                </div>
+                            <img src="img/cubok.svg" alt="cubok" class="cubok">
 
-                                </div>
-                               
-                            
                         </div>
                     </div>
-                    <button class="request" id="request_program" style="margin-top: 20px;">Записаться на собеседование</button>
-                    <div class="text-block" id="abou_oferta">
-                        <p>*Данный рассчет не является офертой</p>
+                </div>
+            </section>
+            <!-- забыл что за код - закомментировал - вроде все работает -->
+            <!-- <div class="modal-overlay" id="modalOverlay">
+                <div class="modal-content" id="modalContent"></div>
+            </div> -->
+            <!-- Блок про Модули ------------------------------------------------------>
+            <section id="modules">
+                <div class="modules-blocks">
+                    <div class="title">Модули программы:</div>
+                    <div class="container_Modules">
+                        <div class="left-column" id="left-column">
+                            <div class="left-buttons" id="left-buttons"></div>
+                        </div>
+                        <div class="column">
+                            <img class="Logostar_big" src="img/logostar_big.svg" alt="Image">
+                        </div>
+                        <div class="right-column" id="right-column">
+                            <div class="right-buttons" id="right-buttons"></div>
+                        </div>
+                    </div>
+
+                    <div class="text-display-container" id="text-display-container" style="display: none;">
+                        <div class="for_columns">
+                            <div class="l-column">
+                                <div class="title_small" id="title_small">Модуль</div>
+                                <div class="button-name" id="button-name"></div>
+                            </div>
+                            <div class="r-column">
+                                <div class="text-content" id="text-content"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <class class="h2">Программа бизнесс-акселератора</class>
+                    <button class="request" id="program-request">Настроить программу для себя</button>
+                    <div class="text-block">
+                        <p>Заполните анкету и получите подробный отчет о подходящих модулях и программу их прохождения
+                        </p>
                     </div>
                 </div>
+            </section>
+            <!-- Блок конструирования программы ----------------------------------------->
+            <div class="program" id="program-form" style="display: none;">
+                <div class="program-container">
+                    <div class="container-close-button">
+                        <button id="close_button">
+                            <svg width="36" height="36" viewBox="0 0 36 36">
+                                <line x1="5" y1="5" x2="35" y2="35" stroke="#FFF" stroke-width="2" />
+                                <line x1="35" y1="5" x2="5" y2="35" stroke="#FFF" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="program-title">Настройка программы коучинга*</div>
+                    <div class="settings-field">
+                        <div class="modules-choose">
+                            <div class="sett-title">Выберите модули*</div>
+                            <div class="modules-checkbox">
+                                <div class="button-container">
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-settings">
+                            <div class="staff-top">
+                                <div class="client-data">
+                                    <div class="sett-title">Ваше имя*</div>
+                                    <input type="text" id="username" name="username" class="module-input">
+                                    <div class="sett-title" style="padding-top: 22px">Удобный вид связи*</div>
+                                    <div class="checkbox-container">
+                                        <div class="checkbox-container">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" class="custom-checkbox-contact" id="option1"
+                                                    name="option1" value="E-mail">
+                                                <label class="checkbox-label" for="option1">E-mail</label>
+                                            </div>
+
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" class="custom-checkbox-contact" id="option2"
+                                                    name="option2" value="номер">
+                                                <label class="checkbox-label" for="option2">WhatsApp</label>
+                                            </div>
+
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" class="custom-checkbox-contact" id="option3"
+                                                    name="option3" value="ник(+номер)">
+                                                <label class="checkbox-label" for="option3">Telegram</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="program-data">
+                                    <div class="sett-title">Удобное количество сессий*</div>
+                                    <select id="meeting-frequency" name="meeting-frequency">
+                                        <option value="1">1 сессия в неделю</option>
+                                        <option value="2">2 сессии в неделю</option>
+                                        <option value="3">3 сессии в неделю</option>
+                                    </select>
+                                    <output id="sett-title-output">-</output>
+                                    <input type="text" id="contacts" name="contacts" class="module-input"
+                                        style="width: 300px;">
+
+                                </div>
+                            </div>
+                            <div class="staff-bottom">
+                                <div class="sett-title" style="padding-top: 22px">Примечание</div>
+                                <input type="text" id="notes" name="notes" class="module-input" style="width: 690px;">
+                                <div class="summary_m">
+                                    <div class="summary_names">
+                                        <div class="sett-title" style="padding-top: 32px">Сроки прохождения</div>
+                                        <div class="sett-title" style="padding-top: 30px">Рассчетная стоимость</div>
+                                    </div>
+                                    <div class="summary_data">
+                                        <output id="time-result">-</output>
+                                        <div class="money">
+                                            <output id="money-result">0</output>
+                                            <select id="currency" name="currency">
+                                                <option value="15000">₽</option>
+                                                <option value="150">€</option>
+                                                <option value="70000">₸</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <button class="request" id="request_program" style="margin-top: 20px;">Записаться на
+                                собеседование</button>
+                            <div class="text-block" id="abou_oferta">
+                                <p>*Данный рассчет не является офертой</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
-        </div>
-    </section>
-    <div class=message-block id="thank-you-message" style="display: none;">
-        <div class="message-block-background"></div>
-        <div class="message-title">Спасибо за запрос!<br> Мы скоро свяжемся с вами.</div>
-    </div>
+            <div class=message-block id="thank-you-message" style="display: none;">
+                <div class="message-block-background"></div>
+                <div class="message-title">Спасибо за запрос!<br> Мы скоро свяжемся с вами.</div>
+            </div>
+            <!-- ================= Фильтр с Кейсами ================== -->
+            <section id="block-cases">
+                <div class="cases-container">
+                    <div class="title">Кейсы клиентов:</div>
+                    <div class="filter" id="filter">
+                        <!-- Кнопки будут добавлены здесь -->
+                    </div>
+                    <div class="cases">
+                    </div>
+                </div>
+            </section>
+            <!-- ================= О НАС ================== -->
+            <section id="block-aboutus">
+                <div class="aboutus-container">
+                    <div class="title">О нас:</div>
+                    <div class="up-block">
+                        <div class="mission">
+                            <div class="about-title">Миссия</div>
+                            <div class="about-text">Создавать партнерские и сотрудничествующие отношения с клиентами,
+                                помогать
+                                им раскрыть и использовать свой потенциал, реализовывать их идеи и мечты, достигать
+                                желаемых
+                                целей.</div>
+                        </div>
+                        <div class="goals">
+                            <div class="about-title">Цели компании</div>
+                            <div class="about-text"> Помогать собственникам бизнеса и первым лицам достигать своей цели
+                                или
+                                итоговой точки с помощью партнерства и сотрудничества в процессе коучинга.</div>
+                        </div>
+                        <div class="values">
+                            <div class="about-title">Наши ценности</div>
+                            <div class="about-text">Партнерство - дает синергию <br> Cистемность - дает
+                                надежность<br>Знания
+                                -
+                                дают осознанность<br>Развитие - деньги </div>
+                        </div>
+                    </div>
+                    <div class="buttom-block">
+                        <div class="about-title">Описание</div>
+                        <div class="about-text">Миссия компании Point B заключается в том, чтобы помогать собственникам
+                            бизнеса
+                            и первым лицам достигать своей цели или итоговой точки с помощью партнерства и
+                            сотрудничества в
+                            процессе коучинга. Миссия компании Point B заключается в том, чтобы помогать собственникам
+                            бизнеса и
+                            первым лицам достигать своей цели или итоговой точки с помощью партнерства и сотрудничества
+                            в
+                            процессе коучинга. Миссия компании Point B заключается в том, чтобы помогать собственникам
+                            бизнеса и
+                            первым лицам достигать своей цели или итоговой точки с помощью партнерства и сотрудничества
+                            в
+                            процессе коучинга. Миссия компании Point B заключается в том, чтобы помогать собственникам
+                            бизнеса и
+                            первым лицам достигать своей цели или итоговой точки с помощью партнерства и сотрудничества
+                            в
+                            процессе коучинга. </div>
+                    </div>
+                    <div class="team">
+                        <div class="left-block">
+                            <div class="photo-block">
+                                <img src="img/innessa.png" class="inn-photo">
+                            </div>
+                            <button class="request" id="request_about">Записаться на собеседование</button>
+                        </div>
+                        <div class="right-block">
+                            <div class="name">Иннесса <br> Романовская</div>
+                            <div class="titul">Мастер-коуч, сооснователь Центра коучинга SuperDay и компании PointB
+                            </div>
+                            <div class="labels">
+                                <div class="label-img">
+                                    <img src="img/icu.png" id="labels">
+                                </div>
+                                <div class="label-text">
+                                    Мастер Coach, Trener of Coaching международной категории ICU
+                                </div>
+                                <div class="label-img">
+                                    <img src="img/icta.png" id="labels">
+                                </div>
+                                <div class="label-text">
+                                    Мастер Coach Междунарожной ассоциации коучей и тренеров ICTA
+                                </div>
+                            </div>
+                            <div class="about-text">
+                                Меня приглашают и обращаются ко мне тогда когда есть сложность применить имеющиеся
+                                знания,
+                                потому что есть глубинные неудовлетворенные потребности, которые проявляются как
+                                ограничения
+                                и
+                                препятствуют движению дальше.<br><br>
+                                По своему опыту могу сказать что нас ограничивает персональные ограничения или
+                                отсутствие
+                                знаний.<br><br>
+                                В работе с персональными ограничениями главной сложностью является не взятие себе своей
+                                ответственности, которая проявляется в разных формах, что формирует ограничения в виде:
+                                потолка,
+                                отсутствия видения, эмоциональности, контроля. Что влияет на создание тех систем в
+                                которых
+                                мы же
+                                сами и живем. Я имею экспертизу в проектном уравнении, в формирование условий для
+                                эффективной
+                                работы партнеров бизнеса, в формировании системы управления в организации, в
+                                позиционировании, в
+                                работе с командами, в создании и реализации видения и стратегии.
+                            </div>
 
+                            <div class="about-result">
+                                <div class="one">
+                                    <div class="about-title">более 2000 сессий</div>
+                                    <div class="about-text">провела професссинального коучинга в направлении
+                                        бизнес-коучинга
+                                        и
+                                        лайф-коучинга, более 70 тренингов и командных сессий</div>
+                                </div>
+                                <div class="two">
+                                    <div class="about-title">15 лет</div>
+                                    <div class="about-text">опыт работы с ресурсом человека в роли психолога, тренера,
+                                        управленца и профессионального коуча</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="members">
+                        <div class="membre">
+                            <img src="img/alexander.png" id="membr-photo">
+                            <div class="name" id="membre-name">Александр <br> Химченко</div>
+                            <div class="about-text">основатель, ментор, соавтор программ, бизнес-коуч</div>
+                        </div>
+                        <div class="membre">
+                            <img src="img/alexander.png" id="membr-photo">
+                            <div class="name" id="membre-name">Александр<br> Химченко</div>
+                            <div class="about-text">партнер, бизнес-коуч</div>
+                        </div>
+                        <div class="membre">
+                            <img src="img/alexander.png" id="membr-photo">
+                            <div class="name" id="membre-name">Александр<br> Химченко</div>
+                            <div class="about-text">партнер, бизнес-коуч</div>
+                        </div>
+                    </div>
+            </section>
+            <!-- ================= Анкета и Заявка ================== -->
+            <section id="anketa-request">
+                <div class="anketa-container">
+                    <div class="anketa">
+                        <div class="anketa-background"></div>
+                        <img class="anketa-img" src="/img/anketa_img.png" alt="anketa">
+                        <div class="anketa-title">Заполните <br> анкету</div>
+                        <div class="anketa-text">И получите подробные рекомендации к действию, составленные
+                            индивидуально для вас нашей командой</div>
+                        <button class="anketa-request" id="anketa-request" style="margin-top: 20px;">Перейти к
+                            анкете</button>
+                        <div class="krug">
+                            <div class="fifteen">15</div>
+                            <div class="questions">вопросов</div>
+                        </div>
+                    </div>
+                    <div class="request-form">
+                        <div class="request-background"></div>
+                        <img class="request-img" src="/img/lists.png" alt="request">
+                        <div class="request-text">Запишись на собеседование</div>
+                        <div class="request-client-data">
+                            <div class="row-one">
+                                <div class="request-first-block">
+                                    <div class="sett-title">Ваше имя*</div>
+                                    <input type="text" id="username" name="username" class="module-input">
+                                </div>
+                                <div class="request-second-block">
+                                    <div class="sett-title">Удобный вид связи*</div>
+                                    <div class="checkbox-container-r">
+                                        <div class="checkbox-container-r">
+                                            <div class="checkbox-item-r">
+                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option1"
+                                                    name="option1" value="E-mail">
+                                                <label class="checkbox-label-r" for="option1">E-mail</label>
+                                            </div>
+
+                                            <div class="checkbox-item-r">
+                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option2"
+                                                    name="option2" value="номер">
+                                                <label class="checkbox-label-r" for="option2">WhatsApp</label>
+                                            </div>
+                                            <div class="checkbox-item-r">
+                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option3"
+                                                    name="option3" value="ник(+номер)">
+                                                <label class="checkbox-label-r" for="option3">Telegram</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-two">
+                                <div class="request-first-block">
+                                    <output id="sett-title-output-r">-</output>
+                                    <input type="text" id="contacts" name="contacts" class="module-input"
+                                    style="position: absolute;width: 500px;top: 60px;">
+                                </div>
+                                <div class="request-second-block">
+                                    <button class="request" id="request_small">Записаться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ================= Вопросы-Ответы ================== -->
+            <section id="faq">
+                <div class="faq">
+                    <div class="title">Вопросы-Ответы</div>
+
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 <script src="script.js"></script>
-</html>
+
+</html><input type="text" id="contacts" name="contacts" class="module-input" style="position: absolute;width: 500px;top: 60px;">

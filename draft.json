@@ -1,0 +1,57 @@
+document.addEventListener("DOMContentLoaded", function () {
+    let activeFilters = [];
+    let totalCasesHeight = 0;
+    const blockCaseContainer = document.querySelector('.block-cases');
+    const caseContainer = document.querySelector('.cases-container');
+  
+    function toggleButtonActivation(event) {
+      // ... (ваш код остается неизменным)
+      updateCases();
+    }
+  
+    function updateCases() {
+      fetch('case.json')
+        .then(response => response.json())
+        .then(data => {
+          const casesContainer = document.querySelector('.cases');
+          casesContainer.innerHTML = '';
+          totalCasesHeight = 0;
+  
+          data.forEach(item => {
+            if (item.tags.some(tag => activeFilters.includes(tag))) {
+              const caseElement = document.createElement('div');
+              caseElement.className = 'case';
+              caseElement.id = `case-${item.id}`;
+  
+              // код для наполнения case (не изменен)
+  
+              casesContainer.appendChild(caseElement);
+  
+              let caseHeight = caseElement.offsetHeight;
+              totalCasesHeight += caseHeight;
+  
+              // Вычисление и установка высоты происходят тут
+              requestAnimationFrame(() => {
+                const summaryElement = caseElement.querySelector('.summary');
+                if (summaryElement) {
+                  const newSummaryHeight = summaryElement.offsetHeight;
+                  // здесь можно обновить высоту summaryElement, если нужно
+                }
+  
+                // обновляем общую высоту контейнеров
+                if (blockCaseContainer) {
+                  blockCaseContainer.style.height = `${totalCasesHeight + 350}px`;
+                }
+                if (caseContainer) {
+                  caseContainer.style.height = `${totalCasesHeight + 350}px`;
+                }
+              });
+            }
+          });
+        })
+        .catch(error => console.log('Ошибка загрузки данных:', error));
+    }
+  
+    // ... (ваш код для загрузки фильтров остается неизменным)
+  });
+  

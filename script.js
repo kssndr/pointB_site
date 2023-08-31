@@ -121,16 +121,16 @@ fetch('pointb_texts.json')
     console.error('Ошибка загрузки JSON', error);
   });
 
-// Ваш код для создания чекбоксов и кнопок
+// код для создания чекбоксов и кнопок
 function createCheckboxes(data) {
   const container = document.querySelector('.modules-checkbox');
   const leftButtons = data.left_buttons;
   const rightButtons = data.right_buttons;
 
-  // ваш код для добавления левых кнопок
+  // код для добавления левых кнопок
   addButtons(leftButtons, container);
 
-  // ваш код для добавления правых кнопок, если нужно
+  //  код для добавления правых кнопок, если нужно
   addButtons(rightButtons, container);
 }
 
@@ -272,7 +272,7 @@ function addButtons(buttonData, container) {
       // Преобразуем массив в строку, разделяя значения запятыми
       const selectedValuesString = selectedValues.join(', ');
 
-      // Выводим строку в консоль (или делаем с ней что-то ещё)
+      // Выводим строку в консоль
       console.log(selectedValuesString);
 
       document.getElementById('sett-title-output').value = selectedValuesString;
@@ -310,44 +310,6 @@ document.addEventListener('DOMContentLoaded', function () {
 // ==============================================================================
 // Создание заявки для отправки по итогам работы клиента с калькулятором + отправка
 //==============================================================================
-
-// версия не работает
-// document.addEventListener('DOMContentLoaded', function () {
-//   const requestProgramButton = document.getElementById('request_program');
-//   const thankYouMessage = document.getElementById('thank-you-message');
-//   const programForm = document.querySelector('.program-form');
-
-//   // Обработчик для кнопки закрытия
-//   document.getElementById('close_button').addEventListener('click', function() {
-   
-//     programForm.style.display = 'block';
- 
-//     thankYouMessage.style.display = 'none';
-//   });
-
-//   // Обработчик для кнопки "Записаться на собеседование"
-//   requestProgramButton.addEventListener('click', function () {
-//     // Сбор данных и действия аналогичны вашему коду
-
-//     // Скрываем форму и показываем блок "Спасибо"
-//     if (programForm) {
-//       programForm.style.display = 'none';
-//     }
-//     thankYouMessage.style.display = 'block';
-
-//     // Запускаем таймеры для исчезновения блока "Спасибо"
-//     setTimeout(function() {
-//       thankYouMessage.classList.add('fade-out');
-//     }, 3000);
-
-//     setTimeout(function() {
-//       thankYouMessage.style.display = 'none';
-//       thankYouMessage.classList.remove('fade-out');
-//     }, 4000);
-//   });
-// });
-
-
 // старый вариант (работает)
 document.addEventListener('DOMContentLoaded', function () {
   const requestProgramButton = document.getElementById('request_program');
@@ -358,84 +320,512 @@ document.addEventListener('DOMContentLoaded', function () {
   // Один обработчик для клика по кнопке "Записаться на собеседование"
   requestProgramButton.addEventListener('click', function () {
 
-      // Собираем данные из полей
-      const username = document.getElementById('username').value;
-      const meetingFrequency = document.getElementById('meeting-frequency').value;
-      const contacts = document.getElementById('contacts').value;
-      const notes = document.getElementById('notes').value;
-      const timeResult = document.getElementById('time-result').innerText;
-      const moneyResult = document.getElementById('money-result').innerText;
-      const currency = document.getElementById('currency').value;
+    // Собираем данные из полей
+    const username = document.getElementById('username').value;
+    const meetingFrequency = document.getElementById('meeting-frequency').value;
+    const contacts = document.getElementById('contacts').value;
+    const notes = document.getElementById('notes').value;
+    const timeResult = document.getElementById('time-result').innerText;
+    const moneyResult = document.getElementById('money-result').innerText;
+    const currency = document.getElementById('currency').value;
 
-      // Собираем текст кнопок, рядом с отмеченными чекбоксами
-      let checkboxes = document.querySelectorAll('.custom-checkbox:checked');
-      let selectedButtonContent = [];
-      checkboxes.forEach((checkbox) => {
-          const button = checkbox.closest('div').querySelector('.button-container .checkbox-button');
-          if (button) {
-              selectedButtonContent.push(button.innerText);
-          }
-      });
-
-      // Формируем объект данных, который будет отправлен
-      const formData = {
-          username,
-          meetingFrequency,
-          contacts,
-          notes,
-          timeResult,
-          moneyResult,
-          currency,
-          selectedButtonContent: selectedButtonContent.join(', ')
-      };
-
-      // Выводим объект в консоль
-      console.log('Data to be sent:', formData);
-
-      // Скрываем форму и показываем блок "Спасибо"
-      if(programForm) {  // Добавлено для обеспечения безопасности
-          programForm.style.display = 'none';
+    // Собираем текст кнопок, рядом с отмеченными чекбоксами
+    let checkboxes = document.querySelectorAll('.custom-checkbox:checked');
+    let selectedButtonContent = [];
+    checkboxes.forEach((checkbox) => {
+      const button = checkbox.closest('div').querySelector('.button-container .checkbox-button');
+      if (button) {
+        selectedButtonContent.push(button.innerText);
       }
-      thankYouMessage.style.display = 'block';
+    });
 
-      // Запускаем таймер на 10 секунд (10000 миллисекунд)
-      // Запускаем таймер на 9 секунд (9000 миллисекунд)
-      setTimeout(function() {
-        // Начинаем анимацию исчезновения
-        thankYouMessage.classList.add('fade-out');
-      }, 3000); // время в миллисекундах
+    // Формируем объект данных, который будет отправлен
+    const formData = {
+      username,
+      meetingFrequency,
+      contacts,
+      notes,
+      timeResult,
+      moneyResult,
+      currency,
+      selectedButtonContent: selectedButtonContent.join(', ')
+    };
 
-      // Запускаем таймер на 10 секунд (10000 миллисекунд)
-      setTimeout(function() {
-        // Полностью скрываем блок "Спасибо" после окончания анимации
-        thankYouMessage.style.display = 'none';
-        thankYouMessage.classList.remove('fade-out'); // Удаляем класс, чтобы сбросить прозрачность
-      }, 4000); // время в миллисекундах
+    // Выводим объект в консоль
+    console.log('Data to be sent:', formData);
 
-      document.getElementById('close_button').addEventListener('click', function() {
-        // Находим элемент с ID "program" и устанавливаем его свойство "display" в "none", чтобы скрыть его
-        document.getElementById('program-form').style.display = 'none';
-      });
+    // Скрываем форму и показываем блок "Спасибо"
+    if (programForm) {  // Добавлено для обеспечения безопасности
+      programForm.style.display = 'none';
+    }
+    thankYouMessage.style.display = 'block';
+
+    // Запускаем таймер на 10 секунд (10000 миллисекунд)
+    // Запускаем таймер на 9 секунд (9000 миллисекунд)
+    setTimeout(function () {
+      // Начинаем анимацию исчезновения
+      thankYouMessage.classList.add('fade-out');
+    }, 3000); // время в миллисекундах
+
+    // Запускаем таймер на 10 секунд (10000 миллисекунд)
+    setTimeout(function () {
+      // Полностью скрываем блок "Спасибо" после окончания анимации
+      thankYouMessage.style.display = 'none';
+      thankYouMessage.classList.remove('fade-out'); // Удаляем класс, чтобы сбросить прозрачность
+    }, 4000); // время в миллисекундах
+
+    document.getElementById('close_button').addEventListener('click', function () {
+      // Находим элемент с ID "program" и устанавливаем его свойство "display" в "none", чтобы скрыть его
+      document.getElementById('program-form').style.display = 'none';
+    });
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Ваша остальная логика здесь...
+document.addEventListener("DOMContentLoaded", function () {
 
   // Находим кнопку по ID и добавляем к ней обработчик события click
   let closeButton = document.getElementById("close_button");
   let programRequestButton = document.getElementById("program-request");
   let programForm = document.getElementById("program-form");
 
-  if(closeButton && programForm) {
-      closeButton.addEventListener("click", function() {
-          programForm.style.display = "none"; // скрываем элемент
-      });
+  if (closeButton && programForm) {
+    closeButton.addEventListener("click", function () {
+      programForm.style.display = "none"; // скрываем элемент
+    });
   }
 
-  if(programRequestButton && programForm) {
-      programRequestButton.addEventListener("click", function() {
-          programForm.style.display = "block"; // показываем элемент
-      });
+  if (programRequestButton && programForm) {
+    programRequestButton.addEventListener("click", function () {
+      programForm.style.display = "block"; // показываем элемент
+    });
   }
 });
+
+//========================================================================================
+//Создание фильтра с вычеслением размеров блоков
+//========================================================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  let activeFilters = [];
+  let maxCaseHeight = 0;
+  let totalCasesHeight = 0; // Для хранения общей высоты всех case-блоков
+  const blockCaseContainer = document.querySelector('.block-cases');
+  const caseContainer = document.querySelector('.cases-container');
+  const cases = document.querySelector('.cases');
+
+
+  function toggleButtonActivation(event) {
+    const button = event.target;
+    const filterId = button.innerText;
+    button.classList.toggle('active');
+    if (button.classList.contains('active')) {
+      activeFilters.push(filterId);
+    } else {
+      const index = activeFilters.indexOf(filterId);
+      if (index > -1) {
+        activeFilters.splice(index, 1);
+      }
+    }
+    updateCases();
+    console.log(activeFilters);
+  }
+
+  function updateCases() {
+    // maxCaseHeight = 0; // Обнуляем максимальную высоту
+    fetch('case.json')
+      .then(response => response.json())
+      .then(data => {
+        const casesContainer = document.querySelector('.cases');
+        casesContainer.innerHTML = '';
+        totalCasesHeight = 0; // Обнуляем общую высоту
+
+        data.forEach(item => {
+          if (item.tags.some(tag => activeFilters.includes(tag))) {
+            const caseElement = document.createElement('div');
+            caseElement.className = 'case';
+            caseElement.id = `case-${item.id}`;
+
+            // код для наполнения case
+
+            // Создание div с классом "abr"
+            const abrElement = document.createElement('div');
+            abrElement.className = 'abr';
+            caseElement.appendChild(abrElement);
+
+            // Создание div с классом "ab"
+            const abElement = document.createElement('div');
+            abElement.className = 'ab';
+            abrElement.appendChild(abElement);
+
+            // Создание div с классом "r"
+            const rElement = document.createElement('div');
+            rElement.className = 'r';
+            abrElement.appendChild(rElement);
+
+            // Создание блока Summary
+            item.blocks.forEach(block => {
+              if (block.summary) {
+                const summaryElement = document.createElement('div');
+                summaryElement.className = 'summary';
+
+
+                // Создание блока для SVG
+                const svgContainer = document.createElement('div');
+                svgContainer.className = 'green_arrow';
+
+                // Вставка SVG кода внутрь контейнера
+                svgContainer.innerHTML = `
+      <svg width="305" height="16" viewBox="0 0 305 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M303.874 8.81599C304.264 8.42547 304.264 7.7923 303.874 7.40178L297.51 1.03782C297.119 0.647295 296.486 0.647295 296.096 1.03782C295.705 1.42834 295.705 2.06151 296.096 2.45203L301.753 8.10889L296.096 13.7657C295.705 14.1563 295.705 14.7894 296.096 15.18C296.486 15.5705 297.119 15.5705 297.51 15.18L303.874 8.81599ZM0.3479 9.10889H303.167V7.10889H0.3479V9.10889Z" fill="url(#paint0_linear_223_5471)"/>
+        <defs>
+          <linearGradient id="paint0_linear_223_5471" x1="303.167" y1="8.10889" x2="0.3479" y2="8.10889" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0D4C47"/>
+            <stop offset="1" stop-color="white" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    `;
+
+                // Добавление SVG контейнера в элемент с классом "abr" (не работало - поменял на ab)
+                abElement.appendChild(svgContainer);
+
+                block.summary.forEach(summaryItem => {
+                  if (summaryItem.photo) {
+                    const photoElement = document.createElement('img');
+                    photoElement.className = 'photo_client';
+                    photoElement.src = summaryItem.photo;
+                    summaryElement.appendChild(photoElement);
+                  }
+
+                  if (summaryItem.client_name) {
+                    const clientNameElement = document.createElement('div');
+                    clientNameElement.className = 'client-name';
+                    clientNameElement.innerHTML = summaryItem.client_name;
+                    summaryElement.appendChild(clientNameElement);
+                  }
+
+                  if (summaryItem.goal_title) {
+                    const goalTitleElement = document.createElement('div');
+                    goalTitleElement.className = 'goal_title';
+                    goalTitleElement.textContent = summaryItem.goal_title;
+                    summaryElement.appendChild(goalTitleElement);
+                  }
+
+                  if (summaryItem.goal_text) {
+                    const goalTextElement = document.createElement('div');
+                    goalTextElement.className = 'goal_text';
+                    goalTextElement.textContent = summaryItem.goal_text;
+                    summaryElement.appendChild(goalTextElement);
+                  }
+
+                  if (summaryItem.mod_title) {
+                    const modTitleElement = document.createElement('div');
+                    modTitleElement.className = 'mod_title';
+                    modTitleElement.textContent = summaryItem.mod_title;
+                    summaryElement.appendChild(modTitleElement);
+                  }
+
+                  if (summaryItem.mod_text) {
+                    const modTextElement = document.createElement('div');
+                    modTextElement.className = 'mod_text';
+                    modTextElement.textContent = summaryItem.mod_text;
+                    summaryElement.appendChild(modTextElement);
+                  }
+
+                  if (summaryItem.duration_title) {
+                    const durationTitleElement = document.createElement('div');
+                    durationTitleElement.className = 'duration_title';
+                    durationTitleElement.textContent = summaryItem.duration_title;
+                    summaryElement.appendChild(durationTitleElement);
+                  }
+
+                  if (summaryItem.duration_text) {
+                    const durationTextElement = document.createElement('div');
+                    durationTextElement.className = 'duration_text';
+                    durationTextElement.textContent = summaryItem.duration_text;
+                    summaryElement.appendChild(durationTextElement);
+                  }
+
+                });
+
+                caseElement.appendChild(summaryElement);
+              }
+
+
+              // ... Здесь заполнение данных для Point A
+              if (block.point_a) {
+                const pointAElement = document.createElement('div');
+                pointAElement.className = 'point_a';
+
+
+                block.point_a.forEach(pointaItem => {
+                  if (pointaItem.a_title) {
+                    const atitleElement = document.createElement('div');
+                    atitleElement.className = 'a_title';
+                    atitleElement.textContent = pointaItem.a_title;
+                    pointAElement.appendChild(atitleElement);
+                  }
+
+                  if (pointaItem.a_title) {
+                    const atextElement = document.createElement('div');
+                    atextElement.className = 'a_text';
+                    atextElement.textContent = pointaItem.a_text;
+                    pointAElement.appendChild(atextElement);
+                  }
+                });
+
+                abElement.appendChild(pointAElement);
+              }
+
+              // ... Здесь заполнение данных для Point B
+              if (block.point_b) {
+                const pointBElement = document.createElement('div');
+                pointBElement.className = 'point_b';
+
+                block.point_b.forEach(pointbItem => {
+                  if (pointbItem.b_title) {
+                    const btitleElement = document.createElement('div');
+                    btitleElement.className = 'b_title';
+                    btitleElement.textContent = pointbItem.b_title;
+                    pointBElement.appendChild(btitleElement);
+                  }
+
+                  if (pointbItem.b_title) {
+                    const btextElement = document.createElement('div');
+                    btextElement.className = 'b_text';
+                    btextElement.innerHTML = pointbItem.b_text;
+                    pointBElement.appendChild(btextElement);
+                  }
+                });
+
+                abElement.appendChild(pointBElement);
+
+              }
+
+              // ... Здесь заполнение данных для Результатов с превышением (Бонусов)
+              if (block.bonus) {
+                const bonusElement = document.createElement('div');
+                bonusElement.className = 'bonus';
+
+                block.bonus.forEach(bonusItem => {
+                  if (bonusItem.bonus_title) {
+                    const bonusTElement = document.createElement('div');
+                    bonusTElement.className = 'bonus_title';
+                    bonusTElement.textContent = bonusItem.bonus_title;
+                    bonusElement.appendChild(bonusTElement);
+                  }
+
+                  if (bonusItem.bonus_text) {
+                    const bonusTxElement = document.createElement('div');
+                    bonusTxElement.className = 'bonus_text';
+                    bonusTxElement.textContent = bonusItem.bonus_text;
+                    bonusElement.appendChild(bonusTxElement);
+                  }
+                });
+
+                rElement.appendChild(bonusElement);
+
+              }
+
+
+            });
+
+            casesContainer.appendChild(caseElement);
+
+
+            //================== Блок вычисления высот===============================
+
+            // Вычисление и установка высоты происходят тут
+            requestAnimationFrame(() => {
+
+              totalMaxHeights = 0;  // Обнуляем сумму максимальных высот перед новым расчетом
+
+              data.forEach(item => {
+                if (item.tags.some(tag => activeFilters.includes(tag))) {
+                  const caseElement = document.getElementById(`case-${item.id}`);
+
+                  if (caseElement) {
+                    const { maxHeight, maxElement } = findMaxHeightElementInCase(caseElement);
+
+                    console.log(`case-id: ${item.id}, max-element: ${maxElement.className}, max-height: ${maxHeight}`);
+                    // Теперь у вас есть maxElement и maxHeight, которые представляют собой элемент с максимальной высотой и его высоту.
+                    totalMaxHeights += maxHeight; // Суммируем максимальные высоты
+
+
+                    // Устанавливаем максимальную высоту для summary и abr
+                    const summaryElement = caseElement.querySelector('.summary');
+                    if (summaryElement) {
+                      summaryElement.style.height = `${maxHeight}px`;
+                    }
+
+                    // Уже существующий abrElement в вашем коде
+                    const existingAbrElement = caseElement.querySelector('.abr');
+                    if (existingAbrElement) {
+                      existingAbrElement.style.height = `${maxHeight}px`;
+
+                    }
+                    // Уже существующий abrElement в вашем коде
+                    const casesElement = caseElement.querySelector('.cases');
+                    if (casesElement) {
+                      casesElement.style.height = `${maxHeight}px`;
+                    }
+
+                    let rh=0
+
+                    const rElement = caseElement.querySelector('.r');
+                    if (rElement) {
+                      rh = rElement.offsetHeight;
+                      console.log(`Высота блока r: ${rh}px`); 
+                    }
+
+                    const aElement = caseElement.querySelector('.point_a');
+                    if (aElement) {
+                      aElement.style.height = `${maxHeight - rh}px`;
+                    }
+
+
+                  }
+                }
+              })
+              console.log('Total max heights:', totalMaxHeights); // Выводим сумму максимальных высот
+              // теперь totalMaxHeights содержит сумму максимальных высот всех case
+
+                          // Устанавливаем максимальную высоту для block-case и case-container
+            if (blockCaseContainer) {
+              blockCaseContainer.style.height = `${totalMaxHeights+ 250}px`;
+            }
+            if (caseContainer) {
+              caseContainer.style.height = `${totalMaxHeights + 250}px`;
+            }
+
+            const casesElement = caseElement.querySelector('.cases');
+            if (casesContainer) {
+              casesContainer.style.height = `${totalMaxHeights}px`;
+            }
+            })
+          }
+        });
+      })
+      .catch(error => console.log('Ошибка загрузки данных:', error));
+  }
+
+  fetch('pointb_texts.json')
+    .then(response => response.json())
+    .then(data => {
+      if (Array.isArray(data.left_buttons) && Array.isArray(data.right_buttons)) {
+        let filterContainer = document.getElementById('filter');
+        if (!filterContainer) {
+          filterContainer = document.createElement('div');
+          filterContainer.id = 'filter';
+          document.body.appendChild(filterContainer);
+        }
+
+        [...data.left_buttons, ...data.right_buttons].forEach(button => {
+          const btn = document.createElement('button');
+          btn.innerHTML = button.name;
+          btn.id = button.id.toString();
+          btn.className = "btn-filter";
+          btn.addEventListener('click', toggleButtonActivation);
+          filterContainer.appendChild(btn);
+        });
+      } else {
+        console.log("Ошибка: полученные данные не содержат нужных массивов");
+      }
+    })
+    .catch(error => console.log('Ошибка загрузки данных:', error));
+});
+
+
+const observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
+    if (mutation.type === "childList") {
+      // Перебираем все добавленные узлы
+      mutation.addedNodes.forEach(function (addedNode) {
+        // Дополнительная проверка: удостоверимся, что узел является элементом DOM
+        if (addedNode.nodeType === 1) {
+          // Проверяем, является ли узел элементом с нужным ID или классом
+          if (addedNode.id === "case-3" || addedNode.classList.contains("summary") || addedNode.classList.contains("abr")) {
+            // Измеряем высоту
+            const height = addedNode.offsetHeight;
+            console.log(`Height of ${addedNode.id || addedNode.className}: ${height}`);
+          }
+
+          // Если добавленный узел содержит другие элементы, можно также искать внутри него
+          const summaries = addedNode.querySelectorAll(".summary");
+          const abrs = addedNode.querySelectorAll(".abr");
+          summaries.forEach(element => console.log(`Height of summary: ${element.offsetHeight}`));
+          abrs.forEach(element => console.log(`Height of abr: ${element.offsetHeight}`));
+        }
+      });
+    }
+  });
+});
+
+// Наблюдение за изменениями в корневом элементе DOM
+observer.observe(document.body, { childList: true, subtree: true });
+
+function findMaxHeightElementInCase(caseElement) {
+  let maxHeight = 0;
+  let maxElement = null;
+
+
+  const childElements = caseElement.querySelectorAll('*'); // Получаем все дочерние элементы
+  childElements.forEach(element => {
+    const height = element.offsetHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+      maxElement = element;
+    }
+  });
+
+
+
+
+
+  return { maxHeight, maxElement };
+}
+
+//========================================================================================
+//Создание и отправка анкеты
+//========================================================================================
+
+
+
+//========================================================================================
+//Создание и отправка заявки на собеседование (малая форма)
+//========================================================================================
+
+ // Добавляем обработчик событий на чекбоксы Контакты
+ document.addEventListener('change', function (event) {
+  if (event.target.matches('.custom-checkbox-contact-r')) {
+    calculateResults();
+  }
+});
+
+// сбор удобных каналов связи
+function collectCheckedValues() {
+  let selectedValues = []; // Массив для хранения выбранных значений
+
+  // Получаем все выбранные чекбоксы
+  const checkedBoxes = document.querySelectorAll('.custom-checkbox-contact-r:checked');
+
+  // Перебираем все выбранные чекбоксы и добавляем их значения в массив
+  checkedBoxes.forEach((checkbox) => {
+    selectedValues.push(checkbox.value);
+  });
+
+  // Преобразуем массив в строку, разделяя значения запятыми
+  const selectedValuesString = selectedValues.join(', ');
+
+  // Выводим строку в консоль
+  console.log(selectedValuesString);
+
+  document.getElementById('sett-title-output-r').value = selectedValuesString;
+
+  return selectedValuesString;
+}
+
+    // Или при изменении состояния любого чекбокса
+    document.querySelectorAll('.custom-checkbox-contact-r').forEach((checkbox) => {
+      checkbox.addEventListener('change', collectCheckedValues);
+    });
