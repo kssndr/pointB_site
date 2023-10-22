@@ -65,7 +65,7 @@
                                 наш
                                 партнерский и эффективный подход
                                 в коучинге.</div>
-                            <button class="request" id="request">Записаться на собеседование</button>
+                            <button class="open-request-form-button" id="request">Записаться на собеседование</button>
                         </div>
                         <div class="picture">
                             <div class="image-container">
@@ -221,12 +221,16 @@
             </div>
             <!-- ================= Фильтр с Кейсами ================== -->
             <section id="block-cases">
-                <div class="cases-container">
-                    <div class="title">Кейсы клиентов:</div>
-                    <div class="filter" id="filter">
-                        <!-- Кнопки будут добавлены здесь -->
+                <div class="c">
+                    <div class="cases-container-head" id="spesial-head">
+                        <div class="title">Кейсы клиентов:</div>
+                        <div class="filter" id="filter">
+                            <!-- Кнопки будут добавлены здесь -->
+                        </div>
                     </div>
-                    <div class="cases">
+                    <div class="cases-container">
+                        <div class="cases">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -282,7 +286,8 @@
                             <div class="photo-block">
                                 <img src="img/innessa.png" class="inn-photo">
                             </div>
-                            <button class="request" id="request_about">Записаться на собеседование</button>
+                            <button class="open-request-form-button" id="request_about">Записаться на
+                                собеседование</button>
                         </div>
                         <div class="right-block">
                             <div class="name">Иннесса <br> Романовская</div>
@@ -360,7 +365,7 @@
                     </div>
             </section>
             <!-- ================= Анкета и Заявка ================== -->
-            <section id="anketa-request">
+            <section id="anketa-request-block">
                 <div class="anketa-container">
                     <div class="anketa">
                         <div class="anketa-background"></div>
@@ -383,7 +388,7 @@
                             <div class="row-one">
                                 <div class="request-first-block">
                                     <div class="sett-title">Ваше имя*</div>
-                                    <input type="text" id="username" name="username" class="module-input">
+                                    <input type="text" id="username-input" name="username-input" class="module-input">
                                 </div>
                                 <div class="request-second-block">
                                     <div class="sett-title">Удобный вид связи*</div>
@@ -412,8 +417,8 @@
                             <div class="row-two">
                                 <div class="request-first-block">
                                     <output id="sett-title-output-r">-</output>
-                                    <input type="text" id="contacts" name="contacts" class="module-input"
-                                    style="position: absolute;width: 500px;top: 60px;">
+                                    <input type="text" id="contacts-input" name="contacts-input" class="module-input"
+                                        style="position: absolute;width: 500px;top: 60px;">
                                 </div>
                                 <div class="request-second-block">
                                     <button class="request" id="request_small">Записаться</button>
@@ -422,17 +427,133 @@
                         </div>
                     </div>
                 </div>
+                <!-- ================= Анкета ================== -->
+                <div id="anketaModal" class="modal">
+                    <div class="modal-content">
+                        <div id="anketaFormContainer">
+                            <!-- Тут будет динамически созданная форма -->
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- ================= Вопросы-Ответы ================== -->
             <section id="faq">
                 <div class="faq">
-                    <div class="title">Вопросы-Ответы</div>
+                    <div class="title">Вопросы - Ответы</div>
+                    <div class="faqContainer" id="faqContainer">
+                        <!-- Здесь будут вопросы и ответы -->
+                    </div>
+                </div>
+            </section>
+            <!-- ================= Блог ================== -->
+            <section id="blog" style="display: block;">
+                <div class="blog">
+                    <div class="title">Блог</div>
 
                 </div>
             </section>
+            <!-- ================= Кому уже помогли ================== -->
+            <section id="our_clients" style="display: block;">
+                <div class="our_clients">
+                    <div class="title">Кому уже помогли:</div>
+                    <div class="table-clints-first-row">
+                        <div class="our-clients-image"><img src="/img/our_clients_img/ulmart.png" alt="ulmart"></div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/innoteh.png" alt="innoteh"></div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/takemytime.png" alt="takemytime">
+                        </div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/pia.png" alt="pia"></div>
+                    </div>
+                    <div class="table-clints-second-row">
+                        <div class="our-clients-image"><img src="/img/our_clients_img/souzhimtrans.png"
+                                alt="souzhimtrans"></div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/medvedislon.png"
+                                alt="medvedislon"></div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/t1.png" alt="t1"></div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/dobrodely.png" alt="dobrodely">
+                        </div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/gis.png" alt="gis"></div>
+                        <div class="our-clients-image"><img src="/img/our_clients_img/uralstroytrans.png"
+                                alt="uralstroytrans"></div>
+                    </div>
+                </div>
+            </section>
+            <template id="request-form-template">
+                <!-- Весь ваш HTML-блок здесь -->
+                <div class="request-form">
+                    <div class="request-background"></div>
+                    <img class="request-img" src="/img/lists.png" alt="request">
+                    <div class="request-text">Запишись на собеседование</div>
+                    <div class="request-client-data">
+                        <div class="row-one">
+                            <div class="request-first-block">
+                                <div class="sett-title">Ваше имя*</div>
+                                <input type="text" id="username-input" name="username-input" class="module-input">
+                            </div>
+                            <div class="request-second-block">
+                                <div class="sett-title">Удобный вид связи*</div>
+                                <div class="checkbox-container-r">
+                                    <div class="checkbox-container-r">
+                                        <div class="checkbox-item-r">
+                                            <input type="checkbox" class="custom-checkbox-contact-r" id="option1"
+                                                name="option1" value="E-mail">
+                                            <label class="checkbox-label-r" for="option1">E-mail</label>
+                                        </div>
+
+                                        <div class="checkbox-item-r">
+                                            <input type="checkbox" class="custom-checkbox-contact-r" id="option2"
+                                                name="option2" value="номер">
+                                            <label class="checkbox-label-r" for="option2">WhatsApp</label>
+                                        </div>
+                                        <div class="checkbox-item-r">
+                                            <input type="checkbox" class="custom-checkbox-contact-r" id="option3"
+                                                name="option3" value="ник(+номер)">
+                                            <label class="checkbox-label-r" for="option3">Telegram</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-two">
+                            <div class="request-first-block">
+                                <output id="sett-title-output-r">-</output>
+                                <input type="text" id="contacts-input" name="contacts-input" class="module-input"
+                                    style="position: absolute;width: 500px;top: 60px;">
+                            </div>
+                            <div class="request-second-block">
+                                <button class="request" id="request_small">Записаться</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
         </main>
     </div>
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="right-footer">
+                <div class="footer-text">
+                    © 2023 Point B. Используя данный веб-сайт, Вы соглашаетесь с тем, что мы сохраняем и используем
+                    cookies на Вашем устройстве
+                </div>
+            </div>
+
+            <div class="right-side-footer">
+                <div class="contact-footer">
+                    <div class="footer-text">Напишите нам:</div>
+                    <a href="https://www.example.com/social" target="_blank"><img class="ss-image"
+                            src="img/button_wsap.svg" style="margin-left: 100px;"></a>
+                    <a href="https://www.example.com/social" target="_blank"><img class="ss-image"
+                            src="img/button_telegram.svg"></a>
+                </div>
+                <div class="terms-footer">
+                    <a href="/terms-and-conditions.html">Условия</a> &nbsp;и&nbsp; <a
+                        href="/privacy-policy.html">Конфеденциальность</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="script.js"></script>
 
-</html><input type="text" id="contacts" name="contacts" class="module-input" style="position: absolute;width: 500px;top: 60px;">
+</html>
