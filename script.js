@@ -13,7 +13,32 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchJsonData();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Находим все элементы меню
+  const menuItems = document.querySelectorAll(".menu-item a");
 
+  // Обходим каждый элемент меню
+  menuItems.forEach(function (item) {
+    // Добавляем обработчик клика
+    item.addEventListener("click", function (e) {
+      e.preventDefault(); // Отменяем стандартное действие ссылки
+
+      // Получаем ID секции, к которой нужно прокрутиться
+      const targetId = this.getAttribute("href").slice(1);
+
+      // Находим соответствующую секцию по ID
+      const targetSection = document.getElementById(targetId);
+
+      // Прокручиваем страницу к секции с плавной анимацией
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
 // ==============================================================================
 // Динамическое создание блока меню Модулей программы
 //==============================================================================
@@ -376,433 +401,36 @@ document.addEventListener('DOMContentLoaded', function () {
 //  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков
 //========================================================================================
 
-document.addEventListener("DOMContentLoaded", function () {
-  let activeFilters = [];
-  let maxCaseHeight = 0;
-  let totalCasesHeight = 0; // Для хранения общей высоты всех case-блоков
-  const blockCaseContainer = document.querySelector('.block-cases');
-  const caseContainer = document.querySelector('.cases-container');
-  const cases = document.querySelector('.cases');
-
-  // работающая функция которую я заменил на то что ниже чтобы реализовать функционал с кнопкой Расскрыть
-  function toggleButtonActivation(event) {
-    const button = event.target;
-    const filterId = button.innerText;
-    button.classList.toggle('active');
-    if (button.classList.contains('active')) {
-      activeFilters.push(filterId);
-    } else {
-      const index = activeFilters.indexOf(filterId);
-      if (index > -1) {
-        activeFilters.splice(index, 1);
-      }
-    }
-    updateCases();
-      updateContainerHeight();  // Строка которая появилась чтобы пересчитывать скрытые кейсы (функция Расскрыт/Скрыть)
-    console.log(activeFilters);
-  }
-
-  // создание блока создания кейса С кнопкой Расскрыть
-
-  function updateCases() {
-    // maxCaseHeight = 0; // Обнуляем максимальную высоту
-    fetch('case.json')
-      .then(response => response.json())
-      .then(data => {
-        const casesContainer = document.querySelector('.cases');
-        casesContainer.innerHTML = '';
-        totalCasesHeight = 0; // Обнуляем общую высоту
-
-        data.forEach(item => {
-          if (item.tags.some(tag => activeFilters.includes(tag))) {
-            const caseElement = document.createElement('div');
-            caseElement.className = 'case';
-            caseElement.id = `case-${item.id}`;
-            // caseElement.classList.add('expanded');
-            // caseElement.style.height = '220px';  // Ограничиваем высоту
-            // caseElement.style.overflow = 'hidden';  // Скрываем переполнение
-
-            // код для наполнения case
-
-            // Создание div с классом "abr"
-            const abrElement = document.createElement('div');
-            abrElement.className = 'abr';
-            caseElement.appendChild(abrElement);
-
-            // Создание div с классом "ab"
-            const abElement = document.createElement('div');
-            abElement.className = 'ab';
-            abrElement.appendChild(abElement);
-
-            // Создание div с классом "r"
-            const rElement = document.createElement('div');
-            rElement.className = 'r';
-            abrElement.appendChild(rElement);
-
-
-            // Добавление кнопки "Раскрыть"
-            const toggleButton = document.createElement('button');
-            toggleButton.className = 'expand-button';
-            toggleButton.textContent = 'Раскрыть';
-            // toggleButton.style.position ="absolute";
-            // toggleButton.style.top ="200px";
-            toggleButton.style.width = "100vw";
-            toggleButton.style.backgroundColor = "white";
-
-
-            // Создание блока Summary
-            item.blocks.forEach(block => {
-              if (block.summary) {
-                const summaryElement = document.createElement('div');
-                summaryElement.className = 'summary';
-
-
-                // Создание блока для SVG
-                const svgContainer = document.createElement('div');
-                svgContainer.className = 'green_arrow';
-
-                // Вставка SVG кода внутрь контейнера
-                svgContainer.innerHTML = `
-                  <svg width="305" height="16" viewBox="0 0 305 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M303.874 8.81599C304.264 8.42547 304.264 7.7923 303.874 7.40178L297.51 1.03782C297.119 0.647295 296.486 0.647295 296.096 1.03782C295.705 1.42834 295.705 2.06151 296.096 2.45203L301.753 8.10889L296.096 13.7657C295.705 14.1563 295.705 14.7894 296.096 15.18C296.486 15.5705 297.119 15.5705 297.51 15.18L303.874 8.81599ZM0.3479 9.10889H303.167V7.10889H0.3479V9.10889Z" fill="url(#paint0_linear_223_5471)"/>
-                    <defs>
-                      <linearGradient id="paint0_linear_223_5471" x1="303.167" y1="8.10889" x2="0.3479" y2="8.10889" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#0D4C47"/>
-                        <stop offset="1" stop-color="white" stop-opacity="0"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                `;
-
-                // Добавление SVG контейнера в элемент с классом "abr" (не работало - поменял на ab)
-                abElement.appendChild(svgContainer);
-
-                block.summary.forEach(summaryItem => {
-                  if (summaryItem.photo) {
-                    const photoElement = document.createElement('img');
-                    photoElement.className = 'photo_client';
-                    photoElement.src = summaryItem.photo;
-                    summaryElement.appendChild(photoElement);
-                  }
-
-                  if (summaryItem.client_name) {
-                    const clientNameElement = document.createElement('div');
-                    clientNameElement.className = 'client-name';
-                    clientNameElement.innerHTML = summaryItem.client_name;
-                    summaryElement.appendChild(clientNameElement);
-                  }
-
-                  if (summaryItem.goal_title) {
-                    const goalTitleElement = document.createElement('div');
-                    goalTitleElement.className = 'goal_title';
-                    goalTitleElement.textContent = summaryItem.goal_title;
-                    summaryElement.appendChild(goalTitleElement);
-                  }
-
-                  if (summaryItem.goal_text) {
-                    const goalTextElement = document.createElement('div');
-                    goalTextElement.className = 'goal_text';
-                    goalTextElement.textContent = summaryItem.goal_text;
-                    summaryElement.appendChild(goalTextElement);
-                  }
-
-                  if (summaryItem.mod_title) {
-                    const modTitleElement = document.createElement('div');
-                    modTitleElement.className = 'mod_title';
-                    modTitleElement.textContent = summaryItem.mod_title;
-                    summaryElement.appendChild(modTitleElement);
-                  }
-
-                  if (summaryItem.mod_text) {
-                    const modTextElement = document.createElement('div');
-                    modTextElement.className = 'mod_text';
-                    modTextElement.textContent = summaryItem.mod_text;
-                    summaryElement.appendChild(modTextElement);
-                  }
-
-                  if (summaryItem.duration_title) {
-                    const durationTitleElement = document.createElement('div');
-                    durationTitleElement.className = 'duration_title';
-                    durationTitleElement.textContent = summaryItem.duration_title;
-                    summaryElement.appendChild(durationTitleElement);
-                  }
-
-                  if (summaryItem.duration_text) {
-                    const durationTextElement = document.createElement('div');
-                    durationTextElement.className = 'duration_text';
-                    durationTextElement.textContent = summaryItem.duration_text;
-                    summaryElement.appendChild(durationTextElement);
-                  }
-
-                });
-
-                caseElement.appendChild(summaryElement);
-              }
-
-              // ... Здесь заполнение данных для Point A
-              if (block.point_a) {
-                const pointAElement = document.createElement('div');
-                pointAElement.className = 'point_a';
-
-
-                block.point_a.forEach(pointaItem => {
-                  if (pointaItem.a_title) {
-                    const atitleElement = document.createElement('div');
-                    atitleElement.className = 'a_title';
-                    atitleElement.textContent = pointaItem.a_title;
-                    pointAElement.appendChild(atitleElement);
-                  }
-
-                  if (pointaItem.a_title) {
-                    const atextElement = document.createElement('div');
-                    atextElement.className = 'a_text';
-                    atextElement.textContent = pointaItem.a_text;
-                    pointAElement.appendChild(atextElement);
-                  }
-                });
-
-                abElement.appendChild(pointAElement);
-              }
-
-              // ... Здесь заполнение данных для Point B
-              if (block.point_b) {
-                const pointBElement = document.createElement('div');
-                pointBElement.className = 'point_b';
-
-                block.point_b.forEach(pointbItem => {
-                  if (pointbItem.b_title) {
-                    const btitleElement = document.createElement('div');
-                    btitleElement.className = 'b_title';
-                    btitleElement.textContent = pointbItem.b_title;
-                    pointBElement.appendChild(btitleElement);
-                  }
-
-                  if (pointbItem.b_title) {
-                    const btextElement = document.createElement('div');
-                    btextElement.className = 'b_text';
-                    btextElement.innerHTML = pointbItem.b_text;
-                    pointBElement.appendChild(btextElement);
-                  }
-                });
-
-                abElement.appendChild(pointBElement);
-
-              }
-
-              // ... Здесь заполнение данных для Результатов с превышением (Бонусов)
-              if (block.bonus) {
-                const bonusElement = document.createElement('div');
-                bonusElement.className = 'bonus';
-
-                block.bonus.forEach(bonusItem => {
-                  if (bonusItem.bonus_title) {
-                    const bonusTElement = document.createElement('div');
-                    bonusTElement.className = 'bonus_title';
-                    bonusTElement.textContent = bonusItem.bonus_title;
-                    bonusElement.appendChild(bonusTElement);
-                  }
-
-                  if (bonusItem.bonus_text) {
-                    const bonusTxElement = document.createElement('div');
-                    bonusTxElement.className = 'bonus_text';
-                    bonusTxElement.textContent = bonusItem.bonus_text;
-                    bonusElement.appendChild(bonusTxElement);
-                  }
-                });
-
-                rElement.appendChild(bonusElement);
-
-              }
-
-            });
-
-            caseElement.appendChild(toggleButton);
-            casesContainer.appendChild(caseElement);
-
-            //================== Блок вычисления высот===============================
-
-            // Вычисление и установка высоты происходят тут
-
-            requestAnimationFrame(() => {
-              console.log('Inside requestAnimationFrame');  // Отладочное сообщение
-              console.log('Active Filters:', activeFilters);  // Вывести активные фильтры
-
-              totalMaxHeights = 0;  // Обнуляем сумму максимальных высот перед новым расчетом
-
-              // Если нет активных фильтров, просто сбросьте высоты и выйдите из функции.
-              if (activeFilters.length === 0) {
-                console.log("No active filters. Resetting heights.");
-                // ваш код для сброса высоты
-                return;
-              }
-
-              data.forEach(item => {
-                if (item.tags.some(tag => activeFilters.includes(tag))) {
-                  const caseElement = document.getElementById(`case-${item.id}`);
-
-                  if (caseElement) {
-                    const { maxHeight, maxElement } = findMaxHeightElementInCase(caseElement);
-
-                    console.log(`case-id: ${item.id}, max-element: ${maxElement.className}, max-height: ${maxHeight}`);
-                    // Теперь у вас есть maxElement и maxHeight, которые представляют собой элемент с максимальной высотой и его высоту.
-                    totalMaxHeights += maxHeight; // Суммируем максимальные высоты
-                    caseElement.setAttribute('data-max-height', maxHeight);  // <--- Вставьте эту строку сюда
-
-
-
-                    // Устанавливаем максимальную высоту для summary и abr
-                    const summaryElement = caseElement.querySelector('.summary');
-                    if (summaryElement) {
-                      summaryElement.style.height = `${maxHeight}px`;
-                    }
-
-                    // Уже существующий abrElement в вашем коде
-                    const existingAbrElement = caseElement.querySelector('.abr');
-                    if (existingAbrElement) {
-                      existingAbrElement.style.height = `${maxHeight}px`;
-
-                    }
-                    // Уже существующий abrElement в вашем коде
-                    const casesElement = caseElement.querySelector('.cases');
-                    if (casesElement) {
-                      casesElement.style.height = `${maxHeight}px`;
-                    }
-
-                    let rh = 0
-
-                    const rElement = caseElement.querySelector('.r');
-                    if (rElement) {
-                      rh = rElement.offsetHeight;
-                      console.log(`Высота блока r: ${rh}px`);
-                    }
-
-                    const aElement = caseElement.querySelector('.point_a');
-                    if (aElement) {
-                      aElement.style.height = `${maxHeight - rh}px`;
-                    }
-
-
-                  }
-                }
-              })
-              console.log('Total max heights:', totalMaxHeights); // Выводим сумму максимальных высот
-              // теперь totalMaxHeights содержит сумму максимальных высот всех case
-
-              // Добавленная проверка на наличие активных фильтров
-              if (activeFilters.length === 0) {
-                console.log("No active filters. Resetting heights.");  // Проверяем, что мы действительно здесь
-                if (blockCaseContainer) {
-                  console.log("Resetting blockCaseContainer");  // Проверяем, что блок существует
-                  blockCaseContainer.style.height = '0px';
-                }
-                if (caseContainer) {
-                  console.log("Resetting caseContainer");  // Проверяем, что блок существует
-                  caseContainer.style.height = '0px';
-                }
-                if (casesContainer) {
-                  console.log("Resetting casesContainer");  // Проверяем, что блок существует
-                  casesContainer.style.height = '0px';
-                }
-              } else {
-                // Устанавливаем максимальную высоту для block-case и case-container
-                if (blockCaseContainer) {
-                  blockCaseContainer.style.height = `${totalMaxHeights + 0}px`;
-                }
-                if (caseContainer) {
-                 // caseContainer.style.height = `${totalMaxHeights + 0}px`;
-                }
-                if (casesContainer) {
-                  casesContainer.style.height = `${totalMaxHeights}px`;
-                }
-              }
-            })
-
-            const expandButton = caseElement.querySelector('.expand-button');
-            if (expandButton) {
-              // Удаляем старый обработчик, чтобы избежать множественного выполнения
-              expandButton.removeEventListener('click', toggleExpand);
-
-              // Добавляем новый обработчик события
-              expandButton.addEventListener('click', toggleExpand);
-            }
-
-          }
-
-        });
-
-      })
-      .catch(error => console.log('Ошибка загрузки данных:', error));
-  }
-
-  // Обработчик событий для кнопки "Раскрыть"
-
-  function toggleExpand(event) {
-    const caseElement = event.target.closest('.case');
-    const expandButton = event.target;  // это кнопка, которую мы нажали
-    if (caseElement) {
-      if (caseElement.classList.contains('expanded')) {
-        caseElement.classList.remove('expanded');
-        expandButton.innerHTML = 'Раскрыть';  // Меняем надпись на кнопке
-      } else {
-        caseElement.classList.add('expanded');
-        expandButton.innerHTML = 'Скрыть';  // Меняем надпись на кнопке
-      }
-      updateContainerHeight(data); // Пересчитываем высоты после изменения состояния
-    }
-  }
-
-  // // функция для пересчета размеров case при нажатии на кнопку Расскрыть/Скрыть
-  // function updateContainerHeight() {
-  //   const casesContainer = document.querySelector('.cases');
-  //   const casesContainerAll = document.querySelector('.c');
-    
-  //   let totalHeight = 0;
-  
-  //   // Выбираем все элементы .case внутри .cases
-  //   const caseElements = document.querySelectorAll('.case');
-  
-  //   // Перебираем все элементы .case
-  //   caseElements.forEach(caseElement => {
-  //     let height;
-      
-  //     if (caseElement.classList.contains('expanded')) {
-  //       // Если элемент раскрыт, используем вашу функцию для вычисления максимальной высоты
-  //       const { maxHeight } = findMaxHeightElementInCase(caseElement);
-  //       height = parseInt(maxHeight, 10);  // Преобразование в целое число, если maxHeight — строка
-  //     } else {
-  //       // Если элемент свёрнут, используем какое-то стандартное значение или вычисляем иное
-  //       height = 285;
-  //       console.log(height);
-
-  //     }
-  
-  //     totalHeight += height; // Суммируем высоту для текущего элемента .case
-  //     console.log(totalHeight);
-  //   });
-  
-  //   // Устанавливаем вычисленную высоту для родительского блока .cases
-  //   if (casesContainer) {
-  //     casesContainer.style.height = `${totalHeight}px`;
-  //     casesContainerAll.style.height = `${totalHeight+300}px`;
-  //   }
-  // }
-  // функция для пересчета размеров case при нажатии на кнопку Расскрыть/Скрыть (вариант наоборот)
+// Добавьте следующую строку для подсчета количества созданных .case
+let caseCount = 0;
+let blockCaseContainer;
+let casesContainer;
+let cases;
+
+
+const state = {
+  activeFilters: [],
+  maxCaseHeight: 0,
+  totalCasesHeight: 0,
+};
+
+// функция для пересчета размеров case при нажатии на кнопку Расскрыть/Скрыть (вариант наоборот)
 function updateContainerHeight() {
-  const casesContainer = document.querySelector('.cases');
-  const casesContainerAll = document.querySelector('.c');
-  const casesContainerA = document.querySelector('.cases-container');
-  
-  let totalHeight = 200;
+  let casesContainer = document.querySelector('.cases');
+  let blockCaseContainer = document.querySelector('.c');
+  let casesContainerA = document.querySelector('.cases-container');
+
+  let totalHeight = 0;
 
   // Выбираем все элементы .case внутри .cases
   const caseElements = document.querySelectorAll('.case');
-  
+
   // Перебираем все свёрнутые элементы .case
   caseElements.forEach(caseElement => {
     if (!caseElement.classList.contains('expanded')) {
       const height = 285; // стандартное значение для свёрнутых
-      totalHeight += height; 
-      console.log('Свернутый элемент:', height);
+      totalHeight += height;
+      console.log('Свернутый элемент:', height, 'totalHeight:', totalHeight);
     }
   });
 
@@ -812,7 +440,7 @@ function updateContainerHeight() {
       // Если элемент раскрыт, используем вашу функцию для вычисления максимальной высоты
       const { maxHeight } = findMaxHeightElementInCase(caseElement);
       const height = parseInt(maxHeight, 10); // Преобразование в целое число, если maxHeight — строка
-      totalHeight += height; 
+      totalHeight += height;
       console.log('Раскрытый элемент:', height);
     }
   });
@@ -821,40 +449,498 @@ function updateContainerHeight() {
   if (casesContainer) {
     casesContainer.style.height = `${totalHeight}px`;
   }
-  if (casesContainerAll) {
-    casesContainerAll.style.height = `${totalHeight + 300}px`;
-    casesContainerA.style.height = `${totalHeight + 300}px`;
+  if (blockCaseContainer) {
+    blockCaseContainer.style.height = `${totalHeight + 155}px`;
+    casesContainerA.style.height = `${totalHeight}px`;
     casesContainer.style.height = `${totalHeight}px`;
   }
 }
 
-  let data= []; // Глобальная переменная
+// Функция для создания элемента кейса и его наполнения данными
+function createCaseElement(item, casesContainer) {
+  const caseElement = document.createElement('div');
+  caseElement.className = 'case';
+  caseElement.id = `case-${item.id}`;
+  // caseElement.classList.add('expanded');
+  // caseElement.style.height = '220px';  // Ограничиваем высоту
+  // caseElement.style.overflow = 'hidden';  // Скрываем переполнение
 
-  fetch('pointb_texts.json')
-    .then(response => response.json())
-    .then(responseData => {
-      data = responseData;
-      if (Array.isArray(data.left_buttons) && Array.isArray(data.right_buttons)) {
-        let filterContainer = document.getElementById('filter');
-        if (!filterContainer) {
-          filterContainer = document.createElement('div');
-          filterContainer.id = 'filter';
-          document.body.appendChild(filterContainer);
+  // код для наполнения case
+
+  // Создание div с классом "abr"
+  const abrElement = document.createElement('div');
+  abrElement.className = 'abr';
+  caseElement.appendChild(abrElement);
+
+  // Создание div с классом "ab"
+  const abElement = document.createElement('div');
+  abElement.className = 'ab';
+  abrElement.appendChild(abElement);
+
+  // Создание div с классом "r"
+  const rElement = document.createElement('div');
+  rElement.className = 'r';
+  abrElement.appendChild(rElement);
+
+
+  // Добавление кнопки "Раскрыть"
+  const toggleButton = document.createElement('button');
+  toggleButton.className = 'expand-button';
+  toggleButton.textContent = 'Развернуть';
+  // toggleButton.style.position ="absolute";
+  // toggleButton.style.top ="200px";
+  toggleButton.style.width = "126px";
+  toggleButton.style.height = '41px'; // Установка высоты кнопки
+  toggleButton.style.backgroundColor = "white";
+  toggleButton.style.border = '1px solid transparent'; // Прозрачная граница
+  toggleButton.style.backgroundColor = '#C4A36D'; // Установка фонового цвета
+  toggleButton.style.borderRadius = '22px'; // Установка радиуса закругления углов
+  toggleButton.style.position = 'absolute';
+  toggleButton.style.bottom = '0px'; // Устанавливаем отступ снизу
+  toggleButton.style.left = '50%'; // Размещаем по горизонтали в центре
+  toggleButton.style.transform = 'translateX(-50%)'; // Центрируем по горизонтали
+  toggleButton.style.color = '#FFF'; // Установка цвета текста
+  toggleButton.style.textAlign = 'center'; // Установка выравнивания текста по центру
+  toggleButton.style.fontFamily = 'Inter'; // Установка шрифта
+  toggleButton.style.fontSize = '14px'; // Установка размера шрифта
+  toggleButton.style.fontStyle = 'normal'; // Установка стиля шрифта
+  toggleButton.style.fontWeight = '700'; // Установка жирности шрифта
+  toggleButton.style.lineHeight = 'normal'; // Установка междустрочного интервала
+  toggleButton.style.zIndex = '2'; // Устанавливаем z-index слоя больше, чем у .case
+
+
+
+
+  const layerElement = document.createElement('div');
+  layerElement.className = 'layer';
+  layerElement.style.height = '100px'; // Установка высоты слоя
+  layerElement.style.background = 'linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)';
+  layerElement.style.position = 'absolute'; // Устанавливаем позицию слоя в "absolute"
+  layerElement.style.bottom = '0'; // Располагаем слой у нижнего края .case
+  layerElement.style.width = '100%'; // Устанавливаем ширину слоя на 100%
+  layerElement.style.zIndex = '1'; // Устанавливаем z-index слоя больше, чем у .case
+
+
+
+
+
+  // Создание блока Summary
+  item.blocks.forEach(block => {
+    if (block.summary) {
+      const summaryElement = document.createElement('div');
+      summaryElement.className = 'summary';
+
+
+      // Создание блока для SVG
+      const svgContainer = document.createElement('div');
+      svgContainer.className = 'green_arrow';
+
+      // Вставка SVG кода внутрь контейнера
+      svgContainer.innerHTML = `
+        <svg width="305" height="16" viewBox="0 0 305 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M303.874 8.81599C304.264 8.42547 304.264 7.7923 303.874 7.40178L297.51 1.03782C297.119 0.647295 296.486 0.647295 296.096 1.03782C295.705 1.42834 295.705 2.06151 296.096 2.45203L301.753 8.10889L296.096 13.7657C295.705 14.1563 295.705 14.7894 296.096 15.18C296.486 15.5705 297.119 15.5705 297.51 15.18L303.874 8.81599ZM0.3479 9.10889H303.167V7.10889H0.3479V9.10889Z" fill="url(#paint0_linear_223_5471)"/>
+          <defs>
+            <linearGradient id="paint0_linear_223_5471" x1="303.167" y1="8.10889" x2="0.3479" y2="8.10889" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0D4C47"/>
+              <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+
+      // Добавление SVG контейнера в элемент с классом "abr" (не работало - поменял на ab)
+      abElement.appendChild(svgContainer);
+
+      block.summary.forEach(summaryItem => {
+        if (summaryItem.photo) {
+          const photoElement = document.createElement('img');
+          photoElement.className = 'photo_client';
+          photoElement.src = summaryItem.photo;
+          summaryElement.appendChild(photoElement);
         }
 
-        [...data.left_buttons, ...data.right_buttons].forEach(button => {
-          const btn = document.createElement('button');
-          btn.innerHTML = button.name;
-          btn.id = button.id.toString();
-          btn.className = "btn-filter";
-          btn.addEventListener('click', toggleButtonActivation);
-          filterContainer.appendChild(btn);
-        });
-      } else {
-        console.log("Ошибка: полученные данные не содержат нужных массивов");
+        if (summaryItem.client_name) {
+          const clientNameElement = document.createElement('div');
+          clientNameElement.className = 'client-name';
+          clientNameElement.innerHTML = summaryItem.client_name;
+          summaryElement.appendChild(clientNameElement);
+        }
+
+        if (summaryItem.goal_title) {
+          const goalTitleElement = document.createElement('div');
+          goalTitleElement.className = 'goal_title';
+          goalTitleElement.textContent = summaryItem.goal_title;
+          summaryElement.appendChild(goalTitleElement);
+        }
+
+        if (summaryItem.goal_text) {
+          const goalTextElement = document.createElement('div');
+          goalTextElement.className = 'goal_text';
+          goalTextElement.textContent = summaryItem.goal_text;
+          summaryElement.appendChild(goalTextElement);
+        }
+
+        if (summaryItem.mod_title) {
+          const modTitleElement = document.createElement('div');
+          modTitleElement.className = 'mod_title';
+          modTitleElement.textContent = summaryItem.mod_title;
+          summaryElement.appendChild(modTitleElement);
+        }
+
+        if (summaryItem.mod_text) {
+          const modTextElement = document.createElement('div');
+          modTextElement.className = 'mod_text';
+          modTextElement.textContent = summaryItem.mod_text;
+          summaryElement.appendChild(modTextElement);
+        }
+
+        if (summaryItem.duration_title) {
+          const durationTitleElement = document.createElement('div');
+          durationTitleElement.className = 'duration_title';
+          durationTitleElement.textContent = summaryItem.duration_title;
+          summaryElement.appendChild(durationTitleElement);
+        }
+
+        if (summaryItem.duration_text) {
+          const durationTextElement = document.createElement('div');
+          durationTextElement.className = 'duration_text';
+          durationTextElement.textContent = summaryItem.duration_text;
+          summaryElement.appendChild(durationTextElement);
+        }
+
+      });
+
+      caseElement.appendChild(summaryElement);
+    }
+
+    // ... Здесь заполнение данных для Point A
+    if (block.point_a) {
+      const pointAElement = document.createElement('div');
+      pointAElement.className = 'point_a';
+
+
+      block.point_a.forEach(pointaItem => {
+        if (pointaItem.a_title) {
+          const atitleElement = document.createElement('div');
+          atitleElement.className = 'a_title';
+          atitleElement.textContent = pointaItem.a_title;
+          pointAElement.appendChild(atitleElement);
+        }
+
+        if (pointaItem.a_title) {
+          const atextElement = document.createElement('div');
+          atextElement.className = 'a_text';
+          atextElement.textContent = pointaItem.a_text;
+          pointAElement.appendChild(atextElement);
+        }
+      });
+
+      abElement.appendChild(pointAElement);
+    }
+
+    // ... Здесь заполнение данных для Point B
+    if (block.point_b) {
+      const pointBElement = document.createElement('div');
+      pointBElement.className = 'point_b';
+
+      block.point_b.forEach(pointbItem => {
+        if (pointbItem.b_title) {
+          const btitleElement = document.createElement('div');
+          btitleElement.className = 'b_title';
+          btitleElement.textContent = pointbItem.b_title;
+          pointBElement.appendChild(btitleElement);
+        }
+
+        if (pointbItem.b_title) {
+          const btextElement = document.createElement('div');
+          btextElement.className = 'b_text';
+          btextElement.innerHTML = pointbItem.b_text;
+          pointBElement.appendChild(btextElement);
+        }
+      });
+
+      abElement.appendChild(pointBElement);
+
+    }
+
+    // ... Здесь заполнение данных для Результатов с превышением (Бонусов)
+    if (block.bonus) {
+      const bonusElement = document.createElement('div');
+      bonusElement.className = 'bonus';
+
+      block.bonus.forEach(bonusItem => {
+        if (bonusItem.bonus_title) {
+          const bonusTElement = document.createElement('div');
+          bonusTElement.className = 'bonus_title';
+          bonusTElement.textContent = bonusItem.bonus_title;
+          bonusElement.appendChild(bonusTElement);
+        }
+
+        if (bonusItem.bonus_text) {
+          const bonusTxElement = document.createElement('div');
+          bonusTxElement.className = 'bonus_text';
+          bonusTxElement.textContent = bonusItem.bonus_text;
+          bonusElement.appendChild(bonusTxElement);
+        }
+      });
+
+      rElement.appendChild(bonusElement);
+
+    }
+
+  });
+
+
+  casesContainer.appendChild(caseElement);
+  caseElement.appendChild(toggleButton);
+
+
+  // // Добавление кнопки "Раскрыть"
+  // const toggleButton = document.createElement('button');
+  // toggleButton.className = 'expand-button';
+  // toggleButton.textContent = 'Раскрыть';
+
+  // // Добавление обработчика события для кнопки "Раскрыть"
+  toggleButton.addEventListener('click', toggleExpand);
+
+  // Добавление элементов кейса в основной контейнер
+  caseElement.appendChild(abrElement);
+  caseElement.appendChild(toggleButton);
+  caseElement.appendChild(layerElement);
+
+  return caseElement;
+}
+// Обработчик событий для кнопки "Раскрыть"
+
+function toggleExpand(event) {
+  const caseElement = event.target.closest('.case');
+  const expandButton = event.target;  // это кнопка, которую мы нажали
+  if (caseElement) {
+    if (caseElement.classList.contains('expanded')) {
+      caseElement.classList.remove('expanded');
+      expandButton.innerHTML = 'Расскрыть';  // Меняем надпись на кнопке
+      // Скрываем слой, когда кнопка "Развернуть" активна
+      const layerElement = caseElement.querySelector('.layer');
+      if (layerElement) {
+        layerElement.style.display = 'block';
+
       }
-    })
-    .catch(error => console.log('Ошибка загрузки данных:', error));
+    } else {
+      caseElement.classList.add('expanded');
+      expandButton.innerHTML = 'Свернуть';  // Меняем надпись на кнопке
+      const layerElement = caseElement.querySelector('.layer');
+      if (layerElement) {
+        layerElement.style.display = 'none';
+
+      }
+    }
+    updateContainerHeight(); // Пересчитываем высоты после изменения состояния
+  }
+}
+
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    return await response.json();
+  } catch (error) {
+    console.log('Ошибка загрузки данных:', error);
+  }
+}
+
+function calculateMaxHeights(data, item, caseElement) {
+  if (state.activeFilters.length === 0) {
+    resetHeights();
+  } else {
+    requestAnimationFrame(() => {
+      setHeights(data); // Передаем data как аргумент
+    });
+  }
+}
+
+function setHeights(data) {
+  requestAnimationFrame(() => {
+    console.log('Inside requestAnimationFrame');
+    console.log('Active Filters:', state.activeFilters);
+
+    let totalMaxHeights = 0;
+
+    if (state.activeFilters.length === 0) {
+      console.log("No active filters. Resetting heights.");
+      resetHeights();
+      return;
+    }
+
+    data.forEach(item => {
+      if (item.tags.some(tag => state.activeFilters.includes(tag))) {
+        const caseElement = document.getElementById(`case-${item.id}`);
+
+        if (caseElement) {
+          const { maxHeight, maxElement } = findMaxHeightElementInCase(caseElement);
+
+          console.log(`case-id: ${item.id}, max-element: ${maxElement.className}, max-height: ${maxHeight}`);
+          totalMaxHeights += maxHeight;
+          caseElement.setAttribute('data-max-height', maxHeight);
+
+          const summaryElement = caseElement.querySelector('.summary');
+          if (summaryElement) {
+            summaryElement.style.height = `${maxHeight}px`;
+          }
+
+          const existingAbrElement = caseElement.querySelector('.abr');
+          if (existingAbrElement) {
+            existingAbrElement.style.height = `${maxHeight}px`;
+          }
+
+          const casesElement = caseElement.querySelector('.cases');
+          if (casesElement) {
+            casesElement.style.height = `${maxHeight}px`;
+          }
+
+          let rh = 0;
+
+          const rElement = caseElement.querySelector('.r');
+          if (rElement) {
+            rh = rElement.offsetHeight;
+            console.log(`Высота блока r: ${rh}px`);
+          }
+
+          const aElement = caseElement.querySelector('.point_a');
+          if (aElement) {
+            aElement.style.height = `${maxHeight - rh}px`;
+          }
+        }
+      }
+    });
+
+    console.log('Total max heights:', totalMaxHeights);
+
+    if (state.activeFilters.length === 0) {
+      console.log("No active filters. Resetting heights.");
+      resetHeights();
+    } else {
+      if (blockCaseContainer) {
+        blockCaseContainer.style.height = `${totalMaxHeights + 0}px`;
+      }
+      if (casesContainer) {
+        casesContainer.style.height = `${totalMaxHeights + 0}px`;
+      }
+      if (cases) {
+        cases.style.height = `${totalMaxHeights}px`;
+      }
+    }
+  });
+}
+
+async function updateCases() {
+  // Обнуляем переменные перед началом обработки данных
+  blockCaseContainer = null;
+  casesContainer = null;
+  cases = null;
+  caseCount = 0;
+
+  const data = await fetchData('case.json');
+  if (!data) return;
+
+  casesContainer = document.querySelector('.cases');
+  casesContainer.innerHTML = '';
+  state.totalCasesHeight = 0;
+
+  // Сбрасываем значения переменных, когда снимаются все фильтры
+  if (state.activeFilters.length === 0) {
+    blockCaseContainer = null;
+    casesContainer = null;
+    cases = null;
+  }
+
+
+  data.forEach(item => {
+    if (item.tags.some(tag => state.activeFilters.includes(tag))) {
+      let caseElement = createCaseElement(item, casesContainer);
+      casesContainer.appendChild(caseElement);
+      calculateMaxHeights(data, item, caseElement);
+
+      // Увеличиваем счетчик каждый раз, когда создается .case
+      caseCount++;
+    }
+  });
+  // Выводим количество созданных .case в консоль
+  console.log(`Количество созданных .case: ${caseCount}`);
+  updateContainerHeight();
+}
+
+function toggleButtonActivation(event) {
+  const button = event.target;
+  const filterId = button.innerText;
+  button.classList.toggle('active');
+
+  if (button.classList.contains('active')) {
+    state.activeFilters.push(filterId);
+  } else {
+    const index = state.activeFilters.indexOf(filterId);
+    if (index > -1) {
+      state.activeFilters.splice(index, 1);
+    }
+  }
+
+  // Обнуляем переменные, когда нет активных фильтров
+  if (state.activeFilters.length === 0) {
+    blockCaseContainer = null;
+    casesContainer = null;
+    cases = null;
+    caseCount = 0;
+    updateContainerHeight(); // Пересчитываем высоты без фильтров
+  }
+
+  updateCases();
+  updateContainerHeight();
+  console.log(state.activeFilters);
+}
+
+//новая версия
+document.addEventListener("DOMContentLoaded", function () {
+
+  let blockCaseContainer = document.querySelector('.c');
+  let casesContainer = document.querySelector('.cases-container');
+  let cases = document.querySelector('.cases');
+
+  function resetHeights(data) {
+    if (blockCaseContainer) blockCaseContainer.style.height = '0px';
+    if (casesContainer) casesContainer.style.height = '0px';
+    if (cases) cases.style.height = '0px';
+  }
+
+  function createFilterButtons(data) {
+    const filterContainer = document.getElementById('filter');
+    if (!filterContainer) {
+      filterContainer = document.createElement('div');
+      filterContainer.id = 'filter';
+      document.body.appendChild(filterContainer);
+    }
+
+    const filterButtons = [...data.left_buttons, ...data.right_buttons];
+
+    filterButtons.forEach(button => {
+      const btn = document.createElement('button');
+      btn.innerHTML = button.name;
+      btn.id = button.id.toString();
+      btn.className = "btn-filter";
+      btn.addEventListener('click', toggleButtonActivation);
+      filterContainer.appendChild(btn);
+    });
+  }
+
+  async function initialize() {
+    const data = await fetchData('pointb_texts.json');
+    if (!data) return;
+
+    if (Array.isArray(data.left_buttons) && Array.isArray(data.right_buttons)) {
+      createFilterButtons(data);
+    } else {
+      console.log("Ошибка: полученные данные не содержат нужных массивов");
+    }
+  }
+
+  initialize();
 });
 
 //новый вариант
@@ -890,8 +976,6 @@ const observer = new MutationObserver(function (mutations) {
 const targetNode = document.body;  // корневой элемент, который мы будем наблюдать
 const config = { childList: true, subtree: true };  // опции
 observer.observe(targetNode, config);
-
-
 
 // Наблюдение за изменениями в корневом элементе DOM
 observer.observe(document.body, { childList: true, subtree: true });
@@ -1762,3 +1846,139 @@ function createCheckboxBlock() {
 
 
 }
+
+// // 1. Отправляем запрос на сервер для получения информации о стране пользователя
+// //    Замените URL запроса на фактический адрес вашего сервера
+// fetch('/get-user-country') // Здесь '/get-user-country' - это адрес вашего сервера для определения страны пользователя
+//   .then(response => response.json())
+//   .then(data => {
+//     // 2. После получения информации о стране, используем ее для выбора соответствующей контактной информации
+//     const userCountry = data.country; // Предположим, что сервер возвращает страну в формате ISO 3166-1 Alpha-2 (например, "US", "UK")
+
+//     const contactsByCountry = {
+//       RUS: {
+//         company_name: "ИП Романовская И.В.",
+//         numbers: "ИНН: 421409221318, ОГРНИП 320784700298867",
+//         address: '346550, РОССИЯ, обл РОСТОВСКАЯ,',
+//         contacts: 'mail@superday.one',
+//       },
+//       KZ: {
+//         company_name: "TOO Point B",
+//         numbers: "ИИН 221140016750",
+//         address: 'Казахстан, Алматинская область',
+//         contacts: 'mail@pointb.ltd',
+//       },
+//       OTHER: {
+//         company_name: "TOO Point B",
+//         numbers: "ИИН 221140016750",
+//         address: 'Казахстан, Алматинская область',
+//         contacts: 'mail@pointb.ltd',
+//       },
+//       // Добавьте контактную информацию для других стран
+//     };
+
+//     // 3. Вставляем контактную информацию на страницу
+//     const contactInfo = contactsByCountry[userCountry] || contactsByCountry['RUS']; // Если страны пользователя нет в списке, используем данные для RUS
+//     if (contactInfo) {
+//       const addressElement = document.getElementById('address');
+//       const numbersElement = document.getElementById('numbers');
+//       const companyNameElement = document.getElementById('company_name');
+//       const contactsElement = document.getElementById('contacts');
+
+//       companyNameElement.textContent = contactInfo.company_name;
+//       numbersElement.textContent = contactInfo.numbers;
+//       addressElement.textContent = contactInfo.address;
+//       contactsElement.textContent = contactInfo.contacts;
+//     } else {
+//       // Если информации о стране пользователя нет в списке, обработайте эту ситуацию
+//       console.error('Информация о стране пользователя не найдена.');
+//     }
+//   })
+//   .catch(error => {
+//     console.error('Ошибка при получении информации о стране пользователя:', error);
+
+//     const ruscontactInfo = contactsByCountry['RUS']; // Используем данные для RUS при ошибке
+//     if (ruscontactInfo) {
+//       const addressElement = document.getElementById('address');
+//       const numbersElement = document.getElementById('numbers');
+//       const companyNameElement = document.getElementById('company_name');
+//       const contactsElement = document.getElementById('contacts');
+
+//       companyNameElement.textContent = ruscontactInfo.company_name;
+//       numbersElement.textContent = ruscontactInfo.numbers;
+//       addressElement.textContent = ruscontactInfo.address;
+//       contactsElement.textContent = ruscontactInfo.contacts;
+//     } else {
+//       // Если информации о стране пользователя нет в списке, обработайте эту ситуацию
+//       console.error('Информация о стране пользователя не найдена.');
+//     }
+//   });
+
+//   // Заменяем fetch на статические данные
+// const fakeUserData = { country: 'RUS' };
+
+// // Заменяем fetch на Promise, который сразу возвращает фиктивные данные
+// const fakeFetch = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve({ json: () => fakeUserData });
+//   }, 1000); // Задержка для имитации задержки ответа от сервера
+// });
+
+/// Заменяем fetch на статические данные
+const fakeUserData = { country: 'RUS' };
+
+// Заменяем fetch на Promise, который сразу возвращает фиктивные данные
+const fakeFetch = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve({ json: () => fakeUserData });
+  }, 1000); // Задержка для имитации задержки ответа от сервера
+});
+
+// Используем fakeFetch вместо fetch для получения данных
+fakeFetch
+  .then((response) => response.json())
+  .then((data) => {
+    // Ваш код для обработки данных
+    const userCountry = data.country;
+
+    const contactsByCountry = {
+      RUS: {
+        company_name: "ИП Романовская И.В.",
+        numbers: "ИНН: 421409221318, ОГРНИП 320784700298867",
+        address: '346550, РОССИЯ, обл РОСТОВСКАЯ,',
+        contacts: 'mail@superday.one',
+      },
+      KZ: {
+        company_name: "TOO Point B",
+        numbers: "ИИН 221140016750",
+        address: 'Казахстан, Алматинская область',
+        contacts: 'mail@pointb.ltd',
+      },
+      OTHER: {
+        company_name: "TOO Point B",
+        numbers: "ИИН 221140016750",
+        address: 'Казахстан, Алматинская область',
+        contacts: 'mail@pointb.ltd',
+      },
+      // Добавьте контактную информацию для других стран
+    };
+
+    // Вставляем контактную информацию на страницу
+    const contactInfo = contactsByCountry[userCountry];
+    if (contactInfo) {
+      const addressElement = document.getElementById('address');
+      const numbersElement = document.getElementById('numbers');
+      const companyNameElement = document.getElementById('company_name');
+      const contactsElement = document.getElementById('contacts_email');
+
+      companyNameElement.textContent = contactInfo.company_name;
+      numbersElement.textContent = contactInfo.numbers;
+      addressElement.textContent = contactInfo.address;
+      contactsElement.textContent = contactInfo.contacts;
+    } else {
+      console.error('Информация о стране пользователя не найдена.');
+    }
+  })
+  .catch((error) => {
+    console.error('Ошибка при получении информации о стране пользователя:', error);
+  });
