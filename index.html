@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -31,12 +31,12 @@
                         <button class="hamburger" id="hamburger">&#9776;</button>
                         <div class="hidden-block"></div>
                         <ul class="menu" id="menu">
-                            <li class="menu-item">Модули</li>
-                            <li class="menu-item">Кейсы</li>
-                            <li class="menu-item">О нас</li>
-                            <li class="menu-item">Вопрос-Ответ</li>
-                            <li class="menu-item">Блог</li>
-                            <li class="menu-item">Контакты</li>
+                            <li class="menu-item"><a href="#modules">Модули</a></li>
+                            <li class="menu-item"><a href="#block-cases">Кейсы</a></li>
+                            <li class="menu-item"><a href="#block-aboutus">О нас</a></li>
+                            <li class="menu-item"><a href="#faq">Вопрос-Ответ</a></li>
+                            <!-- <li class="menu-item"><a href="#blog">Блог</a></li> -->
+                            <li class="menu-item"><a href="#our_clients">Контакты</a></li>
                         </ul>
                     </nav>
                     <li class="menu-item social-link">
@@ -77,10 +77,6 @@
                     </div>
                 </div>
             </section>
-            <!-- забыл что за код - закомментировал - вроде все работает -->
-            <!-- <div class="modal-overlay" id="modalOverlay">
-                <div class="modal-content" id="modalContent"></div>
-            </div> -->
             <!-- Блок про Модули ------------------------------------------------------>
             <section id="modules">
                 <div class="modules-blocks">
@@ -446,7 +442,7 @@
                 </div>
             </section>
             <!-- ================= Блог ================== -->
-            <section id="blog" style="display: block;">
+            <section id="blog" style="display: none;">
                 <div class="blog">
                     <div class="title">Блог</div>
 
@@ -535,6 +531,17 @@
                 <div class="footer-text">
                     © 2023 Point B. Используя данный веб-сайт, Вы соглашаетесь с тем, что мы сохраняем и используем
                     cookies на Вашем устройстве
+                </div>
+            </div>
+
+            <div class="center-footer">
+                <div class="footer-text">
+                    <div id="contact-info">
+                        <p id="company_name"></p>
+                        <p id="numbers"></p>
+                        <p id="address"></p>
+                        <p id="contacts_email"></p>
+                      </div>
                 </div>
             </div>
 
