@@ -367,6 +367,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
       console.log('Data to be sent:', formData);
 
+      // Отправка данных на сервер
+fetch('send_email.php', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(formData),
+})
+  .then(response => {
+      if (response.ok) {
+          // Показать благодарственное сообщение
+          programForm.style.display = 'none';
+          thankYouMessage.style.display = 'block';
+
+          setTimeout(function () {
+              thankYouMessage.classList.add('fade-out');
+          }, 3000);
+
+          setTimeout(function () {
+              thankYouMessage.style.display = 'none';
+              thankYouMessage.classList.remove('fade-out');
+          }, 4000);
+      } else {
+          console.error('Произошла ошибка при отправке данных.');
+      }
+  })
+  .catch(error => {
+      console.error('Ошибка при отправке данных:', error);
+  });
+
       programForm.style.display = 'none';
       thankYouMessage.style.display = 'block';
 

@@ -1,46 +1,30 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $contacts = $_POST['contacts'];
-    $meetingFrequency = $_POST['meeting-frequency'];
-    $notes = $_POST['notes'];
-    $timeResult = $_POST['time-result'];
-    $moneyResult = $_POST['money-result'];
-    $currency = $_POST['currency'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $toEmail = "Innessa.romanovskaya@gmail.com"; // Email-адрес получателя
+    $subject = "Запрос программы"; // Тема письма
 
-    // Проверка: поля "username" и "contacts" не должны быть пустыми
-    // Эта проверка должна идти сразу после сбора данных из полей
-    $isValid = true;
+    // Получение данных из POST-запроса
+    $username = $_POST["username"];
+    $meetingFrequency = $_POST["meetingFrequency"];
+    $contacts = $_POST["contacts"];
+    $notes = $_POST["notes"];
+    $timeResult = $_POST["timeResult"];
+    $moneyResult = $_POST["moneyResult"];
+    $currency = $_POST["currency"];
 
-    if (empty($username)) {
-        $isValid = false;
-        echo json_encode(['success' => false, 'message' => 'Имя обязательно для заполнения']);
-        exit;
-    }
+    // Сообщение, которое будет отправлено
+    $message = "Имя: $username\n";
+    $message .= "Частота встреч: $meetingFrequency\n";
+    $message .= "Контакты: $contacts\n";
+    $message .= "Примечания: $notes\n";
+    $message .= "Время: $timeResult\n";
+    $message .= "Деньги: $moneyResult $currency\n";
 
-    if (empty($contacts)) {
-        $isValid = false;
-        echo json_encode(['success' => false, 'message' => 'Контакты обязательны для заполнения']);
-        exit;
-    }
+    // Дополнительные заголовки
+    $headers = "From: webmaster@example.com\r\n";
+    $headers .= "Reply-To: webmaster@example.com\r\n";
 
-    // Теперь, если все поля валидны, продолжаем выполнение кода
-
-    $to = 'Innessa.romanovskaya@gmail.com'; // Замените на свой адрес электронной почты
-    $subject = 'Запрос программы';
-    $message = "Имя: $username\nКонтакты: $contacts\n... (остальные поля)";
-
-    $headers = 'From: ваш_email@gmail.com' . "\r\n" .
-               'Reply-To: ваш_email@gmail.com' . "\r\n" .
-               'X-Mailer: PHP/' . phpversion();
-
-    if (mail($to, $subject, $message, $headers)) {
-        echo json_encode(['success' => true, 'message' => 'Письмо успешно отправлено']);
-    } else {
-        echo json_encode(['success' => false, 'message' => 'Ошибка отправки письма']);
-    }
-} else {
-    // Обработка ситуации, когда запрос не является POST-запросом
-    echo json_encode(['success' => false, 'message' => 'Недопустимый запрос']);
+    // Отправка письма
+    mail($toEmail, $subject, $message, $headers);
 }
 ?>
