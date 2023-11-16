@@ -1,8 +1,8 @@
 <?php
-$to = 'alexander.khimchenko@gmail.com'; 
+$to = 'alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com'; 
 $subject = 'Тест отправки почты';
 $message = 'Это тестовое сообщение.';
-$headers = 'From: webmaster@example.com' . "\r\n" .
+$headers = `From: "PointB: Order" <webmaster@example.com>' . "\r\n" .
     'Reply-To: webmaster@example.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 

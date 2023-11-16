@@ -1744,7 +1744,10 @@ function createRequestForm() {
     if (!isValid) return; // Выйти из функции, если одно из полей пусто
 
     // Здесь можно отправить эти данные куда-либо, например, на сервер
-    console.log(`Username: ${username}, Contacts: ${contacts}`);
+    let typePost = "interviewRequest";
+
+    console.log(`typePOST: ${typePost}, Username: ${username}, Contacts: ${contacts}`);
+    sendInerviewRequestFormData(typePost,username, contacts); 
 
     // Закрыть модальное окно
     document.querySelector('.request-form-modal').remove();
@@ -1789,6 +1792,20 @@ function createRequestForm() {
 
   return rootDiv;
 
+}
+//функция отправки формы заявки на собеседование
+
+function sendInerviewRequestFormData(typePost,username, contacts) {
+  fetch('submit_form.php', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ typePost, username, contacts }),
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch((error) => console.error('Error:', error));
 }
 
 // реализация отслеживания выбранных чекбоксов
