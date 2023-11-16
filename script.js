@@ -1746,7 +1746,7 @@ function createRequestForm() {
     // Здесь можно отправить эти данные куда-либо, например, на сервер
     let typePost = "interviewRequest";
 
-    console.log(`typePOST: ${typePost}, Username: ${username}, Contacts: ${contacts}`);
+    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}`);
     sendInerviewRequestFormData(typePost,username, contacts); 
 
     // Закрыть модальное окно
@@ -1795,18 +1795,36 @@ function createRequestForm() {
 }
 //функция отправки формы заявки на собеседование
 
-function sendInerviewRequestFormData(typePost,username, contacts) {
-  fetch('submit_form.php', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ typePost, username, contacts }),
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch((error) => console.error('Error:', error));
+async function sendInterviewRequestFormData(typePost, username, contacts) {
+  try {
+      const response = await fetch('sent_reqest_to_email.php', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ type: typePost, username, contacts }),
+      });
+
+      if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      
+      // Здесь можно добавить логику обработки успешного ответа, например:
+      console.log('Data received:', data);
+      alert('Ваши данные успешно отправлены.');
+
+  } catch (error) {
+      console.error('Error during fetch operation:', error);
+      
+      // Вывод сообщения об ошибке пользователю
+      alert('Произошла ошибка при отправке данных. Пожалуйста, попробуйте снова.');
+
+      // Тут можно добавить логику отправки ошибки на сервер для анализа, если это необходимо
+  }
 }
+
 
 // реализация отслеживания выбранных чекбоксов
 
