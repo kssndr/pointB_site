@@ -1747,7 +1747,7 @@ function createRequestForm() {
     let typePost = "interviewRequest";
 
     console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}`);
-    sendInerviewRequestFormData(typePost,username, contacts); 
+    sendInterviewRequestFormData(typePost,username, contacts); 
 
     // Закрыть модальное окно
     document.querySelector('.request-form-modal').remove();
