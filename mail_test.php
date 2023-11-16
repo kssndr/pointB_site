@@ -1,5 +1,5 @@
 <?php
-$to = 'your_email@example.com'; // Замените на ваш реальный email адрес для тестирования
+$to = 'alexander.khimchenko@gmail.com'; 
 $subject = 'Тест отправки почты';
 $message = 'Это тестовое сообщение.';
 $headers = 'From: webmaster@example.com' . "\r\n" .
