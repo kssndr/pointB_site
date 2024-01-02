@@ -356,6 +356,7 @@ a {
     font-weight: 700;
     line-height: normal;
     border: none;
+    cursor: pointer;
 
 }
 
@@ -481,6 +482,7 @@ img {
     padding-bottom: 1px;
     width: fit-content;
     height: 38px;
+    cursor: pointer;
 
 }
 
@@ -1221,6 +1223,7 @@ option {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    cursor: pointer;
 }
 
 .btn-filter.active {
@@ -2113,10 +2116,13 @@ option {
     border-width: 0;
     border-style: 0;
     border-image: 0;
+    
+    cursor: pointer;
 }
 
 .icon-container {
     padding: 20px;
+    cursor: pointer;
 }
 
 .icon-container svg {
