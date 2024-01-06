@@ -1608,14 +1608,14 @@ function createFAQ(questionsData) {
 /*  Мобильная форма заяки на соебеование (та которая появляется поверх всего в двух местах на сайте) */
 /* ================================================================================================== */
 
-function openRequestFormModal() {
+function openRequestFormModal(buttonId) {
   const modal = document.createElement('div');
   modal.className = 'request-form-modal';
   const modalContent = document.createElement('div');
   modalContent.className = 'request-form-modal-content';
   modal.appendChild(modalContent);
 
-  const requestForm = createRequestForm();
+  const requestForm = createRequestForm(buttonId);
   modalContent.appendChild(requestForm);
 
   modal.addEventListener('click', function (e) {
@@ -1632,12 +1632,14 @@ function openRequestFormModal() {
 }
 
 document.querySelectorAll('.open-request-form-button').forEach(button => {
-  button.addEventListener('click', openRequestFormModal);
+  button.addEventListener('click', function() {
+    openRequestFormModal(this.id);
+  });
 });
 
 let selectedValues = [];
 
-function createRequestForm() {
+function createRequestForm(initiatingButtonId) {
   // Create root div
   const rootDiv = document.createElement('div');
   rootDiv.className = 'request-form-m';
@@ -1747,10 +1749,10 @@ function createRequestForm() {
 
     // Здесь можно отправить эти данные куда-либо, например, на сервер
     let typePost = "interviewRequest";
-    let buttonId = this.id;
+    // let buttonId = this.id;
 
-    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${buttonId},selectedCheckboxes: ${selectedValues}`);
-    sendInterviewRequestFormData(typePost,username, contacts, buttonId, selectedValues); 
+    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
+    sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
 
     // Закрыть модальное окно
     document.querySelector('.request-form-modal').remove();
