@@ -15,6 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $contacts = $decoded['contacts'];
                     $buttonId = $decoded['buttonId'];
                     $selectedCheckboxes = $decoded['selectedCheckboxes'];
+                    if (is_array($selectedCheckboxes)) {
+                        // Если это массив, объединяем его элементы в строку
+                        $selectedCheckboxesString = implode(", ", $selectedCheckboxes);
+                    } else {
+                        // В противном случае выводим, что это не массив
+                        $selectedCheckboxesString = 'Данные не доступны или не являются массивом';
+                    }
+                    
+                    // Вывод содержимого для отладки (можете убрать это после исправления ошибки)
+                    echo '<pre>';
+                    print_r($selectedCheckboxes);
+                    echo '</pre>';
+                    
                     $selectedCheckboxesString = implode(", ", $selectedCheckboxes);
 
                     sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts\nСпособ связи: $selectedCheckboxes\nМесто формы: $buttonId");
