@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $contacts = $decoded['contacts'];
                     $buttonId = $decoded['buttonId'];
                     $selectedCheckboxes = $decoded['selectedCheckboxes'];
+                    $selectedCheckboxesString = implode(", ", $selectedCheckboxes);
 
                     sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts\nСпособ связи: $selectedCheckboxes\nМесто формы: $buttonId");
                     break;
