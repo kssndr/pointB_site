@@ -1635,6 +1635,8 @@ document.querySelectorAll('.open-request-form-button').forEach(button => {
   button.addEventListener('click', openRequestFormModal);
 });
 
+let selectedValues = [];
+
 function createRequestForm() {
   // Create root div
   const rootDiv = document.createElement('div');
@@ -1747,7 +1749,7 @@ function createRequestForm() {
     let typePost = "interviewRequest";
     let buttonId = this.id;
 
-    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${buttonId}`);
+    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${buttonId},selectedCheckboxes: ${selectedValues}`);
     sendInterviewRequestFormData(typePost,username, contacts, buttonId, selectedValues); 
 
     // Закрыть модальное окно
@@ -1841,8 +1843,6 @@ async function sendInterviewRequestFormData(typePost, username, contacts, button
 // реализация отслеживания выбранных чекбоксов
 
 function addCheckboxListeners(className, outputElementId) {
-  let selectedValues = [];  // Переменная для хранения выбранных значений
-
   document.querySelectorAll(`.${className}`).forEach((checkbox) => {
     checkbox.addEventListener('change', function () {
       selectedValues = [];
@@ -1857,7 +1857,7 @@ function addCheckboxListeners(className, outputElementId) {
 
       document.getElementById(outputElementId).value = selectedValues.join(', ');
 
-      return selectedValues;
+      // return selectedValues;
     });
   });
 }
