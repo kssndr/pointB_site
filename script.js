@@ -1745,9 +1745,10 @@ function createRequestForm() {
 
     // Здесь можно отправить эти данные куда-либо, например, на сервер
     let typePost = "interviewRequest";
+    let buttonId = this.id;
 
-    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}`);
-    sendInterviewRequestFormData(typePost,username, contacts); 
+    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${buttonId}`);
+    sendInterviewRequestFormData(typePost,username, contacts, buttonId, selectedValues); 
 
     // Закрыть модальное окно
     document.querySelector('.request-form-modal').remove();
@@ -1795,14 +1796,25 @@ function createRequestForm() {
 }
 //функция отправки формы заявки на собеседование
 
-async function sendInterviewRequestFormData(typePost, username, contacts) {
+async function sendInterviewRequestFormData(typePost, username, contacts, buttonId, selectedValues) {
+
+    // Включаем новые данные в тело запроса
+    const requestBody = {
+      type: typePost,
+      username: username,
+      contacts: contacts,
+      buttonId: buttonId,
+      selectedCheckboxes: selectedValues  // Массив выбранных значений чекбоксов
+    };
+
+
   try {
       const response = await fetch('sent_reqest_to_email.php', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ type: typePost, username, contacts }),
+          body: JSON.stringify(requestBody),
       });
 
       if (!response.ok) {
@@ -1829,20 +1841,23 @@ async function sendInterviewRequestFormData(typePost, username, contacts) {
 // реализация отслеживания выбранных чекбоксов
 
 function addCheckboxListeners(className, outputElementId) {
+  let selectedValues = [];  // Переменная для хранения выбранных значений
+
   document.querySelectorAll(`.${className}`).forEach((checkbox) => {
     checkbox.addEventListener('change', function () {
-      let selectedValues = [];
+      selectedValues = [];
+
       const checkedBoxes = document.querySelectorAll(`.${className}:checked`);
 
       checkedBoxes.forEach((checkbox) => {
         selectedValues.push(checkbox.value);
       });
 
-      const selectedValuesString = selectedValues.join(', ');
+      //const selectedValuesString = selectedValues.join(', ');
 
-      document.getElementById(outputElementId).value = selectedValuesString;
+      document.getElementById(outputElementId).value = selectedValues.join(', ');
 
-      return selectedValuesString;
+      return selectedValues;
     });
   });
 }
