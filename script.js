@@ -1455,6 +1455,13 @@ document.addEventListener('DOMContentLoaded', function () {
       contactsChoose.value = '-';
 
 
+      // Здесь можно отправить эти данные куда-либо, например, на сервер
+      let typePost = "interviewRequest";
+      let initiatingButtonId = "mainForm";
+      let selectedValues = collectCheckedValues(); // Теперь это массив выбранных чекбоксов
+      console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
+      sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
+
       document.querySelectorAll('.custom-checkbox-contact-r').forEach((checkbox) => {
         checkbox.checked = false;
       });
@@ -1480,12 +1487,7 @@ document.addEventListener('DOMContentLoaded', function () {
       //   selectedCheckboxes.push(checkbox.value);
       // });
 
-      // Здесь можно отправить эти данные куда-либо, например, на сервер
-      let typePost = "interviewRequest";
-      let initiatingButtonId = "mainForm";
-      let selectedValues = collectCheckedValues(); // Теперь это массив выбранных чекбоксов
-      console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
-      sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
+
 
 
     } else {
