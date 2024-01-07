@@ -1314,7 +1314,7 @@ function createQuestions(questionsData) {
     // Выводим строку в консоль
     console.log(selectedValuesString);
 
-    // Здесь я предполагаю, что вы хотите изменить значение элемента с id 'sett-title-output-a'
+    // Здесь я предполагаю, что нужно изменить значение элемента с id 'sett-title-output-a'
     const outputElement = document.getElementById('sett-title-output-a');
     if (outputElement) {
       outputElement.value = selectedValuesString;
@@ -1375,10 +1375,13 @@ function sendData() {
     }
   });
 
-  console.log("Будут отправлены следующие данные:", dataObj);
+   // Преобразование объекта данных в строку JSON
+   const jsonString = JSON.stringify(dataObj);
+
+   console.log("Будут отправлены следующие данные:", jsonString);
 
   let typePost = "anketa15";
-  sendInterviewRequestFormData(typePost, dataObj); 
+  sendInterviewRequestFormData(typePost, jsonString); 
 
 
   return true; // Валидация и отправка прошли успешно
