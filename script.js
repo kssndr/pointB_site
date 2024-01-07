@@ -1398,7 +1398,7 @@ function collectCheckedValues() {
   const selectedValuesString = selectedValues.join(', ');
 
   // Выводим строку в консоль
-  //console.log(selectedValuesString);
+  console.log(selectedValuesString);
 
   document.getElementById('sett-title-output-r').value = selectedValuesString;
 
