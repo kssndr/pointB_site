@@ -28,10 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts\nСпособ связи: $selectedCheckboxes\nМесто формы: $buttonId");
                     break;    
-                case 'feedbackForm':
+                case 'anketa15':
                     // Обработка данных из формы обратной связи
-                    $feedback = $decoded['feedback'];
-                    sendEmail('feedback@mail.ru', "Новое сообщение обратной связи", "Сообщение: $feedback");
+                    $username = $decoded['username-input'];
+                    $contacts = $decoded['contacts-input'];
+                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts");
                     break;
                 // Другие типы форм
                 // ...
