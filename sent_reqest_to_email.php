@@ -19,6 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts\nСпособ связи: $selectedCheckboxesString\nМесто формы: $buttonId");
                     break;
+                case 'interviewRequestMF':
+                    // Обработка данных из формы запроса
+                    $username = $decoded['username'];
+                    $contacts = $decoded['contacts'];
+                    $buttonId = $decoded['buttonId'];
+                    $selectedCheckboxes = $decoded['selectedCheckboxes'];
+
+                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts\nСпособ связи: $selectedCheckboxes\nМесто формы: $buttonId");
+                    break;    
                 case 'feedbackForm':
                     // Обработка данных из формы обратной связи
                     $feedback = $decoded['feedback'];

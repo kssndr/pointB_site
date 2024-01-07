@@ -1456,7 +1456,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       // Здесь можно отправить эти данные куда-либо, например, на сервер
-      let typePost = "interviewRequest";
+      let typePost = "interviewRequestMF";
       let initiatingButtonId = "mainForm";
       let selectedValues = collectCheckedValues(); // Теперь это массив выбранных чекбоксов
       console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
