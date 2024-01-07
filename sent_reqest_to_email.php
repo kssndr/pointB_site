@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;    
                 case 'anketa15':
                     // Обработка данных из формы обратной связи
-                    $username = $decoded['username-input'];
-                    $contacts = $decoded['contacts-input'];
-                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts");
+                    // $username = $decoded['username-input'];
+                    // $contacts = $decoded['contacts-input'];
+                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета");
                     break;
                 // Другие типы форм
                 // ...
