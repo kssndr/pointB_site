@@ -1476,18 +1476,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Здесь добавьте код для отправки данных на сервер
       let selectedCheckboxes = []; // Пустой массив для хранения значений выбранных чекбоксов
-      // document.querySelectorAll('.custom-checkbox-contact-r checked').forEach((checkbox) => {
-      //   selectedCheckboxes.push(checkbox.value);
-      // });
-      // Получаем элемент output
-      const outputElement = document.getElementById('sett-title-output-r');
-
-      // Получаем значение из outputElement
-      const outputValue = outputElement.value; // Или outputElement.textContent, если это более подходит
-
-      // Преобразуем строку из output в массив, предполагая, что значения разделены запятыми
-      selectedCheckboxes = outputValue.split(',').map(item => item.trim()); // Убираем пробелы и создаем массив
-
+      document.querySelectorAll('.custom-checkbox-contact-r:checked').forEach((checkbox) => {
+        selectedCheckboxes.push(checkbox.value);
+      });
 
       // Здесь можно отправить эти данные куда-либо, например, на сервер
       let typePost = "interviewRequest";
