@@ -1398,7 +1398,7 @@ function collectCheckedValues() {
   const selectedValuesString = selectedValues.join(', ');
 
   // Выводим строку в консоль
-  console.log(selectedValuesString);
+  //console.log(selectedValuesString);
 
   document.getElementById('sett-title-output-r').value = selectedValuesString;
 
@@ -1475,6 +1475,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       // Здесь добавьте код для отправки данных на сервер
+      // Здесь можно отправить эти данные куда-либо, например, на сервер
+      let typePost = "interviewRequest";
+      let initiatingButtonId = "mainForm";
+      let selectedValues = contactsChoose;
+      console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
+      sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
+
 
     } else {
       console.log("Elements not found");
