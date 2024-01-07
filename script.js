@@ -1376,12 +1376,16 @@ function sendData() {
   });
 
    // Преобразование объекта данных в строку JSON
-   const jsonString = JSON.stringify(dataObj);
+   const selectedValues = JSON.stringify(dataObj);
 
-   console.log("Будут отправлены следующие данные:", jsonString);
+   console.log("Будут отправлены следующие данные:", selectedValues);
 
   let typePost = "anketa15";
-  sendInterviewRequestFormData(typePost, jsonString); 
+  let username = "";
+  let contacts = "";
+  let buttonId = "";
+
+  sendInterviewRequestFormData(typePost, username, contacts, buttonId, selectedValues); 
 
 
   return true; // Валидация и отправка прошли успешно
