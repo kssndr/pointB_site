@@ -1133,7 +1133,9 @@ function createQuestions(questionsData) {
         const optionInput = document.createElement('input');
         optionInput.type = 'checkbox';
         optionInput.className = 'custom-checkbox';
-        optionInput.name = `question_${index}`;
+        //optionInput.name = `question_${index}`;
+        optionInput.name = `${index + 1}. ${question.text}`; // Изменено здесь
+
         optionInput.value = option;
 
         const optionTextSpan = document.createElement('span');
@@ -1152,7 +1154,9 @@ function createQuestions(questionsData) {
     if (question.type === 'text') {
       const textArea = document.createElement('textarea');
       textArea.className = "anketa-text-area";
-      textArea.name = `question_${index}`;
+      //textArea.name = `question_${index}`;
+  
+      textArea.name = `${index + 1}. ${question.text}`; // Изменено здесь
       textArea.rows = 4;
       textArea.cols = 50;
 
