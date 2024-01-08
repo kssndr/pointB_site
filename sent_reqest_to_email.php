@@ -48,6 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
                            // Отправка сообщения на электронную почту
                            sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", $messageText);
+                        } else {
+                            // Обработка ошибок декодирования JSON или несоответствия типов
+                            error_log("Ошибка декодирования JSON или selectedCheckboxes не является массивом");
+                        }
                     break;
                 // Другие типы форм
                 // ...
