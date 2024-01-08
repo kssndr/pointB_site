@@ -47,18 +47,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                            }
    
                            // Отправка сообщения на электронную почту
-                           sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", $messageText);
+                           sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новая заполненная анкета", $messageText);
                         } else {
                             // Обработка ошибок декодирования JSON или несоответствия типов
                             error_log("Ошибка декодирования JSON или selectedCheckboxes не является массивом");
                         }
                     break;
-                case 'module':
-                    $username = $decoded['username'];
-                    $contacts = $decoded['contacts'];
-                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts");
-
-                    break;
+                    case 'module':
+                        // Получение данных из декодированного JSON
+                        $username = $decoded['username'];
+                        $contacts = $decoded['contacts'];
+                        $activeCheckboxesNames = $decoded['activeCheckboxesNames']; // предполагаем, что это добавлено в JSON
+                    
+                        // Формирование текста сообщения
+                        $messageText = "Запрос на программу\n";
+                        $messageText .= "Имя пользователя: " . $username . "\n";
+                        $messageText .= "Контакты: " . $contacts . "\n";
+                        
+                        // Добавление информации о активных чекбоксах, если они есть
+                        if (is_array($activeCheckboxesNames)) {
+                            $messageText .= "Активные чекбоксы: " . implode(", ", $activeCheckboxesNames) . "\n";
+                        } else {
+                            $messageText .= "Активные чекбоксы: Отсутствуют\n"; // Если нет активных чекбоксов или ошибка данных
+                        }
+                    
+                        // Отправка сообщения
+                        sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", $messageText);
+                    
+                        break;
                 // Другие типы форм
                 // ...
             }
