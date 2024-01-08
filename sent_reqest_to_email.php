@@ -32,7 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Обработка данных из формы обратной связи
                     // $username = $decoded['username-input'];
                     // $contacts = $decoded['contacts-input'];
-                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", "текст сообщения");
+                    $selectedCheckboxes = $decoded['selectedCheckboxes'];
+                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", "текст сообщения: $selectedCheckboxes");
                     break;
                 // Другие типы форм
                 // ...
