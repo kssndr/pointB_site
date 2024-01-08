@@ -33,9 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $selectedCheckboxes = $decoded['selectedCheckboxes'];
 
                     // Преобразуем JSON в удобочитаемый текст
+
                     $messageText = "";
                     foreach ($selectedCheckboxes as $question => $answer) {
-                        $messageText .= $question . ": " . $answer . "\n";
+                        $messageText .= $question . ": ";
+                        if (is_array($answer)) { // Если ответ это массив
+                            $messageText .= implode(", ", $answer); // Объединяем элементы массива в строку
+                        } else { // Если ответ это строка
+                            $messageText .= $answer;
+                        }
+                        $messageText .= "\n"; // Добавляем перенос строки после каждого вопроса
                     }
 
                     sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", $messageText);
