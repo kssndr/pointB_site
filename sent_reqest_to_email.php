@@ -37,13 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                            // Преобразуем данные в удобочитаемый текст
                            $messageText = "";
                            foreach ($selectedCheckboxes as $question => $answer) {
-                               $messageText .= $question . ": ";
+                               $messageText .= $question . ": \n";
                                if (is_array($answer)) { // Если ответ это массив
                                    $messageText .= implode(", ", $answer); // Объединяем элементы массива в строку
                                } else { // Если ответ это строка
                                    $messageText .= $answer;
                                }
-                               $messageText .= "\n"; // Добавляем перенос строки после каждого вопроса-ответа
+                               $messageText .= "\n\n"; // Добавляем перенос строки после каждого вопроса-ответа
                            }
    
                            // Отправка сообщения на электронную почту
