@@ -29,23 +29,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts\nСпособ связи: $selectedCheckboxes\nМесто формы: $buttonId");
                     break;    
                 case 'anketa15':
-                    // Обработка данных из формы обратной связи
-                    $selectedCheckboxes = $decoded['selectedCheckboxes'];
+                       // Обработка данных из формы обратной связи
+                       $selectedCheckboxes = json_decode($decoded['selectedCheckboxes'], true);
 
-                    // Преобразуем JSON в удобочитаемый текст
-
-                    $messageText = "";
-                    foreach ($selectedCheckboxes as $question => $answer) {
-                        $messageText .= $question . ": ";
-                        if (is_array($answer)) { // Если ответ это массив
-                            $messageText .= implode(", ", $answer); // Объединяем элементы массива в строку
-                        } else { // Если ответ это строка
-                            $messageText .= $answer;
-                        }
-                        $messageText .= "\n"; // Добавляем перенос строки после каждого вопроса
-                    }
-
-                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", $messageText);
+                       // Проверка на успешное декодирование JSON и что результат является массивом
+                       if (json_last_error() === JSON_ERROR_NONE && is_array($selectedCheckboxes)) {
+                           // Преобразуем данные в удобочитаемый текст
+                           $messageText = "";
+                           foreach ($selectedCheckboxes as $question => $answer) {
+                               $messageText .= $question . ": ";
+                               if (is_array($answer)) { // Если ответ это массив
+                                   $messageText .= implode(", ", $answer); // Объединяем элементы массива в строку
+                               } else { // Если ответ это строка
+                                   $messageText .= $answer;
+                               }
+                               $messageText .= "\n"; // Добавляем перенос строки после каждого вопроса-ответа
+                           }
+   
+                           // Отправка сообщения на электронную почту
+                           sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", $messageText);
                     break;
                 // Другие типы форм
                 // ...
