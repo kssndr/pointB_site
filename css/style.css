@@ -804,6 +804,7 @@ button-checkbox {
     width: 350px;
     vertical-align: middle;
     text-align: start;
+    cursor: pointer;
 
 }
 

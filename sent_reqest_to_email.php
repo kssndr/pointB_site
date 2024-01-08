@@ -53,6 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             error_log("Ошибка декодирования JSON или selectedCheckboxes не является массивом");
                         }
                     break;
+                case 'module':
+                    $username = $decoded['username'];
+                    $contacts = $decoded['contacts'];
+                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый запрос на собеседование с сайта", "Имя пользователя: $username\nКонтакты: $contacts");
+
+                    break;
                 // Другие типы форм
                 // ...
             }

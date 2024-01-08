@@ -353,8 +353,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Теперь, если все поля валидны, продолжаем выполнение кода
+      const activeCheckboxesNames = collectCheckedValues();
 
       const formData = {
+        type: "module",
         username: username.value,
         meetingFrequency,
         contacts: contacts.value,
@@ -362,13 +364,15 @@ document.addEventListener('DOMContentLoaded', function () {
         timeResult,
         moneyResult,
         currency,
+        activeCheckboxesNames, // добавляем названия активных чекбоксов
+
         // ... (остальные поля)
       };
 
       console.log('Data to be sent:', formData);
 
       // Отправка данных на сервер
-fetch('send_email.php', {
+fetch('sent_reqest_to_email.php', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
@@ -424,6 +428,21 @@ fetch('send_email.php', {
     programRequestButton.addEventListener('click', function () {
       programForm.style.display = 'block';
     });
+  }
+
+  function collectCheckedValues() {
+    let selectedValues = []; // Массив для хранения выбранных значений
+
+    // Получаем все выбранные чекбоксы
+    const checkedBoxes = document.querySelectorAll('.custom-checkbox:checked');
+
+    // Перебираем все выбранные чекбоксы и добавляем их значения в массив
+    checkedBoxes.forEach((checkbox) => {
+      // Возможно, вам потребуется настроить селектор или добавить атрибуты, чтобы получить именно текстовое значение или label каждого чекбокса.
+      selectedValues.push(checkbox.nextSibling.textContent); // предполагаем, что следующий элемент - это label с текстом
+    });
+
+    return selectedValues; // возвращаем массив с названиями
   }
 });
 
