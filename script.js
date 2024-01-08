@@ -437,10 +437,19 @@ fetch('sent_reqest_to_email.php', {
     const checkedBoxes = document.querySelectorAll('.custom-checkbox:checked');
 
     // Перебираем все выбранные чекбоксы и добавляем их значения в массив
+    // Перебираем все выбранные чекбоксы
     checkedBoxes.forEach((checkbox) => {
-      // Возможно, вам потребуется настроить селектор или добавить атрибуты, чтобы получить именно текстовое значение или label каждого чекбокса.
-      selectedValues.push(checkbox.nextSibling.textContent); // предполагаем, что следующий элемент - это label с текстом
-    });
+      // Находим родительский элемент чекбокса
+      const parentDiv = checkbox.closest('div');
+
+      // В родительском элементе находим кнопку с классом checkbox-button
+      const button = parentDiv.querySelector('.checkbox-button');
+
+      // Добавляем текст кнопки в массив, если кнопка найдена
+      if (button) {
+          selectedValues.push(button.textContent);
+      }
+  });
 
     return selectedValues; // возвращаем массив с названиями
   }

@@ -57,12 +57,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Получение данных из декодированного JSON
                         $username = $decoded['username'];
                         $contacts = $decoded['contacts'];
+                        $meetingFrequency = $decoded['meetingFrequency'];
+                        $notes = $decoded['notes'];
+                        $timeResult = $decoded['timeResult'];
+                        $moneyResult = $decoded['moneyResult'];
+                        $currency = $decoded['currency'];
                         $activeCheckboxesNames = $decoded['activeCheckboxesNames']; // предполагаем, что это добавлено в JSON
                     
                         // Формирование текста сообщения
                         $messageText = "Запрос на программу\n";
                         $messageText .= "Имя пользователя: " . $username . "\n";
                         $messageText .= "Контакты: " . $contacts . "\n";
+
+                        $messageText .= "Выбранная частота встреч: " . $meetingFrequency . "\n";
+                        $messageText .= "Примечания: " . $notes . "\n";
+                        $messageText .= "Длительность: " . $timeResult . "\n";
+                        $messageText .= "Стоимость: " . $moneyResult . "\n";
+                        $messageText .= "Валюта: " . $currency . "\n";
                         
                         // Добавление информации о активных чекбоксах, если они есть
                         if (is_array($activeCheckboxesNames)) {
