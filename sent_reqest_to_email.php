@@ -30,11 +30,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;    
                 case 'anketa15':
                     // Обработка данных из формы обратной связи
-                    $message = "Заполненная анкета:\n\n";
-                    foreach ($decoded as $key => $value) {
-                        $message .= $key . ": " . $value . "\n";
+                    $selectedCheckboxes = $decoded['selectedCheckboxes'];
+
+                    // Преобразуем JSON в удобочитаемый текст
+                    $messageText = "";
+                    foreach ($selectedCheckboxes as $question => $answer) {
+                        $messageText .= $question . ": " . $answer . "\n";
                     }
-                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", $message);
+
+                    sendEmail('alexander.khimchenko@gmail.com, innessa.romanovskaya@gmail.com', "Новый заполненная анкета", $messageText);
                     break;
                 // Другие типы форм
                 // ...
