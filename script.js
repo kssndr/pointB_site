@@ -1990,97 +1990,11 @@ function createCheckboxBlock() {
 
 // // 1. Отправляем запрос на сервер для получения информации о стране пользователя
 // //    Замените URL запроса на фактический адрес вашего сервера
-// fetch('/get-user-country') // Здесь '/get-user-country' - это адрес вашего сервера для определения страны пользователя
-//   .then(response => response.json())
-//   .then(data => {
-//     // 2. После получения информации о стране, используем ее для выбора соответствующей контактной информации
-//     const userCountry = data.country; // Предположим, что сервер возвращает страну в формате ISO 3166-1 Alpha-2 (например, "US", "UK")
-
-//     const contactsByCountry = {
-//       RUS: {
-//         company_name: "ИП Романовская И.В.",
-//         numbers: "ИНН: 421409221318, ОГРНИП 320784700298867",
-//         address: '346550, РОССИЯ, обл РОСТОВСКАЯ,',
-//         contacts: 'mail@superday.one',
-//       },
-//       KZ: {
-//         company_name: "TOO Point B",
-//         numbers: "ИИН 221140016750",
-//         address: 'Казахстан, Алматинская область',
-//         contacts: 'mail@pointb.ltd',
-//       },
-//       OTHER: {
-//         company_name: "TOO Point B",
-//         numbers: "ИИН 221140016750",
-//         address: 'Казахстан, Алматинская область',
-//         contacts: 'mail@pointb.ltd',
-//       },
-//       // Добавьте контактную информацию для других стран
-//     };
-
-//     // 3. Вставляем контактную информацию на страницу
-//     const contactInfo = contactsByCountry[userCountry] || contactsByCountry['RUS']; // Если страны пользователя нет в списке, используем данные для RUS
-//     if (contactInfo) {
-//       const addressElement = document.getElementById('address');
-//       const numbersElement = document.getElementById('numbers');
-//       const companyNameElement = document.getElementById('company_name');
-//       const contactsElement = document.getElementById('contacts');
-
-//       companyNameElement.textContent = contactInfo.company_name;
-//       numbersElement.textContent = contactInfo.numbers;
-//       addressElement.textContent = contactInfo.address;
-//       contactsElement.textContent = contactInfo.contacts;
-//     } else {
-//       // Если информации о стране пользователя нет в списке, обработайте эту ситуацию
-//       console.error('Информация о стране пользователя не найдена.');
-//     }
-//   })
-//   .catch(error => {
-//     console.error('Ошибка при получении информации о стране пользователя:', error);
-
-//     const ruscontactInfo = contactsByCountry['RUS']; // Используем данные для RUS при ошибке
-//     if (ruscontactInfo) {
-//       const addressElement = document.getElementById('address');
-//       const numbersElement = document.getElementById('numbers');
-//       const companyNameElement = document.getElementById('company_name');
-//       const contactsElement = document.getElementById('contacts');
-
-//       companyNameElement.textContent = ruscontactInfo.company_name;
-//       numbersElement.textContent = ruscontactInfo.numbers;
-//       addressElement.textContent = ruscontactInfo.address;
-//       contactsElement.textContent = ruscontactInfo.contacts;
-//     } else {
-//       // Если информации о стране пользователя нет в списке, обработайте эту ситуацию
-//       console.error('Информация о стране пользователя не найдена.');
-//     }
-//   });
-
-//   // Заменяем fetch на статические данные
-// const fakeUserData = { country: 'RUS' };
-
-// // Заменяем fetch на Promise, который сразу возвращает фиктивные данные
-// const fakeFetch = new Promise((resolve) => {
-//   setTimeout(() => {
-//     resolve({ json: () => fakeUserData });
-//   }, 1000); // Задержка для имитации задержки ответа от сервера
-// });
-
-/// Заменяем fetch на статические данные
-const fakeUserData = { country: 'RUS' };
-
-// Заменяем fetch на Promise, который сразу возвращает фиктивные данные
-const fakeFetch = new Promise((resolve) => {
-  setTimeout(() => {
-    resolve({ json: () => fakeUserData });
-  }, 1000); // Задержка для имитации задержки ответа от сервера
-});
-
-// Используем fakeFetch вместо fetch для получения данных
-fakeFetch
-  .then((response) => response.json())
-  .then((data) => {
-    // Ваш код для обработки данных
-    const userCountry = data.country;
+fetch('/get-user-country.php') // Здесь '/get-user-country' - это адрес вашего сервера для определения страны пользователя
+  .then(response => response.json())
+  .then(data => {
+    // 2. После получения информации о стране, используем ее для выбора соответствующей контактной информации
+    const userCountry = data.country; // Предположим, что сервер возвращает страну в формате ISO 3166-1 Alpha-2 (например, "US", "UK")
 
     const contactsByCountry = {
       RUS: {
@@ -2104,22 +2018,108 @@ fakeFetch
       // Добавьте контактную информацию для других стран
     };
 
-    // Вставляем контактную информацию на страницу
-    const contactInfo = contactsByCountry[userCountry];
+    // 3. Вставляем контактную информацию на страницу
+    const contactInfo = contactsByCountry[userCountry] || contactsByCountry['RUS']; // Если страны пользователя нет в списке, используем данные для RUS
     if (contactInfo) {
       const addressElement = document.getElementById('address');
       const numbersElement = document.getElementById('numbers');
       const companyNameElement = document.getElementById('company_name');
-      const contactsElement = document.getElementById('contacts_email');
+      const contactsElement = document.getElementById('contacts');
 
       companyNameElement.textContent = contactInfo.company_name;
       numbersElement.textContent = contactInfo.numbers;
       addressElement.textContent = contactInfo.address;
       contactsElement.textContent = contactInfo.contacts;
     } else {
+      // Если информации о стране пользователя нет в списке, обработайте эту ситуацию
       console.error('Информация о стране пользователя не найдена.');
     }
   })
-  .catch((error) => {
+  .catch(error => {
     console.error('Ошибка при получении информации о стране пользователя:', error);
+
+    const ruscontactInfo = contactsByCountry['RUS']; // Используем данные для RUS при ошибке
+    if (ruscontactInfo) {
+      const addressElement = document.getElementById('address');
+      const numbersElement = document.getElementById('numbers');
+      const companyNameElement = document.getElementById('company_name');
+      const contactsElement = document.getElementById('contacts');
+
+      companyNameElement.textContent = ruscontactInfo.company_name;
+      numbersElement.textContent = ruscontactInfo.numbers;
+      addressElement.textContent = ruscontactInfo.address;
+      contactsElement.textContent = ruscontactInfo.contacts;
+    } else {
+      // Если информации о стране пользователя нет в списке, обработайте эту ситуацию
+      console.error('Информация о стране пользователя не найдена.');
+    }
   });
+
+  // Заменяем fetch на статические данные
+// const fakeUserData = { country: 'RUS' };
+
+// Заменяем fetch на Promise, который сразу возвращает фиктивные данные
+// const fakeFetch = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve({ json: () => fakeUserData });
+//   }, 1000); // Задержка для имитации задержки ответа от сервера
+// });
+
+/// Заменяем fetch на статические данные
+// const fakeUserData = { country: 'RUS' };
+
+// Заменяем fetch на Promise, который сразу возвращает фиктивные данные
+// const fakeFetch = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve({ json: () => fakeUserData });
+//   }, 1000); // Задержка для имитации задержки ответа от сервера
+// });
+
+// // Используем fakeFetch вместо fetch для получения данных
+// fakeFetch
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Ваш код для обработки данных
+//     const userCountry = data.country;
+
+//     const contactsByCountry = {
+//       RUS: {
+//         company_name: "ИП Романовская И.В.",
+//         numbers: "ИНН: 421409221318, ОГРНИП 320784700298867",
+//         address: '346550, РОССИЯ, обл РОСТОВСКАЯ,',
+//         contacts: 'mail@superday.one',
+//       },
+//       KZ: {
+//         company_name: "TOO Point B",
+//         numbers: "ИИН 221140016750",
+//         address: 'Казахстан, Алматинская область',
+//         contacts: 'mail@pointb.ltd',
+//       },
+//       OTHER: {
+//         company_name: "TOO Point B",
+//         numbers: "ИИН 221140016750",
+//         address: 'Казахстан, Алматинская область',
+//         contacts: 'mail@pointb.ltd',
+//       },
+//       // Добавьте контактную информацию для других стран
+//     };
+
+//     // Вставляем контактную информацию на страницу
+//     const contactInfo = contactsByCountry[userCountry];
+//     if (contactInfo) {
+//       const addressElement = document.getElementById('address');
+//       const numbersElement = document.getElementById('numbers');
+//       const companyNameElement = document.getElementById('company_name');
+//       const contactsElement = document.getElementById('contacts_email');
+
+//       companyNameElement.textContent = contactInfo.company_name;
+//       numbersElement.textContent = contactInfo.numbers;
+//       addressElement.textContent = contactInfo.address;
+//       contactsElement.textContent = contactInfo.contacts;
+//     } else {
+//       console.error('Информация о стране пользователя не найдена.');
+//     }
+//   })
+//   .catch((error) => {
+//     console.error('Ошибка при получении информации о стране пользователя:', error);
+//   });
