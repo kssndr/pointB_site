@@ -160,7 +160,7 @@ font-family: 'Rubik', sans-serif; */
 }
 
 .hamburger {
-    padding: 10px 20px;
+    padding: 5px 5px;
     color: #212020;
     background-color: #FFF;
     border: none;
@@ -231,7 +231,7 @@ a {
 
     .Menu-block {
         display: flex;
-        gap: 25px;
+        gap: 5px;
         justify-content: space-between;
         align-items: center;
         flex-direction: row-reverse;
@@ -250,7 +250,7 @@ a {
             /* Показываем меню, когда класс "show" добавлен к списку */
             flex-direction: column;
             gap: 5px;
-            width: 150px;
+            width: 110px;
             align-items: flex-end;
         }
 
