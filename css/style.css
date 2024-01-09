@@ -227,7 +227,7 @@ a {
 }
 
 /* Медиа-запрос для показа гамбургер-меню на маленьких экранах */
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
     .Menu-block {
         display: flex;
