@@ -7,8 +7,8 @@ $response = file_get_contents($url);
 $data = json_decode($response, true);
 
 if ($data && $data['status'] == 'success') {
-    echo json_encode(['country' => $data['countryCode']]);
+    //echo json_encode(['country' => $data['countryCode']]);
 } else {
-    echo json_encode(['error' => 'Страна не найдена']);
+    //echo json_encode(['error' => 'Страна не найдена']);
 }
 ?>

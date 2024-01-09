@@ -198,8 +198,8 @@ function addButtons(buttonData, container) {
 
       selectedCount = checkedBoxes.length; // Количество выбранных чекбоксов
 
-      console.log(`Сумма data-session для всех выбранных чекбоксов: ${sum}`);
-      console.log(`Количество выбранных чекбоксов: ${selectedCount}`);
+      //console.log(`Сумма data-session для всех выбранных чекбоксов: ${sum}`);
+      //console.log(`Количество выбранных чекбоксов: ${selectedCount}`);
 
       // const km = 1;
       // const kt = 1;
@@ -225,7 +225,7 @@ function addButtons(buttonData, container) {
         km = 1.15;
       }
 
-      console.log(`${kt}  ${km}  ${selectedCount}`);
+      //console.log(`${kt}  ${km}  ${selectedCount}`);
 
       function roundToHundred(num) {
         return Math.round(num / 100) * 100;
@@ -277,7 +277,7 @@ function addButtons(buttonData, container) {
       const selectedValuesString = selectedValues.join(', ');
 
       // Выводим строку в консоль
-      console.log(selectedValuesString);
+      //console.log(selectedValuesString);
 
       document.getElementById('sett-title-output').value = selectedValuesString;
 
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // ... (остальные поля)
       };
 
-      console.log('Data to be sent:', formData);
+      //console.log('Data to be sent:', formData);
 
       // Отправка данных на сервер
 fetch('sent_reqest_to_email.php', {
@@ -488,7 +488,7 @@ function updateContainerHeight() {
     if (!caseElement.classList.contains('expanded')) {
       const height = 285; // стандартное значение для свёрнутых
       totalHeight += height;
-      console.log('Свернутый элемент:', height, 'totalHeight:', totalHeight);
+      //console.log('Свернутый элемент:', height, 'totalHeight:', totalHeight);
     }
   });
 
@@ -499,7 +499,7 @@ function updateContainerHeight() {
       const { maxHeight } = findMaxHeightElementInCase(caseElement);
       const height = parseInt(maxHeight, 10); // Преобразование в целое число, если maxHeight — строка
       totalHeight += height;
-      console.log('Раскрытый элемент:', height);
+      //console.log('Раскрытый элемент:', height);
     }
   });
 
@@ -801,7 +801,7 @@ async function fetchData(url) {
     const response = await fetch(url);
     return await response.json();
   } catch (error) {
-    console.log('Ошибка загрузки данных:', error);
+    //console.log('Ошибка загрузки данных:', error);
   }
 }
 
@@ -817,13 +817,13 @@ function calculateMaxHeights(data, item, caseElement) {
 
 function setHeights(data) {
   requestAnimationFrame(() => {
-    console.log('Inside requestAnimationFrame');
-    console.log('Active Filters:', state.activeFilters);
+    //console.log('Inside requestAnimationFrame');
+    //console.log('Active Filters:', state.activeFilters);
 
     let totalMaxHeights = 0;
 
     if (state.activeFilters.length === 0) {
-      console.log("No active filters. Resetting heights.");
+      //console.log("No active filters. Resetting heights.");
       resetHeights();
       return;
     }
@@ -835,7 +835,7 @@ function setHeights(data) {
         if (caseElement) {
           const { maxHeight, maxElement } = findMaxHeightElementInCase(caseElement);
 
-          console.log(`case-id: ${item.id}, max-element: ${maxElement.className}, max-height: ${maxHeight}`);
+          //console.log(`case-id: ${item.id}, max-element: ${maxElement.className}, max-height: ${maxHeight}`);
           totalMaxHeights += maxHeight;
           caseElement.setAttribute('data-max-height', maxHeight);
 
@@ -859,7 +859,7 @@ function setHeights(data) {
           const rElement = caseElement.querySelector('.r');
           if (rElement) {
             rh = rElement.offsetHeight;
-            console.log(`Высота блока r: ${rh}px`);
+            //console.log(`Высота блока r: ${rh}px`);
           }
 
           const aElement = caseElement.querySelector('.point_a');
@@ -870,10 +870,10 @@ function setHeights(data) {
       }
     });
 
-    console.log('Total max heights:', totalMaxHeights);
+    //console.log('Total max heights:', totalMaxHeights);
 
     if (state.activeFilters.length === 0) {
-      console.log("No active filters. Resetting heights.");
+      //console.log("No active filters. Resetting heights.");
       resetHeights();
     } else {
       if (blockCaseContainer) {
@@ -922,7 +922,7 @@ async function updateCases() {
     }
   });
   // Выводим количество созданных .case в консоль
-  console.log(`Количество созданных .case: ${caseCount}`);
+  //console.log(`Количество созданных .case: ${caseCount}`);
   updateContainerHeight();
 }
 
@@ -951,7 +951,7 @@ function toggleButtonActivation(event) {
 
   updateCases();
   updateContainerHeight();
-  console.log(state.activeFilters);
+  //console.log(state.activeFilters);
 }
 
 //новая версия
@@ -994,7 +994,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (Array.isArray(data.left_buttons) && Array.isArray(data.right_buttons)) {
       createFilterButtons(data);
     } else {
-      console.log("Ошибка: полученные данные не содержат нужных массивов");
+      //console.log("Ошибка: полученные данные не содержат нужных массивов");
     }
   }
 
@@ -1016,7 +1016,7 @@ const observer = new MutationObserver(function (mutations) {
           if (caseRegex.test(addedNode.id) || addedNode.classList.contains("summary") || addedNode.classList.contains("abr")) {
             // Измеряем высоту
             const height = addedNode.offsetHeight;
-            console.log(`Height of ${addedNode.id || addedNode.className}: ${height}`);
+            //console.log(`Height of ${addedNode.id || addedNode.className}: ${height}`);
           }
 
           // Если добавленный узел содержит другие элементы, можно также искать внутри него
@@ -1075,7 +1075,7 @@ document.getElementById("anketa-request").addEventListener("click", function () 
 
 // Функция для создания вопросов и ответов
 function createQuestions(questionsData) {
-  console.log('createQuestions вызвана');
+  //console.log('createQuestions вызвана');
   const formContainer = document.getElementById('anketaFormContainer');
 
   // Удаляем старую форму, если она уже существует
@@ -1344,7 +1344,7 @@ function createQuestions(questionsData) {
     const selectedValuesString = selectedValues.join(', ');
 
     // Выводим строку в консоль
-    console.log(selectedValuesString);
+    //console.log(selectedValuesString);
 
     // Здесь я предполагаю, что нужно изменить значение элемента с id 'sett-title-output-a'
     const outputElement = document.getElementById('sett-title-output-a');
@@ -1358,7 +1358,7 @@ function createQuestions(questionsData) {
 }
 
 function sendData() {
-  console.log("Функция sendData вызвана");
+  //console.log("Функция sendData вызвана");
   const form = document.getElementById("questionForm");
 
   if (!form) {
@@ -1386,10 +1386,10 @@ function sendData() {
   }
 
   if (!isValid) {
-    console.log("Валидация не пройдена");
+    //console.log("Валидация не пройдена");
     return false; // Валидация не прошла
   }
-  console.log("Валидация пройдена, отправка данных...");
+  //console.log("Валидация пройдена, отправка данных...");
 
 
   // Ваш остальной код для обработки и отправки данных
@@ -1410,7 +1410,7 @@ function sendData() {
    // Преобразование объекта данных в строку JSON
    const selectedValues = JSON.stringify(dataObj);
 
-   console.log("Будут отправлены следующие данные:", selectedValues);
+   //console.log("Будут отправлены следующие данные:", selectedValues);
 
   let typePost = "anketa15";
   let username = "";
@@ -1536,7 +1536,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     } else {
-      console.log("Elements not found");
+      //console.log("Elements not found");
     }
   });
 });
@@ -1810,7 +1810,7 @@ function createRequestForm(initiatingButtonId) {
     let typePost = "interviewRequest";
     // let buttonId = this.id;
 
-    console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
+    //console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
     sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
 
     // Закрыть модальное окно
@@ -1887,8 +1887,8 @@ async function sendInterviewRequestFormData(typePost, username, contacts, button
       const data = await response.json();
       
       // Здесь можно добавить логику обработки успешного ответа, например:
-      console.log('Data received:', data);
-      alert('Ваши данные успешно отправлены.');
+      //console.log('Data received:', data);
+      //alert('Ваши данные успешно отправлены.');
 
   } catch (error) {
       console.error('Error during fetch operation:', error);
@@ -2005,13 +2005,13 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
       },
       KZ: {
         company_name: "TOO Point B",
-        numbers: "ИИН 221140016750",
+        numbers: "БИН 221140016750",
         address: 'Казахстан, Алматинская область',
         contacts: 'mail@pointb.ltd',
       },
       OTHER: {
         company_name: "TOO Point B",
-        numbers: "ИИН 221140016750",
+        numbers: "БИН 221140016750",
         address: 'Казахстан, Алматинская область',
         contacts: 'mail@pointb.ltd',
       },
@@ -2024,7 +2024,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
       const addressElement = document.getElementById('address');
       const numbersElement = document.getElementById('numbers');
       const companyNameElement = document.getElementById('company_name');
-      const contactsElement = document.getElementById('contacts');
+      const contactsElement = document.getElementById('contacts_email');
 
       companyNameElement.textContent = contactInfo.company_name;
       numbersElement.textContent = contactInfo.numbers;
