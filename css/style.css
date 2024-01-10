@@ -193,22 +193,26 @@ font-family: 'Rubik', sans-serif; */
     color: dark-color;
     cursor: pointer;
     transition: color 0.3s ease;
-    text-decoration: none; /* Убрать подчеркивание ссылок, если оно есть */
+    text-decoration: none;
+    /* Убрать подчеркивание ссылок, если оно есть */
 
 }
 
 /* Уберите стили для всех ссылок */
 a {
-    color: var(--dark-color); /* Замените "ваш_цвет" на желаемый цвет */
+    color: var(--dark-color);
+    /* Замените "ваш_цвет" на желаемый цвет */
     cursor: pointer;
-    text-decoration: none; /* Уберите подчеркивание ссылок */
-  }
-  
-  /* Добавьте стили для ссылок при наведении (если нужно) */
-  a:hover {
-    color: var(--accent-color); /* Замените "ваш_цвет_при_наведении" на цвет при наведении */
+    text-decoration: none;
+    /* Уберите подчеркивание ссылок */
+}
+
+/* Добавьте стили для ссылок при наведении (если нужно) */
+a:hover {
+    color: var(--accent-color);
+    /* Замените "ваш_цвет_при_наведении" на цвет при наведении */
     /* Дополнительные стили при наведении */
-  }
+}
 
 .menu-item:hover {
     color: var(--accent-color);
@@ -217,7 +221,7 @@ a {
 
 .social-link {
     display: flex;
-    width: 40px;
+    width: 35px;
     height: 25px;
     justify-content: space-between
 }
@@ -228,48 +232,85 @@ a {
 
 /* Медиа-запрос для показа гамбургер-меню на маленьких экранах */
 @media only screen and (max-width: 768px) {
+    .non-responsive-block {
 
-    .Menu-block {
-        display: flex;
-        gap: 5px;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
-
-        .hamburger {
-            display: block;
-        }
-
-        .menu {
-            display: none;
-            /* Скрываем обычное меню на маленьких экранах */
-        }
-
-        .menu.show {
+        .Menu-block {
             display: flex;
-            /* Показываем меню, когда класс "show" добавлен к списку */
-            flex-direction: column;
             gap: 5px;
-            width: 110px;
-            align-items: flex-end;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: row-reverse;
-        }
-
-        .Logo.menu.show {
-            width: 185px;
-            height: 80px;
-            padding-bottom: 55px;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            gap: 11px;
-            display: inline-flex;
-        }
+            flex-direction: row-reverse;
 
+            .hamburger {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                /* Скрываем обычное меню на маленьких экранах */
+            }
+
+            .menu.show {
+                display: flex;
+                /* Показываем меню, когда класс "show" добавлен к списку */
+                flex-direction: column;
+                gap: 5px;
+                width: 110px;
+                align-items: flex-end;
+            }
+
+            .navbar {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: row-reverse;
+            }
+
+            .Logo.menu.show {
+                width: 185px;
+                height: 80px;
+                padding-bottom: 55px;
+                justify-content: space-around;
+                align-items: center;
+                gap: 5px;
+                display: inline-flex;
+            }
+
+            .PointB {
+                color: black;
+                font-size: 24px;
+                font-family: Inter;
+                font-weight: 700;
+                word-wrap: break-word;
+            }
+
+            .Point {
+                width: 5px;
+                height: 5px;
+                left: 31px;
+                top: 2px;
+                position: absolute;
+                background: var(--accent-color);
+                border-radius: 9999px;
+            }
+
+            .Name {
+                width: 140px;
+                height: 30px;
+                position: relative;
+            }
+
+            .Logo {
+                width: 130px;
+                height: 80px;
+                padding-top: 40px;
+                padding-left: 5px;
+                justify-content: space-around;
+                align-items: center;
+                gap: 5px;
+                display: inline-flex;
+            }
+
+        }
     }
 }
 
@@ -340,7 +381,8 @@ a {
 
 }
 
-.request , .open-request-form-button {
+.request,
+.open-request-form-button {
     display: flex;
     padding: 12px 22px;
     justify-content: center;
@@ -1153,7 +1195,7 @@ option {
 /* =========================================================== */
 /* Блок ФИЛЬТР по КЕЙСАМ */
 /* =========================================================== */
-#spesial-head{
+#spesial-head {
     width: 1179px;
     margin-top: 40px;
     background: #fff;
@@ -1247,7 +1289,7 @@ option {
 /* =========================================================== */
 /* формат Кейса */
 /* =========================================================== */
-.c{
+.c {
     min-height: 150px;
 }
 
@@ -1469,28 +1511,37 @@ option {
 /* кнопка Расскрыть */
 
 .case {
-    overflow: hidden; /* скрыть часть блока, которая выходит за его границы */
-    max-height: 280px; /* максимальная высота блока */
-    transition: max-height 0.3s ease-in-out; /* анимация изменения высоты */
-  }
-  
-  .case.expanded {
-    max-height: none; /* убрать ограничение по высоте при раскрытии */
-  }
+    overflow: hidden;
+    /* скрыть часть блока, которая выходит за его границы */
+    max-height: 280px;
+    /* максимальная высота блока */
+    transition: max-height 0.3s ease-in-out;
+    /* анимация изменения высоты */
+}
+
+.case.expanded {
+    max-height: none;
+    /* убрать ограничение по высоте при раскрытии */
+}
 
 
-  .case {
-    position: relative; /* сделать блок относительно позиционированным */
+.case {
+    position: relative;
+    /* сделать блок относительно позиционированным */
     overflow: hidden;
     max-height: 280px;
     transition: max-height 0.3s ease-in-out;
-  }
-  
-  .expand-button {
-    position: absolute; /* абсолютное позиционирование кнопки */
-    bottom: 0; /* прикрепить к нижнему краю */
-    right: 0; /* и к правому, если нужно */
-  }
+}
+
+.expand-button {
+    position: absolute;
+    /* абсолютное позиционирование кнопки */
+    bottom: 0;
+    /* прикрепить к нижнему краю */
+    right: 0;
+    /* и к правому, если нужно */
+}
+
 /* =========================================================== */
 /* Блок  O НАС  */
 /* =========================================================== */
@@ -2117,7 +2168,7 @@ option {
     border-width: 0;
     border-style: 0;
     border-image: 0;
-    
+
     cursor: pointer;
 }
 
@@ -2236,17 +2287,20 @@ option {
     gap: 10px;
 }
 
-.right-footer, .center-footer{
+.right-footer,
+.center-footer {
     display: block;
     margin-top: 25px;
     margin-left: 25px;
 }
-.center-footer{
+
+.center-footer {
     display: block;
     margin-top: 25px;
     margin-left: 35px;
     margin-right: 35px;
 }
+
 p {
     display: block;
     margin-block-start: 0;
@@ -2324,9 +2378,9 @@ p {
     z-index: 1000;
     grid-column: 2;
     /* position: relative; */
-  }
-  
-  .request-form-modal-content {
+}
+
+.request-form-modal-content {
     position: relative;
     top: 55%;
     left: 50%;
@@ -2339,11 +2393,12 @@ p {
     height: 325px;
     width: 847px;
     z-index: 1001;
-  }
+}
 
 
-  .request-background-m {
-    position: relative; /* or absolute, fixed, sticky */
+.request-background-m {
+    position: relative;
+    /* or absolute, fixed, sticky */
     top: 0;
     left: 0;
     width: 100%;
@@ -2351,9 +2406,9 @@ p {
     border-radius: 20px;
     z-index: 2;
     background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 200%);
-  }
+}
 
-  .request-img-m {
+.request-img-m {
     border-radius: 20px;
     width: 100%;
     height: 100%;
@@ -2370,7 +2425,7 @@ p {
     top: 90px;
     left: 55px;
     grid-template-columns: 1fr 1fr;
-    gap:60px;
+    gap: 60px;
 }
 
 
@@ -2404,7 +2459,7 @@ p {
 }
 
 /* Стиль для кастомного чекбокса для контакта */
-.custom-checkbox-contact-m{
+.custom-checkbox-contact-m {
     appearance: none;
     background-color: #856746;
     width: 20px;
@@ -2416,8 +2471,7 @@ p {
 }
 
 /* Стиль для отображения галочки внутри чекбокса */
-.custom-checkbox-contact-m:checked
-{
+.custom-checkbox-contact-m:checked {
     border-radius: 2px;
     background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
     background-size: contain;
@@ -2434,6 +2488,7 @@ p {
     cursor: pointer;
     /* Изменение курсора на "руку" при наведении */
 }
+
 .checkbox-container-m {
     display: flex;
     align-items: center;
@@ -2521,9 +2576,9 @@ p {
     background-position: center;
     /* центрирует изображение */
     position: fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .notification-background {
