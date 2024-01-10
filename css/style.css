@@ -233,6 +233,8 @@ a:hover {
 /* Медиа-запрос для показа гамбургер-меню на маленьких экранах */
 @media only screen and (max-width: 768px) {
     .non-responsive-block {
+        display: none;
+    }
 
         .Menu-block {
             display: flex;
@@ -311,7 +313,7 @@ a:hover {
             }
 
         }
-    }
+    
 }
 
 .container_main {
