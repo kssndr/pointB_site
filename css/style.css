@@ -480,7 +480,7 @@ img {
 
 .container_Modules {
     overflow: hidden;
-    width: 1179px;
+    max-width: 1179px;
     height: 320px;
     flex-shrink: 0;
 
@@ -1208,7 +1208,7 @@ option {
 /* Блок ФИЛЬТР по КЕЙСАМ */
 /* =========================================================== */
 #spesial-head {
-    width: 1179px;
+    max-width: 1179px;
     margin-top: 40px;
     background: #fff;
     position: relative;
@@ -1219,7 +1219,7 @@ option {
 }
 
 .cases-container {
-    width: 1179px;
+    max-width: 1179px;
     background: #fff;
     position: relative;
     display: flex;
@@ -1249,7 +1249,7 @@ option {
 
 .filter {
     display: flex;
-    width: 1179px;
+    max-width: 1179px;
     height: 40px;
     position: absolute;
     top: 80px;
@@ -1289,7 +1289,7 @@ option {
 }
 
 .cases {
-    width: 1179px;
+    max-width: 1179px;
     /* min-height: 200px; */
     /* top: 100px; */
     left: 2%;
@@ -1736,7 +1736,7 @@ option {
 /* анкета и запрос */
 /* =========================================================== */
 .anketa-container {
-    width: 1179px;
+    max-width: 1179px;
     background: #fff;
     display: grid;
     grid-template-columns: 325px 827px;
@@ -2131,7 +2131,7 @@ option {
 }
 
 .faqContainer {
-    width: 1179px;
+    max-width: 1179px;
     background: #fff;
     margin-top: 30px;
     border-bottom: 1px solid #D8DADF;
@@ -2252,7 +2252,7 @@ option {
 }
 
 .table-clints-first-row {
-    width: 1179px;
+    max-width: 1179px;
     margin-top: 20px;
     display: flex;
     flex-wrap: nowrap;
@@ -2266,7 +2266,7 @@ option {
 }
 
 .table-clints-second-row {
-    width: 1179px;
+    max-width: 1179px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
