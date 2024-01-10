@@ -2228,6 +2228,21 @@ option {
 /* =========================================================== */
 /*  Кому мы уже помогли */
 /* =========================================================== */
+
+.our_clients_title {
+    display: flex;
+    height: 71px;
+    flex-shrink: 0;
+    color: #B9B9B9;
+    text-align: center;
+    font-family: Roboto Slab;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 67px;
+    /* 279.167% */
+}
+
 .our_clients {
     display: flex;
     justify-content: center;
