@@ -236,89 +236,99 @@ a:hover {
         display: none;
     }
 
-        .Menu-block {
-            display: flex;
-            gap: 5px;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row-reverse;
+    .Menu-block {
+        display: flex;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
 
-            .hamburger {
-                display: block;
-            }
-
-            .menu {
-                display: none;
-                /* Скрываем обычное меню на маленьких экранах */
-            }
-
-            .menu.show {
-                display: flex;
-                /* Показываем меню, когда класс "show" добавлен к списку */
-                flex-direction: column;
-                gap: 5px;
-                width: 110px;
-                align-items: flex-end;
-            }
-
-            .navbar {
-                display: flex;
-                align-items: flex-start;
-                flex-direction: row-reverse;
-            }
-
-            .Logo.menu.show {
-                width: 185px;
-                height: 80px;
-                padding-bottom: 55px;
-                justify-content: space-around;
-                align-items: center;
-                gap: 5px;
-                display: inline-flex;
-            }
-
-            .PointB {
-                color: black;
-                font-size: 24px;
-                font-family: Inter;
-                font-weight: 700;
-                word-wrap: break-word;
-            }
-
-            .Point {
-                width: 5px;
-                height: 5px;
-                left: 31px;
-                top: 2px;
-                position: absolute;
-                background: var(--accent-color);
-                border-radius: 9999px;
-            }
-
-            .Name {
-                width: 140px;
-                height: 30px;
-                position: relative;
-            }
-
-            .Logo {
-                width: 130px;
-                height: 80px;
-                padding-top: 40px;
-                padding-left: 5px;
-                justify-content: space-around;
-                align-items: center;
-                gap: 5px;
-                display: inline-flex;
-            }
-
+        .hamburger {
+            display: block;
         }
-    
+
+        .menu {
+            display: none;
+            /* Скрываем обычное меню на маленьких экранах */
+        }
+
+        .menu.show {
+            display: flex;
+            /* Показываем меню, когда класс "show" добавлен к списку */
+            flex-direction: column;
+            gap: 5px;
+            width: 110px;
+            align-items: flex-end;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row-reverse;
+        }
+
+        .Logo.menu.show {
+            width: 185px;
+            height: 80px;
+            padding-bottom: 55px;
+            justify-content: space-around;
+            align-items: center;
+            gap: 5px;
+            display: inline-flex;
+        }
+
+        .PointB {
+            color: black;
+            font-size: 24px;
+            font-family: Inter;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+
+        .Point {
+            width: 5px;
+            height: 5px;
+            left: 31px;
+            top: 2px;
+            position: absolute;
+            background: var(--accent-color);
+            border-radius: 9999px;
+        }
+
+        .Name {
+            width: 140px;
+            height: 30px;
+            position: relative;
+        }
+
+        .Logo {
+            width: 130px;
+            height: 80px;
+            padding-top: 40px;
+            padding-left: 5px;
+            justify-content: space-around;
+            align-items: center;
+            gap: 5px;
+            display: inline-flex;
+        }
+
+    }
+
+    .text-h1 {
+        color: #0D4D47;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 45.862px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 49.622px; /* 108.197% */
+    }
+
 }
 
 .container_main {
     overflow: hidden;
-    width: 1179px;
+    max-width: 1179px;
     height: 382px;
     flex-shrink: 0;
 
