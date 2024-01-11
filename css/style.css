@@ -2446,6 +2446,7 @@ option {
         box-sizing: border-box;
         object-fit: cover;
         justify-content: space-evenly;
+        max-height: 110px;
     }
 
     .table-clints-second-row {
@@ -2456,6 +2457,8 @@ option {
         box-sizing: border-box;
         object-fit: cover;
         justify-content: space-evenly;
+        max-height: 180px;
+
     }
 
 
@@ -2465,12 +2468,12 @@ option {
     }
 
     .table-clints-second-row img {
-        max-height: 70px;
+        max-height: 67px;
         object-fit: contain;
     }
 
     .table-clints-second-row .our-clients-image {
-        margin-top: 20px;
+        margin-top: 10px;
         min-width: calc(100% / 6);
     }
 }
