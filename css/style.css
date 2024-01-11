@@ -2516,22 +2516,21 @@ p {
 /* первая форма для записи МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 769px) {
     .request-form-modal {
-        display: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        grid-column: 2;
-        /* position: relative; */
+    /* display: none; */
+    position: fixed;
+    /* left: 0; */
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    grid-column: 2;
     }
 
     .request-form-modal-content {
         position: relative;
-        top: 55%;
-        left: 45%;
+        top: 50%;
+        left: 44%;
         transform: translate(-50%, -50%);
         background-color: white;
         /* padding: 20px; */
@@ -2553,9 +2552,24 @@ p {
         background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 200%);
     }
 
+    .request-text {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        position: absolute;
+        top: 40px;
+        left: 27px;
+        z-index: 2;
+    }
+
     .request-form-m {
         grid-column: 2;
         position: relative;
+        /* top: 55%; */
+        /* left: 45%; */
         height: 470px;
         width: 327px;
         border-radius: 20px;
@@ -2706,6 +2720,10 @@ p {
         padding: 10px;
     }
 
+
+    .module-input-m:focus {
+        background-color: transparent;
+    }
     .request-m {
         display: flex;
         padding: 12px 22px;
@@ -2821,10 +2839,10 @@ p {
 
 
     .request-background-m {
-        position: relative;
-        /* or absolute, fixed, sticky */
+        position: absolute;
         top: 0;
-        left: 0;
+        /* left: 0; */
+        /* left: 45%; */
         width: 100%;
         height: 100%;
         border-radius: 20px;
@@ -2833,13 +2851,14 @@ p {
     }
 
     .request-img-m {
-        border-radius: 20px;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
+        /* position: relative; */
+        /* top: 55%; */
+        /* left: 45%; */
+        /* height: 440px; */
+        /* width: 327px; */
+        border-radius: 20px;
     }
 
     .row-one-m {

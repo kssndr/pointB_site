@@ -1766,7 +1766,7 @@ function createRequestForm(initiatingButtonId) {
   input.name = 'contacts-input-m';
   input.className = 'module-input';
   input.style.position = 'absolute';
-  input.style.width = '500px';
+  // input.style.width = '500px';
   input.style.top = '60px';
   firstBlock2.appendChild(input);
 
