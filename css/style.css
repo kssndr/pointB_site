@@ -547,9 +547,11 @@ a:hover {
     position: relative;
 }
 
+@media (min-width: 768px) {
 img {
     width: 100%;
     height: 100%;
+}
 }
 
 .rich_lists {
@@ -2575,16 +2577,21 @@ p {
         border-radius: 20px;
     }
     .request-img-m {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        top: 55%; 
-        left: 45%; 
-        height: 440px;
-        width: 327px;
-        border-radius: 20px;
+    /* width: 200%; */
+    /* height: 100%; */
+    position: relative;
+    /* top: 55%; */
+    /* left: 45%; */
+    height: 470px;
+    width: 327px;
+    border-radius: 20px;
     }
-    
+
+    img {
+         width: 200%; 
+    height: 100%;
+    }
+
     .row-one-m {
         z-index: 2;
         display: flex;
