@@ -2750,14 +2750,6 @@ p {
         background-color: var(--gold-color);
     }
 
-    .request-form-m {
-        grid-column: 2;
-        position: relative;
-        height: 325px;
-        width: 847px;
-        border-radius: 20px;
-    }
-
     .notification {
         background-image: url(/img/lists.png);
         /* position: absolute; */
