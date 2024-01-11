@@ -2770,21 +2770,18 @@ p {
     .notification {
         background-image: url(/img/lists.png);
         /* position: absolute; */
-        width: 500px;
+        width: 350px;
         height: 200px;
         flex-shrink: 0;
         border-radius: 20px;
-        top: 600px;
-        left: 380px;
+        /* top: 600px; */
+        /* left: 380px; */
         background-size: cover;
-        /* растягивает изображение на всю доступную область */
         background-repeat: no-repeat;
-        /* изображение не будет повторяться */
         background-position: center;
-        /* центрирует изображение */
         position: fixed;
         top: 50%;
-        left: 50%;
+        left: 44%;
         transform: translate(-50%, -50%);
     }
 
@@ -2802,15 +2799,16 @@ p {
 
     .notification-message {
 
-        position: absolute;
-        left: 73px;
-        top: 64px;
+        position: relative;
+        left: 33px;
+        top: 44px;
         color: #FFF;
         font-family: Roboto Slab;
         font-size: 28px;
         font-style: normal;
         font-weight: 500;
         line-height: 36px;
+        width: 300px;    
 
     }
 

@@ -1845,8 +1845,8 @@ function createRequestForm(initiatingButtonId) {
       notification.classList.add('fade-out');
       setTimeout(function () {
         notification.remove();
-      }, 5000);
-    }, 5000);
+      }, 1000);
+    }, 1000);
 
   });
 
