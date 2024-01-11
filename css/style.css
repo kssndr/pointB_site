@@ -326,13 +326,6 @@ a:hover {
         /* 108.197% */
     }
 
-    .container_main {
-        overflow: hidden;
-        max-width: 1179px;
-        /* height: 382px; */
-        flex-shrink: 0;
-    }
-
     .about {
         /* height: 382px; */
         display: flex;
@@ -550,7 +543,7 @@ a:hover {
 .container_main {
     overflow: hidden;
     max-width: 1179px;
-    height: 382px;
+    /* height: 382px; */
     flex-shrink: 0;
 
 }
@@ -1470,7 +1463,7 @@ option {
 
 .filter {
     display: flex;
-    max-width: 1179px;
+    width: 1179px;
     height: 40px;
     position: absolute;
     top: 80px;
@@ -2352,7 +2345,7 @@ option {
 }
 
 .faqContainer {
-    max-width: 1179px;
+    width: 1179px;
     background: #fff;
     margin-top: 30px;
     border-bottom: 1px solid #D8DADF;
