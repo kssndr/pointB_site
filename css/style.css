@@ -310,7 +310,7 @@ a:hover {
             align-items: center;
             gap: 5px;
             display: inline-flex;
-        
+
         }
 
     }
@@ -586,10 +586,12 @@ a:hover {
     flex-shrink: 0;
 }
 
-.text-h1 {
-    width: 407px;
-    height: 195px;
-    margin-top: 54px;
+@media (min-width: 768px) {
+    .text-h1 {
+        width: 407px;
+        height: 195px;
+        margin-top: 54px;
+    }
 }
 
 .block {
