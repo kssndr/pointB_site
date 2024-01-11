@@ -301,7 +301,7 @@ a:hover {
             position: relative;
         }
 
-        #header_Logo {
+        .Logo #header_Logo {
             width: 130px;
             height: 80px;
             padding-top: 40px;
@@ -310,6 +310,7 @@ a:hover {
             align-items: center;
             gap: 5px;
             display: inline-flex;
+        
         }
 
     }
