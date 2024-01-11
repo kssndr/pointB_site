@@ -347,7 +347,7 @@ a:hover {
         max-width: 1179px;
         height: 382px;
         flex-shrink: 0;
-    
+
     }
 
     .about {
@@ -2416,6 +2416,74 @@ option {
     gap: 30px;
 }
 
+@media (max-width: 769px) {
+
+    .our_clients_title {
+        display: flex;
+        height: 71px;
+        flex-shrink: 0;
+        color: #B9B9B9;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 67px;
+        /* 279.167% */
+    }
+
+    .our_clients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 350px;
+    }
+
+    .table-clints-first-row {
+        max-width: 1179px;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 120px;
+        flex-direction: row;
+        justify-content: space-between;
+        box-sizing: border-box;
+        object-fit: cover;
+
+    }
+
+    .table-clints-second-row {
+        max-width: 1179px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 20px;
+        flex-direction: row;
+        box-sizing: border-box;
+        object-fit: cover;
+        justify-content: space-around;
+    }
+
+
+    .table-clints-first-row img {
+        max-height: 50px;
+        object-fit: contain;
+    }
+
+    .table-clints-second-row img {
+        max-height: 70px;
+        object-fit: contain;
+    }
+
+    .table-clints-second-row .our-clients-image {
+        margin-top: 30px;
+        min-width: calc(100% / 6);
+        gap: 30px;
+    }
+}
+
 /* =========================================================== */
 /*  Подвал */
 /* =========================================================== */
@@ -2511,6 +2579,99 @@ p {
     gap: 15px;
 }
 
+@media (max-width: 769px) {
+
+    .footer {
+        padding: 1em;
+        height: 140px;
+        flex-shrink: 0;
+        background: linear-gradient(270deg, #CFD8D7 0%, rgba(255, 255, 255, 0.00) 200%);
+    }
+
+    .container-footer {
+        max-width: 1179px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        gap: 10px;
+    }
+
+    .right-footer,
+    .center-footer {
+        display: block;
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+
+    .center-footer {
+        display: block;
+        margin-top: 25px;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+    p {
+        display: block;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .footer-text {
+        color: #272727;
+        font-family: Rubik;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 23px;
+        /* 176.923% */
+        text-align: start;
+
+    }
+
+    .terms-footer {
+        display: flex;
+        color: #272727;
+        font-family: Rubik;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 23px;
+        /* 176.923% */
+        margin-top: 5px;
+
+    }
+
+    .terms-footer a {
+        color: #272727;
+        font-family: Rubik;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 23px;
+        /* 176.923% */
+    }
+
+    .ss-image {
+        width: 25px;
+        height: 25px;
+    }
+
+    .ss-image:active {
+        width: 27px;
+        height: 27px;
+    }
+
+
+    .contact-footer {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        gap: 15px;
+    }
+
+}
 
 /* =========================================================== */
 /*  Мобильная форма заяки на соебеование (та которая появляется поверх всего в двух местах на сайте) */
@@ -2518,15 +2679,15 @@ p {
 /* первая форма для записи МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 769px) {
     .request-form-modal {
-    /* display: none; */
-    position: fixed;
-    /* left: 0; */
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    grid-column: 2;
+        /* display: none; */
+        position: fixed;
+        /* left: 0; */
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        grid-column: 2;
     }
 
     .request-form-modal-content {
@@ -2576,15 +2737,16 @@ p {
         width: 327px;
         border-radius: 20px;
     }
+
     .request-img-m {
-    /* width: 200%; */
-    /* height: 100%; */
-    position: relative;
-    /* top: 55%; */
-    /* left: 45%; */
-    height: 470px;
-    width: 327px;
-    border-radius: 20px;
+        /* width: 200%; */
+        /* height: 100%; */
+        position: relative;
+        /* top: 55%; */
+        /* left: 45%; */
+        height: 470px;
+        width: 327px;
+        border-radius: 20px;
     }
 
     /* img {
@@ -2645,8 +2807,9 @@ p {
         font-weight: 500;
         line-height: 21px;
     }
-      /* Стиль для кастомного чекбокса для контакта */
-      .custom-checkbox-contact-m {
+
+    /* Стиль для кастомного чекбокса для контакта */
+    .custom-checkbox-contact-m {
         appearance: none;
         background-color: #856746;
         width: 20px;
@@ -2656,7 +2819,8 @@ p {
         vertical-align: middle;
         border-radius: 2px;
     }
-   /* Стиль для отображения галочки внутри чекбокса */
+
+    /* Стиль для отображения галочки внутри чекбокса */
     .custom-checkbox-contact-m:checked {
         border-radius: 2px;
         background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
@@ -2741,6 +2905,7 @@ p {
     .module-input-m:focus {
         background-color: transparent;
     }
+
     .request-m {
         display: flex;
         padding: 12px 22px;
@@ -2763,6 +2928,7 @@ p {
         /* flex-direction: column; */
         /* align-items: flex-start; */
     }
+
     .request-m:active {
         background-color: var(--gold-color);
     }
@@ -2808,7 +2974,7 @@ p {
         font-style: normal;
         font-weight: 500;
         line-height: 36px;
-        width: 300px;    
+        width: 300px;
 
     }
 
@@ -2861,8 +3027,8 @@ p {
         width: 100%;
         height: 100%;
         position: relative;
-        top: 55%; 
-        left: 45%; 
+        top: 55%;
+        left: 45%;
         height: 440px;
         width: 327px;
         border-radius: 20px;
