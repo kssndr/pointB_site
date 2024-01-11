@@ -312,10 +312,9 @@ a:hover {
         }
 
     }
-
+/* 
     .table-clints-first-row {
         max-width: 1179px;
-        /* margin-top: 10px; */
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
@@ -336,7 +335,7 @@ a:hover {
         box-sizing: border-box;
         object-fit: cover;
         justify-content: space-around;
-    }
+    } */
 }
 
 /* первый экран */
