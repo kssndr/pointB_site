@@ -323,9 +323,12 @@ a:hover {
         font-weight: 500;
         line-height: 49.622px; /* 108.197% */
     }
+
     .container_main {
         overflow: hidden;
         max-width: 1179px;
+        /* height: 382px; */
+        flex-shrink: 0;
     }
     .about {
         /* height: 382px; */
