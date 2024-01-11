@@ -2632,6 +2632,7 @@ p {
         line-height: 23px;
         /* 176.923% */
         margin-top: 5px;
+        justify-content: center;
 
     }
 
