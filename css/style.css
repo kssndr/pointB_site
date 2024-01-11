@@ -323,7 +323,9 @@ a:hover {
         font-style: normal;
         font-weight: 500;
         line-height: 49.622px;
-        /* 108.197% */
+        /* width: 407px; */
+        height: 160px;
+        margin-top: 20px;
     }
 
     .about {
