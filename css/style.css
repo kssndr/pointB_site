@@ -301,7 +301,7 @@ a:hover {
             position: relative;
         }
 
-        .header__title .Logo {
+        #header_Logo {
             width: 130px;
             height: 80px;
             padding-top: 40px;
