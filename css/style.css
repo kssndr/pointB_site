@@ -547,12 +547,12 @@ a:hover {
     position: relative;
 }
 
-@media (min-width: 768px) {
+
 img {
     width: 100%;
     height: 100%;
 }
-}
+
 
 .rich_lists {
     margin-top: 60px;
