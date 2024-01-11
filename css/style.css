@@ -105,7 +105,8 @@ font-family: 'Rubik', sans-serif; */
     align-items: center;
 
 }
-
+/* Лого в хэдере */
+@media (min-width: 769px) {
 .Logo {
     width: 185px;
     height: 80px;
@@ -143,6 +144,48 @@ font-family: 'Rubik', sans-serif; */
     background: var(--accent-color);
     border-radius: 9999px
 }
+}
+
+@media (max-width: 769px) {
+    .Logo {
+        width: 130px;
+        height: 80px;
+        padding-top: 40px;
+        padding-left: 5px;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+        display: inline-flex;
+    }
+    
+    .Logostar {
+        position: relative
+    }
+    
+    .Name {
+        width: 140px;
+        height: 30px;
+        position: relative
+    }
+    
+    .PointB {
+        color: black;
+        font-size: 24px;
+        font-family: Inter;
+        font-weight: 700;
+        word-wrap: break-word;
+    }
+    
+    .Point {
+        width: 5px;
+        height: 5px;
+        left: 31px;
+        top: 2px;
+        position: absolute;
+        background: var(--accent-color);
+        border-radius: 9999px;
+    }
+    }
 
 .Menu-block {
     display: flex;
@@ -265,52 +308,6 @@ a:hover {
             display: flex;
             align-items: flex-start;
             flex-direction: row-reverse;
-        }
-
-        /* .Logo.menu.show {
-            width: 185px;
-            height: 80px;
-            padding-bottom: 55px;
-            justify-content: space-around;
-            align-items: center;
-            gap: 5px;
-            display: inline-flex;
-        } */
-
-        .PointB {
-            color: black;
-            font-size: 24px;
-            font-family: Inter;
-            font-weight: 700;
-            word-wrap: break-word;
-        }
-
-        .Point {
-            width: 5px;
-            height: 5px;
-            left: 31px;
-            top: 2px;
-            position: absolute;
-            background: var(--accent-color);
-            border-radius: 9999px;
-        }
-
-        .Name {
-            width: 140px;
-            height: 30px;
-            position: relative;
-        }
-
-        .Logo #header_Logo {
-            width: 130px;
-            height: 80px;
-            padding-top: 40px;
-            padding-left: 5px;
-            justify-content: space-around;
-            align-items: center;
-            gap: 5px;
-            display: inline-flex;
-
         }
 
     }
