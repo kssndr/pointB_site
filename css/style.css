@@ -2541,7 +2541,7 @@ p {
     }
 
     .request-background-m {
-        position: relative;
+        position: absolute;
         /* or absolute, fixed, sticky */
         top: 0;
         left: 0;
@@ -2574,7 +2574,17 @@ p {
         width: 327px;
         border-radius: 20px;
     }
-
+    .request-img-m {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 55%; 
+        left: 45%; 
+        height: 440px;
+        width: 327px;
+        border-radius: 20px;
+    }
+    
     .row-one-m {
         z-index: 2;
         display: flex;
@@ -2831,10 +2841,10 @@ p {
 
 
     .request-background-m {
-        position: absolute;
+        position: relative;
         top: 0;
-        /* left: 0; */
-        /* left: 45%; */
+        left: 0;
+        left: 45%;
         width: 100%;
         height: 100%;
         border-radius: 20px;
@@ -2845,11 +2855,11 @@ p {
     .request-img-m {
         width: 100%;
         height: 100%;
-        /* position: relative; */
-        /* top: 55%; */
-        /* left: 45%; */
-        /* height: 440px; */
-        /* width: 327px; */
+        position: relative;
+        top: 55%; 
+        left: 45%; 
+        height: 440px;
+        width: 327px;
         border-radius: 20px;
     }
 
