@@ -1774,7 +1774,7 @@ function createRequestForm(initiatingButtonId) {
 
   // Create second block in row-two
   const secondBlock2 = document.createElement('div');
-  secondBlock2.className = 'request-second-block-m';
+  secondBlock2.className = 'request-second-block-m-btn';
   const button = document.createElement('button');
   button.className = 'request-m';
   button.id = 'request_small-m';

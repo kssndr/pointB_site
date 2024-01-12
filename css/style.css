@@ -233,7 +233,7 @@ section {
         border: none;
         font-size: 50px;
         cursor: pointer;
-        display: block;
+        display: none;
         height: 146px;
         width: 60px;
         /*Скрываем гамбургер на больших экранах*/
@@ -348,7 +348,7 @@ a:hover {
 
         .social-links {
             display: flex;
-            width: 35px;
+            width: 65px;
             height: 25px;
             justify-content: space-between
             /* Убедитесь, что социальные ссылки видны */
@@ -2864,8 +2864,8 @@ p {
         /* 140% */
     }
 
-    .request-second-block-m{
-        
+    .request-second-block-m-btn{
+
     }
 
     .row-two-m {
