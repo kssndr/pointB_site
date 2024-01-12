@@ -2704,7 +2704,7 @@ p {
     .request-form-modal-content {
         position: relative;
         top: 50%;
-        left: 44%;
+        left: 50%;
         transform: translate(-50%, -50%);
         background-color: white;
         /* padding: 20px; */
@@ -2864,6 +2864,10 @@ p {
         /* 140% */
     }
 
+    .request-second-block-m{
+        
+    }
+
     .row-two-m {
         z-index: 2;
         display: flex;
@@ -2943,6 +2947,8 @@ p {
     .request-m:active {
         background-color: var(--gold-color);
     }
+
+
 
     .notification {
         background-image: url(/img/lists.png);
