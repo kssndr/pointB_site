@@ -628,35 +628,6 @@ img {
         display: none;
     }
 
-    .owl-carousel .item {
-        /* Стили для каждого слайда */
-        width: 219px;
-        height: 171px;
-        flex-shrink: 0;
-        border: 1px solid #D8DADF;
-    }
-
-    .owl-carousel .item h3 {
-        /* Стили для заголовков */
-        color: #222;
-        font-family: Roboto Slab;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 22px;
-        /* 137.5% */
-    }
-
-    .owl-carousel .item p {
-        /* Стили для текста */
-        color: #1D1D1D;
-        font-family: Inter;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 17px;
-        /* 141.667% */
-    }
 
 
     .container_Modules {
@@ -913,6 +884,37 @@ img {
     #carousel-container {
         display: block;
     }
+
+    .owl-carousel .item {
+        /* Стили для каждого слайда */
+        width: 219px;
+        height: 171px;
+        flex-shrink: 0;
+        border: 1px solid #D8DADF;
+    }
+
+    .owl-carousel .item h3 {
+        /* Стили для заголовков */
+        color: #222;
+        font-family: Roboto Slab;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+        /* 137.5% */
+    }
+
+    .owl-carousel .item p {
+        /* Стили для текста */
+        color: #1D1D1D;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 17px;
+        /* 141.667% */
+    }
+
 
 
     .left-column {
