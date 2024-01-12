@@ -2445,7 +2445,7 @@ option {
         box-sizing: border-box;
         object-fit: cover;
         justify-content: center;
-        max-height: unset;
+        max-height: 110px;
     }
 
     .table-clints-second-row {
@@ -2456,25 +2456,25 @@ option {
         box-sizing: border-box;
         object-fit: cover;
         justify-content: center;
-        max-height: unset;
+        max-height: 180px;
 
     }
 
 
     .table-clints-first-row img {
-        max-height: unset;
+        max-height: 40px;
         object-fit: contain;
     }
 
     .table-clints-second-row img {
-        max-height: unset;
+        max-height: 67px;
         object-fit: contain;
     }
 
-    /* .table-clints-second-row .our-clients-image {
+    .table-clints-second-row .our-clients-image {
         margin-top: 10px;
         min-width: calc(100% / 6);
-    } */
+    }
 }
 
 /* =========================================================== */
