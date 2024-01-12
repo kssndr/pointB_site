@@ -188,6 +188,7 @@ font-family: 'Rubik', sans-serif; */
     }
 }
 
+@media (min-width: 769px) {
 .Menu-block {
     display: flex;
     gap: 25px;
@@ -202,7 +203,7 @@ font-family: 'Rubik', sans-serif; */
     display: flex;
     align-items: center;
 }
-
+}
 .hamburger {
     padding: 5px 5px;
     color: #212020;
@@ -312,30 +313,6 @@ a:hover {
         }
 
     }
-/* 
-    .table-clints-first-row {
-        max-width: 1179px;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 5px;
-        flex-direction: row;
-        justify-content: space-between;
-        box-sizing: border-box;
-        object-fit: cover;
-    }
-
-    .table-clints-second-row {
-        max-width: 1179px;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 5px;
-        flex-direction: row;
-        box-sizing: border-box;
-        object-fit: cover;
-        justify-content: space-around;
-    } */
 }
 
 /* первый экран */
