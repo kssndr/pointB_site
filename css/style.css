@@ -293,6 +293,12 @@ a:hover {
         flex-direction: row-reverse;
     }
         .hamburger {
+            padding: 5px 5px;
+            color: #212020;
+            background-color: #FFF;
+            border: none;
+            font-size: 50px;
+            cursor: pointer;
             display: block;
         }
 
@@ -318,6 +324,9 @@ a:hover {
 
         .social-links {
             display: flex;
+            width: 35px;
+            height: 25px;
+            justify-content: space-between
             /* Убедитесь, что социальные ссылки видны */
         }
     
