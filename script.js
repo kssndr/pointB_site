@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==============================================================================
 // Динамическое создание блока меню Модулей программы
 //==============================================================================
+function isMobile() {
+  return window.innerWidth <= 768; // предполагаем, что мобильные устройства имеют ширину экрана 768px или меньше
+}
 
 async function fetchJsonData() {
   try {
@@ -51,6 +54,10 @@ async function fetchJsonData() {
     const leftButtonsContainer = document.getElementById("left-buttons");
     const rightButtonsContainer = document.getElementById("right-buttons");
 
+    if (isMobile()) {
+      // Если экран мобильного устройства
+      createCarousel(jsonData);
+    } else {
     jsonData.left_buttons.forEach(buttonData => {
       const button = createButton(buttonData, leftButtonsContainer);
       leftButtonsContainer.appendChild(button);
@@ -60,10 +67,28 @@ async function fetchJsonData() {
       const button = createButton(buttonData, rightButtonsContainer);
       rightButtonsContainer.appendChild(button);
     });
+  }
   } catch (error) {
     console.error("Error loading JSON data:", error);
   }
 }
+
+// async function fetchJsonData() {
+//   try {
+//     const response = await fetch("pointb_texts.json");
+//     const jsonData = await response.json();
+
+//     if (isMobile()) {
+//       // Если экран мобильного устройства
+//       createCarousel(jsonData);
+//     } else {
+//       // Если экран десктопа
+//       createButtons(jsonData);
+//     }
+//   } catch (error) {
+//     console.error("Error loading JSON data:", error);
+//   }
+// }
 
 const textContentDiv = document.getElementById("text-content");
 const buttonNameDiv = document.getElementById("button-name");
@@ -107,6 +132,20 @@ function showText(text, buttonName, containerId) {
 function hideText() {
   textDisplayContainer.style.display = "none";
   textDisplayContainer.style.zIndex = "1000";
+}
+
+function createCarousel(jsonData) {
+  const carouselContainer = document.getElementById("carousel-container");
+  
+  jsonData.left_buttons.concat(jsonData.right_buttons).forEach(buttonData => {
+    const slide = document.createElement("div");
+    slide.className = "carousel-slide";
+    slide.textContent = buttonData.name;
+    // Добавить дополнительные стили и обработчики событий
+    carouselContainer.appendChild(slide);
+  });
+
+  // Здесь добавьте логику для инициализации и управления каруселью
 }
 
 // ==============================================================================
