@@ -2430,33 +2430,25 @@ option {
     }
 
     .our_clients {
-        display: flex;
+        /* display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: center; */
     }
 
     .table-clints-first-row {
         margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 5px;
-        flex-direction: row;
-        box-sizing: border-box;
-        object-fit: cover;
-        justify-content: center;
-        max-height: 110px;
     }
 
     .table-clints-second-row {
-        display: flex;
-        flex-wrap: wrap;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* flex-wrap: wrap; */
         gap: 5px;
-        flex-direction: row;
-        box-sizing: border-box;
-        object-fit: cover;
-        justify-content: center;
-        max-height: 180px;
 
     }
 
