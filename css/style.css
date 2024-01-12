@@ -624,7 +624,9 @@ img {
         /* 279.167% */
     }
 
-
+    #carousel-container {
+        display: none;
+    }
     .container_Modules {
         overflow: hidden;
         max-width: 1179px;
