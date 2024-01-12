@@ -184,7 +184,7 @@ section {
         width: 5px;
         height: 5px;
         left: 31px;
-        top: 2px;
+        top: 4px;
         position: absolute;
         background: var(--accent-color);
         border-radius: 9999px;
