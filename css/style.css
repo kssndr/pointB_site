@@ -268,7 +268,7 @@ a:hover {
     /* Зеленый цвет при наведении курсора */
 }
 
-.social-link {
+.social-links {
     display: flex;
     width: 35px;
     height: 25px;
@@ -300,6 +300,8 @@ a:hover {
             font-size: 50px;
             cursor: pointer;
             display: block;
+            height: 60px;
+            width: 60px;
         }
 
         .menu {
@@ -309,12 +311,32 @@ a:hover {
 
         .menu.show {
             display: flex;
-            /* Показываем меню, когда класс "show" добавлен к списку */
             flex-direction: column;
-            gap: 5px;
-            width: 110px;
+            /* gap: 5px; */
+            width: 100px;
             align-items: flex-end;
+            list-style-type: none;
+            padding-left: 0px;
+
         }
+        a {
+            color: var(--dark-color);
+            /* cursor: pointer; */
+            text-decoration: none;
+            color: #404040;
+            text-align: right;
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            }
+            a:hover {
+                color: var(--accent-color);
+                /* Замените "ваш_цвет_при_наведении" на цвет при наведении */
+                /* Дополнительные стили при наведении */
+            }
 
         .navbar {
             display: flex;
@@ -2328,9 +2350,9 @@ option {
     background: #EDF5F5;
 }
 
-.social-links {
+/* .social-links {
     display: flex;
-}
+} */
 
 /* =========================================================== */
 /* Блог */
