@@ -2445,8 +2445,8 @@ option {
         flex-direction: row;
         box-sizing: border-box;
         object-fit: cover;
-        justify-content: space-evenly;
-        max-height: 110px;
+        justify-content: center;
+        max-height: unset;
     }
 
     .table-clints-second-row {
@@ -2456,26 +2456,26 @@ option {
         flex-direction: row;
         box-sizing: border-box;
         object-fit: cover;
-        justify-content: space-evenly;
-        max-height: 180px;
+        justify-content: center;
+        max-height: unset;
 
     }
 
 
     .table-clints-first-row img {
-        max-height: 40px;
+        max-height: unset;
         object-fit: contain;
     }
 
     .table-clints-second-row img {
-        max-height: 67px;
+        max-height: unset;
         object-fit: contain;
     }
 
-    .table-clints-second-row .our-clients-image {
+    /* .table-clints-second-row .our-clients-image {
         margin-top: 10px;
         min-width: calc(100% / 6);
-    }
+    } */
 }
 
 /* =========================================================== */
