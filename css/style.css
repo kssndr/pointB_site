@@ -885,6 +885,14 @@ img {
         display: block;
     }
 
+    .owl-carousel {
+        max-width: 375px; /* Измените на желаемую ширину */
+    }
+
+    .owl-carousel .owl-item {
+        width: 300px; /* Измените на желаемую ширину слайда */
+    }
+
     .owl-carousel .item {
         /* Стили для каждого слайда */
         width: 219px;
