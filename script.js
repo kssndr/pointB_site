@@ -134,6 +134,7 @@ function initializeCarousel() {
   $("#carousel-container").owlCarousel({
     loop: true,
     margin: 10,
+    items:0.8,
    // nav: false, // Обычно на мобильных устройствах лучше скрыть навигацию
     responsive: {
       0: {
