@@ -153,8 +153,8 @@ section {
 @media (max-width: 769px) {
     .Logo {
         width: 130px;
-        height: 80px;
-        padding-top: 40px;
+        height: 146px;
+        padding-top: px;
         padding-left: 5px;
         justify-content: space-around;
         align-items: center;
@@ -184,7 +184,7 @@ section {
         width: 5px;
         height: 5px;
         left: 31px;
-        top: 4px;
+        top: 3px;
         position: absolute;
         background: var(--accent-color);
         border-radius: 9999px;
@@ -233,7 +233,9 @@ section {
         border: none;
         font-size: 50px;
         cursor: pointer;
-        display: none;
+        display: block;
+        height: 146px;
+        width: 60px;
         /*Скрываем гамбургер на больших экранах*/
     }
 }
@@ -270,9 +272,9 @@ a:hover {
 
 .social-links {
     display: flex;
-    width: 35px;
+    width: 65px;
     height: 25px;
-    justify-content: space-between
+    justify-content: space-between /* Убедитесь, что социальные ссылки видны */;
 }
 
 .menu-item.active {
