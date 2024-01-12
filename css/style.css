@@ -2418,7 +2418,6 @@ option {
 @media (max-width: 769px) {
 
     .our_clients_title {
-        display: flex;
         height: 31px;
         flex-shrink: 0;
         color: #B9B9B9;
@@ -2432,9 +2431,9 @@ option {
 
     .our_clients {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
     }
 
     .table-clints-first-row {
