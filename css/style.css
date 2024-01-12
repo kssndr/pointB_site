@@ -2,45 +2,6 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    color: #1D1D1D;
-    font-size: 14px;
-    font-family: Inter, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px;
-    justify-content: center;
-
-}
-
-main {
-    display: grid;
-}
-
-section {
-    margin: 0;
-    /* или другое положительное значение */
-    /* z-index: auto;  значение по умолчанию */
-    /* position: static;  значение по умолчанию */
-    margin-bottom: 10px;
-}
-
-.container {
-    max-width: 1179px;
-    background-color: #fff;
-    margin: 0 auto;
-
-}
-
-.container_header {
-    max-width: 1179px;
-    height: 146px;
-    background-color: #fff;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
 :root {
     --accent-color: #0D4C47;
     --dark-color: #1D1D1D;
@@ -91,6 +52,48 @@ font-family: 'Roboto Slab', serif;
 font-family: 'Rubik', sans-serif; */
 
 
+body {
+    margin: 0;
+    color: #1D1D1D;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    justify-content: center;
+
+}
+
+main {
+    display: grid;
+}
+
+section {
+    margin: 0;
+    /* или другое положительное значение */
+    /* z-index: auto;  значение по умолчанию */
+    /* position: static;  значение по умолчанию */
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1179px;
+    background-color: #fff;
+    margin: 0 auto;
+
+}
+
+/* ============================================= */
+/* блок "Шапка" */
+/* ============================================= */
+
+.container_header {
+    max-width: 1179px;
+    height: 146px;
+    background-color: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+}
 
 .header {
     min-height: 146px;
@@ -188,6 +191,7 @@ font-family: 'Rubik', sans-serif; */
     }
 }
 
+/* ------------- меню десктоп ----------- */
 @media (min-width: 769px) {
     .Menu-block {
         display: flex;
@@ -232,12 +236,7 @@ font-family: 'Rubik', sans-serif; */
         display: none;
         /*Скрываем гамбургер на больших экранах*/
     }
-
 }
-
-
-
-
 
 .menu-item {
     background-color: #fff;
@@ -246,7 +245,6 @@ font-family: 'Rubik', sans-serif; */
     transition: color 0.3s ease;
     text-decoration: none;
     /* Убрать подчеркивание ссылок, если оно есть */
-
 }
 
 /* Уберите стили для всех ссылок */
@@ -318,10 +316,18 @@ a:hover {
             flex-direction: row-reverse;
         }
 
+        .social-links {
+            display: flex;
+            /* Убедитесь, что социальные ссылки видны */
+        }
+
     }
 }
 
-/* первый экран */
+/* ============================================= */
+/* блок "Первый экран" */
+/* ============================================= */
+
 @media (min-width: 768px) {
 
     .container_main {
