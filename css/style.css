@@ -2750,13 +2750,7 @@ p {
     }
 
     .request-img-m {
-        /* width: 200%; */
-        /* height: 100%; */
-        position: relative;
-        /* top: 55%; */
-        /* left: 45%; */
-        height: 470px;
-        width: 327px;
+        object-fit: cover;
         border-radius: 20px;
     }
 
@@ -2965,7 +2959,7 @@ p {
         background-position: center;
         position: fixed;
         top: 50%;
-        left: 44%;
+        left: 50%;
         transform: translate(-50%, -50%);
     }
 
@@ -2992,7 +2986,7 @@ p {
         font-style: normal;
         font-weight: 500;
         line-height: 36px;
-        width: 300px;
+        width: 280px;
 
     }
 
