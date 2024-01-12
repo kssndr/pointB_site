@@ -856,7 +856,7 @@ img {
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        line-height: 67px;
+        line-height: 80px;
         /* 279.167% */
     }
 
@@ -886,16 +886,19 @@ img {
     }
 
     .owl-carousel {
-        max-width: 375px; /* Измените на желаемую ширину */
+        max-width: 375px;
+        /* Измените на желаемую ширину */
     }
 
     .owl-carousel .owl-item {
-        width: 300px; /* Измените на желаемую ширину слайда */
+        width: 300px;
+        /* Измените на желаемую ширину слайда */
     }
 
     .owl-carousel .item {
         /* Стили для каждого слайда */
-        width: 219px;
+        margin-left: 5px;
+        width: 350px;
         height: 171px;
         flex-shrink: 0;
         border: 1px solid #D8DADF;
@@ -903,13 +906,13 @@ img {
 
     .owl-carousel .item h3 {
         /* Стили для заголовков */
+        margin-left: 15px;
         color: #222;
         font-family: Roboto Slab;
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: 22px;
-        /* 137.5% */
     }
 
     .owl-carousel .item p {
@@ -920,7 +923,8 @@ img {
         font-style: normal;
         font-weight: 500;
         line-height: 17px;
-        /* 141.667% */
+        text-align: justify;
+        margin: 15px;
     }
 
 
@@ -1093,7 +1097,8 @@ img {
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        line-height: 50px;
+        line-height: 32px;
+        margin-bottom: 10px;
     }
 
     .text-block {
