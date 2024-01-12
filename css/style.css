@@ -627,6 +627,20 @@ img {
     #carousel-container {
         display: none;
     }
+
+    .owl-carousel .item {
+        /* Стили для каждого слайда */
+    }
+    
+    .owl-carousel .item h3 {
+        /* Стили для заголовков */
+    }
+    
+    .owl-carousel .item p {
+        /* Стили для текста */
+    }
+
+
     .container_Modules {
         overflow: hidden;
         max-width: 1179px;

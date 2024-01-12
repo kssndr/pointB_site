@@ -119,16 +119,24 @@ function hideText() {
 
 function createCarousel(jsonData) {
   const carouselContainer = document.getElementById("carousel-container");
-  
+
   jsonData.left_buttons.concat(jsonData.right_buttons).forEach(buttonData => {
     const slide = document.createElement("div");
-    slide.className = "carousel-slide";
-    slide.textContent = buttonData.name;
-    // Добавить дополнительные стили и обработчики событий
+    slide.className = "item"; // Класс 'item' для OwlCarousel
+    slide.innerHTML = `<h3>${buttonData.name}</h3><p>${buttonData.text}</p>`;
     carouselContainer.appendChild(slide);
   });
 
-  // Здесь добавьте логику для инициализации и управления каруселью
+  initializeCarousel();
+}
+
+function initializeCarousel() {
+  $("#carousel-container").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    // Другие настройки OwlCarousel...
+  });
 }
 
 // ==============================================================================
