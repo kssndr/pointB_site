@@ -876,6 +876,10 @@ img {
         padding-right: calc(((1179px / 3) - 262px) / 2);
     }
 
+    #carousel-container {
+        display: block;
+    }
+
 
     .left-column {
 
