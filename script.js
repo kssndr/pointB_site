@@ -73,23 +73,6 @@ async function fetchJsonData() {
   }
 }
 
-// async function fetchJsonData() {
-//   try {
-//     const response = await fetch("pointb_texts.json");
-//     const jsonData = await response.json();
-
-//     if (isMobile()) {
-//       // Если экран мобильного устройства
-//       createCarousel(jsonData);
-//     } else {
-//       // Если экран десктопа
-//       createButtons(jsonData);
-//     }
-//   } catch (error) {
-//     console.error("Error loading JSON data:", error);
-//   }
-// }
-
 const textContentDiv = document.getElementById("text-content");
 const buttonNameDiv = document.getElementById("button-name");
 const textDisplayContainer = document.getElementById("text-display-container");

@@ -862,7 +862,7 @@ img {
         height: 320px;
         flex-shrink: 0;
 
-        display: grid;
+        display: none;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
