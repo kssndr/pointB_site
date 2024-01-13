@@ -1570,11 +1570,10 @@ img {
         outline: none;
         color: #FFF;
         font-family: Inter;
-        font-size: 22px;
         font-style: normal;
         line-height: 21px;
         width: 48px;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 500;
         padding-bottom: 5px;
         padding-top: 5px;
@@ -1636,13 +1635,14 @@ img {
         line-height: 36px;
     }
 }
+
 @media (max-width: 768px) {
     .program-container {
         width: 375px;
         /* height: 880px; */
         background: #09312E;
         position: absolute;
-        /* top: 500px; */
+        top: 850px;
         /* left: 50%; */
         /* transform: translateX(-45%); */
         z-index: 1000;
@@ -1727,13 +1727,14 @@ img {
         line-height: 43px;
         margin-bottom: -25px;
     }
+
     #sett-title-summary-names {
         color: #C4A36D;
         font-family: Roboto Slab;
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
-        line-height: 43px;
+        line-height: 20px;
     }
 
     .sett-title {
@@ -1898,7 +1899,7 @@ img {
 
     }
 
-    #username{
+    #username {
         position: relative;
         width: 250px;
         top: 0px;
@@ -1915,7 +1916,8 @@ img {
         width: 300px;
         padding: 10px;
     }
-    #notes{
+
+    #notes {
         position: relative;
         width: 250px;
         top: 0px;
@@ -1932,7 +1934,8 @@ img {
         width: 300px;
         padding: 10px;
     }
-    #contacts{
+
+    #contacts {
         position: relative;
         width: 250px;
         top: 0px;
@@ -2093,9 +2096,12 @@ img {
 
 
     .staff-bottom {
-        width: 710px;
-        height: 265px;
+        width: 320px;
+        /* height: 265px; */
+        overflow-x: hidden;
+        border: none;
     }
+    
 
     .summary_m {
         display: grid;
@@ -2105,7 +2111,7 @@ img {
 
     .summary_names {
         grid-column: 1;
-        width: 210px;
+        width: 130px;
     }
 
     .summary_data {
@@ -2125,7 +2131,7 @@ img {
         outline: none;
         color: #FFF;
         font-family: Roboto Slab;
-        font-size: 22px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: 36px;
@@ -2141,7 +2147,7 @@ img {
         color: #FFF;
         text-align: right;
         font-family: Roboto Slab;
-        font-size: 22px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: 31px;
@@ -2152,7 +2158,7 @@ img {
 
     .money {
         display: flex;
-        margin-top: 28px;
+        margin-top: 36px;
     }
 
     #currency {
@@ -2179,9 +2185,30 @@ img {
     /* .request {
 } */
 
+    #request_program {
+        display: flex;
+        margin-left: 35px;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+
+    }
+
     #abou_oferta {
         color: #B9B9B9;
-        margin-top: 30px;
+        margin-top: 18px;
         display: flex;
 
 
@@ -2190,18 +2217,16 @@ img {
     .message-block {
         background-image: url(/img/lists.png);
         position: absolute;
-        width: 500px;
+        width: 375px;
         height: 200px;
         flex-shrink: 0;
         border-radius: 20px;
         top: 600px;
-        left: 380px;
+        /* left: 380px; */
         background-size: cover;
-        /* растягивает изображение на всю доступную область */
         background-repeat: no-repeat;
-        /* изображение не будет повторяться */
         background-position: center;
-        /* центрирует изображение */
+        z-index: 5;
 
     }
 
@@ -2218,8 +2243,8 @@ img {
 
     .message-title {
         position: absolute;
-        left: 73px;
-        top: 64px;
+        left: 39px;
+        top: 40px;
         color: #FFF;
         font-family: Roboto Slab;
         font-size: 28px;
@@ -2228,6 +2253,7 @@ img {
         line-height: 36px;
     }
 }
+
 /* =========================================================== */
 /* Блок ФИЛЬТР по КЕЙСАМ */
 /* =========================================================== */
@@ -3917,7 +3943,7 @@ p {
         background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 200%);
     }
      */
-   .request-background-m {
+    .request-background-m {
         position: relative;
         top: -103%;
         /* left: 0; */
@@ -3928,6 +3954,7 @@ p {
         z-index: 2;
         background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 200%);
     }
+
     /* .request-img-m {
         width: 100%;
         height: 100%;
@@ -3949,7 +3976,7 @@ p {
         /* width: 327px; */
         border-radius: 20px;
     }
- 
+
 
     .row-one-m {
         z-index: 2;
