@@ -1889,7 +1889,7 @@ img {
 
     }
 
-    input[type="text"]#username{
+    #username{
         position: relative;
         width: 250px;
         /* top: 63px; */
@@ -1906,7 +1906,7 @@ img {
         width: 300px;
         padding: 10px;
     }
-    
+
     .module-input {
         position: absolute;
         width: 250px;
