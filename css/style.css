@@ -928,10 +928,10 @@ img {
     }
 
     .owl-theme .owl-dots .owl-dot span {
-        width: 20px;
-        height: 3px;
-        margin: 1px 2px;
-        background: #E9E9E9;
+        width: 20px !important;
+        height: 3px !important;
+        margin: 1px 2px !important;
+        background: #E9E9E9 !important;
         display: block;
         -webkit-backface-visibility: visible;
         transition: opacity .2s ease;
@@ -943,8 +943,8 @@ img {
     }
 
     .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-        background: #C4A36D;
-        width: 70px;
+        background: #C4A36D !important;
+        width: 70px !important;
     }
 
     .owl-theme .owl-dots,.owl-theme .owl-nav {
