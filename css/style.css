@@ -1638,22 +1638,23 @@ img {
 }
 @media (max-width: 768px) {
     .program-container {
-        width: 1440px;
-        height: 880px;
+        width: 375px;
+        /* height: 880px; */
         background: #09312E;
         position: absolute;
-        top: 500px;
-        left: 50%;
+        /* top: 500px; */
+        /* left: 50%; */
         transform: translateX(-45%);
         z-index: 1000;
 
     }
 
     .container-close-button {
-        padding-top: 42px;
-        padding-right: 240px;
+        padding-top: 25px;
+        /* padding-right: 240px; */
         text-align: right;
         display: flex;
+        height: 0px;
     }
 
     #close_button {
@@ -1663,6 +1664,9 @@ img {
         /* Убираем рамки */
         margin-left: auto;
         display: block;
+        margin-right: 20px;
+        /* height: 20px; */
+        transform: scale(0.5);
     }
 
     #close_button svg line {
@@ -1688,7 +1692,7 @@ img {
     .program-title {
         color: #FFF;
         font-family: Roboto Slab;
-        font-size: 41px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 500;
         line-height: 36px;
@@ -1699,29 +1703,37 @@ img {
     }
 
     .settings-field {
-        display: grid;
-        width: 1115px;
-        height: 470px;
-        padding-top: 36px;
-        padding-left: 100px;
-
+        display: flex;
+        /* width: 1115px; */
+        /* height: 470px; */
+        padding-top: 5px;
+        padding-left: 25px;
+        flex-direction: column;
     }
 
     .modules-choose {
-        grid-column: 1;
+        /* grid-column: 1; */
         width: 370px;
-        height: 470px;
+        /* height: 470px; */
 
     }
 
+    #sett-title-choose-modules {
+        color: #C4A36D;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 43px;
+        margin-bottom: -25px;
+    }
     .sett-title {
         color: #C4A36D;
         font-family: Roboto Slab;
         font-size: 17px;
         font-style: normal;
         font-weight: 500;
-        line-height: 36px;
-        /* 211.765% */
+        line-height: 43px;
     }
 
     #sett-title-output,
@@ -1858,25 +1870,29 @@ img {
 
 
     .client-settings {
-        grid-column: 2;
+        /* grid-column: 2;
         width: 710px;
-        height: 470px;
+        height: 470px; */
         /* margin-left: 20px; */
+        margin-top: 20px;
     }
 
     .staff-top {
-        display: grid;
+        /* display: grid;
         width: 710px;
-        height: 174px;
+        height: 174px; */
         /* margin-left: 20px; */
     }
 
     .client-data {
-        grid-column: 1;
+        /* grid-column: 1; */
 
     }
 
     .module-input {
+        position: relative;
+        width: 250px;
+        /* top: 63px; */
         background-color: transparent;
         border: none;
         border-bottom: 1px solid white;
@@ -1887,7 +1903,7 @@ img {
         font-style: normal;
         font-weight: 700;
         line-height: 21px;
-        width: 320px;
+        width: 300px;
         padding: 10px;
     }
 
@@ -1991,8 +2007,8 @@ img {
 
 
     .program-data {
-        grid-column: 2;
-        margin-left: 40px;
+        /* grid-column: 2;
+        margin-left: 40px; */
     }
 
 
