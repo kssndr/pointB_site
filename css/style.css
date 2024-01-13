@@ -1727,10 +1727,19 @@ img {
         line-height: 43px;
         margin-bottom: -25px;
     }
+    #sett-title-summary-names {
+        color: #C4A36D;
+        font-family: Roboto Slab;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 43px;
+    }
+
     .sett-title {
         color: #C4A36D;
         font-family: Roboto Slab;
-        font-size: 17px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 500;
         line-height: 43px;
