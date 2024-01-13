@@ -2315,6 +2315,7 @@ img {
 /* =========================================================== */
 /* Блок ФИЛЬТР по КЕЙСАМ */
 /* =========================================================== */
+@media (min-width: 768px) {
 #spesial-head {
     max-width: 1179px;
     margin-top: 40px;
@@ -2405,10 +2406,11 @@ img {
     display: flex;
     flex-direction: column;
 }
-
+}
 /* =========================================================== */
 /* формат Кейса */
 /* =========================================================== */
+@media (min-width: 768px) {
 .c {
     min-height: 150px;
 }
@@ -2661,11 +2663,11 @@ img {
     right: 0;
     /* и к правому, если нужно */
 }
-
+}
 /* =========================================================== */
 /* Блок  O НАС  */
 /* =========================================================== */
-
+@media (min-width: 768px) {
 .aboutus-container {
     display: flex;
     justify-content: center;
@@ -2839,7 +2841,7 @@ img {
     border-radius: 20px;
     object-fit: cover;
 }
-
+}
 /* =========================================================== */
 /* анкета и запрос */
 /* =========================================================== */
@@ -3231,6 +3233,7 @@ img {
 /* =========================================================== */
 /* вопросы и ответы */
 /* =========================================================== */
+@media (min-width: 768px) {
 .faq {
     display: flex;
     justify-content: center;
@@ -3317,7 +3320,96 @@ img {
     padding-bottom: 20px;
     background: #EDF5F5;
 }
+}
 
+@media (max-width: 768px) {
+    .faq {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .faqContainer {
+        width: 1179px;
+        background: #fff;
+        margin-top: 30px;
+        border-bottom: 1px solid #D8DADF;
+    }
+    
+    .faq-question-container {
+        border-left: 1px solid #D8DADF;
+        border-right: 1px solid #D8DADF;
+        border-top: 1px solid #D8DADF;
+        border-bottom: none;
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+    }
+    
+    .faq-question {
+        color: #0D4C47;
+        font-family: Roboto Slab;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 53px;
+        /* 294.444% */
+        padding-left: 22px;
+        /* text-decoration: underline;
+        text-decoration-style: dotted; */
+    
+        appearance: auto;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: center;
+        align-items: flex-start;
+        cursor: default;
+        box-sizing: border-box;
+        background-color: transparent;
+        writing-mode: horizontal-tb !important;
+        margin: 0em;
+    
+        border-width: 0;
+        border-style: 0;
+        border-image: 0;
+    
+        cursor: pointer;
+    }
+    
+    .icon-container {
+        padding: 20px;
+        cursor: pointer;
+    }
+    
+    .icon-container svg {
+        transform: scale(2);
+    }
+    
+    .faq-answer {
+        border-left: 1px solid #D8DADF;
+        border-right: 1px solid #D8DADF;
+        border-top: none;
+        border-bottom: 1px solid #D8DADF;
+        color: #1D1D1D;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        /* 150% */
+        padding-left: 20px;
+        padding-bottom: 20px;
+        background: #EDF5F5;
+    }
+    }
 /* .social-links {
     display: flex;
 } */
