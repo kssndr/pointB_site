@@ -1120,522 +1120,1038 @@ img {
 /* =========================================================== */
 /* Блок конструирования программы */
 /* =========================================================== */
+@media (min-width: 768px) {
+    .program-container {
+        width: 1440px;
+        height: 880px;
+        background: #09312E;
+        position: absolute;
+        top: 500px;
+        left: 50%;
+        transform: translateX(-45%);
+        z-index: 1000;
 
-.program-container {
-    width: 1440px;
-    height: 880px;
-    background: #09312E;
-    position: absolute;
-    top: 500px;
-    left: 50%;
-    transform: translateX(-45%);
-    z-index: 1000;
+    }
 
-}
+    .container-close-button {
+        padding-top: 42px;
+        padding-right: 240px;
+        text-align: right;
+        display: flex;
+    }
 
-.container-close-button {
-    padding-top: 42px;
-    padding-right: 240px;
-    text-align: right;
-    display: flex;
-}
+    #close_button {
+        background: none;
+        /* Убираем фон */
+        border: none;
+        /* Убираем рамки */
+        margin-left: auto;
+        display: block;
+    }
 
-#close_button {
-    background: none;
-    /* Убираем фон */
-    border: none;
-    /* Убираем рамки */
-    margin-left: auto;
-    display: block;
-}
+    #close_button svg line {
+        width: 30px;
+        /* Устанавливаем ширину SVG (можно настроить) */
+        height: 30px;
+        /* Устанавливаем высоту SVG (можно настроить) */
+        stroke-width: 3
+    }
 
-#close_button svg line {
-    width: 30px;
-    /* Устанавливаем ширину SVG (можно настроить) */
-    height: 30px;
-    /* Устанавливаем высоту SVG (можно настроить) */
-    stroke-width: 3
-}
+    #close_button:active svg line {
+        stroke-width: 4;
+        /* Увеличиваем толщину линий SVG (этот параметр может не сработать, если в самом SVG не установлен атрибут stroke-width, либо SVG является растром) */
+    }
 
-#close_button:active svg line {
-    stroke-width: 4;
-    /* Увеличиваем толщину линий SVG (этот параметр может не сработать, если в самом SVG не установлен атрибут stroke-width, либо SVG является растром) */
-}
-
-.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-    /* Длительность 1 секунда */
-}
-
-
-.program-title {
-    color: #FFF;
-    font-family: Roboto Slab;
-    font-size: 41px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-    /* 87.805% */
-    padding-top: 100px;
-    padding-left: 100px;
-    display: flex;
-}
-
-.settings-field {
-    display: grid;
-    width: 1115px;
-    height: 470px;
-    padding-top: 36px;
-    padding-left: 100px;
-
-}
-
-.modules-choose {
-    grid-column: 1;
-    width: 370px;
-    height: 470px;
-
-}
-
-.sett-title {
-    color: #C4A36D;
-    font-family: Roboto Slab;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-    /* 211.765% */
-}
-
-#sett-title-output,
-#sett-title-output-r {
-    color: #C4A36D;
-    font-family: Roboto Slab;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-    /* 211.765% */
-    padding-top: 22px;
-    display: block;
-}
+    .fade-out {
+        opacity: 0;
+        transition: opacity 1s ease-out;
+        /* Длительность 1 секунда */
+    }
 
 
-/* .modules-checkbox {
+    .program-title {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 41px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 87.805% */
+        padding-top: 100px;
+        padding-left: 100px;
+        display: flex;
+    }
+
+    .settings-field {
+        display: grid;
+        width: 1115px;
+        height: 470px;
+        padding-top: 36px;
+        padding-left: 100px;
+
+    }
+
+    .modules-choose {
+        grid-column: 1;
+        width: 370px;
+        height: 470px;
+
+    }
+
+    .sett-title {
+        color: #C4A36D;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 211.765% */
+    }
+
+    #sett-title-output,
+    #sett-title-output-r {
+        color: #C4A36D;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 211.765% */
+        padding-top: 22px;
+        display: block;
+    }
+
+
+    /* .modules-checkbox {
 
 } */
 
-/* создание чек боксов с подсказаками */
+    /* создание чек боксов с подсказаками */
 
-.tooltip {
-    color: #1D1D1D;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 19px;
-    /* 158.333% */
-    visibility: hidden;
-    position: absolute;
-    background-color: #FFF;
-    padding: 5px;
-    white-space: pre-wrap;
-    z-index: 999;
-    /* Добавлено */
-    width: 300px;
-    bottom: 100%;
-    /* Смещение от нижнего края родительского элемента */
-    margin-bottom: 1px;
-    /* Небольшой отступ между кнопкой и подсказкой */
-    left: 10px;
-}
+    .tooltip {
+        color: #1D1D1D;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19px;
+        /* 158.333% */
+        visibility: hidden;
+        position: absolute;
+        background-color: #FFF;
+        padding: 5px;
+        white-space: pre-wrap;
+        z-index: 999;
+        /* Добавлено */
+        width: 300px;
+        bottom: 100%;
+        /* Смещение от нижнего края родительского элемента */
+        margin-bottom: 1px;
+        /* Небольшой отступ между кнопкой и подсказкой */
+        left: 10px;
+    }
 
-.tooltip::before {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    /* Положение стрелки (снизу tooltip) */
-    left: 10px;
-    /* Смещение стрелки влево */
-    border-width: 10px 5px 0 5px;
-    /* Толщина границ */
-    border-style: solid;
-    border-color: #FFF transparent transparent transparent;
-}
+    .tooltip::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        /* Положение стрелки (снизу tooltip) */
+        left: 10px;
+        /* Смещение стрелки влево */
+        border-width: 10px 5px 0 5px;
+        /* Толщина границ */
+        border-style: solid;
+        border-color: #FFF transparent transparent transparent;
+    }
 
-button-checkbox {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    color: inherit;
-    /* Добавьте эту строку, если хотите, чтобы цвет текста совпадал с окружающим текстом */
+    button-checkbox {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        color: inherit;
+        /* Добавьте эту строку, если хотите, чтобы цвет текста совпадал с окружающим текстом */
 
-}
+    }
 
-.checkbox-button {
-    background: none;
-    border: none;
-    color: #8F714D;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 21px;
-    /* 150% */
-    width: 350px;
-    vertical-align: middle;
-    text-align: start;
-    cursor: pointer;
+    .checkbox-button {
+        background: none;
+        border: none;
+        color: #8F714D;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        /* 150% */
+        width: 350px;
+        vertical-align: middle;
+        text-align: start;
+        cursor: pointer;
 
-}
+    }
 
-/* Стили для кнопки, когда чекбокс выбран */
-.custom-checkbox:checked~.button-container .checkbox-button {
-    color: #FFF;
-    /* Пример цвета, когда чекбокс выбран */
-}
+    /* Стили для кнопки, когда чекбокс выбран */
+    .custom-checkbox:checked~.button-container .checkbox-button {
+        color: #FFF;
+        /* Пример цвета, когда чекбокс выбран */
+    }
 
-/* Стиль для кастомного чекбокса */
-.custom-checkbox {
-    appearance: none;
-    background-color: #856746;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #856746;
-    cursor: pointer;
-    vertical-align: middle;
-    border-radius: 2px;
-}
+    /* Стиль для кастомного чекбокса */
+    .custom-checkbox {
+        appearance: none;
+        background-color: #856746;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #856746;
+        cursor: pointer;
+        vertical-align: middle;
+        border-radius: 2px;
+    }
 
-/* Стиль для отображения галочки внутри чекбокса */
-#custom-checkbox:checked {
-    border-radius: 2px;
-    background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
-    background-size: contain;
-    background-size: 80%;
-    border: 1px solid white;
-}
+    /* Стиль для отображения галочки внутри чекбокса */
+    #custom-checkbox:checked {
+        border-radius: 2px;
+        background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
+        background-size: contain;
+        background-size: 80%;
+        border: 1px solid white;
+    }
 
-#custom-checkbox:checked~.checkbox-label,
-#custom-checkbox-r:checked~.checkbox-label-r {
-    color: #FFF;
-}
-
-
-.button-container:hover .tooltip {
-    visibility: visible;
-    width: 300px;
-}
-
-.button-container {
-    position: relative;
-    display: inline-block;
-    width: 300px;
-    margin: 3px;
-}
+    #custom-checkbox:checked~.checkbox-label,
+    #custom-checkbox-r:checked~.checkbox-label-r {
+        color: #FFF;
+    }
 
 
+    .button-container:hover .tooltip {
+        visibility: visible;
+        width: 300px;
+    }
 
-.client-settings {
-    grid-column: 2;
-    width: 710px;
-    height: 470px;
-    /* margin-left: 20px; */
-}
-
-.staff-top {
-    display: grid;
-    width: 710px;
-    height: 174px;
-    /* margin-left: 20px; */
-}
-
-.client-data {
-    grid-column: 1;
-
-}
-
-.module-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 21px;
-    width: 320px;
-    padding: 10px;
-}
-
-.module-input:focus {
-    background-color: transparent;
-}
-
-.invalid {
-    border-bottom: 1px solid rgb(205, 6, 6);
-}
-
-
-.checkbox-container,
-.checkbox-container-r,
-.checkbox-container-a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #856746;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 21px;
-    /* 140% */
-}
-
-.checkbox-label,
-.checkbox-label-r,
-.checkbox-label-a {
-    margin-right: 20px;
-    cursor: pointer;
-    /* Изменение курсора на "руку" при наведении */
-}
-
-/* Стиль для кастомного чекбокса */
-.custom-checkbox,
-.custom-checkbox-r,
-.custom-checkbox-a {
-    appearance: none;
-    background-color: #856746;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #856746;
-    cursor: pointer;
-    vertical-align: middle;
-    border-radius: 2px;
-}
-
-/* Стиль для отображения галочки внутри чекбокса */
-.custom-checkbox:checked,
-.custom-checkbox-r:checked,
-.custom-checkbox-a:checked {
-    border-radius: 2px;
-    background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
-    background-size: contain;
-    background-size: 80%;
-    border: 1px solid white;
-}
-
-.custom-checkbox:checked~.checkbox-label,
-.custom-checkbox-r:checked~.checkbox-label-r,
-.custom-checkbox-a:checked~.checkbox-label-a {
-    color: #FFF;
-}
-
-
-/* Стиль для кастомного чекбокса для контакта */
-.custom-checkbox-contact,
-.custom-checkbox-contact-r,
-.custom-checkbox-contact-a {
-    appearance: none;
-    background-color: #856746;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #856746;
-    cursor: pointer;
-    vertical-align: middle;
-    border-radius: 2px;
-}
-
-/* Стиль для отображения галочки внутри чекбокса */
-.custom-checkbox-contact:checked,
-.custom-checkbox-contact-r:checked,
-.custom-checkbox-contact-a:checked {
-    border-radius: 2px;
-    background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
-    background-size: contain;
-    background-size: 80%;
-    border: 1px solid white;
-}
-
-.custom-checkbox-contact:checked~.checkbox-label,
-.custom-checkbox-contact-r:checked~.checkbox-label-r,
-.custom-checkbox-contact-a:checked~.checkbox-label-a {
-    color: #FFF;
-}
+    .button-container {
+        position: relative;
+        display: inline-block;
+        width: 300px;
+        margin: 3px;
+    }
 
 
 
-.program-data {
-    grid-column: 2;
-    margin-left: 40px;
-}
+    .client-settings {
+        grid-column: 2;
+        width: 710px;
+        height: 470px;
+        /* margin-left: 20px; */
+    }
+
+    .staff-top {
+        display: grid;
+        width: 710px;
+        height: 174px;
+        /* margin-left: 20px; */
+    }
+
+    .client-data {
+        grid-column: 1;
+
+    }
+
+    .module-input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 320px;
+        padding: 10px;
+    }
+
+    .module-input:focus {
+        background-color: transparent;
+    }
+
+    .invalid {
+        border-bottom: 1px solid rgb(205, 6, 6);
+    }
 
 
-select {
-    background-color: #09312E;
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 21px;
-    width: 320px;
-    padding: 10px;
-}
+    .checkbox-container,
+    .checkbox-container-r,
+    .checkbox-container-a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #856746;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        /* 140% */
+    }
 
-option {
-    padding: 10px;
-}
+    .checkbox-label,
+    .checkbox-label-r,
+    .checkbox-label-a {
+        margin-right: 20px;
+        cursor: pointer;
+        /* Изменение курсора на "руку" при наведении */
+    }
 
+    /* Стиль для кастомного чекбокса */
+    .custom-checkbox,
+    .custom-checkbox-r,
+    .custom-checkbox-a {
+        appearance: none;
+        background-color: #856746;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #856746;
+        cursor: pointer;
+        vertical-align: middle;
+        border-radius: 2px;
+    }
 
-.staff-bottom {
-    width: 710px;
-    height: 265px;
-}
+    /* Стиль для отображения галочки внутри чекбокса */
+    .custom-checkbox:checked,
+    .custom-checkbox-r:checked,
+    .custom-checkbox-a:checked {
+        border-radius: 2px;
+        background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
+        background-size: contain;
+        background-size: 80%;
+        border: 1px solid white;
+    }
 
-.summary_m {
-    display: grid;
-    height: 180px;
-
-}
-
-.summary_names {
-    grid-column: 1;
-    width: 210px;
-}
-
-.summary_data {
-    grid-column: 2;
-    display: flex;
-    width: 350px;
-    margin-right: 360px;
-    margin-left: 10px;
-    margin-top: 30px;
-    flex-direction: column;
-}
-
-#time-result {
-    background-color: #09312E;
-    border: none;
-
-    outline: none;
-    color: #FFF;
-    font-family: Roboto Slab;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
+    .custom-checkbox:checked~.checkbox-label,
+    .custom-checkbox-r:checked~.checkbox-label-r,
+    .custom-checkbox-a:checked~.checkbox-label-a {
+        color: #FFF;
+    }
 
 
+    /* Стиль для кастомного чекбокса для контакта */
+    .custom-checkbox-contact,
+    .custom-checkbox-contact-r,
+    .custom-checkbox-contact-a {
+        appearance: none;
+        background-color: #856746;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #856746;
+        cursor: pointer;
+        vertical-align: middle;
+        border-radius: 2px;
+    }
 
-}
+    /* Стиль для отображения галочки внутри чекбокса */
+    .custom-checkbox-contact:checked,
+    .custom-checkbox-contact-r:checked,
+    .custom-checkbox-contact-a:checked {
+        border-radius: 2px;
+        background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
+        background-size: contain;
+        background-size: 80%;
+        border: 1px solid white;
+    }
 
-#money-result {
-    background-color: #09312E;
-    border: none;
-    outline: none;
-    color: #FFF;
-    text-align: right;
-    font-family: Roboto Slab;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 31px;
-    /* 140.909% */
-    margin-top: 4px;
+    .custom-checkbox-contact:checked~.checkbox-label,
+    .custom-checkbox-contact-r:checked~.checkbox-label-r,
+    .custom-checkbox-contact-a:checked~.checkbox-label-a {
+        color: #FFF;
+    }
 
-}
 
-.money {
-    display: flex;
-    margin-top: 28px;
-}
 
-#currency {
-    background-color: #09312E;
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 22px;
-    font-style: normal;
-    line-height: 21px;
-    width: 48px;
-    font-size: 22px;
-    font-weight: 500;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left: 0px;
-    border-left-width: 10px;
-    margin-left: 10px;
-    height: 40px;
-}
+    .program-data {
+        grid-column: 2;
+        margin-left: 40px;
+    }
 
-/* .request {
+
+    select {
+        background-color: #09312E;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 320px;
+        padding: 10px;
+    }
+
+    option {
+        padding: 10px;
+    }
+
+
+    .staff-bottom {
+        width: 710px;
+        height: 265px;
+    }
+
+    .summary_m {
+        display: grid;
+        height: 180px;
+
+    }
+
+    .summary_names {
+        grid-column: 1;
+        width: 210px;
+    }
+
+    .summary_data {
+        grid-column: 2;
+        display: flex;
+        width: 350px;
+        margin-right: 360px;
+        margin-left: 10px;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+    #time-result {
+        background-color: #09312E;
+        border: none;
+
+        outline: none;
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+
+
+
+    }
+
+    #money-result {
+        background-color: #09312E;
+        border: none;
+        outline: none;
+        color: #FFF;
+        text-align: right;
+        font-family: Roboto Slab;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 31px;
+        /* 140.909% */
+        margin-top: 4px;
+
+    }
+
+    .money {
+        display: flex;
+        margin-top: 28px;
+    }
+
+    #currency {
+        background-color: #09312E;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 22px;
+        font-style: normal;
+        line-height: 21px;
+        width: 48px;
+        font-size: 22px;
+        font-weight: 500;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-left: 0px;
+        border-left-width: 10px;
+        margin-left: 10px;
+        height: 40px;
+    }
+
+    /* .request {
 } */
 
-#abou_oferta {
-    color: #B9B9B9;
-    margin-top: 30px;
-    display: flex;
+    #abou_oferta {
+        color: #B9B9B9;
+        margin-top: 30px;
+        display: flex;
 
 
+    }
+
+    .message-block {
+        background-image: url(/img/lists.png);
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        top: 600px;
+        left: 380px;
+        background-size: cover;
+        /* растягивает изображение на всю доступную область */
+        background-repeat: no-repeat;
+        /* изображение не будет повторяться */
+        background-position: center;
+        /* центрирует изображение */
+
+    }
+
+    .message-block-background {
+        background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 100%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        border-radius: 20px;
+
+
+    }
+
+    .message-title {
+        position: absolute;
+        left: 73px;
+        top: 64px;
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+    }
 }
+@media (max-width: 768px) {
+    .program-container {
+        width: 1440px;
+        height: 880px;
+        background: #09312E;
+        position: absolute;
+        top: 500px;
+        left: 50%;
+        transform: translateX(-45%);
+        z-index: 1000;
 
-.message-block {
-    background-image: url(/img/lists.png);
-    position: absolute;
-    width: 500px;
-    height: 200px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    top: 600px;
-    left: 380px;
-    background-size: cover;
-    /* растягивает изображение на всю доступную область */
-    background-repeat: no-repeat;
-    /* изображение не будет повторяться */
-    background-position: center;
-    /* центрирует изображение */
+    }
 
+    .container-close-button {
+        padding-top: 42px;
+        padding-right: 240px;
+        text-align: right;
+        display: flex;
+    }
+
+    #close_button {
+        background: none;
+        /* Убираем фон */
+        border: none;
+        /* Убираем рамки */
+        margin-left: auto;
+        display: block;
+    }
+
+    #close_button svg line {
+        width: 30px;
+        /* Устанавливаем ширину SVG (можно настроить) */
+        height: 30px;
+        /* Устанавливаем высоту SVG (можно настроить) */
+        stroke-width: 3
+    }
+
+    #close_button:active svg line {
+        stroke-width: 4;
+        /* Увеличиваем толщину линий SVG (этот параметр может не сработать, если в самом SVG не установлен атрибут stroke-width, либо SVG является растром) */
+    }
+
+    .fade-out {
+        opacity: 0;
+        transition: opacity 1s ease-out;
+        /* Длительность 1 секунда */
+    }
+
+
+    .program-title {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 41px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 87.805% */
+        padding-top: 100px;
+        padding-left: 100px;
+        display: flex;
+    }
+
+    .settings-field {
+        display: grid;
+        width: 1115px;
+        height: 470px;
+        padding-top: 36px;
+        padding-left: 100px;
+
+    }
+
+    .modules-choose {
+        grid-column: 1;
+        width: 370px;
+        height: 470px;
+
+    }
+
+    .sett-title {
+        color: #C4A36D;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 211.765% */
+    }
+
+    #sett-title-output,
+    #sett-title-output-r {
+        color: #C4A36D;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 211.765% */
+        padding-top: 22px;
+        display: block;
+    }
+
+
+    /* .modules-checkbox {
+
+} */
+
+    /* создание чек боксов с подсказаками */
+
+    .tooltip {
+        color: #1D1D1D;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19px;
+        /* 158.333% */
+        visibility: hidden;
+        position: absolute;
+        background-color: #FFF;
+        padding: 5px;
+        white-space: pre-wrap;
+        z-index: 999;
+        /* Добавлено */
+        width: 300px;
+        bottom: 100%;
+        /* Смещение от нижнего края родительского элемента */
+        margin-bottom: 1px;
+        /* Небольшой отступ между кнопкой и подсказкой */
+        left: 10px;
+    }
+
+    .tooltip::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        /* Положение стрелки (снизу tooltip) */
+        left: 10px;
+        /* Смещение стрелки влево */
+        border-width: 10px 5px 0 5px;
+        /* Толщина границ */
+        border-style: solid;
+        border-color: #FFF transparent transparent transparent;
+    }
+
+    button-checkbox {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        color: inherit;
+        /* Добавьте эту строку, если хотите, чтобы цвет текста совпадал с окружающим текстом */
+
+    }
+
+    .checkbox-button {
+        background: none;
+        border: none;
+        color: #8F714D;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        /* 150% */
+        width: 350px;
+        vertical-align: middle;
+        text-align: start;
+        cursor: pointer;
+
+    }
+
+    /* Стили для кнопки, когда чекбокс выбран */
+    .custom-checkbox:checked~.button-container .checkbox-button {
+        color: #FFF;
+        /* Пример цвета, когда чекбокс выбран */
+    }
+
+    /* Стиль для кастомного чекбокса */
+    .custom-checkbox {
+        appearance: none;
+        background-color: #856746;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #856746;
+        cursor: pointer;
+        vertical-align: middle;
+        border-radius: 2px;
+    }
+
+    /* Стиль для отображения галочки внутри чекбокса */
+    #custom-checkbox:checked {
+        border-radius: 2px;
+        background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
+        background-size: contain;
+        background-size: 80%;
+        border: 1px solid white;
+    }
+
+    #custom-checkbox:checked~.checkbox-label,
+    #custom-checkbox-r:checked~.checkbox-label-r {
+        color: #FFF;
+    }
+
+
+    .button-container:hover .tooltip {
+        visibility: visible;
+        width: 300px;
+    }
+
+    .button-container {
+        position: relative;
+        display: inline-block;
+        width: 300px;
+        margin: 3px;
+    }
+
+
+
+    .client-settings {
+        grid-column: 2;
+        width: 710px;
+        height: 470px;
+        /* margin-left: 20px; */
+    }
+
+    .staff-top {
+        display: grid;
+        width: 710px;
+        height: 174px;
+        /* margin-left: 20px; */
+    }
+
+    .client-data {
+        grid-column: 1;
+
+    }
+
+    .module-input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 320px;
+        padding: 10px;
+    }
+
+    .module-input:focus {
+        background-color: transparent;
+    }
+
+    .invalid {
+        border-bottom: 1px solid rgb(205, 6, 6);
+    }
+
+
+    .checkbox-container,
+    .checkbox-container-r,
+    .checkbox-container-a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #856746;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        /* 140% */
+    }
+
+    .checkbox-label,
+    .checkbox-label-r,
+    .checkbox-label-a {
+        margin-right: 20px;
+        cursor: pointer;
+        /* Изменение курсора на "руку" при наведении */
+    }
+
+    /* Стиль для кастомного чекбокса */
+    .custom-checkbox,
+    .custom-checkbox-r,
+    .custom-checkbox-a {
+        appearance: none;
+        background-color: #856746;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #856746;
+        cursor: pointer;
+        vertical-align: middle;
+        border-radius: 2px;
+    }
+
+    /* Стиль для отображения галочки внутри чекбокса */
+    .custom-checkbox:checked,
+    .custom-checkbox-r:checked,
+    .custom-checkbox-a:checked {
+        border-radius: 2px;
+        background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
+        background-size: contain;
+        background-size: 80%;
+        border: 1px solid white;
+    }
+
+    .custom-checkbox:checked~.checkbox-label,
+    .custom-checkbox-r:checked~.checkbox-label-r,
+    .custom-checkbox-a:checked~.checkbox-label-a {
+        color: #FFF;
+    }
+
+
+    /* Стиль для кастомного чекбокса для контакта */
+    .custom-checkbox-contact,
+    .custom-checkbox-contact-r,
+    .custom-checkbox-contact-a {
+        appearance: none;
+        background-color: #856746;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #856746;
+        cursor: pointer;
+        vertical-align: middle;
+        border-radius: 2px;
+    }
+
+    /* Стиль для отображения галочки внутри чекбокса */
+    .custom-checkbox-contact:checked,
+    .custom-checkbox-contact-r:checked,
+    .custom-checkbox-contact-a:checked {
+        border-radius: 2px;
+        background: #FFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M11.4415 0.75365C11.8348 0.342669 12.4913 0.342103 12.8853 0.752404L13.086 0.961421C13.4572 1.34793 13.4577 1.95831 13.0872 2.34546L6.51094 9.21735C6.11764 9.62833 5.4612 9.62889 5.06719 9.21859L4.86647 9.00958C4.49531 8.62307 4.49478 8.01269 4.86527 7.62554L11.4415 0.75365Z' fill='%23391F18'/%3E%3Cpath d='M0.666448 4.71332C0.293913 4.32813 0.291215 3.71776 0.660331 3.32929L0.893598 3.0838C1.28543 2.67142 1.94188 2.66852 2.33734 3.07742L6.72518 7.61427C7.09772 7.99946 7.10041 8.60983 6.7313 8.9983L6.49803 9.24379C6.10619 9.65617 5.44975 9.65907 5.05429 9.25017L0.666448 4.71332Z' fill='%23391F18'/%3E%3C/svg%3E") no-repeat center center;
+        background-size: contain;
+        background-size: 80%;
+        border: 1px solid white;
+    }
+
+    .custom-checkbox-contact:checked~.checkbox-label,
+    .custom-checkbox-contact-r:checked~.checkbox-label-r,
+    .custom-checkbox-contact-a:checked~.checkbox-label-a {
+        color: #FFF;
+    }
+
+
+
+    .program-data {
+        grid-column: 2;
+        margin-left: 40px;
+    }
+
+
+    select {
+        background-color: #09312E;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 320px;
+        padding: 10px;
+    }
+
+    option {
+        padding: 10px;
+    }
+
+
+    .staff-bottom {
+        width: 710px;
+        height: 265px;
+    }
+
+    .summary_m {
+        display: grid;
+        height: 180px;
+
+    }
+
+    .summary_names {
+        grid-column: 1;
+        width: 210px;
+    }
+
+    .summary_data {
+        grid-column: 2;
+        display: flex;
+        width: 350px;
+        margin-right: 360px;
+        margin-left: 10px;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+    #time-result {
+        background-color: #09312E;
+        border: none;
+
+        outline: none;
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+
+
+
+    }
+
+    #money-result {
+        background-color: #09312E;
+        border: none;
+        outline: none;
+        color: #FFF;
+        text-align: right;
+        font-family: Roboto Slab;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 31px;
+        /* 140.909% */
+        margin-top: 4px;
+
+    }
+
+    .money {
+        display: flex;
+        margin-top: 28px;
+    }
+
+    #currency {
+        background-color: #09312E;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 22px;
+        font-style: normal;
+        line-height: 21px;
+        width: 48px;
+        font-size: 22px;
+        font-weight: 500;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-left: 0px;
+        border-left-width: 10px;
+        margin-left: 10px;
+        height: 40px;
+    }
+
+    /* .request {
+} */
+
+    #abou_oferta {
+        color: #B9B9B9;
+        margin-top: 30px;
+        display: flex;
+
+
+    }
+
+    .message-block {
+        background-image: url(/img/lists.png);
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        top: 600px;
+        left: 380px;
+        background-size: cover;
+        /* растягивает изображение на всю доступную область */
+        background-repeat: no-repeat;
+        /* изображение не будет повторяться */
+        background-position: center;
+        /* центрирует изображение */
+
+    }
+
+    .message-block-background {
+        background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 100%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        border-radius: 20px;
+
+
+    }
+
+    .message-title {
+        position: absolute;
+        left: 73px;
+        top: 64px;
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+    }
 }
-
-.message-block-background {
-    background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 100%);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    border-radius: 20px;
-
-
-}
-
-.message-title {
-    position: absolute;
-    left: 73px;
-    top: 64px;
-    color: #FFF;
-    font-family: Roboto Slab;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-}
-
 /* =========================================================== */
 /* Блок ФИЛЬТР по КЕЙСАМ */
 /* =========================================================== */
