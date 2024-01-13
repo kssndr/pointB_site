@@ -1923,6 +1923,23 @@ img {
         width: 300px;
         padding: 10px;
     }
+    #contacts{
+        position: relative;
+        width: 250px;
+        top: 0px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 300px;
+        padding: 10px;
+    }
 
     .module-input {
         position: absolute;
