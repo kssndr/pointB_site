@@ -927,7 +927,25 @@ img {
         margin: 15px;
     }
 
+    .owl-theme .owl-dots .owl-dot span {
+        width: 20px;
+        height: 3px;
+        margin: 1px 2px;
+        background: #E9E9E9;
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity .2s ease;
+        border-radius: 8px;
+    }
 
+    .owl-theme .owl-nav.disabled+.owl-dots {
+        /* margin-top: 10px; */
+    }
+
+    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+        background: #C4A36D;
+        width: 70px;
+    }
 
     .left-column {
 
@@ -1100,7 +1118,9 @@ img {
         line-height: 32px;
         margin-bottom: 10px;
     }
-
+    .h2 span {
+        display: block; /* Переместить первое слово на новую строку */
+    }
     .text-block {
         color: rgba(29, 29, 29, 0.50);
         text-align: center;
