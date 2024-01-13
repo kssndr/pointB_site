@@ -3896,7 +3896,7 @@ p {
     }
 
 
-    .request-background-m {
+    /* .request-background-m {
         position: relative;
         top: 0;
         left: 0;
@@ -3907,8 +3907,19 @@ p {
         z-index: 2;
         background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 200%);
     }
-
-    .request-img-m {
+     */
+   .request-background-m {
+        position: relative;
+        top: -103%;
+        /* left: 0; */
+        /* left: 45%; */
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        z-index: 2;
+        background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 200%);
+    }
+    /* .request-img-m {
         width: 100%;
         height: 100%;
         position: relative;
@@ -3917,7 +3928,19 @@ p {
         height: 440px;
         width: 327px;
         border-radius: 20px;
+    } */
+
+    .request-img-m {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        /* top: 55%; */
+        /* left: 45%; */
+        /* height: 440px; */
+        /* width: 327px; */
+        border-radius: 20px;
     }
+ 
 
     .row-one-m {
         z-index: 2;
