@@ -1522,11 +1522,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (username === '') {
         usernameInput.classList.add('invalid');
+        usernameInput.style.borderBottom = '2px solid red';
         isValid = false;
       }
 
       if (contacts === '') {
         contactsInput.classList.add('invalid');
+        contactsInput.style.borderBottom = '2px solid red';
         isValid = false;
       }
 
