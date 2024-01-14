@@ -3527,11 +3527,11 @@ img {
         z-index: 2;
         display: flex;
         position: absolute;
-        top: 173px;
+        top: 215px;
         left: 25px;
         width: 270px;
-        /* height: 50px; */
-        overflow: hidden;
+        height: 50px;
+        /* overflow: hidden; */
         /* gap: 60px; */
         flex-direction: column;
         flex-wrap: nowrap;
@@ -3545,11 +3545,12 @@ img {
         font-style: normal;
         font-weight: 500;
         line-height: 36px;
-        padding-top: 22px;
+        padding-top: 15px;
         display: block;
         /* height: 0px; */
         position: absolute;
-        top: 83px;
+        top: 45px;
+        
     }
 
     #username-input-main-request{
@@ -3573,7 +3574,7 @@ img {
     #contacts-input-main-request{
         position: absolute;
         /* width: 250px; */
-        top: 150px !important;
+        top: 93px !important;
         background-color: transparent;
         border: none;
         border-bottom: 1px solid white;
@@ -3584,7 +3585,7 @@ img {
         font-style: normal;
         font-weight: 700;
         line-height: 21px;
-        width: 250px;
+        width: 250px !important;
         padding: 10px;
         overflow: hidden;
     }
@@ -3593,7 +3594,57 @@ img {
         margin-top: 227px;
         margin-left: 0px;
     }
+
+    #request_small-main-request {
+        display: flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        top: 186px;
     }
+
+    #small-form-requrst-thank-you-message{
+        background-image: url(/img/lists.png);
+        position: absolute;
+        width: 335px !important;
+        height: 470px !important;
+        flex-shrink: 0;
+        border-radius: 20px;
+        top: 600px;
+        /* left: 380px; */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 5;
+    }
+    #message-title-main-request {
+        position: absolute;
+        left: 25px;
+        top: 165px;
+        width: 300px;
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+    }
+
+    }
+
 /* =========================================================== */
 /* Анкета */
 /* =========================================================== */
