@@ -1810,8 +1810,7 @@ img {
         line-height: 43px;
     }
 
-    #sett-title-output,
-    #sett-title-output-r {
+    #sett-title-output{
         color: #C4A36D;
         font-family: Roboto Slab;
         font-size: 17px;
@@ -3467,15 +3466,18 @@ img {
     
     .request-client-data {
         z-index: 2;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
     
     .row-one {
-        z-index: 2;
+        z-index: 3;
         display: flex;
         position: absolute;
         top: 90px;
         left: 25px;
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
         /* gap: 60px; */
         flex-direction: column;
     }
@@ -3497,7 +3499,7 @@ img {
         font-style: normal;
         font-weight: 500;
         line-height: 20px;
-        margin-top: 45px;
+        margin-top: 40px;
     }
     .reqest-first-block {
         grid-column: 1;
@@ -3523,17 +3525,37 @@ img {
 
     .row-two {
         z-index: 2;
-        display: grid;
+        display: flex;
         position: absolute;
-        top: 170px;
-        left: 55px;
-        grid-template-columns: 450px 320px;
-        gap: 60px;
+        top: 173px;
+        left: 25px;
+        width: 270px;
+        /* height: 50px; */
+        overflow: hidden;
+        /* gap: 60px; */
+        flex-direction: column;
+        flex-wrap: nowrap;
+    
     }
+
+    #sett-title-output-r {
+        color: #C4A36D;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        padding-top: 22px;
+        display: block;
+        /* height: 0px; */
+        position: absolute;
+        top: 83px;
+    }
+
     #username-input-main-request{
         position: absolute;
         /* width: 250px; */
-        top: 50px;
+        top: 45px;
         background-color: transparent;
         border: none;
         border-bottom: 1px solid white;
@@ -3551,7 +3573,7 @@ img {
     #contacts-input-main-request{
         position: absolute;
         /* width: 250px; */
-        top: 50px;
+        top: 150px !important;
         background-color: transparent;
         border: none;
         border-bottom: 1px solid white;
@@ -3568,8 +3590,8 @@ img {
     }
 
     #request_small {
-        margin-top: 60px;
-        margin-left: 85px;
+        margin-top: 227px;
+        margin-left: 0px;
     }
     }
 /* =========================================================== */
@@ -4798,8 +4820,8 @@ p {
     }
      */
     .request-background-m {
-        position: relative;
-        top: -103%;
+        position: absolute;
+        top: 0;
         /* left: 0; */
         /* left: 45%; */
         width: 100%;
@@ -4822,8 +4844,8 @@ p {
 
     .request-img-m {
         width: 100%;
-        height: 100%;
-        position: relative;
+        /* height: 100%; */
+        position: absolute;
         /* top: 55%; */
         /* left: 45%; */
         /* height: 440px; */
