@@ -3530,7 +3530,7 @@ img {
         grid-template-columns: 450px 320px;
         gap: 60px;
     }
-    .username-input-main-request{
+    #username-input-main-request{
         position: absolute;
         /* width: 250px; */
         top: 50px;
@@ -3548,7 +3548,7 @@ img {
         padding: 10px;
         overflow: hidden;
     }
-    .contacts-input-main-request{
+    #contacts-input-main-request{
         position: absolute;
         /* width: 250px; */
         top: 50px;
