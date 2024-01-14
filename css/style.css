@@ -2044,7 +2044,6 @@ img {
 
 
     .checkbox-container,
-    .checkbox-container-r,
     .checkbox-container-a {
         display: flex;
         align-items: center;
@@ -3334,7 +3333,7 @@ img {
     
     
     .anketa-title {
-
+        position: absolute;
         color: #FFF;
         font-family: Roboto Slab;
         font-size: 28px;
@@ -3453,7 +3452,7 @@ img {
         top: -100%;
     }
     
-    .request-text {
+    #request-text-main-form {
         color: #FFF;
         font-family: Roboto Slab;
         font-size: 28px;
@@ -3483,12 +3482,12 @@ img {
 
     #sett-title-request-name{
         color: #C4A36D;
-    font-family: Roboto Slab;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 79px;
-    margin-top: -5px;
+        font-family: Roboto Slab;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 66px;
+        /* margin-top: -5px;*/
     }
     
     #sett-title-request-type-connecting {
@@ -3497,8 +3496,8 @@ img {
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
-        line-height: 79px;
-        margin-top: -5px;
+        line-height: 20px;
+        margin-top: 45px;
     }
     .reqest-first-block {
         grid-column: 1;
@@ -3508,6 +3507,20 @@ img {
         grid-column: 2;
     }
     
+    .checkbox-container-r {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #856746;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+    }
+
     .row-two {
         z-index: 2;
         display: grid;
@@ -3517,7 +3530,43 @@ img {
         grid-template-columns: 450px 320px;
         gap: 60px;
     }
-    
+    .username-input-main-request{
+        position: absolute;
+        /* width: 250px; */
+        top: 50px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 250px;
+        padding: 10px;
+        overflow: hidden;
+    }
+    .contacts-input-main-request{
+        position: absolute;
+        /* width: 250px; */
+        top: 50px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 250px;
+        padding: 10px;
+        overflow: hidden;
+    }
+
     #request_small {
         margin-top: 60px;
         margin-left: 85px;
