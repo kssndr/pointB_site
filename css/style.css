@@ -3054,6 +3054,7 @@ img {
         border-radius: 20px;
         object-fit: cover;
         margin-top: 15px;
+        align-self: center;
     }
     
     #about-text-member {
@@ -3074,6 +3075,8 @@ img {
 /* =========================================================== */
 /* анкета и запрос */
 /* =========================================================== */
+
+@media (min-width: 768px) {
 .anketa-container {
     max-width: 1179px;
     background: #fff;
@@ -3286,11 +3289,225 @@ img {
     margin-top: 60px;
     margin-left: 85px;
 }
-
+}
+@media (max-width: 768px) {
+    .anketa-container {
+        max-width: 1179px;
+        background: #fff;
+        display: grid;
+        grid-template-columns: 325px 827px;
+        gap: 10px;
+        margin-top: 30px;
+    }
+    
+    .anketa {
+        grid-column: 1;
+        position: relative;
+        height: 325px;
+        width: 325px;
+        border-radius: 20px;
+    }
+    
+    .anketa-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        z-index: 1;
+        background: linear-gradient(315deg, #C4A36D 0%, rgb(1 1 1 / 10%) 400%);
+    }
+    
+    .anketa-img {
+        position: absolute;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    
+    .anketa-title {
+        position: absolute;
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px;
+        /* 107.143% */
+        top: 50px;
+        left: 55px;
+        z-index: 2;
+    }
+    
+    .anketa-text {
+        position: absolute;
+        color: #1D1D1D;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        /* 150% */
+        width: 220px;
+        top: 125px;
+        left: 55px;
+        z-index: 2;
+    }
+    
+    .anketa-request {
+        position: absolute;
+        bottom: 55px;
+        left: 55px;
+        display: block;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #FFF;
+        color: #937647;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        z-index: 2;
+    }
+    
+    .krug {
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 30px;
+        left: 240px;
+        flex-shrink: 0;
+        background: linear-gradient(180deg, #16524D 0%, #27AF9D 100%);
+        filter: drop-shadow(0px 4px 10px rgba(33, 108, 103, 0.30));
+        z-index: 3;
+    }
+    
+    .fifteen {
+        color: #FFF;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px;
+        /* 83.333% */
+        margin-top: 20px;
+    
+    }
+    
+    .questions {
+        color: #FFF;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px;
+        /* 214.286% */
+    
+    }
+    
+    .anketa-request:active {
+        background-color: var(--accent-color2);
+    }
+    
+    .request-form {
+        grid-column: 2;
+        position: relative;
+        height: 325px;
+        width: 847px;
+        border-radius: 20px;
+    }
+    
+    .request-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        z-index: 1;
+        background: linear-gradient(130deg, #09312E 0%, rgba(13, 76, 71, 0.00) 200%);
+    }
+    
+    .request-img {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .request-text {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 128.571% */
+        position: absolute;
+        top: 40px;
+        left: 55px;
+        z-index: 2;
+    }
+    
+    .request-client-data {
+        z-index: 2;
+    }
+    
+    .row-one {
+        z-index: 2;
+        display: grid;
+        position: absolute;
+        top: 90px;
+        left: 55px;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+    
+    .reqest-first-block {
+        grid-column: 1;
+    }
+    
+    .reqest-second-block {
+        grid-column: 2;
+    }
+    
+    .row-two {
+        z-index: 2;
+        display: grid;
+        position: absolute;
+        top: 170px;
+        left: 55px;
+        grid-template-columns: 450px 320px;
+        gap: 60px;
+    }
+    
+    #request_small {
+        margin-top: 60px;
+        margin-left: 85px;
+    }
+    }
 /* =========================================================== */
 /* Анкета */
 /* =========================================================== */
-
+@media (min-width: 768px) {
 .modal {
     display: none;
     position: fixed;
@@ -3458,7 +3675,177 @@ img {
     display: flex;
     flex-direction: row-reverse;
 }
+}
 
+@media (max-width: 768px) {
+    .modal {
+        display: none;
+        position: fixed;
+        /* Фиксированное положение */
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Ширина 100% */
+        height: 100%;
+        /* Высота 100% */
+        overflow: auto;
+        /* Добавить прокрутку при необходимости */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Черный фон с прозрачностью */
+        z-index: 3;
+    }
+    
+    .modal-content {
+        margin: auto;
+        padding: 20px;
+        width: 100%;
+        background-color: #b59553;
+        max-height: 90vh;
+        /* Ограничим высоту */
+        overflow: auto;
+        /* Позволим прокрутку */
+    }
+    
+    #anketaFormContainer {
+        overflow: auto;
+        height: auto;
+        background: #B59554;
+    }
+    
+    #questionForm {
+        padding-left: 150px;
+    }
+    
+    .icon-container-anketa {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 78vw;
+    }
+    
+    .close-anketa-button {
+        background-color: transparent;
+        width: 60px;
+        height: 60px;
+        border: none;
+    }
+    
+    .question {
+        width: 70vw;
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 211.765% */
+    }
+    
+    .options {
+        display: flex;
+        flex-direction: column;
+        color: #232323;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        /* 150% */
+    }
+    
+    .anketa-text-area {
+        width: 78vw;
+        border-radius: 2px;
+        border-color: #b59553;
+        background: #FFF;
+        color: #1D1D1D;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        /* 150% */
+    }
+    
+    .checkbox-anketa-text {
+        margin-left: 10px;
+        /* Отступ слева */
+    }
+    
+    .title-anketa {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 41px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 0px;
+        /* 87.805% */
+    }
+    
+    .anketa-row-one {
+        display: grid;
+        width: 78vw;
+        grid-column: 50% 300px 50%;
+        gap: 20px;
+        align-items: end;
+    
+    }
+    
+    .anketa-first-block {
+        grid-column: 1;
+    }
+    
+    .anketa-sett-title,
+    #sett-title-output-a {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        /* 211.765% */
+    }
+    
+    .anketa-second-block {
+        grid-column: 2;
+        width: 330px;
+    }
+    
+    .anketa-treth-block {
+        grid-column: 3;
+    }
+    
+    .anketa-row-two {
+        margin-top: 40px;
+        width: 78vw;
+    }
+    
+    .anketa-sent {
+        color: #9E8041;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 22px;
+        background: #FFF;
+        display: inline-flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: none;
+    }
+    
+    .anketa-sent:active {
+        background-color: var(--accent-color2);
+    }
+    
+    .anketa-button-block {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    }
 /* =========================================================== */
 /* вопросы и ответы */
 /* =========================================================== */
