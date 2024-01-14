@@ -1504,8 +1504,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const submitButton = document.getElementById('request_small');
 
   submitButton.addEventListener('click', function () {
-    const usernameInput = document.getElementById('username-input');
-    const contactsInput = document.getElementById('contacts-input');
+    const usernameInput = document.getElementById('username-input-main-request');
+    const contactsInput = document.getElementById('contacts-input-main-request');
     const contactsChoose = document.getElementById('sett-title-output-r');
 
     // Проверяем валидность данных
