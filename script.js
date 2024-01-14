@@ -1501,7 +1501,7 @@ document.querySelectorAll('.custom-checkbox-contact-r').forEach((checkbox) => {
 //Создание и отправка заявки на собеседование (малая форма)
 //========================================================================================
 document.addEventListener('DOMContentLoaded', function () {
-  const submitButton = document.getElementById('request_small');
+  const submitButton = document.getElementById('request_small-main-request');
 
   submitButton.addEventListener('click', function () {
     const usernameInput = document.getElementById('username-input-main-request');
