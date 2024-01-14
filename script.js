@@ -1535,7 +1535,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Выводим данные в консоль
-      //console.log(`Username: ${username}, Contacts: ${contacts}`);
+      console.log(`Username: ${username}, Contacts: ${contacts}`);
 
       usernameInput.value = '';
       contactsInput.value = '';
@@ -1546,7 +1546,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let typePost = "interviewRequestMF";
       let initiatingButtonId = "mainForm";
       let selectedValues = collectCheckedValues(); // Теперь это массив выбранных чекбоксов
-      //console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
+      console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
       sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
 
       document.querySelectorAll('.custom-checkbox-contact-r').forEach((checkbox) => {
@@ -1578,7 +1578,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     } else {
-      //console.log("Elements not found");
+      console.log("Elements not found");
     }
   });
 });
