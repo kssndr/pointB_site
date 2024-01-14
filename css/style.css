@@ -2949,8 +2949,8 @@ img {
     }
 
     .inn-photo {
-        width: 372.061px;
-        height: 543.608px;
+        /* width: 372.061px;
+        height: 543.608px; */
         flex-shrink: 0;
         border-radius: 30px;
         object-fit: cover;
@@ -2958,17 +2958,28 @@ img {
 
     #request_about {
         position: relative;
-        top: 1250px;
+        top: 1280px;
         align-self: center;
         /* margin-top: 30px; */
         /* left: 50%;*/
     }
 
     .right-block {
-        margin: 20px;
+        margin-top: -35px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
-    .name {}
+    .name {
+        color: #0D4D47;
+    font-family: Roboto Slab;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    display: inline-block;
+    text-align: center;
+    }
 
     .titul {
         color: #0D4D47;
@@ -3017,13 +3028,14 @@ img {
         flex-wrap: nowrap;
     }
 
-    .members {
+    .members {    
         display: flex;
         /* gap: 40px; */
-        margin-top: 20px;
+        margin-top: 100px;
         flex-direction: column;
-        margin: 20px;
+        margin-left: 20px;
         align-items: center;
+        margin-right: 20px;
     }
 
     .membre {
@@ -3044,7 +3056,7 @@ img {
         margin-top: 15px;
     }
     
-    .about-text-member {
+    #about-text-member {
         color: #1D1D1D;
         font-family: Inter;
         font-size: 14px;
