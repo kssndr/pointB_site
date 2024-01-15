@@ -1123,27 +1123,28 @@ function createCheckboxDropdown(data) {
       return;
     }
 
-    const dropdown = document.createElement('div');
-    dropdown.setAttribute('class', 'dropdown-checkbox');
+    const dropdownContainer = document.createElement('div');
+    dropdownContainer.classList.add('dropdown-checkbox-container');
 
     data.left_buttons.concat(data.right_buttons).forEach(button => {
-      const label = document.createElement('label');
-      label.setAttribute('class', 'dropdown-checkbox-label');
-
       const checkbox = document.createElement('input');
-      checkbox.setAttribute('type', 'checkbox');
-      checkbox.setAttribute('value', button.id);
-      checkbox.setAttribute('name', 'filterCheckbox');
+      checkbox.type = 'checkbox';
+      checkbox.id = 'chk_' + button.id;
+      checkbox.value = button.id;
 
-      const text = document.createTextNode(button.name);
+      const label = document.createElement('label');
+      label.htmlFor = 'chk_' + button.id;
+      label.textContent = button.name;
 
-      label.appendChild(checkbox);
-      label.appendChild(text);
-      dropdown.appendChild(label);
+      const checkboxContainer = document.createElement('div');
+      checkboxContainer.appendChild(checkbox);
+      checkboxContainer.appendChild(label);
+
+      dropdownContainer.appendChild(checkboxContainer);
     });
 
     filterContainer.innerHTML = '';
-    filterContainer.appendChild(dropdown);
+    filterContainer.appendChild(dropdownContainer);
   }
 }
 
