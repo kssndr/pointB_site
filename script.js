@@ -1098,9 +1098,7 @@ function findMaxHeightElementInCase(caseElement) {
 //========================================================================================
 //  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков MOBILE
 //========================================================================================
-function isMobile() {
-  return window.innerWidth <= 768; // предполагаем, что мобильные устройства имеют ширину экрана 768px или меньше
-}
+
 // Функция для загрузки JSON данных
 function loadJsonData() {
   fetch('pointb_texts.json')
@@ -1125,6 +1123,7 @@ function createCheckboxDropdown(data) {
 
     const dropdownContainer = document.createElement('div');
     dropdownContainer.classList.add('dropdown-checkbox-container');
+    dropdownContainer.style.display = 'none'; // Изначально скрыт
 
     data.left_buttons.concat(data.right_buttons).forEach(button => {
       const checkbox = document.createElement('input');
@@ -1143,14 +1142,29 @@ function createCheckboxDropdown(data) {
       dropdownContainer.appendChild(checkboxContainer);
     });
 
-    filterContainer.innerHTML = '';
     filterContainer.appendChild(dropdownContainer);
   }
 }
 
-document.addEventListener('DOMContentLoaded', loadJsonData);
-
-
+// Функция для создания кнопки управления видимостью выпадающего списка
+function createToggleButton() {
+  const filterContainer = document.getElementById('filter-mob');
+  if (!filterContainer) {
+  console.error('Элемент с ID "filter-mob" не найден.');
+  return;
+  }
+  
+  const toggleButton = document.createElement('button');
+  toggleButton.textContent = 'Показать фильтры';
+  toggleButton.onclick = function() {
+  const dropdown = filterContainer.querySelector('.dropdown-checkbox-container');
+  dropdown.style.display = (dropdown.style.display === 'none' ? 'block' : 'none');
+  };
+  
+  filterContainer.insertBefore(toggleButton, filterContainer.firstChild);
+  }
+  
+  document.addEventListener('DOMContentLoaded', loadJsonData);
 
 //========================================================================================
 //Создание и отправка анкеты
