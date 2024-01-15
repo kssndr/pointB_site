@@ -1105,7 +1105,7 @@ function isMobile() {
 
 // Функция для загрузки JSON данных
 function loadJsonData() {
-  fetch('potntb_text.json')
+  fetch('pointb_text.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
