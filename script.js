@@ -1111,7 +1111,7 @@ function loadJsonData() {
 function createDropdown(data) {
   // Проверка на мобильное устройство (здесь вам нужно использовать свою логику)
   if (isMobileDevice()) {
-      const filterContainer = document.getElementById('filter');
+      const filterContainer = document.getElementById('filter-mob');
 
       const selectElement = document.createElement('select');
       selectElement.setAttribute('id', 'mobileFilterDropdown');
