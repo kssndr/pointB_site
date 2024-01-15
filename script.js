@@ -1100,54 +1100,67 @@ function findMaxHeightElementInCase(caseElement) {
 //========================================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Проверка, соответствует ли экран мобильному устройству
+  console.log("DOM полностью загружен и разобран");
+  
   if (window.matchMedia("(max-width: 768px)").matches) {
-      // Обработчик клика на кнопку filter-mob для показа списка
-      document.getElementById('filter-mob').addEventListener('click', function() {
-          toggleVisibility('filter-list');
+    console.log("Экран соответствует мобильному устройству");
+    let filterButton = document.getElementById('filter-mob');
+    
+    if (filterButton) {
+      filterButton.addEventListener('click', function() {
+        console.log("Кнопка filter-mob нажата");
+        toggleVisibility('filter-list');
       });
 
-      // Загрузка данных из файла JSON
       fetch('pointb_texts.json')
-          .then(response => response.json())
-          .then(data => createCheckboxList(data.left_buttons))
-          .catch(error => console.error('Ошибка при загрузке JSON:', error));
-  }
+        .then(response => response.json())
+        .then(data => {
+          console.log("Данные из JSON загружены", data);
+          createCheckboxList(data.left_buttons);
+        })
+        .catch(error => console.error('Ошибка при загрузке JSON:', error));
+    } else {
+      console.error("Элемент с ID 'filter-mob' не найден");
+    }
+  } else {
+    console.log("Экран не соответствует мобильному устройству");
+}
 });
 
 function createCheckboxList(buttons) {
-  let listContainer = document.createElement('div');
-  listContainer.id = 'filter-list';
-  listContainer.style.display = 'none';
+let listContainer = document.createElement('div');
+listContainer.id = 'filter-list';
+listContainer.style.display = 'none';
 
-  // Создание чекбоксов
-  buttons.forEach(button => {
-      let checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.id = 'filter-' + button.id;
-      checkbox.value = button.name;
+buttons.forEach(button => {
+let checkbox = document.createElement('input');
+checkbox.type = 'checkbox';
+checkbox.id = 'filter-' + button.id;
+checkbox.value = button.name;
+let label = document.createElement('label');
+  label.htmlFor = 'filter-' + button.id;
+  label.textContent = button.name;
 
-      let label = document.createElement('label');
-      label.htmlFor = 'filter-' + button.id;
-      label.textContent = button.name;
+  listContainer.appendChild(checkbox);
+  listContainer.appendChild(label);
+  listContainer.appendChild(document.createElement('br'));
+});
 
-      listContainer.appendChild(checkbox);
-      listContainer.appendChild(label);
-      listContainer.appendChild(document.createElement('br'));
-  });
-
-  document.querySelector('.cases-container-head').appendChild(listContainer);
+document.querySelector('.cases-container-head').appendChild(listContainer);
 }
 
 function toggleVisibility(elementId) {
-  let element = document.getElementById(elementId);
-  if (element.style.display === 'none') {
-      element.style.display = 'block';
-  } else {
-      element.style.display = 'none';
-  }
+let element = document.getElementById(elementId);
+if (element) {
+if (element.style.display === 'none') {
+element.style.display = 'block';
+} else {
+element.style.display = 'none';
 }
-
+} else {
+console.error("Элемент с ID '" + elementId + "' не найден");
+}
+}
 
 //========================================================================================
 //Создание и отправка анкеты
