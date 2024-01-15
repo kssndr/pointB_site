@@ -1110,7 +1110,7 @@ function loadJsonData() {
       }
       return response.json();
     })
-    .then(data => createCheckboxes(data))
+    .then(data => createCheckboxDropdown(data)) // Убедитесь, что названия совпадают
     .catch(error => console.error('Ошибка при загрузке JSON:', error));
 }
 
