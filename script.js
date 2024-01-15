@@ -1098,10 +1098,6 @@ function findMaxHeightElementInCase(caseElement) {
 //========================================================================================
 //  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков MOBILE
 //========================================================================================
-// Примерная функция для определения мобильного устройства
-function isMobile() {
-  return window.innerWidth <= 800; // Примерный порог, можно настроить
-}
 
 // Функция для загрузки JSON данных
 function loadJsonData() {
@@ -1116,8 +1112,8 @@ function loadJsonData() {
     .catch(error => console.error('Ошибка при загрузке JSON:', error));
 }
 
-// Функция для создания чекбоксов
-function createCheckboxes(data) {
+// Функция для создания выпадающего списка с чекбоксами
+function createCheckboxDropdown(data) {
   if (isMobile()) {
     const filterContainer = document.getElementById('filter-mob');
     if (!filterContainer) {
@@ -1125,25 +1121,27 @@ function createCheckboxes(data) {
       return;
     }
 
-    // Очистка контейнера фильтра
-    filterContainer.innerHTML = '';
+    const dropdown = document.createElement('div');
+    dropdown.setAttribute('class', 'dropdown-checkbox');
 
     data.left_buttons.concat(data.right_buttons).forEach(button => {
-      // Создание чекбокса и лейбла для каждого элемента
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.id = 'checkbox-' + button.id;
-      checkbox.value = button.id;
-
       const label = document.createElement('label');
-      label.htmlFor = 'checkbox-' + button.id;
-      label.textContent = button.name;
+      label.setAttribute('class', 'dropdown-checkbox-label');
 
-      // Добавление чекбокса и лейбла в контейнер
-      filterContainer.appendChild(checkbox);
-      filterContainer.appendChild(label);
-      filterContainer.appendChild(document.createElement('br')); // Для переноса строки между чекбоксами
+      const checkbox = document.createElement('input');
+      checkbox.setAttribute('type', 'checkbox');
+      checkbox.setAttribute('value', button.id);
+      checkbox.setAttribute('name', 'filterCheckbox');
+
+      const text = document.createTextNode(button.name);
+
+      label.appendChild(checkbox);
+      label.appendChild(text);
+      dropdown.appendChild(label);
     });
+
+    filterContainer.innerHTML = '';
+    filterContainer.appendChild(dropdown);
   }
 }
 
