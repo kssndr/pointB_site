@@ -2412,6 +2412,99 @@ img {
     }
 }
 
+@media (max-width: 768px) {
+    #spesial-head {
+        max-width: 1179px;
+        margin-top: 40px;
+        background: #fff;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cases-container {
+        max-width: 1179px;
+        background: #fff;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 100px;
+
+    }
+
+    /* .title-cases {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-120%);
+    top: 30px;
+    width: 277px;
+    height: 71px;
+    color: #B9B9B9;
+    text-align: center;
+    font-family: Roboto Slab;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 67px;
+} */
+
+    .filter {
+        display: flex;
+        width: 1179px;
+        height: 40px;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3px;
+        z-index: 1;
+    }
+
+    .btn-filter {
+        border-radius: 22px;
+        border: 1px solid #D4D4D4;
+        background-color: #FFF;
+        display: flex;
+        width: auto;
+        padding: 9px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: #474747;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        cursor: pointer;
+    }
+
+    .btn-filter.active {
+        border-radius: 22px;
+        background: #0D4D47;
+        color: #FFF;
+        border: 1px solid#0D4D47;
+    }
+
+    .cases {
+        max-width: 1179px;
+        /* min-height: 200px; */
+        /* top: 100px; */
+        left: 2%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 /* =========================================================== */
 /* формат Кейса */
 /* =========================================================== */
@@ -3595,6 +3688,12 @@ img {
         margin-left: 0px;
     }
 
+    .request-second-block{
+        position: relative;
+        top: 61px;
+        left: 75px;
+    }
+
     #request_small-main-request {
         display: flex;
         padding: 12px 22px;
@@ -4047,7 +4146,7 @@ img {
         flex-direction: row-reverse;
     }
     #username-input-a {
-        position: absolute;
+        position: relative;
         width: 250px;
         top: 0px;
         background-color: transparent;

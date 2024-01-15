@@ -498,7 +498,7 @@ fetch('sent_reqest_to_email.php', {
 });
 
 //========================================================================================
-//  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков
+//  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков DESKTOP
 //========================================================================================
 
 // Добавьте следующую строку для подсчета количества созданных .case
@@ -1094,6 +1094,42 @@ function findMaxHeightElementInCase(caseElement) {
   });
   return { maxHeight, maxElement };
 }
+
+//========================================================================================
+//  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков MOBILE
+//========================================================================================
+
+// Функция для загрузки JSON данных
+function loadJsonData() {
+  fetch('potntb_text.json')
+      .then(response => response.json())
+      .then(data => createDropdown(data))
+      .catch(error => console.error('Ошибка при загрузке JSON:', error));
+}
+
+// Функция для создания выпадающего списка
+function createDropdown(data) {
+  // Проверка на мобильное устройство (здесь вам нужно использовать свою логику)
+  if (isMobileDevice()) {
+      const filterContainer = document.getElementById('filter');
+
+      const selectElement = document.createElement('select');
+      selectElement.setAttribute('id', 'mobileFilterDropdown');
+
+      // Создание опций для выпадающего списка из данных JSON
+      data.left_buttons.concat(data.right_buttons).forEach(button => {
+          const option = document.createElement('option');
+          option.value = button.id;
+          option.textContent = button.name;
+          selectElement.appendChild(option);
+      });
+
+      // Очистка контейнера фильтра и добавление выпадающего списка
+      filterContainer.innerHTML = '';
+      filterContainer.appendChild(selectElement);
+  }
+}
+
 
 //========================================================================================
 //Создание и отправка анкеты

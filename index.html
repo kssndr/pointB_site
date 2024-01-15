@@ -11,8 +11,13 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Point B</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -188,8 +193,10 @@
                                 <input type="text" id="notes" name="notes" class="module-input" style="width: 690px;">
                                 <div class="summary_m">
                                     <div class="summary_names">
-                                        <div class="sett-title" id="sett-title-summary-names" style="padding-top: 32px">Сроки прохождения</div>
-                                        <div class="sett-title" id="sett-title-summary-names" style="padding-top: 30px">Рассчетная стоимость</div>
+                                        <div class="sett-title" id="sett-title-summary-names" style="padding-top: 32px">
+                                            Сроки прохождения</div>
+                                        <div class="sett-title" id="sett-title-summary-names" style="padding-top: 30px">
+                                            Рассчетная стоимость</div>
                                     </div>
                                     <div class="summary_data">
                                         <output id="time-result">-</output>
@@ -221,10 +228,26 @@
 
             <div class=message-block id="thank-you-message" style="display: none;">
                 <div class="message-block-background"></div>
-                <div class="message-title" id="message-title-main-request">Спасибо за запрос!<br> Мы скоро свяжемся с вами.</div>
+                <div class="message-title" id="message-title-main-request">Спасибо за запрос!<br> Мы скоро свяжемся с
+                    вами.</div>
             </div>
             <!-- ================= Фильтр с Кейсами ================== -->
             <section class="non-responsive-block" id="block-cases">
+                <div class="c">
+                    <div class="cases-container-head" id="spesial-head">
+                        <div class="title">Кейсы клиентов:</div>
+                        <div class="filter" id="filter">
+                            <!-- Кнопки будут добавлены здесь -->
+                        </div>
+                    </div>
+                    <div class="cases-container">
+                        <div class="cases">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ================= Фильтр с Кейсами для Мобил================== -->
+            <section id="block-cases">
                 <div class="c">
                     <div class="cases-container-head" id="spesial-head">
                         <div class="title">Кейсы клиентов:</div>
@@ -354,7 +377,8 @@
                         <div class="membre">
                             <img src="img/alexander.png" id="membr-photo">
                             <div class="name" id="membre-name">Александр <br> Химченко</div>
-                            <div class="about-text" id="about-text-member">основатель, ментор, соавтор программ, бизнес-коуч</div>
+                            <div class="about-text" id="about-text-member">основатель, ментор, соавтор программ,
+                                бизнес-коуч</div>
                         </div>
                         <div class="membre">
                             <img src="img/alexander.png" id="membr-photo">
@@ -392,10 +416,12 @@
                             <div class="row-one">
                                 <div class="request-first-block">
                                     <div class="sett-title" id="sett-title-request-name">Ваше имя*</div>
-                                    <input type="text" id="username-input-main-request" name="username-input" class="module-input">
+                                    <input type="text" id="username-input-main-request" name="username-input"
+                                        class="module-input">
                                 </div>
                                 <div class="request-second-block">
-                                    <div class="sett-title" id="sett-title-request-type-connecting">Удобный вид связи*</div>
+                                    <div class="sett-title" id="sett-title-request-type-connecting">Удобный вид связи*
+                                    </div>
                                     <div class="checkbox-container-r">
                                         <div class="checkbox-container-r">
                                             <div class="checkbox-item-r">
@@ -421,8 +447,8 @@
                             <div class="row-two">
                                 <div class="request-first-block">
                                     <output id="sett-title-output-r">-</output>
-                                    <input type="text" id="contacts-input-main-request" name="contacts-input" class="module-input"
-                                        style="position: absolute;width: 500px;top: 60px;">
+                                    <input type="text" id="contacts-input-main-request" name="contacts-input"
+                                        class="module-input" style="position: absolute;width: 500px;top: 60px;">
                                 </div>
                                 <div class="request-second-block">
                                     <button class="request" id="request_small-main-request">Записаться</button>
@@ -457,7 +483,7 @@
                 </div>
             </section>
             <!-- ================= Кому уже помогли ================== -->
-            <section  id="our_clients" style="display: block;">
+            <section id="our_clients" style="display: block;">
                 <div class="our_clients">
                     <div class="our_clients_title">Кому уже помогли:</div>
                     <div class="table-clints-first-row">
@@ -485,7 +511,7 @@
                 <!-- Весь ваш HTML-блок здесь -->
                 <div class="request-form">
                     <div class="request-background"></div>
-                    <img class="request-img" id="request-img-m"src="/img/lists.png" alt="request">
+                    <img class="request-img" id="request-img-m" src="/img/lists.png" alt="request">
                     <div class="request-text">Запишись на собеседование</div>
                     <div class="request-client-data">
                         <div class="row-one">
@@ -549,15 +575,15 @@
                         <p id="numbers"></p>
                         <p id="address"></p>
                         <p id="contacts_email"></p>
-                      </div>
+                    </div>
                 </div>
             </div>
 
             <div class="right-side-footer">
                 <div class="contact-footer">
                     <div class="footer-text">Напишите нам:</div>
-                    <a href="https://www.instagram.com/pointa.pointb?igsh=OGQ5ZDc2ODk2ZA==" target="_blank"><img class="ss-image"
-                        src="img/Instagram.svg" style="margin-left: 50px;"></a>
+                    <a href="https://www.instagram.com/pointa.pointb?igsh=OGQ5ZDc2ODk2ZA==" target="_blank"><img
+                            class="ss-image" src="img/Instagram.svg" style="margin-left: 50px;"></a>
                     <a href="https://wa.me/message/BQTJTTAUQ2UEL1" target="_blank"><img class="ss-image"
                             src="img/button_wsap.svg"></a>
                     <a href="https://t.me/InnRomanov" target="_blank"><img class="ss-image"
@@ -570,8 +596,12 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 <script src="script.js"></script>
 
