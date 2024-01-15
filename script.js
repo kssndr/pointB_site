@@ -1112,12 +1112,12 @@ function loadJsonData() {
       }
       return response.json();
     })
-    .then(data => createDropdown(data))
+    .then(data => createCheckboxes(data))
     .catch(error => console.error('Ошибка при загрузке JSON:', error));
 }
 
-// Функция для создания выпадающего списка
-function createDropdown(data) {
+// Функция для создания чекбоксов
+function createCheckboxes(data) {
   if (isMobile()) {
     const filterContainer = document.getElementById('filter-mob');
     if (!filterContainer) {
@@ -1125,22 +1125,30 @@ function createDropdown(data) {
       return;
     }
 
-    const selectElement = document.createElement('select');
-    selectElement.setAttribute('id', 'mobileFilterDropdown');
+    // Очистка контейнера фильтра
+    filterContainer.innerHTML = '';
 
     data.left_buttons.concat(data.right_buttons).forEach(button => {
-      const option = document.createElement('option');
-      option.value = button.id;
-      option.textContent = button.name;
-      selectElement.appendChild(option);
-    });
+      // Создание чекбокса и лейбла для каждого элемента
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = 'checkbox-' + button.id;
+      checkbox.value = button.id;
 
-    filterContainer.innerHTML = '';
-    filterContainer.appendChild(selectElement);
+      const label = document.createElement('label');
+      label.htmlFor = 'checkbox-' + button.id;
+      label.textContent = button.name;
+
+      // Добавление чекбокса и лейбла в контейнер
+      filterContainer.appendChild(checkbox);
+      filterContainer.appendChild(label);
+      filterContainer.appendChild(document.createElement('br')); // Для переноса строки между чекбоксами
+    });
   }
 }
 
 document.addEventListener('DOMContentLoaded', loadJsonData);
+
 
 
 //========================================================================================
