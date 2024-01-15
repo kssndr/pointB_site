@@ -1108,7 +1108,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       // Загрузка данных из файла JSON
-      fetch('pointb_text.json')
+      fetch('pointb_texts.json')
           .then(response => response.json())
           .then(data => createCheckboxList(data.left_buttons))
           .catch(error => console.error('Ошибка при загрузке JSON:', error));
