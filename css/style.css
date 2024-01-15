@@ -3853,7 +3853,8 @@ img {
     }
     
     #questionForm {
-        /* padding-left: 150px; */
+        padding: 25px 25px 25px 25px;
+
     }
     
     .icon-container-anketa {
@@ -3887,12 +3888,10 @@ img {
     .title-anketa {
         color: #FFF;
         font-family: Roboto Slab;
-        font-size: 20px;
+        font-size: 17px;
         font-style: normal;
         font-weight: 500;
-        line-height: 0px;
-        /* margin-block: 10px; */
-        /* margin: 25px;*/
+        line-height: 24px;
     }
     
     .options {

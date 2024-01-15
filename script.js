@@ -1132,7 +1132,7 @@ function createQuestions(questionsData) {
 
   // Создаем заголовок формы
   const titleAnket = document.createElement('div');
-  titleAnket.className = "title-anketa";
+  titleAnket.className = "title-anketa-name";
   titleAnket.textContent = "Заполните анкету";
 
   // Создаем контейнер для SVG иконок
