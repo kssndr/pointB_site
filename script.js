@@ -1105,7 +1105,7 @@ function isMobile() {
 
 // Функция для загрузки JSON данных
 function loadJsonData() {
-  fetch('pointb_text.json')
+  fetch('pointb_texts.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
