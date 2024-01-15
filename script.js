@@ -1130,6 +1130,7 @@ function createDropdown(data) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', loadJsonData);
 
 //========================================================================================
 //Создание и отправка анкеты
