@@ -3956,7 +3956,7 @@ img {
         margin-left: 10px;
         /* Отступ слева */
     }
-    
+/*     
     .title-anketa {
         color: #FFF;
         font-family: Roboto Slab;
@@ -3964,8 +3964,8 @@ img {
         font-style: normal;
         font-weight: 500;
         line-height: 0px;
-        /* 87.805% */
-    }
+    } 
+    */
     
     .anketa-row-one {
         display: grid;
