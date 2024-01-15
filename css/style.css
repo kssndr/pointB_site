@@ -3750,6 +3750,7 @@ img {
     font-weight: 500;
     line-height: 0px;
     /* 87.805% */
+    margin-top: 20px;
 }
 .title-anketa-name{
     color: #FFF;
@@ -3882,10 +3883,12 @@ img {
     .title-anketa-name{
         color: #FFF;
         font-family: Roboto Slab;
-        font-size: 20px;
+        font-size: 23px;
         font-style: normal;
         font-weight: 500;
-        line-height: 20px; /* 100% */
+        line-height: 0px;
+        position: relative;
+        top: 20px;
     }
 
     .close-anketa-button {
@@ -3936,6 +3939,8 @@ img {
 
     .anketa-client-data{
         position: relative;
+        display: flex;
+        flex-direction: column;
     }
     
     .anketa-text-area {
@@ -3968,16 +3973,18 @@ img {
     */
     
     .anketa-row-one {
-        display: grid;
+        display: flex;
         width: 78vw;
-        grid-column: 50% 300px 50%;
-        gap: 20px;
-        align-items: end;
+        /* grid-column: 50% 300px 50%; */
+        /* gap: 20px; */
+        /* align-items: end; */
+        /* flex-wrap: nowrap; */
+        flex-direction: column;
     
     }
     
     .anketa-first-block {
-        grid-column: 1;
+        /* grid-column: 1; */
     }
     
     .anketa-sett-title,
@@ -3992,13 +3999,21 @@ img {
     }
     
     .anketa-second-block {
-        grid-column: 2;
-        width: 330px;
+      /* grid-column: 2; */
+      width: 330px;
+      display: flex;
+      flex-direction: column;
+      /* margin-left: 25px; */
+      position: relative;
+      top: 0px;
     }
     
     .anketa-treth-block {
-        grid-column: 3;
-    }
+           /* grid-column: 3; */
+    position: relative;
+    top: 0px;
+}
+    
     
     .anketa-row-two {
         margin-top: 40px;
@@ -4031,6 +4046,42 @@ img {
         display: flex;
         flex-direction: row-reverse;
     }
+    #username-input-a {
+        position: absolute;
+        width: 250px;
+        top: 0px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 250px;
+        padding: 10px;
+    }
+    #contacts-input-a {
+        position: relative;
+        width: 250px;
+        top: 0px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        width: 250px;
+        padding: 10px;
+    }
+
+
     }
 /* =========================================================== */
 /* вопросы и ответы */
@@ -4343,6 +4394,8 @@ img {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
+        margin-left: 10px;
+    margin-right: 5px;
     }
 
     .table-clints-second-row {
@@ -4351,6 +4404,8 @@ img {
         grid-template-columns: repeat(3, 1fr);
         /* flex-wrap: wrap; */
         gap: 5px;
+        margin-left: 10px;
+    margin-right: 5px;
 
     }
 
