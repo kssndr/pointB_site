@@ -3751,7 +3751,24 @@ img {
     line-height: 0px;
     /* 87.805% */
 }
-
+.title-anketa-name{
+    color: #FFF;
+    font-family: Roboto Slab;
+    font-size: 41px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px; /* 87.805% */
+}
+.title-anketa {
+    color: #FFF;
+    font-family: Roboto Slab;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    margin: 15px 0px 5px 0px;
+    /* width: 330px; */
+}
 .anketa-row-one {
     display: grid;
     width: 78vw;
@@ -3862,7 +3879,15 @@ img {
         flex-direction: row-reverse;
         width: 78vw; */
     }
-    
+    .title-anketa-name{
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 100% */
+    }
+
     .close-anketa-button {
         background-color: transparent;
         /* width: 30px; */
@@ -3892,6 +3917,8 @@ img {
         font-style: normal;
         font-weight: 500;
         line-height: 24px;
+        margin: 15px 0px 5px 0px;
+        width: 330px;
     }
     
     .options {
@@ -3903,6 +3930,7 @@ img {
         font-style: normal;
         font-weight: 700;
         line-height: 21px;
+        width: 330px;
         /* 150% */
     }
 
