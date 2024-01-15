@@ -1099,72 +1099,55 @@ function findMaxHeightElementInCase(caseElement) {
 //  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков MOBILE
 //========================================================================================
 
-// Функция для загрузки JSON данных
-function loadJsonData() {
-  fetch('pointb_texts.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => createCheckboxDropdown(data)) // Убедитесь, что названия совпадают
-    .catch(error => console.error('Ошибка при загрузке JSON:', error));
-}
+document.addEventListener('DOMContentLoaded', function() {
+  // Проверка, соответствует ли экран мобильному устройству
+  if (window.matchMedia("(max-width: 768px)").matches) {
+      // Обработчик клика на кнопку filter-mob для показа списка
+      document.getElementById('filter-mob').addEventListener('click', function() {
+          toggleVisibility('filter-list');
+      });
 
-// Функция для создания выпадающего списка с чекбоксами
-function createCheckboxDropdown(data) {
-  if (isMobile()) {
-    const filterContainer = document.getElementById('filter-mob');
-    if (!filterContainer) {
-      console.error('Элемент с ID "filter-mob" не найден.');
-      return;
-    }
+      // Загрузка данных из файла JSON
+      fetch('pointb_text.json')
+          .then(response => response.json())
+          .then(data => createCheckboxList(data.left_buttons))
+          .catch(error => console.error('Ошибка при загрузке JSON:', error));
+  }
+});
 
-    const dropdownContainer = document.createElement('div');
-    dropdownContainer.classList.add('dropdown-checkbox-container');
-    dropdownContainer.style.display = 'none'; // Изначально скрыт
+function createCheckboxList(buttons) {
+  let listContainer = document.createElement('div');
+  listContainer.id = 'filter-list';
+  listContainer.style.display = 'none';
 
-    data.left_buttons.concat(data.right_buttons).forEach(button => {
-      const checkbox = document.createElement('input');
+  // Создание чекбоксов
+  buttons.forEach(button => {
+      let checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
-      checkbox.id = 'chk_' + button.id;
-      checkbox.value = button.id;
+      checkbox.id = 'filter-' + button.id;
+      checkbox.value = button.name;
 
-      const label = document.createElement('label');
-      label.htmlFor = 'chk_' + button.id;
+      let label = document.createElement('label');
+      label.htmlFor = 'filter-' + button.id;
       label.textContent = button.name;
 
-      const checkboxContainer = document.createElement('div');
-      checkboxContainer.appendChild(checkbox);
-      checkboxContainer.appendChild(label);
+      listContainer.appendChild(checkbox);
+      listContainer.appendChild(label);
+      listContainer.appendChild(document.createElement('br'));
+  });
 
-      dropdownContainer.appendChild(checkboxContainer);
-    });
+  document.querySelector('.cases-container-head').appendChild(listContainer);
+}
 
-    filterContainer.appendChild(dropdownContainer);
+function toggleVisibility(elementId) {
+  let element = document.getElementById(elementId);
+  if (element.style.display === 'none') {
+      element.style.display = 'block';
+  } else {
+      element.style.display = 'none';
   }
 }
 
-// Функция для создания кнопки управления видимостью выпадающего списка
-function createToggleButton() {
-  const filterContainer = document.getElementById('filter-mob');
-  if (!filterContainer) {
-  console.error('Элемент с ID "filter-mob" не найден.');
-  return;
-  }
-  
-  const toggleButton = document.createElement('button');
-  toggleButton.textContent = 'Показать фильтры';
-  toggleButton.onclick = function() {
-  const dropdown = filterContainer.querySelector('.dropdown-checkbox-container');
-  dropdown.style.display = (dropdown.style.display === 'none' ? 'block' : 'none');
-  };
-  
-  filterContainer.insertBefore(toggleButton, filterContainer.firstChild);
-  }
-  
-  document.addEventListener('DOMContentLoaded', loadJsonData);
 
 //========================================================================================
 //Создание и отправка анкеты
