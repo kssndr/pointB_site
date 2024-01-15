@@ -58,16 +58,16 @@ async function fetchJsonData() {
       // Если экран мобильного устройства
       createCarousel(jsonData);
     } else {
-    jsonData.left_buttons.forEach(buttonData => {
-      const button = createButton(buttonData, leftButtonsContainer);
-      leftButtonsContainer.appendChild(button);
-    });
+      jsonData.left_buttons.forEach(buttonData => {
+        const button = createButton(buttonData, leftButtonsContainer);
+        leftButtonsContainer.appendChild(button);
+      });
 
-    jsonData.right_buttons.forEach(buttonData => {
-      const button = createButton(buttonData, rightButtonsContainer);
-      rightButtonsContainer.appendChild(button);
-    });
-  }
+      jsonData.right_buttons.forEach(buttonData => {
+        const button = createButton(buttonData, rightButtonsContainer);
+        rightButtonsContainer.appendChild(button);
+      });
+    }
   } catch (error) {
     console.error("Error loading JSON data:", error);
   }
@@ -135,8 +135,8 @@ function initializeCarousel() {
     loop: true,
     margin: 10,
     center: true,
-    items:1.2,
-   // nav: false, // Обычно на мобильных устройствах лучше скрыть навигацию
+    items: 1.2,
+    // nav: false, // Обычно на мобильных устройствах лучше скрыть навигацию
     responsive: {
       0: {
         items: 1 // На очень маленьких экранах показывать 1 элемент
@@ -414,34 +414,34 @@ document.addEventListener('DOMContentLoaded', function () {
       //console.log('Data to be sent:', formData);
 
       // Отправка данных на сервер
-fetch('sent_reqest_to_email.php', {
-  method: 'POST',
-  headers: {
-      'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(formData),
-})
-  .then(response => {
-      if (response.ok) {
-          // Показать благодарственное сообщение
-          programForm.style.display = 'none';
-          thankYouMessage.style.display = 'block';
+      fetch('sent_reqest_to_email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then(response => {
+          if (response.ok) {
+            // Показать благодарственное сообщение
+            programForm.style.display = 'none';
+            thankYouMessage.style.display = 'block';
 
-          setTimeout(function () {
+            setTimeout(function () {
               thankYouMessage.classList.add('fade-out');
-          }, 3000);
+            }, 3000);
 
-          setTimeout(function () {
+            setTimeout(function () {
               thankYouMessage.style.display = 'none';
               thankYouMessage.classList.remove('fade-out');
-          }, 4000);
-      } else {
-          console.error('Произошла ошибка при отправке данных.');
-      }
-  })
-  .catch(error => {
-      console.error('Ошибка при отправке данных:', error);
-  });
+            }, 4000);
+          } else {
+            console.error('Произошла ошибка при отправке данных.');
+          }
+        })
+        .catch(error => {
+          console.error('Ошибка при отправке данных:', error);
+        });
 
       programForm.style.display = 'none';
       thankYouMessage.style.display = 'block';
@@ -489,9 +489,9 @@ fetch('sent_reqest_to_email.php', {
 
       // Добавляем текст кнопки в массив, если кнопка найдена
       if (button) {
-          selectedValues.push(button.textContent);
+        selectedValues.push(button.textContent);
       }
-  });
+    });
 
     return selectedValues; // возвращаем массив с названиями
   }
@@ -1099,15 +1099,15 @@ function findMaxHeightElementInCase(caseElement) {
 //  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков MOBILE
 //========================================================================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   console.log("DOM полностью загружен и разобран");
-  
+
   if (window.matchMedia("(max-width: 768px)").matches) {
     console.log("Экран соответствует мобильному устройству");
     let filterButton = document.getElementById('filter-mob');
-    
+
     if (filterButton) {
-      filterButton.addEventListener('click', function() {
+      filterButton.addEventListener('click', function () {
         console.log("Кнопка filter-mob нажата");
         toggleVisibility('filter-list');
       });
@@ -1116,7 +1116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
           console.log("Данные из JSON загружены", data);
-          createCheckboxList(data.left_buttons);
+          createCheckboxList(data.left_buttons, data.right_buttons);
         })
         .catch(error => console.error('Ошибка при загрузке JSON:', error));
     } else {
@@ -1124,42 +1124,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   } else {
     console.log("Экран не соответствует мобильному устройству");
-}
+  }
 });
 
-function createCheckboxList(buttons) {
-let listContainer = document.createElement('div');
-listContainer.id = 'filter-list';
-listContainer.style.display = 'none';
+function createCheckboxList(leftButtons, rightButtons) {
+  let listContainer = document.createElement('div');
+  listContainer.id = 'filter-list';
+  listContainer.style.display = 'none';
 
-buttons.forEach(button => {
-let checkbox = document.createElement('input');
-checkbox.type = 'checkbox';
-checkbox.id = 'filter-' + button.id;
-checkbox.value = button.name;
-let label = document.createElement('label');
-  label.htmlFor = 'filter-' + button.id;
-  label.textContent = button.name;
+  // Функция для добавления чекбоксов
+  function addCheckboxes(buttons) {
+    buttons.forEach(button => {
+      let checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = 'filter-' + button.id;
+      checkbox.value = button.name;
 
-  listContainer.appendChild(checkbox);
-  listContainer.appendChild(label);
-  listContainer.appendChild(document.createElement('br'));
-});
+      let label = document.createElement('label');
+      label.htmlFor = 'filter-' + button.id;
+      label.textContent = button.name;
 
-document.querySelector('.cases-container-head').appendChild(listContainer);
+      listContainer.appendChild(checkbox);
+      listContainer.appendChild(label);
+      listContainer.appendChild(document.createElement('br'));
+    });
+  }
+
+  // Добавление чекбоксов для каждого массива кнопок
+  addCheckboxes(leftButtons);
+  addCheckboxes(rightButtons);
+
+  document.querySelector('.cases-container-head').appendChild(listContainer);
 }
+
 
 function toggleVisibility(elementId) {
-let element = document.getElementById(elementId);
-if (element) {
-if (element.style.display === 'none') {
-element.style.display = 'block';
-} else {
-element.style.display = 'none';
-}
-} else {
-console.error("Элемент с ID '" + elementId + "' не найден");
-}
+  let element = document.getElementById(elementId);
+  if (element) {
+    if (element.style.display === 'none') {
+      element.style.display = 'block';
+    } else {
+      element.style.display = 'none';
+    }
+  } else {
+    console.error("Элемент с ID '" + elementId + "' не найден");
+  }
 }
 
 //========================================================================================
@@ -1293,7 +1302,7 @@ function createQuestions(questionsData) {
       const textArea = document.createElement('textarea');
       textArea.className = "anketa-text-area";
       //textArea.name = `question_${index}`;
-  
+
       textArea.name = `${index + 1}. ${question.text}`; // Изменено здесь
       textArea.rows = 4;
       textArea.cols = 50;
@@ -1517,17 +1526,17 @@ function sendData() {
     }
   });
 
-   // Преобразование объекта данных в строку JSON
-   const selectedValues = JSON.stringify(dataObj);
+  // Преобразование объекта данных в строку JSON
+  const selectedValues = JSON.stringify(dataObj);
 
-   //console.log("Будут отправлены следующие данные:", selectedValues);
+  //console.log("Будут отправлены следующие данные:", selectedValues);
 
   let typePost = "anketa15";
   let username = "";
   let contacts = "";
   let buttonId = "";
 
-  sendInterviewRequestFormData(typePost, username, contacts, buttonId, selectedValues); 
+  sendInterviewRequestFormData(typePost, username, contacts, buttonId, selectedValues);
 
 
   return true; // Валидация и отправка прошли успешно
@@ -1617,7 +1626,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let initiatingButtonId = "mainForm";
       let selectedValues = collectCheckedValues(); // Теперь это массив выбранных чекбоксов
       console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
-      sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
+      sendInterviewRequestFormData(typePost, username, contacts, initiatingButtonId, selectedValues);
 
       document.querySelectorAll('.custom-checkbox-contact-r').forEach((checkbox) => {
         checkbox.checked = false;
@@ -1803,7 +1812,7 @@ function openRequestFormModal(buttonId) {
 }
 
 document.querySelectorAll('.open-request-form-button').forEach(button => {
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function () {
     openRequestFormModal(this.id);
   });
 });
@@ -1923,7 +1932,7 @@ function createRequestForm(initiatingButtonId) {
     // let buttonId = this.id;
 
     //console.log(`typePost: ${typePost}, Username: ${username}, Contacts: ${contacts}, buttonId: ${initiatingButtonId},selectedCheckboxes: ${selectedValues}`);
-    sendInterviewRequestFormData(typePost,username, contacts, initiatingButtonId, selectedValues); 
+    sendInterviewRequestFormData(typePost, username, contacts, initiatingButtonId, selectedValues);
 
     // Закрыть модальное окно
     document.querySelector('.request-form-modal').remove();
@@ -1973,42 +1982,42 @@ function createRequestForm(initiatingButtonId) {
 
 async function sendInterviewRequestFormData(typePost, username, contacts, buttonId, selectedValues) {
 
-    // Включаем новые данные в тело запроса
-    const requestBody = {
-      type: typePost,
-      username: username,
-      contacts: contacts,
-      buttonId: buttonId,
-      selectedCheckboxes: selectedValues  // Массив выбранных значений чекбоксов
-    };
+  // Включаем новые данные в тело запроса
+  const requestBody = {
+    type: typePost,
+    username: username,
+    contacts: contacts,
+    buttonId: buttonId,
+    selectedCheckboxes: selectedValues  // Массив выбранных значений чекбоксов
+  };
 
 
   try {
-      const response = await fetch('sent_reqest_to_email.php', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(requestBody),
-      });
+    const response = await fetch('sent_reqest_to_email.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
 
-      if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
-      }
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.statusText}`);
+    }
 
-      const data = await response.json();
-      
-      // Здесь можно добавить логику обработки успешного ответа, например:
-      //console.log('Data received:', data);
-      //alert('Ваши данные успешно отправлены.');
+    const data = await response.json();
+
+    // Здесь можно добавить логику обработки успешного ответа, например:
+    //console.log('Data received:', data);
+    //alert('Ваши данные успешно отправлены.');
 
   } catch (error) {
-      console.error('Error during fetch operation:', error);
-      
-      // Вывод сообщения об ошибке пользователю
-      alert('Произошла ошибка при отправке данных. Пожалуйста, попробуйте снова.');
+    console.error('Error during fetch operation:', error);
 
-      // Тут можно добавить логику отправки ошибки на сервер для анализа, если это необходимо
+    // Вывод сообщения об ошибке пользователю
+    alert('Произошла ошибка при отправке данных. Пожалуйста, попробуйте снова.');
+
+    // Тут можно добавить логику отправки ошибки на сервер для анализа, если это необходимо
   }
 }
 
@@ -2167,7 +2176,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
     }
   });
 
-  // Заменяем fetch на статические данные
+// Заменяем fetch на статические данные
 // const fakeUserData = { country: 'RUS' };
 
 // Заменяем fetch на Promise, который сразу возвращает фиктивные данные
