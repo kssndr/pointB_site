@@ -3837,14 +3837,13 @@ img {
     }
     
     .modal-content {
-        margin: auto;
-        padding: 20px;
+        margin: 0px;
+        padding: 0px;
         width: 100%;
         background-color: #b59553;
         max-height: 90vh;
-        /* Ограничим высоту */
         overflow: auto;
-        /* Позволим прокрутку */
+        position: relative;
     }
     
     #anketaFormContainer {
@@ -3854,20 +3853,25 @@ img {
     }
     
     #questionForm {
-        padding-left: 150px;
+        /* padding-left: 150px; */
     }
     
     .icon-container-anketa {
-        display: flex;
+        /* display: flex;
         flex-direction: row-reverse;
-        width: 78vw;
+        width: 78vw; */
     }
     
     .close-anketa-button {
         background-color: transparent;
-        width: 60px;
-        height: 60px;
+        /* width: 30px; */
+        /* height: 30px; */
         border: none;
+        display: flex;
+        position: relative;
+        top: -30px;
+        left: 285px;
+        scale: 0.7;
     }
     
     .question {
@@ -3880,6 +3884,16 @@ img {
         line-height: 36px;
         /* 211.765% */
     }
+    .title-anketa {
+        color: #FFF;
+        font-family: Roboto Slab;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 0px;
+        /* margin-block: 10px; */
+        /* margin: 25px;*/
+    }
     
     .options {
         display: flex;
@@ -3891,6 +3905,10 @@ img {
         font-weight: 700;
         line-height: 21px;
         /* 150% */
+    }
+
+    .anketa-client-data{
+        position: relative;
     }
     
     .anketa-text-area {

@@ -1189,7 +1189,8 @@ function createQuestions(questionsData) {
     const questionDiv = document.createElement('div');
     questionDiv.className = "question";
 
-    const questionTitle = document.createElement('h3');
+    const questionTitle = document.createElement('div'); //h3
+    questionTitle.className = "title-anketa";
     questionTitle.textContent = `${index + 1}. ${question.text}`;
     questionDiv.appendChild(questionTitle);
 
