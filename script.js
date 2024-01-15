@@ -1098,39 +1098,50 @@ function findMaxHeightElementInCase(caseElement) {
 //========================================================================================
 //  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков MOBILE
 //========================================================================================
+// Примерная функция для определения мобильного устройства
+function isMobile() {
+  return window.innerWidth <= 800; // Примерный порог, можно настроить
+}
 
 // Функция для загрузки JSON данных
 function loadJsonData() {
   fetch('potntb_text.json')
-      .then(response => response.json())
-      .then(data => createDropdown(data))
-      .catch(error => console.error('Ошибка при загрузке JSON:', error));
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => createDropdown(data))
+    .catch(error => console.error('Ошибка при загрузке JSON:', error));
 }
 
 // Функция для создания выпадающего списка
 function createDropdown(data) {
-  // Проверка на мобильное устройство (здесь вам нужно использовать свою логику)
   if (isMobile()) {
-      const filterContainer = document.getElementById('filter-mob');
+    const filterContainer = document.getElementById('filter-mob');
+    if (!filterContainer) {
+      console.error('Элемент с ID "filter-mob" не найден.');
+      return;
+    }
 
-      const selectElement = document.createElement('select');
-      selectElement.setAttribute('id', 'mobileFilterDropdown');
+    const selectElement = document.createElement('select');
+    selectElement.setAttribute('id', 'mobileFilterDropdown');
 
-      // Создание опций для выпадающего списка из данных JSON
-      data.left_buttons.concat(data.right_buttons).forEach(button => {
-          const option = document.createElement('option');
-          option.value = button.id;
-          option.textContent = button.name;
-          selectElement.appendChild(option);
-      });
+    data.left_buttons.concat(data.right_buttons).forEach(button => {
+      const option = document.createElement('option');
+      option.value = button.id;
+      option.textContent = button.name;
+      selectElement.appendChild(option);
+    });
 
-      // Очистка контейнера фильтра и добавление выпадающего списка
-      filterContainer.innerHTML = '';
-      filterContainer.appendChild(selectElement);
+    filterContainer.innerHTML = '';
+    filterContainer.appendChild(selectElement);
   }
 }
 
 document.addEventListener('DOMContentLoaded', loadJsonData);
+
 
 //========================================================================================
 //Создание и отправка анкеты
