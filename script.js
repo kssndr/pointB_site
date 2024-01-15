@@ -1110,7 +1110,7 @@ function loadJsonData() {
 // Функция для создания выпадающего списка
 function createDropdown(data) {
   // Проверка на мобильное устройство (здесь вам нужно использовать свою логику)
-  if (isMobileDevice()) {
+  if (isMobile()) {
       const filterContainer = document.getElementById('filter-mob');
 
       const selectElement = document.createElement('select');
