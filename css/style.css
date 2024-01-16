@@ -2428,10 +2428,13 @@ img {
 
     .filter-btns{
         display: flex;
-        
+        width: 340px;
+        justify-content: space-around;
+
     }
 
     .filter-mob {
+        display: flex;
         width: 260px;
         height: 30px;
         background-color: white;
@@ -2444,10 +2447,14 @@ img {
         /* left: -20px; */
         color: #313131;
         font-family: Inter;
-        font-size: 16px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 700;
-        line-height: 21px;
+        line-height: 26px;
+        padding-left: 0px;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 
     #filter-mob svg {
@@ -2459,7 +2466,10 @@ img {
             vertical-align: middle; /* Выравнивание по центру */
             margin-right: 5px; /* Отступ справа */
           }
-
+          .filter-mob-cancel {
+    border: none;
+    background-color: white;
+}
     #filter-list {
         display: block;
         z-index: 2;

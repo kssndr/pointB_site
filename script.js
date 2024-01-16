@@ -1125,24 +1125,21 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     console.log("Экран не соответствует мобильному устройству");
   }
-
-    // Добавление обработчика событий для кнопки "filter-mob-cancel"
-    let cancelButton = document.querySelector('.filter-mob-cancel');
-    if (cancelButton) {
-      cancelButton.addEventListener('click', function() {
-        // Сброс выбранных чекбоксов
-        document.querySelectorAll('#filter-list input[type="checkbox"]').forEach(checkbox => {
-          checkbox.checked = false;
-        });
-  
-        // Обновление выбранных фильтров и текста кнопки
-        updateSelectedFilters();
-      });
-    }
-
-
-
 });
+
+// Добавление обработчика событий для кнопки "filter-mob-cancel"
+let cancelButton = document.querySelector('.filter-mob-cancel');
+if (cancelButton) {
+  cancelButton.addEventListener('click', function () {
+    // Сброс выбранных чекбоксов
+    document.querySelectorAll('#filter-list input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+
+    // Обновление выбранных фильтров и текста кнопки
+    updateSelectedFilters();
+  });
+}
 
 function createCheckboxList(leftButtons, rightButtons) {
   let listContainer = document.createElement('div');
@@ -1207,9 +1204,14 @@ let svgIconFilter = `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="
                     </defs>
                     </svg>`;
 
+let svgIconArrow = `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none">
+                    <path d="M5 8L0.669873 0.499999L9.33013 0.5L5 8Z" fill="#313131"/>
+                    </svg>`;
+
+
 
 function updateSelectedFilters() {
-  selectedFiltersMob = []; 
+  selectedFiltersMob = [];
   document.querySelectorAll('#filter-list input[type="checkbox"]:checked').forEach(checkbox => {
     selectedFiltersMob.push(checkbox.value);
   });
@@ -1217,9 +1219,9 @@ function updateSelectedFilters() {
   let filterButton = document.getElementById('filter-mob');
   if (filterButton) {
     let buttonText = selectedFiltersMob.length > 0 ?
-                    `Выбрано модулей (${selectedFiltersMob.length})` :
-                    "Выберите модули";
-    filterButton.innerHTML = svgIconFilter + buttonText + " ▼";
+      `Выбрано модулей (${selectedFiltersMob.length})` :
+      "Выберите модули";
+    filterButton.innerHTML = svgIconFilter + buttonText + svgIconArrow;
   }
 }
 
