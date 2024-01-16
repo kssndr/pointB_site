@@ -1140,8 +1140,8 @@ function createCheckboxList(leftButtons, rightButtons) {
       checkbox.id = 'filter-' + button.id;
       checkbox.value = button.name;
 
-       // Добавляем обработчик события для обновления списка и текста кнопки
-    checkbox.addEventListener('change', updateSelectedFilters);
+      // Добавляем обработчик события для обновления списка и текста кнопки
+      checkbox.addEventListener('change', updateSelectedFilters);
 
       let label = document.createElement('label');
       label.htmlFor = 'filter-' + button.id;
@@ -1159,8 +1159,8 @@ function createCheckboxList(leftButtons, rightButtons) {
 
   document.querySelector('.cases-container-head-mob').appendChild(listContainer);
 
-   // Обновление списка и текста кнопки после создания чекбоксов
-   updateSelectedFilters();
+  // Обновление списка и текста кнопки после создания чекбоксов
+  updateSelectedFilters();
 }
 
 
@@ -1179,23 +1179,33 @@ function toggleVisibility(elementId) {
 
 // Глобальная переменная для хранения выбранных элементов
 let selectedFiltersMob = [];
+let svgIconFilter = `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <g clip-path="url(#clip0_223_10910)">
+                    <path d="M10.5625 22.75C10.4104 22.7505 10.2612 22.7083 10.1319 22.6281C10.0148 22.5549 9.91828 22.4531 9.85146 22.3323C9.78465 22.2115 9.74973 22.0756 9.75001 21.9375V14.1212L3.47751 7.15813C2.8062 6.41065 2.43568 5.44093 2.43751 4.43625V4.0625C2.43751 3.84701 2.52311 3.64035 2.67548 3.48798C2.82786 3.3356 3.03452 3.25 3.25001 3.25H22.75C22.9655 3.25 23.1722 3.3356 23.3245 3.48798C23.4769 3.64035 23.5625 3.84701 23.5625 4.0625V4.43625C23.5643 5.44093 23.1938 6.41065 22.5225 7.15813L16.25 14.1212V18.4925C16.2509 18.9462 16.1251 19.3912 15.8868 19.7774C15.6486 20.1635 15.3072 20.4755 14.9013 20.6781L10.9281 22.6606C10.8149 22.7186 10.6897 22.7492 10.5625 22.75ZM4.10313 4.875C4.18365 5.31965 4.38619 5.73317 4.68813 6.06937L11.1881 13.2681C11.3148 13.4207 11.3812 13.6143 11.375 13.8125V20.6212L14.1781 19.2237C14.3134 19.1556 14.4269 19.051 14.5058 18.9218C14.5848 18.7926 14.6261 18.6439 14.625 18.4925V13.8125C14.6255 13.6111 14.7008 13.4171 14.8363 13.2681L21.3363 6.06937C21.6441 5.73508 21.8523 5.32139 21.9375 4.875H4.10313Z" fill="#3E4145"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_223_10910">
+                    <rect width="26" height="26" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>`;
+
 
 function updateSelectedFilters() {
-  selectedFiltersMob = []; // Очищаем список
+  selectedFiltersMob = []; 
   document.querySelectorAll('#filter-list input[type="checkbox"]:checked').forEach(checkbox => {
-    selectedFiltersMob.push(checkbox.value); // Добавляем выбранные значения в список
+    selectedFiltersMob.push(checkbox.value);
   });
 
-  // Обновляем текст кнопки
   let filterButton = document.getElementById('filter-mob');
   if (filterButton) {
-    if (selectedFiltersMob.length > 0) {
-      filterButton.textContent = `Выбрано модулей (${selectedFiltersMob.length})`;
-    } else {
-      filterButton.textContent = "Выберите модули";
+    let buttonText = selectedFiltersMob.length > 0 ?
+                    `Выбрано модулей (${selectedFiltersMob.length})` :
+                    "Выберите модули";
+    filterButton.innerHTML = svgIconFilter + buttonText + " ▼";
+  }
 }
-}
-}
+
 //========================================================================================
 //Создание и отправка анкеты
 //========================================================================================
