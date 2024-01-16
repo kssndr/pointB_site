@@ -2413,7 +2413,9 @@ img {
 }
 
 @media (max-width: 768px) {
-
+#block-cases-mob{
+    display: block;
+}
     .cases-container-head-mob {
         max-width: 1179px;
         margin-top: 10px;
@@ -2477,6 +2479,11 @@ img {
         border: none;
         background-color: white;
     }
+
+    .filter-mob-cancel:active {
+        
+        color: #222222; /* Цвет текста при нажатии */
+      }
 
     #filter-list {
         display: block;
