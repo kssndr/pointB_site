@@ -1178,7 +1178,6 @@ function createCheckboxList(leftButtons, rightButtons) {
   updateSelectedFilters();
 }
 
-
 function toggleVisibility(elementId) {
   let element = document.getElementById(elementId);
   if (element) {
@@ -1297,12 +1296,12 @@ function displayClientInfo(caseItem) {
                 <div class="mob-arrow"></div>
                 <div class="mob-ab-text-cb">${aText}</div>
             </div>
-                <div class="mob-ab-title-cb">Точка Б</div>
-                <div class="mob-ab-text-cb">${bText}</div>
+                <div class="mob-reslt-title-cb">Точка Б</div>
+                <div class="mob-reslt-text-cb">${bText}</div>
         </div>
         <div class="mob-reslt-cb">
-            <div class="mob-ab-title-cb">Результат с превышением</div
-            <div class="mob-ab-text-cb">${bonusText}</div>
+            <div class="mob-reslt-title-cb">Результат с превышением</div
+            <div class="mob-reslt-text-cb">${bonusText}</div>
          </div>
         <div class="mob-bottom-cb">
             <button class="mob-case-block-bottom-prev"></button>
