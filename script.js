@@ -1245,19 +1245,34 @@ function updateCasesContainer() {
   container.innerHTML = ''; // Очищаем предыдущие результаты
 
   caseData.forEach(caseItem => {
-    // Проверяем, есть ли пересечение между тегами кейса и выбранными фильтрами
     if (caseItem.tags.some(tag => selectedFiltersMob.includes(tag))) {
-      // Находим блок с информацией о клиенте
       const clientInfoBlock = caseItem.blocks.find(block => block.summary?.find(item => item.client_name));
       if (clientInfoBlock) {
-        const clientName = clientInfoBlock.summary.find(item => item.client_name).client_name;
-        // Создаем элемент для отображения имени клиента и добавляем его в контейнер
-        let clientNameElement = document.createElement('div');
-        clientNameElement.innerHTML = clientName;
-        container.appendChild(clientNameElement);
-      }
-    }
-  });
+        const clientName = clientInfoBlock.summary.find(item => item.client_name).client_name
+;
+const clientPhoto = clientInfoBlock.summary.find(item => item.photo)?.photo;
+
+    // Создаем кнопку с фото и именем клиента
+    let clientButton = document.createElement('button');
+    clientButton.classList.add('client-button');
+    clientButton.innerHTML = `<img class="client-photo-mob" src="${clientPhoto}" alt="Фото клиента" /><div class="client-name-mob">${clientName}</div>`;
+
+    // Обработчик нажатия кнопки для отображения дополнительной информации
+    clientButton.addEventListener('click', () => {
+      displayClientInfo(caseItem);
+    });
+
+    container.appendChild(clientButton);
+  }
+}
+});
+}
+
+// Функция для отображения дополнительной информации о клиенте
+function displayClientInfo(caseItem) {
+// Здесь вы можете добавить логику для отображения дополнительной информации
+// Например, можете создать модальное окно или новый HTML-элемент с этой информацией
+console.log('Дополнительная информация:', caseItem);
 }
 
 // Вызываем функцию загрузки данных из JSON при загрузке документа
