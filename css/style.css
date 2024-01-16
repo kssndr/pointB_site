@@ -2557,16 +2557,15 @@ img {
 
 
     .modal-container {
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        padding: 20px;
+
     }
 
     .mob-case-block {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
+        position: absolute;
+        top: 1170px;
     }
 
     .mob-head-cb {
@@ -2651,10 +2650,31 @@ img {
     background-color: #EDF5F5;
     padding: 20px;
     }
-    .mob-reslt-title-cb {}
-    .mob-reslt-text-cb {}
+    .mob-reslt-title-cb {
+        color: #0D4D47;
+    font-family: Roboto Slab;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 67px;
+    }
+    .mob-reslt-text-cb {
+        color: #1D1D1D;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    }
 
-    .mob-bottom-cb {}
+    .mob-bottom-cb {
+        display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 20px;
+    justify-content: space-around;
+
+    }
 
     .mob-case-block-bottom-prev {}
 
