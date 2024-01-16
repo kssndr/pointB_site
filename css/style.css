@@ -2513,6 +2513,37 @@ img {
         border: 1px solid #0D4C47;
     }
 
+    .cases-containe-mob {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 10px;
+        /* top: 20px; */
+        position: relative;
+        margin: 20px;
+    }
+
+    .client-button {
+        background-color: white;
+        border: none;
+        padding: 0px;
+    }
+    
+    .client-photo-mob {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+    }
+
+    .client-name-mob {
+        color: #1D1D1D;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
 }
 
 /* =========================================================== */
