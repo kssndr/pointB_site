@@ -1224,7 +1224,44 @@ function updateSelectedFilters() {
       "Выберите модули";
     filterButton.innerHTML = svgIconFilter + buttonText + svgIconArrow;
   }
+  updateCasesContainer(); // Обновляем контейнер с кейсами
 }
+
+let caseData = []; // Глобальная переменная для хранения данных из case.json
+
+// Загрузка данных из case.json
+function loadCaseData() {
+  fetch('case.json')
+    .then(response => response.json())
+    .then(data => {
+      caseData = data; // Сохраняем данные в глобальную переменную
+      updateSelectedFilters(); // Обновляем фильтры после загрузки данных
+    })
+    .catch(error => console.error('Ошибка при загрузке case.json:', error));
+}
+
+function updateCasesContainer() {
+  let container = document.querySelector('.cases-containe-mob');
+  container.innerHTML = ''; // Очищаем предыдущие результаты
+
+  caseData.forEach(caseItem => {
+    // Проверяем, есть ли пересечение между тегами кейса и выбранными фильтрами
+    if (caseItem.tags.some(tag => selectedFiltersMob.includes(tag))) {
+      // Находим блок с информацией о клиенте
+      const clientInfoBlock = caseItem.blocks.find(block => block.summary?.find(item => item.client_name));
+      if (clientInfoBlock) {
+        const clientName = clientInfoBlock.summary.find(item => item.client_name).client_name;
+        // Создаем элемент для отображения имени клиента и добавляем его в контейнер
+        let clientNameElement = document.createElement('div');
+        clientNameElement.innerHTML = clientName;
+        container.appendChild(clientNameElement);
+      }
+    }
+  });
+}
+
+// Вызываем функцию загрузки данных из JSON при загрузке документа
+document.addEventListener('DOMContentLoaded', loadCaseData);
 
 //========================================================================================
 //Создание и отправка анкеты
