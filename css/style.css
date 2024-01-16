@@ -2523,9 +2523,17 @@ img {
     }
 
     .client-button {
+        display: flex;
         background-color: white;
         border: none;
         padding: 0px;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .client-button:active {
+        background-color: #EAEAEA;
     }
     
     .client-photo-mob {
@@ -2543,6 +2551,45 @@ img {
         font-weight: 500;
         line-height: 18px;
     }
+
+    .mob-case-block {
+        display: block;
+    }
+    .mob-head-cb {
+        display: block;
+    }
+    .mob-head-name-cansel {
+    }
+    .mob-head-client-name-cb {
+        
+    }
+    .mob-case-block-top-cancel {
+    }
+    .mob-head-title-cb {
+    }
+    .mob-head-text-cb {
+    }
+    .mob-ab-cb {
+    }
+    .mob-ab-title-cb {
+    }
+    .mob-a-text-arrow-cb {
+    }
+    .mob-arrow {
+    }
+    .mob-ab-text-cb {
+    }
+    .mob-reslt-cb {
+    }
+    .mob-bottom-cb {
+    }
+    .mob-case-block-bottom-prev {
+    }
+    .mob-case-block-bottom-cancel {
+    }
+    .mob-case-block-bottom-next {
+    }
+    
 
 }
 

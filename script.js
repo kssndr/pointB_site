@@ -1249,30 +1249,86 @@ function updateCasesContainer() {
       const clientInfoBlock = caseItem.blocks.find(block => block.summary?.find(item => item.client_name));
       if (clientInfoBlock) {
         const clientName = clientInfoBlock.summary.find(item => item.client_name).client_name
-;
-const clientPhoto = clientInfoBlock.summary.find(item => item.photo)?.photo;
+          ;
+        const clientPhoto = clientInfoBlock.summary.find(item => item.photo)?.photo;
 
-    // Создаем кнопку с фото и именем клиента
-    let clientButton = document.createElement('button');
-    clientButton.classList.add('client-button');
-    clientButton.innerHTML = `<img class="client-photo-mob" src="${clientPhoto}" alt="Фото клиента" /><div class="client-name-mob">${clientName}</div>`;
+        // Создаем кнопку с фото и именем клиента
+        let clientButton = document.createElement('button');
+        clientButton.classList.add('client-button');
+        clientButton.innerHTML = `<img class="client-photo-mob" src="${clientPhoto}" alt="Фото клиента" /><div class="client-name-mob">${clientName}</div>`;
 
-    // Обработчик нажатия кнопки для отображения дополнительной информации
-    clientButton.addEventListener('click', () => {
-      displayClientInfo(caseItem);
-    });
+        // Обработчик нажатия кнопки для отображения дополнительной информации
+        clientButton.addEventListener('click', () => {
+          displayClientInfo(caseItem);
+        });
 
-    container.appendChild(clientButton);
-  }
-}
-});
+        container.appendChild(clientButton);
+      }
+    }
+  });
 }
 
 // Функция для отображения дополнительной информации о клиенте
 function displayClientInfo(caseItem) {
-// Здесь вы можете добавить логику для отображения дополнительной информации
-// Например, можете создать модальное окно или новый HTML-элемент с этой информацией
-console.log('Дополнительная информация:', caseItem);
+  // Извлекаем данные из caseItem
+  const clientName = caseItem.blocks[0].summary.find(item => item.client_name)?.client_name || '';
+  const goalText = caseItem.blocks[0].summary.find(item => item.goal_text)?.goal_text || '';
+  const moduleText = caseItem.blocks[0].summary.find(item => item.mod_text)?.mod_text || '';
+  const aText = caseItem.blocks[1].point_a[0]?.a_text || '';
+  const bText = caseItem.blocks[2].point_b[0]?.b_text || '';
+  const bonusText = caseItem.blocks[3].bonus[0]?.bonus_text || '';
+
+  // Создаем и наполняем модальное окно
+  let modalHtml = `
+    <div class="mob-case-block">
+        <div class="mob-head-cb">
+            <div class="mob-head-name-cansel">
+                <div class="mob-head-client-name-cb">${clientName}</div>
+                <button class="mob-case-block-top-cancel" onclick="closeModal()"></button>
+            </div>
+            <div class="mob-head-title-cb">Запрос</div>
+            <div class="mob-head-text-cb">${goalText}</div>
+            <div class="mob-head-title-cb">Модули</div>
+            <div class="mob-head-text-cb">${moduleText}</div>
+        </div>
+        <div class="mob-ab-cb">
+            <div class="mob-ab-title-cb">Точка А</div>
+            <div class="mob-a-text-arrow-cb">
+                <div class="mob-arrow"></div>
+                <div class="mob-ab-text-cb">${aText}</div>
+            </div>
+                <div class="mob-ab-title-cb">Точка Б</div>
+                <div class="mob-ab-text-cb">${bText}</div>
+        </div>
+        <div class="mob-reslt-cb">
+            <div class="mob-ab-title-cb">Результат с превышением</div
+            <div class="mob-ab-text-cb">${bonusText}</div>
+         </div>
+        <div class="mob-bottom-cb">
+            <button class="mob-case-block-bottom-prev"></button>
+            <button class="mob-case-block-bottom-cancel" onclick="closeModal()">Закрыть</button>
+            <button class="mob-case-block-bottom-next"></button>
+        </div>
+      </div>`;
+  // Создаем контейнер для модального окна, если еще не создан
+  let modalContainer = document.getElementById('modal-container');
+  if (!modalContainer) {
+    modalContainer = document.createElement('div');
+    modalContainer.id = 'modal-container';
+    document.body.appendChild(modalContainer);
+  }
+
+  // Добавляем HTML модального окна в контейнер
+  modalContainer.innerHTML = modalHtml;
+  modalContainer.style.display = 'block'; // Показываем модальное окно
+}
+
+// Функция для закрытия модального окна
+function closeModal() {
+  let modalContainer = document.getElementById('modal-container');
+  if (modalContainer) {
+    modalContainer.style.display = 'none'; // Скрываем модальное окно
+  }
 }
 
 // Вызываем функцию загрузки данных из JSON при загрузке документа
