@@ -1125,6 +1125,23 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     console.log("Экран не соответствует мобильному устройству");
   }
+
+    // Добавление обработчика событий для кнопки "filter-mob-cancel"
+    let cancelButton = document.querySelector('.filter-mob-cancel');
+    if (cancelButton) {
+      cancelButton.addEventListener('click', function() {
+        // Сброс выбранных чекбоксов
+        document.querySelectorAll('#filter-list input[type="checkbox"]').forEach(checkbox => {
+          checkbox.checked = false;
+        });
+  
+        // Обновление выбранных фильтров и текста кнопки
+        updateSelectedFilters();
+      });
+    }
+
+
+
 });
 
 function createCheckboxList(leftButtons, rightButtons) {

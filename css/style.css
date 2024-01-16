@@ -2426,6 +2426,11 @@ img {
 
     }
 
+    .filter-btns{
+        display: flex;
+        
+    }
+
     .filter-mob {
         width: 260px;
         height: 30px;
@@ -2448,6 +2453,12 @@ img {
     #filter-mob svg {
         vertical-align: middle; /* Выравнивание по центру */
         margin-right: 8px; }
+    
+        .filter-mob-cancel svg {
+            fill: #000; /* Цвет иконки */
+            vertical-align: middle; /* Выравнивание по центру */
+            margin-right: 5px; /* Отступ справа */
+          }
 
     #filter-list {
         display: block;
