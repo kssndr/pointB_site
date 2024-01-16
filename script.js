@@ -1151,6 +1151,7 @@ function createCheckboxList(leftButtons, rightButtons) {
     buttons.forEach(button => {
       let checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
+      checkbox.className = 'checkbox-mob';
       checkbox.id = 'filter-' + button.id;
       checkbox.value = button.name;
 
