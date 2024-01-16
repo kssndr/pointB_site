@@ -1154,7 +1154,7 @@ function createCheckboxList(leftButtons, rightButtons) {
   addCheckboxes(leftButtons);
   addCheckboxes(rightButtons);
 
-  document.querySelector('.cases-container-head').appendChild(listContainer);
+  document.querySelector('.cases-container-head-mob').appendChild(listContainer);
 }
 
 
