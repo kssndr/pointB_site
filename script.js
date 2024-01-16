@@ -1140,6 +1140,9 @@ function createCheckboxList(leftButtons, rightButtons) {
       checkbox.id = 'filter-' + button.id;
       checkbox.value = button.name;
 
+       // Добавляем обработчик события для обновления списка и текста кнопки
+    checkbox.addEventListener('change', updateSelectedFilters);
+
       let label = document.createElement('label');
       label.htmlFor = 'filter-' + button.id;
       label.textContent = button.name;
@@ -1155,6 +1158,9 @@ function createCheckboxList(leftButtons, rightButtons) {
   addCheckboxes(rightButtons);
 
   document.querySelector('.cases-container-head-mob').appendChild(listContainer);
+
+   // Обновление списка и текста кнопки после создания чекбоксов
+   updateSelectedFilters();
 }
 
 
@@ -1171,6 +1177,25 @@ function toggleVisibility(elementId) {
   }
 }
 
+// Глобальная переменная для хранения выбранных элементов
+let selectedFiltersMob = [];
+
+function updateSelectedFilters() {
+  selectedFiltersMob = []; // Очищаем список
+  document.querySelectorAll('#filter-list input[type="checkbox"]:checked').forEach(checkbox => {
+    selectedFiltersMob.push(checkbox.value); // Добавляем выбранные значения в список
+  });
+
+  // Обновляем текст кнопки
+  let filterButton = document.getElementById('filter-mob');
+  if (filterButton) {
+    if (selectedFiltersMob.length > 0) {
+      filterButton.textContent = `Выбрано модулей (${selectedFiltersMob.length})`;
+    } else {
+      filterButton.textContent = "Выберите модули";
+}
+}
+}
 //========================================================================================
 //Создание и отправка анкеты
 //========================================================================================
