@@ -1279,6 +1279,7 @@ function displayClientInfo(caseItem) {
 
   // Создаем и наполняем модальное окно
   let modalHtml = `
+  <div class="modal-overlay"></div>
     <div class="mob-case-block">
         <div class="mob-head-cb">
             <div class="mob-head-name-cansel">
@@ -1309,6 +1310,8 @@ function displayClientInfo(caseItem) {
             <button class="mob-case-block-bottom-next"></button>
         </div>
       </div>`;
+
+
   // Создаем контейнер для модального окна, если еще не создан
   let modalContainer = document.getElementById('modal-container');
   if (!modalContainer) {
@@ -1320,6 +1323,7 @@ function displayClientInfo(caseItem) {
   // Добавляем HTML модального окна в контейнер
   modalContainer.innerHTML = modalHtml;
   modalContainer.style.display = 'block'; // Показываем модальное окно
+  document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
 }
 
 // Функция для закрытия модального окна
@@ -1327,6 +1331,7 @@ function closeModal() {
   let modalContainer = document.getElementById('modal-container');
   if (modalContainer) {
     modalContainer.style.display = 'none'; // Скрываем модальное окно
+    document.body.style.overflow = ''; // Восстанавливаем прокрутку фона
   }
 }
 
