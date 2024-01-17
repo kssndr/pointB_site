@@ -2636,7 +2636,7 @@ img {
 
     /* Стиль для кнопки при нажатии */
     .mob-case-block-top-cancel:active svg path {
-        fill: black;
+        transform: scale(1.1); /* Увеличиваем размер SVG на 10% */
         /* Цвет при нажатии */
     }
 
@@ -2759,8 +2759,7 @@ img {
         text-decoration-line: underline;
     }
     .mob-case-block-bottom-cancel {
-        color: black;
-        font-weight: 700;
+        transform: scale(1.1); /* Увеличиваем размер SVG на 10% */
     }
 
     .mob-case-block-bottom-next {
