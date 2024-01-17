@@ -2720,13 +2720,33 @@ img {
         list-style-type: none;
         padding-left: 0;
     }
-
-    .mob-reslt-text-cb li::before {
-        content: url('birds_gold.svg');
-        /* Путь к вашему SVG изображению */
-        padding-right: 10px;
-        /* Дополнительные стили для выравнивания и размера изображения, если нужно */
+    .mob-reslt-text-cb li {
+        position: relative; /* Для корректного позиционирования псевдоэлемента */
+        padding-left: 25px; /* Достаточно места для маркера */
     }
+    
+    .mob-reslt-text-cb li::before {
+        content: '';
+        position: absolute;
+        left: 0; /* Позиционирование относительно левого края элемента li */
+        top: 0; /* Позиционирование относительно верха элемента li */
+        width: 20px; /* Ширина изображения */
+        height: 20px; /* Высота изображения */
+        background-image: url('img/birds_gold.svg'); /* Путь к SVG */
+        background-size: contain; /* Масштабируем изображение по размеру */
+        background-repeat: no-repeat; /* Без повторения */
+    }
+    /* .mob-reslt-text-cb li::before {
+        content: url('img/birds_gold.svg'); */
+        /* Путь к вашему SVG изображению */
+        /* padding-right: 10px; */
+        /* Дополнительные стили для выравнивания и размера изображения, если нужно */
+        /* content: '\2714';
+        color: #E3AE56;
+        font-weight: bold;
+        padding-right: 10px;
+        font-size: larger; */
+    /* } */
 
     .mob-bottom-cb {
         display: flex;
