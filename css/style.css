@@ -2628,8 +2628,16 @@ img {
         background-color: transparent;
     }
 
-    .mob-case-block-top-cancel:active {
-        counter-reset: black;
+    /* Стиль для кнопки в обычном состоянии */
+    .mob-case-block-top-cancel svg path {
+        fill: #313131;
+        /* Текущий цвет */
+    }
+
+    /* Стиль для кнопки при нажатии */
+    .mob-case-block-top-cancel:active svg path {
+        fill: black;
+        /* Цвет при нажатии */
     }
 
     .mob-head-title-cb {
@@ -2675,13 +2683,12 @@ img {
 
     .mob-ab-text-cb {
         color: rgba(29, 29, 29, 0.50);
-
         font-family: Inter;
         font-size: 13px;
         font-style: normal;
         font-weight: 500;
         line-height: 21px;
-        /* 161.538% */
+        margin-left: 10px;
     }
 
     .mob-reslt-cb {
@@ -2709,6 +2716,18 @@ img {
         line-height: 21px;
     }
 
+    .mob-reslt-text-cb ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .mob-reslt-text-cb li::before {
+        content: url('img/birds_gold.svg');
+        /* Путь к вашему SVG изображению */
+        padding-right: 10px;
+        /* Дополнительные стили для выравнивания и размера изображения, если нужно */
+    }
+
     .mob-bottom-cb {
         display: flex;
         flex-direction: row;
@@ -2723,6 +2742,9 @@ img {
         border: none;
         background-color: transparent;
     }
+    .mob-case-block-bottom-prev:active svg {
+        transform: scale(1.1); /* Увеличиваем размер SVG на 10% */
+    }
 
     .mob-case-block-bottom-cancel {
         border: none;
@@ -2736,10 +2758,18 @@ img {
         line-height: 21px;
         text-decoration-line: underline;
     }
+    .mob-case-block-bottom-cancel {
+        color: black;
+        font-weight: 700;
+    }
 
     .mob-case-block-bottom-next {
         border: none;
         background-color: transparent;
+    }
+
+    .mob-case-block-bottom-next:active svg {
+        transform: scale(1.1); /* Увеличиваем размер SVG на 10% */
     }
 
 
