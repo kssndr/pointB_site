@@ -1302,7 +1302,18 @@ function displayClientInfo(caseItem) {
         <div class="mob-ab-cb">
             <div class="mob-ab-title-cb">Точка А</div>
             <div class="mob-a-text-arrow-cb">
-                <div class="mob-arrow"></div>
+                <div class="mob-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="176" viewBox="0 0 16 176" fill="none">
+                <path d="M7.2929 175.707C7.68343 176.098 8.31659 176.098 8.70711 175.707L15.0711 169.343C15.4616 168.953 15.4616 168.319 15.0711 167.929C14.6806 167.538 14.0474 167.538 13.6569 167.929L8.00001 173.586L2.34315 167.929C1.95263 167.538 1.31946 167.538 0.92894 167.929C0.538415 168.319 0.538415 168.953 0.92894 169.343L7.2929 175.707ZM7 4.37114e-08L7.00001 175L9.00001 175L9 -4.37114e-08L7 4.37114e-08Z" fill="url(#paint0_linear_223_12386)"/>
+                <defs>
+                <linearGradient id="paint0_linear_223_12386" x1="8.00001" y1="175" x2="8" y2="0" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0D4C47"/>
+                <stop offset="1" stop-color="white" stop-opacity="0"/>
+                </linearGradient>
+                </defs>
+                </svg>
+                                
+                </div>
                 <div class="mob-ab-text-cb">${aText}</div>
             </div>
             <div class="mob-reslt-title-cb">Точка Б</div>
