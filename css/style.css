@@ -2725,7 +2725,7 @@ img {
         padding-left: 25px; /* Достаточно места для маркера */
     }
     
-    .mob-reslt-text-cb li::before {
+    .mob-reslt-text-cb li {
         content: '';
         position: absolute;
         left: 0; /* Позиционирование относительно левого края элемента li */
