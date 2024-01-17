@@ -2584,7 +2584,7 @@ img {
         flex-direction: column;
         flex-wrap: nowrap;
         position: absolute;
-        top: 1170px;
+        /* top: 1170px; */
     }
 
     .mob-head-cb {
@@ -2607,6 +2607,15 @@ img {
         font-style: normal;
         font-weight: 500;
         line-height: 24px;
+    }
+    .mob-head-client-name-cb p {
+        color: #1D1D1D;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 150% */
+        text-align: start;
     }
 
     .mob-case-block-top-cancel {}

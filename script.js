@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ==============================================================================
-// Создание заявки для отправки по итогам работы клиента с калькулятором + отправка
+// Создание заявки для отправки по итогам работы клиента с калькулятором + отправкbа
 //==============================================================================
 document.addEventListener('DOMContentLoaded', function () {
   const requestProgramButton = document.getElementById('request_program');
@@ -1284,7 +1284,15 @@ function displayClientInfo(caseItem) {
         <div class="mob-head-cb">
             <div class="mob-head-name-cansel">
                 <div class="mob-head-client-name-cb">${clientName}</div>
-                <button class="mob-case-block-top-cancel" onclick="closeModal()"></button>
+                <button class="mob-case-block-top-cancel" onclick="closeModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                <g opacity="0.4">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1733 20.6946L9.34717 11.0091C9.05819 10.7277 9.05819 10.273 9.34717 9.99087L19.1733 0.305365C19.5904 -0.101788 20.2692 -0.101788 20.6871 0.305365C21.1043 0.712519 21.1043 1.37332 20.6871 1.78048L11.8525 10.5004L20.6871 19.2188C21.1043 19.6267 21.1043 20.2875 20.6871 20.6946C20.2692 21.1018 19.5904 21.1018 19.1733 20.6946Z" fill="#313131"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.82673 0.305369L11.6528 9.99088C11.9418 10.2723 11.9418 10.727 11.6528 11.0091L1.82673 20.6946C1.40955 21.1018 0.730804 21.1018 0.312886 20.6946C-0.104291 20.2875 -0.104291 19.6267 0.312886 19.2195L9.14754 10.4996L0.312888 1.78121C-0.104289 1.37333 -0.104289 0.712523 0.312888 0.305369C0.730806 -0.101785 1.40955 -0.101785 1.82673 0.305369Z" fill="#313131"/>
+                </g>
+              </svg>
+                
+                </button>
             </div>
             <div class="mob-head-title-cb">Запрос</div>
             <div class="mob-head-text-cb">${goalText}</div>
@@ -1305,9 +1313,30 @@ function displayClientInfo(caseItem) {
             <div class="mob-reslt-text-cb">${bonusText}</div>
         </div>
         <div class="mob-bottom-cb">
-            <button class="mob-case-block-bottom-prev"></button>
+            <button class="mob-case-block-bottom-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="30" viewBox="0 0 64 30" fill="none">
+            <path d="M0.585785 13.5858C-0.195259 14.3668 -0.195259 15.6332 0.585785 16.4142L13.3137 29.1421C14.0948 29.9232 15.3611 29.9232 16.1421 29.1421C16.9232 28.3611 16.9232 27.0948 16.1421 26.3137L4.82843 15L16.1421 3.68629C16.9232 2.90524 16.9232 1.63891 16.1421 0.85786C15.3611 0.0768114 14.0948 0.0768112 13.3137 0.85786L0.585785 13.5858ZM64 13L2 13L2 17L64 17L64 13Z" fill="url(#paint0_linear_223_12388)"/>
+            <defs>
+            <linearGradient id="paint0_linear_223_12388" x1="2" y1="15" x2="64" y2="15" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8E8E8E"/>
+            <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            </defs>
+            </svg>
+            
+            </button>
             <button class="mob-case-block-bottom-cancel" onclick="closeModal()">Закрыть</button>
-            <button class="mob-case-block-bottom-next"></button>
+            <button class="mob-case-block-bottom-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="30" viewBox="0 0 64 30" fill="none">
+              <path d="M63.4142 16.4142C64.1953 15.6332 64.1953 14.3668 63.4142 13.5858L50.6863 0.857869C49.9052 0.07682 48.6389 0.0768199 47.8579 0.857869C47.0768 1.63892 47.0768 2.90525 47.8579 3.6863L59.1716 15L47.8579 26.3137C47.0768 27.0948 47.0768 28.3611 47.8579 29.1421C48.6389 29.9232 49.9052 29.9232 50.6863 29.1421L63.4142 16.4142ZM-1.74846e-07 17L62 17L62 13L1.74846e-07 13L-1.74846e-07 17Z" fill="url(#paint0_linear_223_12387)"/>
+              <defs>
+                <linearGradient id="paint0_linear_223_12387" x1="62" y1="15" x2="0" y2="15" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#8E8E8E"/>
+                  <stop offset="1" stop-color="white" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            </button>
         </div>
       </div>`;
 
