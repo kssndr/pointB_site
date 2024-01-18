@@ -3382,8 +3382,12 @@ img {
         font-weight: 500;
         line-height: 27px;
         display: inline-block;
-        text-align: start;
+        text-align: center;
     }
+    #innessa{
+        text-align: start !important;
+    }
+    
 
     .titul {
         color: #0D4D47;
