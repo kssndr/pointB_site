@@ -1386,11 +1386,11 @@ function displayClientInfo(caseItem) {
   
   // Удаляем предыдущие обработчики событий
   if (nextButton) {
-    nextButton.removeEventListener('click', showNextCase);
+    // nextButton.removeEventListener('click', showNextCase);
     nextButton.addEventListener('click', showNextCase); // Добавляем новый обработчик событий
   }
   if (prevButton) {
-    prevButton.removeEventListener('click', showPreviousCase);
+    // prevButton.removeEventListener('click', showPreviousCase);
     prevButton.addEventListener('click', showPreviousCase); // Добавляем новый обработчик событий
   }
 }
