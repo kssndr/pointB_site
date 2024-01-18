@@ -1207,7 +1207,8 @@ let svgIconFilter = `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="
 let svgIconArrow = `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none">
                     <path d="M5 8L0.669873 0.499999L9.33013 0.5L5 8Z" fill="#313131"/>
                     </svg>`;
-
+let currentCaseIndex = 0; // Индекс текущего отображаемого кейса
+let filteredCaseData = []; // Отфильтрованные данные кейсов
 
 
 function updateSelectedFilters() {
@@ -1242,9 +1243,11 @@ function loadCaseData() {
 function updateCasesContainer() {
   let container = document.querySelector('.cases-containe-mob');
   container.innerHTML = ''; // Очищаем предыдущие результаты
+  filteredCaseData = []; // Обнуляем отфильтрованные данные
 
   caseData.forEach(caseItem => {
     if (caseItem.tags.some(tag => selectedFiltersMob.includes(tag))) {
+      filteredCaseData.push(caseItem);  // Добавляем элемент в отфильтрованные данные
       const clientInfoBlock = caseItem.blocks.find(block => block.summary?.find(item => item.client_name));
       if (clientInfoBlock) {
         const clientName = clientInfoBlock.summary.find(item => item.client_name).client_name
@@ -1265,6 +1268,10 @@ function updateCasesContainer() {
       }
     }
   });
+
+  if (filteredCaseData.length > 0) {
+    displayClientInfo(filteredCaseData[currentCaseIndex]); // Отображаем первый кейс
+  }
 }
 
 // Функция для отображения дополнительной информации о клиенте
@@ -1364,6 +1371,13 @@ function displayClientInfo(caseItem) {
   modalContainer.innerHTML = modalHtml;
   modalContainer.style.display = 'block'; // Показываем модальное окно
   document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+
+    // Добавление обработчиков событий для кнопок переключения кейсов
+    let nextButton = modalContainer.querySelector('.mob-case-block-bottom-next');
+    let prevButton = modalContainer.querySelector('.mob-case-block-bottom-prev');
+  
+    nextButton.addEventListener('click', showNextCase);
+    prevButton.addEventListener('click', showPreviousCase);
 }
 
 // Функция для закрытия модального окна
@@ -1374,6 +1388,22 @@ function closeModal() {
     document.body.style.overflow = ''; // Восстанавливаем прокрутку фона
   }
 }
+
+function showNextCase() {
+  currentCaseIndex = (currentCaseIndex + 1) % filteredCaseData.length;
+  displayClientInfo(filteredCaseData[currentCaseIndex]);
+}
+
+function showPreviousCase() {
+  currentCaseIndex = (currentCaseIndex - 1 + filteredCaseData.length) % filteredCaseData.length;
+  displayClientInfo(filteredCaseData[currentCaseIndex]);
+}
+
+nextButton.removeEventListener('click', showNextCase);
+prevButton.removeEventListener('click', showPreviousCase);
+
+nextButton.addEventListener('click', showNextCase);
+prevButton.addEventListener('click', showPreviousCase);
 
 // Вызываем функцию загрузки данных из JSON при загрузке документа
 document.addEventListener('DOMContentLoaded', loadCaseData);
