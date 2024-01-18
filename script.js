@@ -1269,9 +1269,9 @@ function updateCasesContainer() {
     }
   });
 
-  if (filteredCaseData.length > 0) {
-    displayClientInfo(filteredCaseData[currentCaseIndex]); // Отображаем первый кейс
-  }
+  // if (filteredCaseData.length > 0) {
+  //   displayClientInfo(filteredCaseData[currentCaseIndex]); // Отображаем первый кейс
+  // }
 }
 
 // Функция для отображения дополнительной информации о клиенте
