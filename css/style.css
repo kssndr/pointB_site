@@ -428,8 +428,23 @@ a:hover {
 
     }
 
-    .request,
     .open-request-form-button {
+        /* display: flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer; */
         display: flex;
         padding: 12px 22px;
         justify-content: center;
@@ -446,8 +461,33 @@ a:hover {
         line-height: normal;
         border: none;
         cursor: pointer;
-
+        position: relative;
+        left: 0px;
+        top: 7px;
     }
+    .request {
+
+        display: flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        left: 0px;
+        top: -20px;
+    }
+
 
     .request:active {
         background-color: var(--gold-color);
@@ -3631,6 +3671,30 @@ img {
         grid-template-columns: 1fr 1fr;
         gap: 60px;
     }
+
+    #request_small-main-request {
+
+        display: flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        left: 70px;
+        top: 63px;
+        }
+    
 
     .reqest-first-block {
         grid-column: 1;

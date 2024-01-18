@@ -1407,11 +1407,21 @@ function closeModal() {
 function showNextCase() {
   currentCaseIndex = (currentCaseIndex + 1) % filteredCaseData.length;
   displayClientInfo(filteredCaseData[currentCaseIndex]);
+  scrollToTopOfModal();
 }
 
 function showPreviousCase() {
   currentCaseIndex = (currentCaseIndex - 1 + filteredCaseData.length) % filteredCaseData.length;
   displayClientInfo(filteredCaseData[currentCaseIndex]);
+  scrollToTopOfModal();
+}
+
+function scrollToTopOfModal() {
+  let modalContainer = document.getElementById('modal-container');
+  let topElement = modalContainer.querySelector('.mob-case-block');
+  if (topElement) {
+    topElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 // Вызываем функцию загрузки данных из JSON при загрузке документа
