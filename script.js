@@ -1285,12 +1285,12 @@ function displayClientInfo(caseItem) {
   const bonusText = caseItem.blocks[3].bonus[0]?.bonus_text || '';
 
 
-  if (nextButton) {
-    nextButton.removeEventListener('click', showNextCase);
-  }
-  if (prevButton) {
-    prevButton.removeEventListener('click', showPreviousCase);
-  }
+  // if (nextButton) {
+  //   nextButton.removeEventListener('click', showNextCase);
+  // }
+  // if (prevButton) {
+  //   prevButton.removeEventListener('click', showPreviousCase);
+  // }
 
   // Создаем и наполняем модальное окно
   let modalHtml = `
