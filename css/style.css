@@ -2362,7 +2362,7 @@ img {
 @media (min-width: 768px) {
     #spesial-head {
         max-width: 1179px;
-        margin-top: 40px;
+        margin-top: 15px;
         background: #fff;
         position: relative;
         display: flex;
@@ -3085,6 +3085,8 @@ img {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-top: 30px;
+
     }
 
     .title-aboutus {
