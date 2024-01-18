@@ -1284,6 +1284,14 @@ function displayClientInfo(caseItem) {
   const bText = caseItem.blocks[2].point_b[0]?.b_text || '';
   const bonusText = caseItem.blocks[3].bonus[0]?.bonus_text || '';
 
+
+  if (nextButton) {
+    nextButton.removeEventListener('click', showNextCase);
+  }
+  if (prevButton) {
+    prevButton.removeEventListener('click', showPreviousCase);
+  }
+
   // Создаем и наполняем модальное окно
   let modalHtml = `
   <div class="modal-overlay"></div>
@@ -1376,8 +1384,14 @@ function displayClientInfo(caseItem) {
     let nextButton = modalContainer.querySelector('.mob-case-block-bottom-next');
     let prevButton = modalContainer.querySelector('.mob-case-block-bottom-prev');
   
+  // Добавление новых обработчиков событий для кнопок переключения кейсов
+  if (nextButton) {
     nextButton.addEventListener('click', showNextCase);
+  }
+  if (prevButton) {
     prevButton.addEventListener('click', showPreviousCase);
+  }
+
 }
 
 // Функция для закрытия модального окна
@@ -1398,12 +1412,6 @@ function showPreviousCase() {
   currentCaseIndex = (currentCaseIndex - 1 + filteredCaseData.length) % filteredCaseData.length;
   displayClientInfo(filteredCaseData[currentCaseIndex]);
 }
-
-nextButton.removeEventListener('click', showNextCase);
-prevButton.removeEventListener('click', showPreviousCase);
-
-nextButton.addEventListener('click', showNextCase);
-prevButton.addEventListener('click', showPreviousCase);
 
 // Вызываем функцию загрузки данных из JSON при загрузке документа
 document.addEventListener('DOMContentLoaded', loadCaseData);
