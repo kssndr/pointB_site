@@ -3177,7 +3177,7 @@ img {
 
     #request_about {
         margin-top: 30px;
-        left: 50%;
+        /* left: 50%; */
     }
 
     .right-block {
@@ -3298,7 +3298,7 @@ img {
     .name {
         color: #0D4D47;
         font-family: Roboto Slab;
-        font-size: 32px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 500;
         line-height: 38px;
@@ -3382,7 +3382,7 @@ img {
         font-weight: 500;
         line-height: 27px;
         display: inline-block;
-        text-align: center;
+        text-align: start;
     }
 
     .titul {
@@ -3880,7 +3880,7 @@ img {
         height: 100%;
         object-fit: cover;
         position: relative;
-        top: -100%;
+        top: -470px;
     }
 
     #request-text-main-form {
