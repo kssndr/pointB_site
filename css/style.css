@@ -3281,7 +3281,7 @@ img {
         display: flex;
         /* grid-template-columns: repeat(3, 1fr); */
         gap: 21px;
-        margin-top: 20px;
+        margin-top: 0px;
         margin-bottom: 10px;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -4641,7 +4641,7 @@ img {
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
-        line-height: 80px;
+        line-height: 70px;
     }
 
 
@@ -4838,10 +4838,7 @@ img {
     }
 
     .our_clients {
-        /* display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center; */
+        margin-top: 25px;
     }
 
     .table-clints-first-row {
