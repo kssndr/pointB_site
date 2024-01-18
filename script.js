@@ -1041,6 +1041,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initialize();
+  
+      // Добавление обработчика событий для закрытия списка при клике вне его
+      document.addEventListener('click', function(event) {
+        let filterButton = document.getElementById('filter-mob');
+        let filterList = document.getElementById('filter-list');
+
+        // Проверяем, был ли клик внутри списка или кнопки
+        if (filterList && !filterList.contains(event.target) && !filterButton.contains(event.target)) {
+            filterList.style.display = 'none';
+        }
+    });
 });
 
 //новый вариант
