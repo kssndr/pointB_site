@@ -1384,14 +1384,15 @@ function displayClientInfo(caseItem) {
     let nextButton = modalContainer.querySelector('.mob-case-block-bottom-next');
     let prevButton = modalContainer.querySelector('.mob-case-block-bottom-prev');
   
-  // Добавление новых обработчиков событий для кнопок переключения кейсов
+  // Удаляем предыдущие обработчики событий
   if (nextButton) {
-    nextButton.addEventListener('click', showNextCase);
+    nextButton.removeEventListener('click', showNextCase);
+    nextButton.addEventListener('click', showNextCase); // Добавляем новый обработчик событий
   }
   if (prevButton) {
-    prevButton.addEventListener('click', showPreviousCase);
+    prevButton.removeEventListener('click', showPreviousCase);
+    prevButton.addEventListener('click', showPreviousCase); // Добавляем новый обработчик событий
   }
-
 }
 
 // Функция для закрытия модального окна
