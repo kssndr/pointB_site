@@ -939,7 +939,7 @@ img {
         /* Стили для каждого слайда */
         margin-left: 5px;
         width: 350px;
-        height: 171px;
+        height: 200px;
         flex-shrink: 0;
         border: 1px solid #D8DADF;
     }
