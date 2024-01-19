@@ -2761,8 +2761,8 @@ img {
     }
 
     .mob-reslt-text-cb li::before {
-        /* content: url('img/birds_gold.svg');
-        Путь к вашему SVG изображению */
+        /* content: url('/img/birds_gold.svg'); */
+          /* Путь к  SVG изображению начинается с / */
         padding-right: 10px;
         /* Дополнительные стили для выравнивания и размера изображения, если нужно */
         content: '\2714';
