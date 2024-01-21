@@ -676,7 +676,7 @@ function createCaseElement(item, casesContainer) {
         if (summaryItem.goal_text) {
           const goalTextElement = document.createElement('div');
           goalTextElement.className = 'goal_text';
-          goalTextElement.textContent = summaryItem.goal_text;
+          goalTextElement.innerHTML = summaryItem.goal_text;
           summaryElement.appendChild(goalTextElement);
         }
 
@@ -690,7 +690,7 @@ function createCaseElement(item, casesContainer) {
         if (summaryItem.mod_text) {
           const modTextElement = document.createElement('div');
           modTextElement.className = 'mod_text';
-          modTextElement.textContent = summaryItem.mod_text;
+          modTextElement.innerHTML = summaryItem.mod_text;
           summaryElement.appendChild(modTextElement);
         }
 
@@ -730,7 +730,7 @@ function createCaseElement(item, casesContainer) {
         if (pointaItem.a_title) {
           const atextElement = document.createElement('div');
           atextElement.className = 'a_text';
-          atextElement.textContent = pointaItem.a_text;
+          atextElement.innerHTML = pointaItem.a_text;
           pointAElement.appendChild(atextElement);
         }
       });
