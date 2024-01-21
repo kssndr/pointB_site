@@ -940,7 +940,7 @@ img {
         /* Стили для каждого слайда */
         margin-left: 5px;
         width: 350px;
-        height: 240px;
+        height: 245px;
         flex-shrink: 0;
         border: 1px solid #D8DADF;
     }
