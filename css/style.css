@@ -3029,14 +3029,11 @@ img {
         line-height: 21px;
         padding-right: 40px;
         padding-bottom: 40px;
-        
         padding-top: 0px;
         list-style-type: none;
         padding-left: 0;
         align-items: stretch;
         margin-top: 8px;
-
-
     }
 
     .b_text li {
@@ -3083,6 +3080,25 @@ img {
         padding-bottom: 40px;
         list-style-type: none;
         margin-top: 8px;
+    }
+
+
+    .bonus_text li {
+        position: relative;
+        padding-left: 0.7em;
+        padding-bottom: 0.7em;
+    }
+
+    .bonus_text li::marker {
+        content: '✔';
+        position: absolute;
+        left: 0;
+        color: #E3AE56;
+    }
+
+    .bonus_text ul {
+        margin-top: 0px;
+
     }
 
     /* кнопка Расскрыть */
