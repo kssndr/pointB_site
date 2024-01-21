@@ -697,7 +697,7 @@ function createCaseElement(item, casesContainer) {
         if (summaryItem.duration_title) {
           const durationTitleElement = document.createElement('div');
           durationTitleElement.className = 'duration_title';
-          durationTitleElement.textContent = summaryItem.duration_title;
+          // durationTitleElement.textContent = summaryItem.duration_title;
           summaryElement.appendChild(durationTitleElement);
         }
 
