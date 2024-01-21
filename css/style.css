@@ -2902,6 +2902,8 @@ img {
 
     }
 
+ 
+
     .goal_text,
     .mod_text,
     .duration_text li {
@@ -2919,7 +2921,7 @@ img {
         /* color: #E3AE56; */
     }
 
-    .goal_text,
+    
     .mod_text,
     .duration_text ul {
         margin-top: 0px;
