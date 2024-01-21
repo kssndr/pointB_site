@@ -2902,6 +2902,30 @@ img {
 
     }
 
+    .goal_text,
+    .mod_text,
+    .duration_text li {
+        position: relative;
+        padding-left: 0.7em;
+        padding-bottom: 0.7em;
+    }
+
+    .goal_text,
+    .mod_text,
+    .duration_text li::marker {
+        content: '✔';
+        position: absolute;
+        left: 0;
+        color: #E3AE56;
+    }
+
+    .goal_text,
+    .mod_text,
+    .duration_text ul {
+        margin-top: 0px;
+
+    }
+
     .abr {
         grid-column: 2;
         display: flex;
@@ -2957,6 +2981,23 @@ img {
         width: 300px;
         align-items: stretch;
         margin-top: 8px;
+        list-style-type: none;
+    }
+    .a_text li {
+        position: relative;
+        padding-left: 0.7em;
+        padding-bottom: 0.7em;
+    }
+    .a_text li::marker {
+        content: '✔';
+        position: absolute;
+        left: 0;
+        color: #E3AE56;
+    }
+
+    .a_text ul {
+        margin-top: 0px;
+
     }
 
 
@@ -2986,7 +3027,7 @@ img {
         line-height: 21px;
         padding-right: 40px;
         padding-bottom: 40px;
-        list-style-type: none;
+        
         padding-top: 0px;
         list-style-type: none;
         padding-left: 0;
