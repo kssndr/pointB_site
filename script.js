@@ -779,7 +779,7 @@ function createCaseElement(item, casesContainer) {
         if (bonusItem.bonus_text) {
           const bonusTxElement = document.createElement('div');
           bonusTxElement.className = 'bonus_text';
-          bonusTxElement.textContent = bonusItem.bonus_text;
+          bonusTxElement.innerHTML = bonusItem.bonus_text;
           bonusElement.appendChild(bonusTxElement);
         }
       });
