@@ -465,6 +465,7 @@ a:hover {
         left: 0px;
         top: 7px;
     }
+
     .request {
 
         display: flex;
@@ -713,21 +714,22 @@ img {
         display: grid;
         justify-items: start;
     }
-.h3 {
-    color: #0D4C47;
-    text-align: right;
-    font-family: Roboto Slab;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 53px;
-    /* 331.25% */
-    position: relative;
-    padding-bottom: 1px;
-    width: fit-content;
-    height: 38px;
-    cursor: pointer;
-}
+
+    .h3 {
+        color: #0D4C47;
+        text-align: right;
+        font-family: Roboto Slab;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 53px;
+        /* 331.25% */
+        position: relative;
+        padding-bottom: 1px;
+        width: fit-content;
+        height: 38px;
+        cursor: pointer;
+    }
 
 
     .button {
@@ -2777,7 +2779,7 @@ img {
 
     .mob-reslt-text-cb li::before {
         /* content: url('/img/birds_gold.svg'); */
-          /* Путь к  SVG изображению начинается с / */
+        /* Путь к  SVG изображению начинается с / */
         padding-right: 10px;
         /* Дополнительные стили для выравнивания и размера изображения, если нужно */
         content: '\2714';
@@ -2801,8 +2803,10 @@ img {
         border: none;
         background-color: transparent;
     }
+
     .mob-case-block-bottom-prev:active svg {
-        transform: scale(1.1); /* Увеличиваем размер SVG на 10% */
+        transform: scale(1.1);
+        /* Увеличиваем размер SVG на 10% */
     }
 
     .mob-case-block-bottom-cancel {
@@ -2817,8 +2821,10 @@ img {
         line-height: 21px;
         text-decoration-line: underline;
     }
+
     .mob-case-block-bottom-cancel {
-        transform: scale(1.1); /* Увеличиваем размер SVG на 10% */
+        transform: scale(1.1);
+        /* Увеличиваем размер SVG на 10% */
     }
 
     .mob-case-block-bottom-next {
@@ -2827,7 +2833,8 @@ img {
     }
 
     .mob-case-block-bottom-next:active svg {
-        transform: scale(1.1); /* Увеличиваем размер SVG на 10% */
+        transform: scale(1.1);
+        /* Увеличиваем размер SVG на 10% */
     }
 
 
@@ -2916,7 +2923,7 @@ img {
 
     }
 
- 
+
 
     .goal_text,
     .mod_text,
@@ -2935,7 +2942,7 @@ img {
         /* color: #E3AE56; */
     }
 
-    
+
     .mod_text,
     .duration_text ul {
         margin-top: 0px;
@@ -2999,11 +3006,13 @@ img {
         margin-top: 8px;
         list-style-type: none;
     }
+
     .a_text li {
         position: relative;
         padding-left: 0.7em;
         padding-bottom: 0.7em;
     }
+
     .a_text li::marker {
         content: '✔';
         position: absolute;
@@ -3463,10 +3472,11 @@ img {
         display: inline-block;
         text-align: center;
     }
-    #innessa{
+
+    #innessa {
         text-align: start !important;
     }
-    
+
 
     .titul {
         color: #0D4D47;
@@ -3776,8 +3786,8 @@ img {
         position: relative;
         left: 70px;
         top: 63px;
-        }
-    
+    }
+
 
     .reqest-first-block {
         grid-column: 1;
