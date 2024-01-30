@@ -80,7 +80,11 @@ const textDisplayContainer = document.getElementById("text-display-container");
 function createButton(buttonData, container) {
   const button = document.createElement("div");
   button.className = "button";
-  button.textContent = buttonData.name;
+  // button.textContent = buttonData.name; //вместо просто кнопки кнопка с h3 (см ниже)
+
+  const buttonTitle = document.createElement("h3"); // Создание элемента h3 для названия кнопки
+  buttonTitle.textContent = buttonData.name; // Добавление текста названия в h3
+  button.appendChild(buttonTitle); // Добавление h3 в контейнер кнопки
 
   button.addEventListener("mousedown", () => {
     showText(buttonData.text, buttonData.name, container.id);
