@@ -645,6 +645,20 @@ img {
 /* блок "Модули программмы" */
 /* ============================================= */
 @media (min-width: 768px) {
+    h1 {
+        display: flex;
+        height: 71px;
+        flex-shrink: 0;
+        color: #B9B9B9;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 67px;
+    }
+
+
     .modules-blocks {
         display: flex;
         justify-content: center;
@@ -722,7 +736,7 @@ img {
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
-        line-height: 53px;
+        line-height: 22px;
         /* 331.25% */
         position: relative;
         padding-bottom: 1px;
