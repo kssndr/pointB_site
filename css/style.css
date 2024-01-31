@@ -5055,7 +5055,7 @@ img {
 p {
     display: block;
     margin-block-start: 0;
-    margin-block-end: 0;
+    margin-block-end: 3px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
@@ -5144,10 +5144,10 @@ p {
     }
 
     p {
-        text-align: center;
+        text-align: start;
         display: block;
         margin-block-start: 0;
-        margin-block-end: 0;
+        margin-block-end: 3px;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
     }
