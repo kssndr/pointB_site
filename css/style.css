@@ -647,7 +647,7 @@ img {
 @media (min-width: 768px) {
     h1 {
         display: flex;
-        height: 71px;
+        height: 35px;
         flex-shrink: 0;
         color: #B9B9B9;
         text-align: center;
@@ -655,7 +655,7 @@ img {
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        line-height: 67px;
+        line-height: 21px;
     }
 
 
@@ -879,7 +879,7 @@ img {
         padding-top: 20px;
     }
 
-    .h2 {
+    h2 {
         width: 738px;
         height: 72px;
         flex-shrink: 0;
@@ -910,6 +910,20 @@ img {
 }
 
 @media (max-width: 768px) {
+
+    h1 {
+        display: flex;
+        height: 35px;
+        flex-shrink: 0;
+        color: #B9B9B9;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+    }
+
     .modules-blocks {
         display: flex;
         justify-content: center;
@@ -1217,7 +1231,7 @@ img {
         padding-top: 20px;
     }
 
-    .h2 {
+    h2 {
         /* width: 738px; */
         /* height: 72px; */
         flex-shrink: 0;
@@ -1231,7 +1245,7 @@ img {
         margin-bottom: 10px;
     }
 
-    .h2 span {
+    h2 span {
         display: block;
         /* Переместить первое слово на новую строку */
     }
