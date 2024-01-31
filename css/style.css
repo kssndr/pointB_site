@@ -913,7 +913,8 @@ img {
 
     h1 {
         display: flex;
-        height: 35px;
+        height: auto;
+        width: 100vw;
         flex-shrink: 0;
         color: #B9B9B9;
         text-align: center;
@@ -921,7 +922,7 @@ img {
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        line-height: 21px;
+        line-height: 30px;
     }
 
     .modules-blocks {
@@ -933,7 +934,7 @@ img {
 
     .title {
         display: flex;
-        height: 71px;
+        height: auto;
         flex-shrink: 0;
         color: #B9B9B9;
         text-align: center;
@@ -3478,7 +3479,7 @@ img {
 
     #request_about {
         position: relative;
-        top: 1280px;
+        top: 1040px;
         align-self: center;
         /* margin-top: 30px; */
         /* left: 50%;*/

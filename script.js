@@ -1970,10 +1970,16 @@ function createFAQ(questionsData) {
 
     // Создаем кнопку для вопроса
     const questionButton = document.createElement('button');
-    questionButton.textContent = question.text;
+    // questionButton.textContent = question.text; //добавляем  h4 (ниже)
     questionButton.className = "faq-question";
     questionButton.style.textDecoration = "underline";
     questionButton.style.textDecorationStyle = "dotted";
+
+     // Создаем элемент h4 для текста вопроса и добавляем его в кнопку
+     const questionText = document.createElement('h4');
+     questionText.textContent = question.text;
+     questionButton.appendChild(questionText);  // Добавляем текст вопроса внутрь h4, а затем h4 в кнопку
+ 
 
 
     // Создаем контейнер для SVG иконок
