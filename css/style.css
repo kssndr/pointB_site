@@ -4721,6 +4721,17 @@ img {
         cursor: pointer;
     }
 
+    h4 {
+            color: #0D4C47;
+            font-family: Roboto Slab;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 53px;
+            /* 294.444% */
+            padding-left: 22px;
+    }
+
     .icon-container {
         padding: 20px;
         cursor: pointer;
@@ -4825,6 +4836,17 @@ img {
 
         cursor: pointer;
     }
+
+    h4 {
+        color: #0D4C47;
+        font-family: Roboto Slab;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 53px;
+        /* 294.444% */
+        padding-left: 22px;
+}
 
     .icon-container {
         padding: 20px;
