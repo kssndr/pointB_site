@@ -4809,7 +4809,7 @@ img {
         font-weight: 500;
         line-height: 20px;
         /* 294.444% */
-        padding-left: 22px;
+        padding-left: 20px;
         /* text-decoration: underline;
         text-decoration-style: dotted; */
 
@@ -4840,12 +4840,12 @@ img {
     h4 {
         color: #0D4C47;
         font-family: Roboto Slab;
-        font-size: 18px;
+        font-size: 14px;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         line-height: 20px;
         /* 294.444% */
-        padding-left: 10px;
+        /* padding-left: 10px; */
 }
 
     .icon-container {
