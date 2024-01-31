@@ -1,0 +1,11 @@
+# Основные директивы
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /test/
+
+# Разрешить доступ ко всему остальному на сайте
+Allow: /
+
+# Указание местоположения XML-карты сайта
+Sitemap: https://www.pointb.ltd/sitemap.xml
