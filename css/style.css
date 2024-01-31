@@ -4691,9 +4691,9 @@ img {
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
-        line-height: 53px;
+        line-height: 20px;
         /* 294.444% */
-        padding-left: 22px;
+        padding-left: 10px;
         /* text-decoration: underline;
     text-decoration-style: dotted; */
 
@@ -4727,9 +4727,9 @@ img {
             font-size: 18px;
             font-style: normal;
             font-weight: 500;
-            line-height: 53px;
+            line-height: 20px;
             /* 294.444% */
-            padding-left: 22px;
+            padding-left: 10px;
     }
 
     .icon-container {
@@ -4807,7 +4807,7 @@ img {
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 53px;
+        line-height: 20px;
         /* 294.444% */
         padding-left: 22px;
         /* text-decoration: underline;
@@ -4843,9 +4843,9 @@ img {
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
-        line-height: 53px;
+        line-height: 20px;
         /* 294.444% */
-        padding-left: 22px;
+        padding-left: 10px;
 }
 
     .icon-container {
