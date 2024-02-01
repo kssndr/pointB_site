@@ -3384,6 +3384,8 @@ img {
         line-height: 21px;
         margin-bottom: 10px;
         margin-top: 6px;
+        text-align: center;
+
         /* margin-right: 15px;
         overflow-y: auto;
         max-height: 340px; */
@@ -3608,6 +3610,7 @@ img {
 
     .membre-name {
         margin-top: 10px;
+        text-align: center;
     }
 
     .membr-photo {
