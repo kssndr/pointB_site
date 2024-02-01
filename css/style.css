@@ -889,19 +889,22 @@ img {
         padding-top: 20px;
     }
 
-    h2 {
-        width: 738px;
-        height: 72px;
-        flex-shrink: 0;
-        color: #313131;
-        text-align: center;
-        font-family: Roboto Slab;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 66px;
-        /* 206.25% */
-    }
+    h2 
+        {
+            width: 785px;
+            height: 45px;
+            flex-shrink: 0;
+            color: #313131;
+            text-align: center;
+            font-family: Roboto Slab;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 41px;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.5em;
+            }
+    
 
     .text-block {
         color: rgba(29, 29, 29, 0.50);
@@ -917,6 +920,38 @@ img {
         flex-shrink: 0;
         display: block;
     }
+
+    h5 {
+        display: block;
+        font-size: 0.83em;
+        margin-block-start: 1.3em;
+        margin-block-end: 1.3em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        }
+
+        .request-module-block {
+            display: flex;
+            padding: 12px 22px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 22px;
+            background: #C4A36D;
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            left: 0px;
+            top: 23px;
+            }
 }
 
 @media (max-width: 768px) {
