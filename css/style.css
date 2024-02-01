@@ -386,6 +386,7 @@ a:hover {
         gap: 21px;
         flex-direction: column;
         justify-content: flex-start;
+        position: relative;
     }
 
     .offer_text {
@@ -405,20 +406,29 @@ a:hover {
 
 
     .text-h1 {
-        width: 407px;
+        width: 744px;
         height: 195px;
         margin-top: 54px;
+        position: absolute;
+        color: var(--accent-color);
+        font-size: 72px;
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 66px;
     }
 
 
     .block {
-        width: 313px;
-        height: 41px;
+        position: absolute;
+        top: 211px;
+        width: 520px;
+        height: 35px;
         background-color: #0D4C47;
         display: flex;
         color: #FFF;
         font-family: Inter;
-        font-size: 16px;
+        font-size: 21px;
         font-style: normal;
         font-weight: 500;
         line-height: 27px;
@@ -462,8 +472,8 @@ a:hover {
         border: none;
         cursor: pointer;
         position: relative;
-        left: 0px;
-        top: 7px;
+        left: 127px;
+        top: 300px;
     }
 
     .request {
