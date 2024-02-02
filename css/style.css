@@ -73,7 +73,7 @@ section {
     /* или другое положительное значение */
     /* z-index: auto;  значение по умолчанию */
     /* position: static;  значение по умолчанию */
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .container {
@@ -970,7 +970,7 @@ img {
         cursor: pointer;
         position: relative;
         left: 0px;
-        top: 0px;
+        top: 20px;
     }
 }
 
@@ -2531,7 +2531,7 @@ img {
 @media (min-width: 768px) {
     #spesial-head {
         max-width: 1179px;
-        margin-top: 15px;
+        margin-top: 25px;
         background: #fff;
         position: relative;
         display: flex;
