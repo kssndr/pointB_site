@@ -688,15 +688,12 @@ img {
         font-weight: 500;
         line-height: 67px;
         margin-left: 28px;
-}
         /* 279.167% */
     }
 
     #carousel-container {
         display: none;
     }
-
-
 
     .container_Modules {
         overflow: hidden;
@@ -891,22 +888,21 @@ img {
         padding-top: 20px;
     }
 
-    h2 
-        {
-            width: 785px;
-            height: 45px;
-            flex-shrink: 0;
-            color: #313131;
-            text-align: center;
-            font-family: Roboto Slab;
-            font-size: 32px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 41px;
-            margin-block-start: 0.83em;
-            margin-block-end: 0.5em;
-            }
-    
+    h2 {
+        width: 785px;
+        height: 45px;
+        flex-shrink: 0;
+        color: #313131;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 41px;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.5em;
+    }
+
 
     .text-block {
         color: rgba(29, 29, 29, 0.50);
@@ -931,29 +927,29 @@ img {
         margin-inline-start: 0px;
         margin-inline-end: 0px;
         font-weight: bold;
-        }
+    }
 
-        .request-module-block {
-            display: flex;
-            padding: 12px 22px;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border-radius: 22px;
-            background: #C4A36D;
-            color: #FFF;
-            text-align: center;
-            font-family: Inter;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            left: 0px;
-            top: 23px;
-            }
+    .request-module-block {
+        display: flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        left: 0px;
+        top: 23px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -3244,7 +3240,7 @@ img {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 50px;
+        margin-top: 20px;
 
     }
 
@@ -3340,7 +3336,8 @@ img {
 
     #request_about {
         margin-top: 30px;
-        /* left: 50%; */
+        left: 0px;
+        top: 0px;
     }
 
     .right-block {
@@ -3397,15 +3394,17 @@ img {
         grid-template-columns: repeat(3, 1fr); */
         gap: 40px;
         margin-top: 30px;
-        display: flex;        /* Располагает дочерние элементы в горизонтальном направлении */
-        overflow-x: auto;     /* Добавляет горизонтальную прокрутку, если дочерние элементы не помещаются */
-        white-space: nowrap; 
+        display: flex;
+        /* Располагает дочерние элементы в горизонтальном направлении */
+        overflow-x: auto;
+        /* Добавляет горизонтальную прокрутку, если дочерние элементы не помещаются */
+        white-space: nowrap;
     }
 
     .membre {
         display: flex;
         flex-direction: column;
-        flex: 0 0 auto;  
+        flex: 0 0 auto;
         width: 270px;
         align-items: center;
     }
@@ -3504,6 +3503,7 @@ img {
         overflow-y: auto;
         max-height: 340px;
     }
+
     .about-text-member {
         color: #1D1D1D;
         font-family: Inter;
@@ -3645,14 +3645,15 @@ img {
         margin-left: 20px;
         align-items: center;
         margin-right: 20px;
-        overflow-x: auto;     /* Добавляет горизонтальную прокрутку, если дочерние элементы не помещаются */
-        white-space: nowrap; 
+        overflow-x: auto;
+        /* Добавляет горизонтальную прокрутку, если дочерние элементы не помещаются */
+        white-space: nowrap;
     }
 
     .membre {
         display: flex;
         flex-direction: column;
-        flex: 0 0 auto;  
+        flex: 0 0 auto;
     }
 
     .membre-name {
@@ -3697,7 +3698,7 @@ img {
         display: grid;
         grid-template-columns: 325px 827px;
         gap: 10px;
-        margin-top: 30px;
+        margin-top: 100px;
     }
 
     .anketa {
@@ -4809,14 +4810,14 @@ img {
     }
 
     h4 {
-            color: #0D4C47;
-            font-family: Roboto Slab;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 20px;
-            /* 294.444% */
-            padding-left: 10px;
+        color: #0D4C47;
+        font-family: Roboto Slab;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        /* 294.444% */
+        padding-left: 10px;
     }
 
     .icon-container {
@@ -4933,7 +4934,7 @@ img {
         line-height: 20px;
         /* 294.444% */
         /* padding-left: 10px; */
-}
+    }
 
     .icon-container {
         padding: 20px;
