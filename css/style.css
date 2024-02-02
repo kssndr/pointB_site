@@ -951,6 +951,27 @@ img {
         left: 0px;
         top: 23px;
     }
+    .request-module-block {
+        display: flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
 }
 
 @media (max-width: 768px) {
