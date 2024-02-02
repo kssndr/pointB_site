@@ -3623,7 +3623,7 @@ img {
 
     #request_about {
         position: relative;
-        top: 1040px;
+        top: 1300px;
         align-self: center;
         /* margin-top: 30px; */
         /* left: 50%;*/
@@ -3700,14 +3700,14 @@ img {
 
     .members {
         display: flex;
-        /* gap: 40px; */
+        gap: 40px;
         margin-top: 100px;
-        flex-direction: column;
+        width: 100vw;
+        /* flex-direction: column; */
         margin-left: 20px;
         align-items: center;
         margin-right: 20px;
         overflow-x: auto;
-        /* Добавляет горизонтальную прокрутку, если дочерние элементы не помещаются */
         white-space: nowrap;
     }
 
