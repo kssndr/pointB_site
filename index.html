@@ -296,96 +296,84 @@
                     </div>
                 </div>
             </section>
+            <!-- ================= Анкета и Заявка ================== -->
+            <section id="anketa-request-block">
+                <div class="anketa-container">
+                    <div class="anketa">
+                        <div class="anketa-background"></div>
+                        <img class="anketa-img" src="/img/anketa_img.png" alt="">
+                        <div class="anketa-title">Заполните <br> анкету</div>
+                        <div class="anketa-text">И получите подробные рекомендации к действию, составленные
+                            индивидуально для вас нашей командой</div>
+                        <button class="anketa-request" id="anketa-request" style="margin-top: 20px;">Перейти к
+                            анкете</button>
+                        <div class="krug">
+                            <div class="fifteen">15</div>
+                            <div class="questions">вопросов</div>
+                        </div>
+                    </div>
+                    <div class="request-form">
+                        <div class="request-background"></div>
+                        <img class="request-img" src="/img/lists.png" alt="">
+                        <div class="request-text" id="request-text-main-form">Запишись на собеседование</div>
+                        <div class="request-client-data">
+                            <div class="row-one">
+                                <div class="request-first-block">
+                                    <div class="sett-title" id="sett-title-request-name">Ваше имя*</div>
+                                    <input type="text" id="username-input-main-request" name="username-input"
+                                        class="module-input">
+                                </div>
+                                <div class="request-second-block">
+                                    <div class="sett-title" id="sett-title-request-type-connecting">Удобный вид связи*
+                                    </div>
+                                    <div class="checkbox-container-r">
+                                        <div class="checkbox-container-r">
+                                            <div class="checkbox-item-r">
+                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option1"
+                                                    name="option1" value="E-mail">
+                                                <label class="checkbox-label-r" for="option1">E-mail</label>
+                                            </div>
+
+                                            <div class="checkbox-item-r">
+                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option2"
+                                                    name="option2" value="номер">
+                                                <label class="checkbox-label-r" for="option2">WhatsApp</label>
+                                            </div>
+                                            <div class="checkbox-item-r">
+                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option3"
+                                                    name="option3" value="ник(+номер)">
+                                                <label class="checkbox-label-r" for="option3">Telegram</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-two">
+                                <div class="request-first-block">
+                                    <output id="sett-title-output-r">-</output>
+                                    <input type="text" id="contacts-input-main-request" name="contacts-input"
+                                        class="module-input" style="position: absolute;width: 500px;top: 60px;">
+                                </div>
+                                <div class="request-second-block">
+                                    <button class="request" id="request_small-main-request">Записаться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================= Анкета ================== -->
+                <div id="anketaModal" class="modal">
+                    <div class="modal-content">
+                        <div id="anketaFormContainer">
+                            <!-- Тут будет динамически созданная форма -->
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!-- ================= О НАС ================== -->
             <section id="block-aboutus">
                 <div class="aboutus-container">
                     <div class="title">О нас:</div>
-                    <div class="up-block">
-                        <div class="mission">
-                            <div class="about-title">Миссия</div>
-                            <div class="about-text">Миссия команды "Point B" продвигать и совершенствовать культуру
-                                работы с
-                                изменениями в бизнесе и организациях через раскрытие потенциала первых лиц -
-                                собственников,
-                                топ-менеджеров и руководителей. </div>
-                        </div>
-                        <div class="goals">
-                            <div class="about-title">Цели компании</div>
-                            <div class="about-text">
-                                <p>1. <strong>Развитие лидерских качеств и управленческих навыков</strong>:
-                                    Предоставление индивидуальных программ коучинга и развития, направленных на усиление
-                                    лидерских способностей и управленческих компетенций руководителей всех уровней.</p>
-                                <p>2. <strong>Поддержка личностного роста и самореализации</strong>: Помощь клиентам в
-                                    раскрытии их внутреннего потенциала, углублении самопознания и достижении личных
-                                    целей для улучшения качества жизни.</p>
-                                <p>3. <strong>Формирование эффективных управленческих систем и команд</strong>:
-                                    Разработка и внедрение стратегий и инструментов для создания устойчивых и
-                                    эффективных управленческих систем и команд в организациях.</p>
-                                <p>4. <strong>Стимулирование инноваций и стратегического мышления</strong>: Поощрение
-                                    инновационного подхода и стратегического планирования среди руководителей для
-                                    преодоления вызовов бизнеса и достижения долгосрочных целей.</p>
-                                <p>5. <strong>Развитие социальной ответственности и этических стандартов</strong>:
-                                    Поддержка клиентов в осуществлении положительного влияния на общество и бизнес,
-                                    соблюдая высокие этические стандарты и практики устойчивого развития.</p>
-                                <p>6. <strong>Улучшение взаимодействия в команде и организации</strong>: Содействие
-                                    развитию коммуникативных навыков и стратегий для улучшения взаимодействия внутри
-                                    команд и на всех уровнях организации.</p>
-                                <p>7. <strong>Адаптация к изменениям и управление кризисными ситуациями</strong>:
-                                    Предоставление инструментов и техник для эффективного управления изменениями и
-                                    кризисными ситуациями в бизнесе.</p>
-                            </div>
-                        </div>
-                        <div class="values">
-                            <div class="about-title">Наши ценности</div>
-                            <div class="about-text">
-                                <p><strong>Центрированность на Человеке</strong>: люди - ключевой ресурс и главная точка
-                                    роста.</p>
-                                <p><strong>Целостность и Системность</strong>: учет взаимосвязей и взаимозависимости
-                                    различных частей системы.</p>
-                                <p><strong>Стратегия</strong>: мышление и действия в контексте широкой перспективы.</p>
-                                <p><strong>Ответственность и Ассертивность</strong>: способность формировать и
-                                    обосновывать идеи, видение возможностей в изменениях.</p>
-                                <p><strong>Партнерство</strong>: сотрудничество для достижения своих и общих целей.</p>
-                                <p><strong>Знания</strong>: осознанность в принятии решений.</p>
-                                <p><strong>Развитие</strong>: непрерывный рост как путь к успеху.</p>
-                                <p><strong>Социальная ответственность и влияние</strong>: положительное влияние на
-                                    бизнес и общество.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="buttom-block">
-                        <div class="about-title">Описание</div>
-                        <div class="about-text">
-                            <p>Наша компания специализируется на предоставлении коучинговых услуг и программ личностного
-                                и
-                                профессионального развития для руководителей всех уровней, включая директоров, CEO,
-                                менеджеров, а
-                                также владельцев бизнеса и предпринимателей. Мы фокусируемся на индивидуальном подходе к
-                                каждому клиенту,
-                                предлагая решения, адаптированные к их уникальным профессиональным и личным целям и
-                                обстоятельствам.</p>
-                            <p>Наша команда стремится предоставлять услуги, которые не только улучшают профессиональные
-                                навыки,
-                                но и способствуют личностному росту и повышению качества жизни клиентов. Наш подход
-                                ориентирован на создание гармоничного
-                                баланса между профессиональными и личными аспектами жизни клиентов, а также на их
-                                эффективное взаимодействие в команде и
-                                организации.
-                            <p>Мы считаем что Человек главный драйвер и источник потенциала в любой системе,
-                                и только целостный Человек способен конвертировать изменения в успех.</p>
-                            <p>Наши продукты развивают лидерский потенциал и улучшают качество жизни владельцев,
-                                топ-менеджеров
-                                и руководителей через углубленное понимание аспектов профессиональных и личных целей,
-                                раскрытие
-                                и гармонизацию психологических факторов и условий формирования поведения человека,
-                                восприятие себя
-                                и жизни, реакции на события и обстоятельства.</p>
-                            Наши продукты создают основу создания эффективных управленческих систем, управления
-                            командами для
-                            устойчивого развития и достижения стратегических целей, положительного влияния в бизнесе и
-                            обществе.
-                        </div>
-                    </div>
                     <div class="team">
                         <div class="left-block">
                             <div class="photo-block">
@@ -482,80 +470,93 @@
                             <div class="about-text-member">партнер, бизнес-коуч</div>
                         </div>
                     </div>
-            </section>
-            <!-- ================= Анкета и Заявка ================== -->
-            <section id="anketa-request-block">
-                <div class="anketa-container">
-                    <div class="anketa">
-                        <div class="anketa-background"></div>
-                        <img class="anketa-img" src="/img/anketa_img.png" alt="">
-                        <div class="anketa-title">Заполните <br> анкету</div>
-                        <div class="anketa-text">И получите подробные рекомендации к действию, составленные
-                            индивидуально для вас нашей командой</div>
-                        <button class="anketa-request" id="anketa-request" style="margin-top: 20px;">Перейти к
-                            анкете</button>
-                        <div class="krug">
-                            <div class="fifteen">15</div>
-                            <div class="questions">вопросов</div>
+                    <div class="up-block">
+                        <div class="mission">
+                            <div class="about-title">Миссия</div>
+                            <div class="about-text">Миссия команды "Point B" продвигать и совершенствовать культуру
+                                работы с
+                                изменениями в бизнесе и организациях через раскрытие потенциала первых лиц -
+                                собственников,
+                                топ-менеджеров и руководителей. </div>
+                        </div>
+                        <div class="goals">
+                            <div class="about-title">Цели компании</div>
+                            <div class="about-text">
+                                <p>1. <strong>Развитие лидерских качеств и управленческих навыков</strong>:
+                                    Предоставление индивидуальных программ коучинга и развития, направленных на усиление
+                                    лидерских способностей и управленческих компетенций руководителей всех уровней.</p>
+                                <p>2. <strong>Поддержка личностного роста и самореализации</strong>: Помощь клиентам в
+                                    раскрытии их внутреннего потенциала, углублении самопознания и достижении личных
+                                    целей для улучшения качества жизни.</p>
+                                <p>3. <strong>Формирование эффективных управленческих систем и команд</strong>:
+                                    Разработка и внедрение стратегий и инструментов для создания устойчивых и
+                                    эффективных управленческих систем и команд в организациях.</p>
+                                <p>4. <strong>Стимулирование инноваций и стратегического мышления</strong>: Поощрение
+                                    инновационного подхода и стратегического планирования среди руководителей для
+                                    преодоления вызовов бизнеса и достижения долгосрочных целей.</p>
+                                <p>5. <strong>Развитие социальной ответственности и этических стандартов</strong>:
+                                    Поддержка клиентов в осуществлении положительного влияния на общество и бизнес,
+                                    соблюдая высокие этические стандарты и практики устойчивого развития.</p>
+                                <p>6. <strong>Улучшение взаимодействия в команде и организации</strong>: Содействие
+                                    развитию коммуникативных навыков и стратегий для улучшения взаимодействия внутри
+                                    команд и на всех уровнях организации.</p>
+                                <p>7. <strong>Адаптация к изменениям и управление кризисными ситуациями</strong>:
+                                    Предоставление инструментов и техник для эффективного управления изменениями и
+                                    кризисными ситуациями в бизнесе.</p>
+                            </div>
+                        </div>
+                        <div class="values">
+                            <div class="about-title">Наши ценности</div>
+                            <div class="about-text">
+                                <p><strong>Центрированность на Человеке</strong>: люди - ключевой ресурс и главная точка
+                                    роста.</p>
+                                <p><strong>Целостность и Системность</strong>: учет взаимосвязей и взаимозависимости
+                                    различных частей системы.</p>
+                                <p><strong>Стратегия</strong>: мышление и действия в контексте широкой перспективы.</p>
+                                <p><strong>Ответственность и Ассертивность</strong>: способность формировать и
+                                    обосновывать идеи, видение возможностей в изменениях.</p>
+                                <p><strong>Партнерство</strong>: сотрудничество для достижения своих и общих целей.</p>
+                                <p><strong>Знания</strong>: осознанность в принятии решений.</p>
+                                <p><strong>Развитие</strong>: непрерывный рост как путь к успеху.</p>
+                                <p><strong>Социальная ответственность и влияние</strong>: положительное влияние на
+                                    бизнес и общество.
+                            </div>
                         </div>
                     </div>
-                    <div class="request-form">
-                        <div class="request-background"></div>
-                        <img class="request-img" src="/img/lists.png" alt="">
-                        <div class="request-text" id="request-text-main-form">Запишись на собеседование</div>
-                        <div class="request-client-data">
-                            <div class="row-one">
-                                <div class="request-first-block">
-                                    <div class="sett-title" id="sett-title-request-name">Ваше имя*</div>
-                                    <input type="text" id="username-input-main-request" name="username-input"
-                                        class="module-input">
-                                </div>
-                                <div class="request-second-block">
-                                    <div class="sett-title" id="sett-title-request-type-connecting">Удобный вид связи*
-                                    </div>
-                                    <div class="checkbox-container-r">
-                                        <div class="checkbox-container-r">
-                                            <div class="checkbox-item-r">
-                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option1"
-                                                    name="option1" value="E-mail">
-                                                <label class="checkbox-label-r" for="option1">E-mail</label>
-                                            </div>
+                    <div class="buttom-block">
+                        <div class="about-title">Описание</div>
+                        <div class="about-text">
+                            <p>Наша компания специализируется на предоставлении коучинговых услуг и программ личностного
+                                и
+                                профессионального развития для руководителей всех уровней, включая директоров, CEO,
+                                менеджеров, а
+                                также владельцев бизнеса и предпринимателей. Мы фокусируемся на индивидуальном подходе к
+                                каждому клиенту,
+                                предлагая решения, адаптированные к их уникальным профессиональным и личным целям и
+                                обстоятельствам.</p>
+                            <p>Наша команда стремится предоставлять услуги, которые не только улучшают профессиональные
+                                навыки,
+                                но и способствуют личностному росту и повышению качества жизни клиентов. Наш подход
+                                ориентирован на создание гармоничного
+                                баланса между профессиональными и личными аспектами жизни клиентов, а также на их
+                                эффективное взаимодействие в команде и
+                                организации.
+                            <p>Мы считаем что Человек главный драйвер и источник потенциала в любой системе,
+                                и только целостный Человек способен конвертировать изменения в успех.</p>
+                            <p>Наши продукты развивают лидерский потенциал и улучшают качество жизни владельцев,
+                                топ-менеджеров
+                                и руководителей через углубленное понимание аспектов профессиональных и личных целей,
+                                раскрытие
+                                и гармонизацию психологических факторов и условий формирования поведения человека,
+                                восприятие себя
+                                и жизни, реакции на события и обстоятельства.</p>
+                            Наши продукты создают основу создания эффективных управленческих систем, управления
+                            командами для
+                            устойчивого развития и достижения стратегических целей, положительного влияния в бизнесе и
+                            обществе.
+                        </div>
+                    </div>
 
-                                            <div class="checkbox-item-r">
-                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option2"
-                                                    name="option2" value="номер">
-                                                <label class="checkbox-label-r" for="option2">WhatsApp</label>
-                                            </div>
-                                            <div class="checkbox-item-r">
-                                                <input type="checkbox" class="custom-checkbox-contact-r" id="option3"
-                                                    name="option3" value="ник(+номер)">
-                                                <label class="checkbox-label-r" for="option3">Telegram</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row-two">
-                                <div class="request-first-block">
-                                    <output id="sett-title-output-r">-</output>
-                                    <input type="text" id="contacts-input-main-request" name="contacts-input"
-                                        class="module-input" style="position: absolute;width: 500px;top: 60px;">
-                                </div>
-                                <div class="request-second-block">
-                                    <button class="request" id="request_small-main-request">Записаться</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ================= Анкета ================== -->
-                <div id="anketaModal" class="modal">
-                    <div class="modal-content">
-                        <div id="anketaFormContainer">
-                            <!-- Тут будет динамически созданная форма -->
-                        </div>
-                    </div>
-                </div>
             </section>
             <!-- ================= Вопросы-Ответы ================== -->
             <section id="faq">

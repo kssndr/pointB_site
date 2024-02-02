@@ -687,6 +687,8 @@ img {
         font-style: normal;
         font-weight: 500;
         line-height: 67px;
+        margin-left: 28px;
+}
         /* 279.167% */
     }
 
@@ -924,7 +926,7 @@ img {
     h5 {
         display: block;
         font-size: 0.83em;
-        margin-block-start: 1.3em;
+        margin-block-start: 0.4em;
         margin-block-end: 1.3em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
