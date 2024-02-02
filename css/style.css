@@ -2938,7 +2938,8 @@ img {
         top: 0px;
         left: 0px;
         flex-direction: column;
-        background-color: #EAEAEA;
+        /* background-color: #EAEAEA; */
+        background: linear-gradient(180deg,#EAEAEA 90%,#FFFF);
         height: auto;
         padding-bottom: 20px;
 
@@ -3157,7 +3158,8 @@ img {
     }
 
     .bonus {
-        background: #EDF5F5;
+        /* background: #EDF5F5; */
+        background: linear-gradient(180deg,#EDF5F5 90%,#FFFF);
         margin-bottom: 40px;
 
     }
