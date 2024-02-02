@@ -554,10 +554,10 @@ a:hover {
         color: #0D4D47;
         text-align: center;
         font-family: Roboto Slab;
-        font-size: 45.862px;
+        font-size: 56px;
         font-style: normal;
         font-weight: 500;
-        line-height: 49.622px;
+        line-height: 50px;
         /* width: 407px; */
         height: 160px;
         margin-top: 20px;
@@ -572,7 +572,7 @@ a:hover {
 
 
     .block {
-        width: 313px;
+        width: 350px;
         height: 41px;
         background-color: #0D4C47;
         display: flex;
@@ -606,6 +606,7 @@ a:hover {
         line-height: normal;
         border: none;
         cursor: pointer;
+        margin-top: 30px;
 
     }
 
@@ -955,14 +956,14 @@ img {
 @media (max-width: 768px) {
 
     h1 {
-        display: flex;
+        /* display: flex; */
         height: auto;
         width: 100vw;
         flex-shrink: 0;
         color: #B9B9B9;
         text-align: center;
         font-family: Roboto Slab;
-        font-size: 24px;
+        font-size: 22px;
         font-style: normal;
         font-weight: 500;
         line-height: 30px;
@@ -1173,10 +1174,6 @@ img {
         font-weight: 800;
     }
 
-    .text-block {
-        display: none;
-    }
-
     .modal-overlay {
         display: none;
         position: fixed;
@@ -1307,6 +1304,37 @@ img {
         flex-shrink: 0;
         display: block;
         margin: 10px 20px 0px 20px;
+    }
+
+    .text-block p {
+        text-align: center;
+        display: block;
+        margin-block-start: 0;
+        margin-block-end: 3px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .request-module-block {
+        display: flex;
+        padding: 12px 22px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 22px;
+        background: #C4A36D;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        left: 0px;
+        top: 23px;
     }
 }
 
@@ -2939,7 +2967,7 @@ img {
         left: 0px;
         flex-direction: column;
         /* background-color: #EAEAEA; */
-        background: linear-gradient(180deg,#EAEAEA 90%,#FFFF);
+        background: linear-gradient(180deg, #EAEAEA 90%, #FFFF);
         height: auto;
         padding-bottom: 20px;
 
@@ -3159,7 +3187,7 @@ img {
 
     .bonus {
         /* background: #EDF5F5; */
-        background: linear-gradient(180deg,#EDF5F5 90%,#FFFF);
+        background: linear-gradient(180deg, #EDF5F5 90%, #FFFF);
         margin-bottom: 40px;
 
     }
