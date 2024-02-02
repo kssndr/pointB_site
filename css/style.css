@@ -930,7 +930,7 @@ img {
         font-weight: bold;
     }
 
-    .request-module-block {
+    .request-after-anket {
         display: flex;
         padding: 12px 22px;
         justify-content: center;
@@ -1334,7 +1334,7 @@ img {
         cursor: pointer;
         position: relative;
         left: 0px;
-        top: 23px;
+        top: 0px;
     }
 
     h5 {
@@ -1346,6 +1346,27 @@ img {
         margin-inline-end: 0px;
         font-weight: bold;
         }
+
+        .request-after-anket {
+            display: flex;
+            padding: 12px 22px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 22px;
+            background: #C4A36D;
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            top: 155px;
+            }
 }
 
 /* =========================================================== */
