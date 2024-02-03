@@ -1818,7 +1818,7 @@ function sendData() {
 $(document).ready(function(){
   $(".members.owl-carousel").owlCarousel({
       loop: false, // Зацикливание карусели
-      margin: 40, // Отступы между элементами
+      margin: 100, // Отступы между элементами
       nav: false, // Навигация (стрелки)
       responsive: { // Адаптивность
           0: {
@@ -1827,7 +1827,7 @@ $(document).ready(function(){
           780: {
               items: 3 // Количество элементов при ширине экрана 600px и выше
           },
-          1000: {
+          1200: {
               items: 4 // Количество элементов при ширине экрана 1000px и выше
           }
       }
