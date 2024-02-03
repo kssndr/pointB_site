@@ -3496,12 +3496,12 @@ img {
 
     .owl-carousel .owl-item img {
         display: block;
-        width: 0% !important;
+        width: 76% !important;
         }
 
     .membr-photo {
         width: 160px;
-        height: 190px;
+        height: 200px;
         flex-shrink: 0;
         border-radius: 20px;
         object-fit: cover;
@@ -3731,7 +3731,7 @@ img {
 
     .owl-carousel .owl-item img {
         display: block;
-        width: 0% !important;
+        width: 44% !important;
         }
 
     .membre {
@@ -3748,8 +3748,8 @@ img {
     }
 
     .membr-photo {
-        width: 162.487px;
-        height: 192.146px;
+        /* width: 162.487px; */
+        height: 200px;
         flex-shrink: 0;
         border-radius: 20px;
         object-fit: cover;
