@@ -1819,8 +1819,8 @@ $(document).ready(function(){
   $(".members.owl-carousel").owlCarousel({
       loop: false, // Зацикливание карусели
       margin: 40, // Отступы между элементами
-      center: true,
-      items: 1.2,
+      center: false,
+      items: 1.5,
       responsive: { // Адаптивность
           0: {
               items: 1 // Количество элементов при ширине экрана 0px и выше
