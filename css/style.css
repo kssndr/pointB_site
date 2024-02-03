@@ -3495,7 +3495,7 @@ img {
     }
 
     .membr-photo {
-        height: 270px;
+        height: 190px;
         flex-shrink: 0;
         border-radius: 20px;
         object-fit: cover;
