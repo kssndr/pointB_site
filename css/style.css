@@ -3525,7 +3525,7 @@ img {
 
     /* Стиль активной точки */
     .members .owl-carousel .owl-dot.active {
-        background: #000;
+        background: #C58812;
         /* Цвет активной полоски */
     }
 
@@ -3760,9 +3760,39 @@ img {
 
     }
 
-    .owl-carousel .owl-item img {
+   .members .owl-carousel .owl-item img {
         display: block;
         width: 44% !important;
+    }
+
+
+    /* Стиль контейнера точек */
+    .members .owl-carousel .owl-dots {
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+        /* Убирает эффект выделения на мобильных устройствах */
+    }
+
+    /* Стиль каждой точки */
+    .members .owl-carousel .owl-dot {
+        display: inline-block;
+        height: 4px;
+        /* Высота полоски */
+        width: 30px;
+        /* Ширина полоски */
+        background: #ccc;
+        /* Цвет полоски */
+        margin: 0 5px;
+        /* Отступы между полосками */
+        border-radius: 2px;
+        /* Скругление углов полоски для более плавного вида */
+        cursor: pointer;
+    }
+
+    /* Стиль активной точки */
+    .members .owl-carousel .owl-dot.active {
+        background: #C58812;
+        /* Цвет активной полоски */
     }
 
     .membre {
