@@ -98,6 +98,9 @@ section {
 .header {
     min-height: 146px;
     background-color: #FFF;
+    /* TEST */
+    max-width: 1179px;
+    margin: auto;
 
 }
 
