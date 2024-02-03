@@ -3721,21 +3721,20 @@ img {
 
     .members {
         display: flex;
+        flex-wrap: nowrap; /* Убедитесь, что элементы не переносятся на новую строку */
         gap: 40px;
-        margin-top: 100px;
-        width: calc(100vw - 40px);
-        /* flex-direction: column; */
-        margin-left: 20px;
-        align-items: center;
-        margin-right: 20px;
-        overflow-x: auto;
-        white-space: nowrap;
+        margin: 100px 20px; /* Объединенные верхние и боковые отступы */
+        overflow-x: auto; /* Включает горизонтальный скролл для блоков .membre */
+        white-space: nowrap; /* Убедитесь, что текст внутри блоков не переносится */
+        align-items: center; /* Выравнивание элементов по центру по вертикали */
     }
 
     .membre {
         display: flex;
         flex-direction: column;
         flex: 0 0 auto;
+        min-width: 160px; /* Пример минимальной ширины, адаптируйте под свой дизайн */
+
     }
 
     .membre-name {
