@@ -3494,7 +3494,13 @@ img {
         margin-top: 10px;
     }
 
+    .owl-carousel .owl-item img {
+        display: block;
+        /* width: 100%; */
+        }
+
     .membr-photo {
+        width: 160px;
         height: 190px;
         flex-shrink: 0;
         border-radius: 20px;
