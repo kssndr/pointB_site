@@ -3725,13 +3725,14 @@ img {
 
     .members {
         display: flex;
-        flex-wrap: nowrap; /* Убедитесь, что элементы не переносятся на новую строку */
-        gap: 40px;
-        margin: 100px 20px; /* Объединенные верхние и боковые отступы */
-        overflow-x: auto; /* Включает горизонтальный скролл для блоков .membre */
-        white-space: nowrap; /* Убедитесь, что текст внутри блоков не переносится */
-        align-items: center; /* Выравнивание элементов по центру по вертикали */
+        margin-top: 70px;
+
     }
+
+    .owl-carousel .owl-item img {
+        display: block;
+        /* width: 100%; */
+        }
 
     .membre {
         display: flex;

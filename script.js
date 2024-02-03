@@ -1819,7 +1819,7 @@ $(document).ready(function(){
   $(".members.owl-carousel").owlCarousel({
       loop: false, // Зацикливание карусели
       margin: 40, // Отступы между элементами
-      nav: false, // Навигация (стрелки)
+      nav: true, // Навигация (стрелки)
       responsive: { // Адаптивность
           0: {
               items: 1 // Количество элементов при ширине экрана 0px и выше
