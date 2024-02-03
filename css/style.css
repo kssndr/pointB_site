@@ -3487,7 +3487,7 @@ img {
         display: flex;
         flex-direction: column;
         flex: 0 0 auto;
-        width: 270px;
+        width: 220px;
         align-items: center;
     }
 
@@ -3497,7 +3497,7 @@ img {
 
     .membr-photo {
         width: 162.487px;
-        height: 192.146px;
+        height: 270px;
         flex-shrink: 0;
         border-radius: 20px;
         object-fit: cover;
@@ -3526,7 +3526,6 @@ img {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 100vw;
     }
 
     .title-aboutus {
