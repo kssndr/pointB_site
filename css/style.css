@@ -3477,13 +3477,9 @@ img {
     .members {
         /* display: grid;
         grid-template-columns: repeat(3, 1fr); */
-        gap: 40px;
         margin-top: 30px;
         display: flex;
-        /* Располагает дочерние элементы в горизонтальном направлении */
-        overflow-x: auto;
-        /* Добавляет горизонтальную прокрутку, если дочерние элементы не помещаются */
-        white-space: nowrap;
+        max-width: 1179px;
     }
 
     .membre {
@@ -3499,7 +3495,6 @@ img {
     }
 
     .membr-photo {
-        width: 162.487px;
         height: 270px;
         flex-shrink: 0;
         border-radius: 20px;
