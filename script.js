@@ -1045,17 +1045,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initialize();
-  
-      // Добавление обработчика событий для закрытия списка при клике вне его
-      document.addEventListener('click', function(event) {
-        let filterButton = document.getElementById('filter-mob');
-        let filterList = document.getElementById('filter-list');
 
-        // Проверяем, был ли клик внутри списка или кнопки
-        if (filterList && !filterList.contains(event.target) && !filterButton.contains(event.target)) {
-            filterList.style.display = 'none';
-        }
-    });
+  // Добавление обработчика событий для закрытия списка при клике вне его
+  document.addEventListener('click', function (event) {
+    let filterButton = document.getElementById('filter-mob');
+    let filterList = document.getElementById('filter-list');
+
+    // Проверяем, был ли клик внутри списка или кнопки
+    if (filterList && !filterList.contains(event.target) && !filterButton.contains(event.target)) {
+      filterList.style.display = 'none';
+    }
+  });
 });
 
 //новый вариант
@@ -1395,10 +1395,10 @@ function displayClientInfo(caseItem) {
   modalContainer.style.display = 'block'; // Показываем модальное окно
   document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
 
-    // Добавление обработчиков событий для кнопок переключения кейсов
-    let nextButton = modalContainer.querySelector('.mob-case-block-bottom-next');
-    let prevButton = modalContainer.querySelector('.mob-case-block-bottom-prev');
-  
+  // Добавление обработчиков событий для кнопок переключения кейсов
+  let nextButton = modalContainer.querySelector('.mob-case-block-bottom-next');
+  let prevButton = modalContainer.querySelector('.mob-case-block-bottom-prev');
+
   // Удаляем предыдущие обработчики событий
   if (nextButton) {
     // nextButton.removeEventListener('click', showNextCase);
@@ -1815,23 +1815,23 @@ function sendData() {
 //========================================================================================
 //Создание карусели для команды на мобильной версии
 //========================================================================================
-$(document).ready(function(){
+$(document).ready(function () {
   $(".members.owl-carousel").owlCarousel({
-      loop: false, // Зацикливание карусели
-      margin: 40, // Отступы между элементами
-      center: false,
-      items: 1.5,
-      responsive: { // Адаптивность
-          0: {
-              items: 1 // Количество элементов при ширине экрана 0px и выше
-          },
-          480: {
-              items: 2 // Количество элементов при ширине экрана 600px и выше
-          },
-          768: {
-              items: 3 // Количество элементов при ширине экрана 1000px и выше
-          }
+    loop: false, // Зацикливание карусели
+    margin: 40, // Отступы между элементами
+    center: false,
+    items: 1.5,
+    responsive: { // Адаптивность
+      0: {
+        items: 1 // Количество элементов при ширине экрана 0px и выше
+      },
+      480: {
+        items: 2 // Количество элементов при ширине экрана 600px и выше
+      },
+      768: {
+        items: 3 // Количество элементов при ширине экрана 1000px и выше
       }
+    }
   });
 });
 
@@ -1999,11 +1999,17 @@ function createFAQ(questionsData) {
     questionButton.style.textDecoration = "underline";
     questionButton.style.textDecorationStyle = "dotted";
 
-     // Создаем элемент h4 для текста вопроса и добавляем его в кнопку
-     const questionText = document.createElement('h4');
-     questionText.textContent = question.text;
-     questionButton.appendChild(questionText);  // Добавляем текст вопроса внутрь h4, а затем h4 в кнопку
- 
+    // Создаем элемент h4 для текста вопроса и добавляем его в кнопку
+    const questionText = document.createElement('h4');
+    questionText.textContent = question.text;
+    questionButton.appendChild(questionText);  // Добавляем текст вопроса внутрь h4, а затем h4 в кнопку
+
+    // Проверка, содержит ли `answer` текст для создания якоря
+    if (question.answer.includes("Настроить под себя")) {
+      question.answer = createAnchorFromText(question.answer, "program-request", "Настроить под себя");
+    }
+
+
 
 
     // Создаем контейнер для SVG иконок
@@ -2049,8 +2055,13 @@ function createFAQ(questionsData) {
     questionContainer.appendChild(iconContainer);
 
     // Создаем div для ответа
+    // const answerDiv = document.createElement('div');
+    // answerDiv.textContent = question.answer;
+    // answerDiv.className = "faq-answer";
+    // answerDiv.style.display = "none";
+
     const answerDiv = document.createElement('div');
-    answerDiv.textContent = question.answer;
+    answerDiv.innerHTML = question.answer; // Изменено с textContent на innerHTML
     answerDiv.className = "faq-answer";
     answerDiv.style.display = "none";
 
@@ -2082,6 +2093,11 @@ function createFAQ(questionsData) {
     faqContainer.appendChild(questionContainer);
     faqContainer.appendChild(answerDiv);
   });
+}
+// Функция для замены названия кнопки на якорную ссылку
+function createAnchorFromText(text, buttonId, buttonText) {
+  const anchorHtml = `<a href="#${buttonId}" style="text-decoration: underline;">${buttonText}</a>`;
+  return text.replace(buttonText, anchorHtml);
 }
 
 
