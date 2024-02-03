@@ -1396,7 +1396,7 @@ img {
 @media (min-width: 768px) {
     .program-container {
         width: 1440px;
-        height: 880px;
+        height: 740px;
         background: #09312E;
         position: absolute;
         top: 500px;
@@ -1407,7 +1407,7 @@ img {
     }
 
     .container-close-button {
-        padding-top: 42px;
+        padding-top: 20px;
         padding-right: 240px;
         text-align: right;
         display: flex;
@@ -1450,7 +1450,7 @@ img {
         font-weight: 500;
         line-height: 36px;
         /* 87.805% */
-        padding-top: 100px;
+        padding-top: 10px;
         padding-left: 100px;
         display: flex;
     }
@@ -1861,7 +1861,7 @@ img {
 
     #abou_oferta {
         color: #B9B9B9;
-        margin-top: 30px;
+        margin-top: 15px;
         display: flex;
 
 
@@ -5290,6 +5290,7 @@ p {
         height: auto;
         flex-shrink: 0;
         background: linear-gradient(270deg, #CFD8D7 0%, rgba(255, 255, 255, 0.00) 200%);
+        width: 100vw;
     }
 
     .container-footer {
