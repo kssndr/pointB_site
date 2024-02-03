@@ -3342,9 +3342,9 @@ img {
 
     .up-block {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        margin-top: 20px;
+        /* grid-template-columns: repeat(3, 1fr); */
+        gap: 10px;
+        margin-top: 40px;
         margin-bottom: 40px;
     }
 
