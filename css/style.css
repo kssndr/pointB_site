@@ -3496,7 +3496,7 @@ img {
 
     .owl-carousel .owl-item img {
         display: block;
-        /* width: 100%; */
+        width: 0% !important;
         }
 
     .membr-photo {
@@ -3731,7 +3731,7 @@ img {
 
     .owl-carousel .owl-item img {
         display: block;
-        /* width: 100%; */
+        width: 0% !important;
         }
 
     .membre {
