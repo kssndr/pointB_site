@@ -5389,6 +5389,14 @@ p {
     max-height: 300px; /* Регулируемая максимальная высота */
     overflow-y: auto; /* Включить прокрутку по вертикали, если текст превышает максимальную высоту */
 }
+.terms-btn {
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 11px;
+    font-size: 16px;
+    color: green;
+    }
 
 
 @media (max-width: 769px) {
@@ -5502,10 +5510,10 @@ p {
     
     .modal-content-term {
         background-color: #fefefe;
-        margin: 15% auto; /* 15% от верхней части экрана и центрировано по горизонтали */
+        margin: 20% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%; /* Можно регулировать ширину */
+        width: 85%;
     }
     
     .close-term {
@@ -5523,9 +5531,27 @@ p {
     }
     
     .modal-text {
-        max-height: 300px; /* Регулируемая максимальная высота */
+        max-height: 340px; /* Регулируемая максимальная высота */
         overflow-y: auto; /* Включить прокрутку по вертикали, если текст превышает максимальную высоту */
     }
+
+    .modal-text p {
+        color: #1D1D1D;
+        font-size: 12px;
+        font-family: Inter, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        }
+
+        .terms-btn {
+            font-family: Inter, sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            margin-top: 11px;
+            font-size: 16px;
+            color: green;
+            }
 
 }
 
