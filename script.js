@@ -2493,71 +2493,57 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
     }
   });
 
-// Заменяем fetch на статические данные
-// const fakeUserData = { country: 'RUS' };
+// Получение модального окна
+var termsModal = document.getElementById("termsModal");
+var privacyModal = document.getElementById("privacyModal");
 
-// Заменяем fetch на Promise, который сразу возвращает фиктивные данные
-// const fakeFetch = new Promise((resolve) => {
-//   setTimeout(() => {
-//     resolve({ json: () => fakeUserData });
-//   }, 1000); // Задержка для имитации задержки ответа от сервера
-// });
+// Получение кнопки, открывающей модальное окно
+var termsLink = document.querySelector("a[href='/terms-and-conditions.html']");
+var privacyLink = document.querySelector("a[href='/privacy-policy.html']");
 
-/// Заменяем fetch на статические данные
-// const fakeUserData = { country: 'RUS' };
+// Получение элемента <span>, который закрывает модальное окно
+var spans = document.getElementsByClassName("close-term");
 
-// Заменяем fetch на Promise, который сразу возвращает фиктивные данные
-// const fakeFetch = new Promise((resolve) => {
-//   setTimeout(() => {
-//     resolve({ json: () => fakeUserData });
-//   }, 1000); // Задержка для имитации задержки ответа от сервера
-// });
+// Когда пользователь кликает на ссылку, открыть модальное окно
+termsLink.onclick = function(event) {
+    event.preventDefault(); // Предотвращение перехода по ссылке
+    loadDocument('terms-and-conditions.html', 'termsText');
+    termsModal.style.display = "block";
+}
 
-// // Используем fakeFetch вместо fetch для получения данных
-// fakeFetch
-//   .then((response) => response.json())
-//   .then((data) => {
-//     // Ваш код для обработки данных
-//     const userCountry = data.country;
+privacyLink.onclick = function(event) {
+    event.preventDefault(); // Предотвращение перехода по ссылке
+    loadDocument('privacy-policy.html', 'privacyText');
+    privacyModal.style.display = "block";
+}
 
-//     const contactsByCountry = {
-//       RUS: {
-//         company_name: "ИП Романовская И.В.",
-//         numbers: "ИНН: 421409221318, ОГРНИП 320784700298867",
-//         address: '346550, РОССИЯ, обл РОСТОВСКАЯ,',
-//         contacts: 'mail@superday.one',
-//       },
-//       KZ: {
-//         company_name: "TOO Point B",
-//         numbers: "ИИН 221140016750",
-//         address: 'Казахстан, Алматинская область',
-//         contacts: 'mail@pointb.ltd',
-//       },
-//       OTHER: {
-//         company_name: "TOO Point B",
-//         numbers: "ИИН 221140016750",
-//         address: 'Казахстан, Алматинская область',
-//         contacts: 'mail@pointb.ltd',
-//       },
-//       // Добавьте контактную информацию для других стран
-//     };
+// Когда пользователь кликает на <span> (x), закрыть модальное окно
+for (var i = 0; i < spans.length; i++) {
+    spans[i].onclick = function() {
+        termsModal.style.display = "none";
+        privacyModal.style.display = "none";
+    }
+}
 
-//     // Вставляем контактную информацию на страницу
-//     const contactInfo = contactsByCountry[userCountry];
-//     if (contactInfo) {
-//       const addressElement = document.getElementById('address');
-//       const numbersElement = document.getElementById('numbers');
-//       const companyNameElement = document.getElementById('company_name');
-//       const contactsElement = document.getElementById('contacts_email');
+// Загрузка содержимого документа в модальное окно
+function loadDocument(url, elementId) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById(elementId).innerHTML = xhr.responseText;
+        } else {
+            console.error('Ошибка загрузки документа: ', xhr.statusText);
+        }
+    };
+    xhr.open('GET', url);
+    xhr.send();
+}
 
-//       companyNameElement.textContent = contactInfo.company_name;
-//       numbersElement.textContent = contactInfo.numbers;
-//       addressElement.textContent = contactInfo.address;
-//       contactsElement.textContent = contactInfo.contacts;
-//     } else {
-//       console.error('Информация о стране пользователя не найдена.');
-//     }
-//   })
-//   .catch((error) => {
-//     console.error('Ошибка при получении информации о стране пользователя:', error);
-//   });
+// Когда пользователь кликает в любом месте за пределами модального окна, закрыть его
+window.onclick = function(event) {
+    if (event.target == termsModal || event.target == privacyModal) {
+        termsModal.style.display = "none";
+        privacyModal.style.display = "none";
+    }
+}
+
