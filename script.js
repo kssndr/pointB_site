@@ -2546,4 +2546,13 @@ window.onclick = function(event) {
         privacyModal.style.display = "none";
     }
 }
+// Получение кнопки "Принять" для Политики конфиденциальности
+var acceptPrivacyBtn = document.getElementById("acceptPrivacy");
 
+// Действие при нажатии на кнопку "Принять"
+acceptPrivacyBtn.onclick = function() {
+    console.log("Пользователь принял Политику конфиденциальности"); // Пример действия: вывод в консоль
+    privacyModal.style.display = "none"; // Закрыть модальное окно
+
+    // Здесь можно добавить дополнительный код, например, для сохранения состояния согласия пользователя
+}
