@@ -1201,44 +1201,38 @@ function createCheckboxList(leftButtons, rightButtons) {
 
 }
 
+// function toggleVisibility(elementId) {
+//   let element = document.getElementById(elementId);
+//   if (element) {
+//     if (element.style.display === 'none') {
+//       element.style.display = 'block';
+//     } else {
+//       element.style.display = 'none';
+//     }
+//   } else {
+//     console.error("Элемент с ID '" + elementId + "' не найден");
+//   }
+// }
+
 function toggleVisibility(elementId) {
   let element = document.getElementById(elementId);
+  let cancelButton = document.querySelector('.filter-mob-cancel');
+
   if (element) {
-    if (element.style.display === 'none') {
-      element.style.display = 'block';
+    if (element.style.display === 'none' || element.style.display === '') {
+      element.style.display = 'block'; // Показываем выпадающий список
+      // Скрываем кнопку filter-mob-cancel, когда список отображается
+      if (cancelButton) cancelButton.style.display = 'none';
     } else {
-      element.style.display = 'none';
+      element.style.display = 'none'; // Скрываем выпадающий список
+      // Показываем кнопку filter-mob-cancel, когда список скрыт
+      if (cancelButton) cancelButton.style.display = 'block';
     }
   } else {
     console.error("Элемент с ID '" + elementId + "' не найден");
   }
 }
 
-
-// function toggleVisibility(elementId) {
-//   let element = document.getElementById(elementId);
-//   if (element) {
-//     if (element.style.display === 'none') {
-//       element.style.display = 'block';
-      
-//       // Добавляем код для отображения кнопки filter-mob-cancel
-//       let cancelButton = document.querySelector('.filter-mob-cancel');
-//       if (cancelButton) {
-//         cancelButton.style.display = 'block';
-//       }
-//     } else {
-//       element.style.display = 'none';
-      
-//       // Добавляем код для скрытия кнопки filter-mob-cancel
-//       let cancelButton = document.querySelector('.filter-mob-cancel');
-//       if (cancelButton) {
-//         cancelButton.style.display = 'none';
-//       }
-//     }
-//   } else {
-//     console.error("Элемент с ID '" + elementId + "' не найден");
-//   }
-// }
 
 // Глобальная переменная для хранения выбранных элементов
 let selectedFiltersMob = [];
