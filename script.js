@@ -1144,6 +1144,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Добавление обработчика событий для кнопки "filter-mob-cancel"
 let cancelButton = document.querySelector('.filter-mob-cancel');
+
 if (cancelButton) {
   cancelButton.addEventListener('click', function () {
     // Сброс выбранных чекбоксов
@@ -1161,11 +1162,6 @@ function createCheckboxList(leftButtons, rightButtons) {
   listContainer.id = 'filter-list';
   listContainer.style.display = 'none';
 
-    // Скрываем кнопку "filter-mob-cancel"
-    if (cancelButton) {
-      cancelButton.style.display = 'none';
-    }
-  
   // Функция для добавления чекбоксов
   function addCheckboxes(buttons) {
     buttons.forEach(button => {
@@ -1196,6 +1192,13 @@ function createCheckboxList(leftButtons, rightButtons) {
 
   // Обновление списка и текста кнопки после создания чекбоксов
   updateSelectedFilters();
+
+    // Скрытие кнопки filter-mob-cancel
+    let cancelButton = document.querySelector('.filter-mob-cancel');
+    if (cancelButton) {
+      cancelButton.style.display = 'none';
+    }
+    
 }
 
 function toggleVisibility(elementId) {
@@ -1244,12 +1247,6 @@ function updateSelectedFilters() {
       "Выберите модули";
     filterButton.innerHTML = svgIconFilter + buttonText + svgIconArrow;
   }
-
-    // Показываем кнопку "filter-mob-cancel"
-    if (cancelButton) {
-      cancelButton.style.display = 'block';
-    }
-
   updateCasesContainer(); // Обновляем контейнер с кейсами
 }
 
@@ -1284,6 +1281,11 @@ function updateCasesContainer() {
         let clientButton = document.createElement('button');
         clientButton.classList.add('client-button');
         clientButton.innerHTML = `<img class="client-photo-mob" src="${clientPhoto}" alt="Фото клиента" /><div class="client-name-mob">${clientName}</div>`;
+
+        // Обработчик нажатия кнопки для отображения дополнительной информации
+        clientButton.addEventListener('click', () => {
+          displayClientInfo(caseItem);
+        });
 
         container.appendChild(clientButton);
       }
