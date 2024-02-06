@@ -2585,6 +2585,7 @@ img {
         flex-wrap: wrap;
         gap: 3px;
         z-index: 1;
+        justify-content: center;
     }
 
     .btn-filter {
