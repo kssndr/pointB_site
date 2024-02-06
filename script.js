@@ -1249,7 +1249,7 @@ function updateSelectedFilters() {
     if (cancelButton) {
       cancelButton.style.display = 'block';
     }
-    
+
   updateCasesContainer(); // Обновляем контейнер с кейсами
 }
 
@@ -1284,11 +1284,6 @@ function updateCasesContainer() {
         let clientButton = document.createElement('button');
         clientButton.classList.add('client-button');
         clientButton.innerHTML = `<img class="client-photo-mob" src="${clientPhoto}" alt="Фото клиента" /><div class="client-name-mob">${clientName}</div>`;
-
-        // Обработчик нажатия кнопки для отображения дополнительной информации
-        clientButton.addEventListener('click', () => {
-          displayClientInfo(caseItem);
-        });
 
         container.appendChild(clientButton);
       }
