@@ -1161,6 +1161,11 @@ function createCheckboxList(leftButtons, rightButtons) {
   listContainer.id = 'filter-list';
   listContainer.style.display = 'none';
 
+    // Скрываем кнопку "filter-mob-cancel"
+    if (cancelButton) {
+      cancelButton.style.display = 'none';
+    }
+  
   // Функция для добавления чекбоксов
   function addCheckboxes(buttons) {
     buttons.forEach(button => {
@@ -1239,6 +1244,12 @@ function updateSelectedFilters() {
       "Выберите модули";
     filterButton.innerHTML = svgIconFilter + buttonText + svgIconArrow;
   }
+
+    // Показываем кнопку "filter-mob-cancel"
+    if (cancelButton) {
+      cancelButton.style.display = 'block';
+    }
+    
   updateCasesContainer(); // Обновляем контейнер с кейсами
 }
 
