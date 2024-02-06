@@ -1198,16 +1198,42 @@ function createCheckboxList(leftButtons, rightButtons) {
     if (cancelButton) {
       cancelButton.style.display = 'none';
     }
-    
+
 }
+
+// function toggleVisibility(elementId) {
+//   let element = document.getElementById(elementId);
+//   if (element) {
+//     if (element.style.display === 'none') {
+//       element.style.display = 'block';
+//     } else {
+//       element.style.display = 'none';
+//     }
+//   } else {
+//     console.error("Элемент с ID '" + elementId + "' не найден");
+//   }
+// }
+
 
 function toggleVisibility(elementId) {
   let element = document.getElementById(elementId);
   if (element) {
     if (element.style.display === 'none') {
       element.style.display = 'block';
+      
+      // Добавляем код для отображения кнопки filter-mob-cancel
+      let cancelButton = document.querySelector('.filter-mob-cancel');
+      if (cancelButton) {
+        cancelButton.style.display = 'block';
+      }
     } else {
       element.style.display = 'none';
+      
+      // Добавляем код для скрытия кнопки filter-mob-cancel
+      let cancelButton = document.querySelector('.filter-mob-cancel');
+      if (cancelButton) {
+        cancelButton.style.display = 'none';
+      }
     }
   } else {
     console.error("Элемент с ID '" + elementId + "' не найден");
@@ -1247,6 +1273,17 @@ function updateSelectedFilters() {
       "Выберите модули";
     filterButton.innerHTML = svgIconFilter + buttonText + svgIconArrow;
   }
+
+    // Добавляем код для отображения/скрытия кнопки filter-mob-cancel
+    let cancelButton = document.querySelector('.filter-mob-cancel');
+    if (cancelButton) {
+      if (selectedFiltersMob.length > 0) {
+        cancelButton.style.display = 'block'; // Показываем кнопку
+      } else {
+        cancelButton.style.display = 'none'; // Скрываем кнопку
+      }
+    }
+
   updateCasesContainer(); // Обновляем контейнер с кейсами
 }
 
