@@ -1193,26 +1193,9 @@ function createCheckboxList(leftButtons, rightButtons) {
   // Обновление списка и текста кнопки после создания чекбоксов
   updateSelectedFilters();
 
-    // Скрытие кнопки filter-mob-cancel
-    // let cancelButton = document.querySelector('.filter-mob-cancel');
-    // if (cancelButton) {
-    //   cancelButton.style.display = 'none';
-    // }
-
 }
 
-// function toggleVisibility(elementId) {
-//   let element = document.getElementById(elementId);
-//   if (element) {
-//     if (element.style.display === 'none') {
-//       element.style.display = 'block';
-//     } else {
-//       element.style.display = 'none';
-//     }
-//   } else {
-//     console.error("Элемент с ID '" + elementId + "' не найден");
-//   }
-// }
+
 
 function toggleVisibility(elementId) {
   let element = document.getElementById(elementId);
@@ -2466,12 +2449,16 @@ function createCheckboxBlock() {
 }
 
 // // 1. Отправляем запрос на сервер для получения информации о стране пользователя
-// //    Замените URL запроса на фактический адрес вашего сервера
+
+// Глобальная переменная для хранения страны пользователя
+let userCountryGlobal = null;
+
 fetch('/get-user-country.php') // Здесь '/get-user-country' - это адрес вашего сервера для определения страны пользователя
   .then(response => response.json())
   .then(data => {
     // 2. После получения информации о стране, используем ее для выбора соответствующей контактной информации
-    const userCountry = data.country; // Предположим, что сервер возвращает страну в формате ISO 3166-1 Alpha-2 (например, "US", "UK")
+    //const userCountry = data.country; // Предположим, что сервер возвращает страну в формате ISO 3166-1 Alpha-2 (например, "US", "UK")
+    userCountryGlobal = data.country;
 
     const contactsByCountry = {
       RUS: {
@@ -2496,7 +2483,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
     };
 
     // 3. Вставляем контактную информацию на страницу
-    const contactInfo = contactsByCountry[userCountry] || contactsByCountry['RUS']; // Если страны пользователя нет в списке, используем данные для RUS
+    const contactInfo = contactsByCountry[userCountryGlobal] || contactsByCountry['RUS']; // Если страны пользователя нет в списке, используем данные для RUS
     if (contactInfo) {
       const addressElement = document.getElementById('address');
       const numbersElement = document.getElementById('numbers');
@@ -2540,21 +2527,57 @@ var privacyModal = document.getElementById("privacyModal");
 var termsLink = document.querySelector("a[href='/terms-and-conditions.html']");
 var privacyLink = document.querySelector("a[href='/privacy-policy.html']");
 
+var termsLinkT = document.querySelector("a[href='/terms-and--conditions.html']");
+var privacyLinkT = document.querySelector("a[href='/privacy--policy.html']");
+
 // Получение элемента <span>, который закрывает модальное окно
 var spans = document.getElementsByClassName("close-term");
 
 // Когда пользователь кликает на ссылку, открыть модальное окно
+// termsLink.onclick = function(event) {
+//     event.preventDefault(); // Предотвращение перехода по ссылке
+//     loadDocument('terms-and-conditions.html', 'termsText');
+//     termsModal.style.display = "block";
+// }
+
 termsLink.onclick = function(event) {
-    event.preventDefault(); // Предотвращение перехода по ссылке
-    loadDocument('terms-and-conditions.html', 'termsText');
-    termsModal.style.display = "block";
+  event.preventDefault();
+  if (userCountryGlobal === 'RUS') {
+      loadDocument('terms-and-conditions.html', 'termsText');
+      termsModal.style.display = "block";
+  }
 }
 
+// privacyLink.onclick = function(event) {
+//     event.preventDefault(); // Предотвращение перехода по ссылке
+//     loadDocument('privacy-policy.html', 'privacyText');
+//     privacyModal.style.display = "block";
+// }
+
 privacyLink.onclick = function(event) {
-    event.preventDefault(); // Предотвращение перехода по ссылке
-    loadDocument('privacy-policy.html', 'privacyText');
-    privacyModal.style.display = "block";
+  event.preventDefault();
+  if (userCountryGlobal === 'RUS') {
+      loadDocument('privacy-policy.html', 'privacyText');
+      privacyModal.style.display = "block";
+  }
 }
+
+termsLinkT.onclick = function(event) {
+  event.preventDefault();
+  if (userCountryGlobal !== 'RUS') {
+      loadDocument('terms-and--conditions.html', 'termsText');
+      termsModal.style.display = "block";
+  }
+}
+
+privacyLinkT.onclick = function(event) {
+  event.preventDefault();
+  if (userCountryGlobal !== 'RUS') {
+      loadDocument('privacy--policy.html', 'privacyText');
+      privacyModal.style.display = "block";
+  }
+}
+
 
 // Когда пользователь кликает на <span> (x), закрыть модальное окно
 for (var i = 0; i < spans.length; i++) {
