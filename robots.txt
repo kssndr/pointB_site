@@ -8,4 +8,4 @@ Disallow: /test/
 Allow: /
 
 # Указание местоположения XML-карты сайта
-Sitemap: https://pointb.ltd/sitemap.xml
+Sitemap:https://pointb.ltd/sitemap.xml
