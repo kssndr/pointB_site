@@ -1398,13 +1398,23 @@ img {
 /* Блок конструирования программы */
 /* =========================================================== */
 @media (min-width: 768px) {
+
+    .program {
+        position: fixed;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1000;
+    }
     .program-container {
         /* width: 1440px;
         height: 740px; */
         width: 100vw;
         height: 100vw;
         background: #09312E;
-        position: absolute;
+        position: relative;
         /* top: 500px;
         left: 50%;
         transform: translateX(-45%); */
@@ -1457,7 +1467,7 @@ img {
         line-height: 36px;
         /* 87.805% */
         padding-top: 10px;
-        padding-left: 120px;
+        padding-left: 100px;
         display: flex;
     }
 
@@ -1466,7 +1476,7 @@ img {
         width: 1115px;
         height: 470px;
         padding-top: 36px;
-        padding-left: 120px;
+        padding-left: 100px;
 
     }
 
