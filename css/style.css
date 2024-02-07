@@ -1399,13 +1399,15 @@ img {
 /* =========================================================== */
 @media (min-width: 768px) {
     .program-container {
-        width: 1440px;
-        height: 740px;
+        /* width: 1440px;
+        height: 740px; */
+        width: 100vw;
+        height: 100vw;
         background: #09312E;
         position: absolute;
-        top: 500px;
+        /* top: 500px;
         left: 50%;
-        transform: translateX(-45%);
+        transform: translateX(-45%); */
         z-index: 1000;
 
     }
@@ -1455,7 +1457,7 @@ img {
         line-height: 36px;
         /* 87.805% */
         padding-top: 10px;
-        padding-left: 100px;
+        padding-left: 120px;
         display: flex;
     }
 
@@ -1464,7 +1466,7 @@ img {
         width: 1115px;
         height: 470px;
         padding-top: 36px;
-        padding-left: 100px;
+        padding-left: 120px;
 
     }
 

@@ -2031,9 +2031,6 @@ function createFAQ(questionsData) {
       question.answer = createAnchorFromText(question.answer, "program-request", "Настроить под себя");
     }
 
-
-
-
     // Создаем контейнер для SVG иконок
     const iconContainer = document.createElement('span');
     iconContainer.className = "icon-container";
