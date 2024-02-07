@@ -2562,7 +2562,7 @@ privacyLink.onclick = function(event) {
   }
 }
 
-termsLinkT.onclick = function(event) {
+termsLink.onclick = function(event) {
   event.preventDefault();
   if (userCountryGlobal !== 'RUS') {
       loadDocument('terms-and--conditions.html', 'termsText');
@@ -2570,7 +2570,7 @@ termsLinkT.onclick = function(event) {
   }
 }
 
-privacyLinkT.onclick = function(event) {
+privacyLink.onclick = function(event) {
   event.preventDefault();
   if (userCountryGlobal !== 'RUS') {
       loadDocument('privacy--policy.html', 'privacyText');
