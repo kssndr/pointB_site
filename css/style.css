@@ -1424,7 +1424,7 @@ z-index: 1000;
 
     .container-close-button {
         padding-top: 20px;
-        padding-right: 240px;
+        padding-right: 100px;
         text-align: right;
         display: flex;
     }
@@ -1877,7 +1877,7 @@ z-index: 1000;
 
     #abou_oferta {
         color: #B9B9B9;
-        margin-top: 15px;
+        margin-top: 5px;
         display: flex;
 
 
