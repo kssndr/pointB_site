@@ -1502,7 +1502,7 @@ function createQuestions(questionsData) {
   // Создаем заголовок формы
   const titleAnket = document.createElement('div');
   titleAnket.className = "title-anketa-name";
-  titleAnket.textContent = "Заполните анкету";
+  titleAnket.textContent = "Ответьте на вопросы теста";
 
   // Создаем контейнер для SVG иконок
   const iconContainer = document.createElement('span');
