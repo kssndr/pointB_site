@@ -5335,7 +5335,7 @@ p {
 }
 
 .terms-footer a {
-    color: #272727;
+    color: (var(--accent-color2));
     font-family: Rubik;
     font-size: 13px;
     font-style: normal;
@@ -5479,7 +5479,7 @@ p {
     }
 
     .terms-footer a {
-        color: #272727;
+        color: (var(--accent-color2));
         font-family: Rubik;
         font-size: 13px;
         font-style: normal;
