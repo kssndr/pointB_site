@@ -655,8 +655,8 @@ a:hover {
     .photo-block-intr {
         overflow: hidden;
         border-radius: 30px;
-        width: 350px;
-        height: 350px;
+        /* width: 350px;
+        height: 350px; */
         flex-shrink: 0;
         border-radius: 30px;
         /* transform: scale(1.2); */
@@ -664,8 +664,8 @@ a:hover {
     }
 
     .inn-photo-intr {
-        width: 350px;
-        height: 350px;
+        /* width: 350px;
+        height: 350px; */
         flex-shrink: 0;
         border-radius: 30px;
         transform: scale(1.4);
@@ -681,10 +681,16 @@ a:hover {
         }
 
         .right-block-intr {
-            /* margin-top: -35px; */
+            margin-top: 10px;
             margin-left: 20px;
             margin-right: 20px;
+            display: flex;
+            flex-direction: column;
             }
+
+    #intr-titul {
+        margin-bottom: 25px !important;
+    }
 
 }
 
