@@ -698,12 +698,12 @@ function createCaseElement(item, casesContainer) {
           summaryElement.appendChild(modTextElement);
         }
 
-        if (summaryItem.duration_title) {
-          const durationTitleElement = document.createElement('div');
-          durationTitleElement.className = 'duration_title';
-          // durationTitleElement.textContent = summaryItem.duration_title;
-          summaryElement.appendChild(durationTitleElement);
-        }
+        // if (summaryItem.duration_title) {
+        //   const durationTitleElement = document.createElement('div');
+        //   durationTitleElement.className = 'duration_title';
+        //   // durationTitleElement.textContent = summaryItem.duration_title;
+        //   summaryElement.appendChild(durationTitleElement);
+        // }
 
         if (summaryItem.duration_text) {
           const durationTextElement = document.createElement('div');
@@ -1111,7 +1111,7 @@ function findMaxHeightElementInCase(caseElement) {
 }
 
 //========================================================================================
-//  КЕЙСЫ - Создание фильтра с вычеслением размеров блоков MOBILE
+//  КЕЙСЫ - Создание фильтра  MOBILE
 //========================================================================================
 
 document.addEventListener('DOMContentLoaded', function () {
