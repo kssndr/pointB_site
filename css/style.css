@@ -535,6 +535,12 @@ a:hover {
         /* left: 50%; */
         }
 
+        .right-block-intr {
+            margin-top: -35px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
 }
 
 @media (max-width: 768px) {
@@ -672,6 +678,12 @@ a:hover {
         /* margin-top: 30px; */
         /* left: 50%; */
         }
+
+        .right-block-intr {
+            /* margin-top: -35px; */
+            margin-left: 20px;
+            margin-right: 20px;
+            }
 
 }
 
@@ -880,7 +892,7 @@ img {
 
     .text-display-container {
         position: absolute;
-        top: 600px;
+        /* top: 600px; */
         left: 450px;
         width: 714px;
         /* height: 250px; */
