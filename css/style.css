@@ -3777,7 +3777,7 @@ img {
 
     .right-block {
         
-        margin-top: -35px;
+        /* margin-top: -35px; */
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -3847,7 +3847,7 @@ img {
 
     .members {
         display: flex;
-        margin-top: 60px;
+        margin-top: 30px;
 
     }
 
