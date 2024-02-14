@@ -534,7 +534,7 @@ function updateContainerHeight() {
     if (!caseElement.classList.contains('expanded')) {
       const height = 285; // стандартное значение для свёрнутых
       totalHeight += height;
-      //console.log('Свернутый элемент:', height, 'totalHeight:', totalHeight);
+      console.log('Свернутый элемент:', height, 'totalHeight:', totalHeight);
     }
   });
 
@@ -545,7 +545,7 @@ function updateContainerHeight() {
       const { maxHeight } = findMaxHeightElementInCase(caseElement);
       const height = parseInt(maxHeight, 10); // Преобразование в целое число, если maxHeight — строка
       totalHeight += height;
-      //console.log('Раскрытый элемент:', height);
+      console.log('Раскрытый элемент:', height);
     }
   });
 
@@ -863,13 +863,13 @@ function calculateMaxHeights(data, item, caseElement) {
 
 function setHeights(data) {
   requestAnimationFrame(() => {
-    //console.log('Inside requestAnimationFrame');
-    //console.log('Active Filters:', state.activeFilters);
+    console.log('Inside requestAnimationFrame');
+    console.log('Active Filters:', state.activeFilters);
 
     let totalMaxHeights = 0;
 
     if (state.activeFilters.length === 0) {
-      //console.log("No active filters. Resetting heights.");
+      console.log("No active filters. Resetting heights.");
       resetHeights();
       return;
     }
@@ -881,7 +881,7 @@ function setHeights(data) {
         if (caseElement) {
           const { maxHeight, maxElement } = findMaxHeightElementInCase(caseElement);
 
-          //console.log(`case-id: ${item.id}, max-element: ${maxElement.className}, max-height: ${maxHeight}`);
+          console.log(`case-id: ${item.id}, max-element: ${maxElement.className}, max-height: ${maxHeight}`);
           totalMaxHeights += maxHeight;
           caseElement.setAttribute('data-max-height', maxHeight);
 
@@ -905,7 +905,7 @@ function setHeights(data) {
           const rElement = caseElement.querySelector('.r');
           if (rElement) {
             rh = rElement.offsetHeight;
-            //console.log(`Высота блока r: ${rh}px`);
+            console.log(`Высота блока r: ${rh}px`);
           }
 
           const aElement = caseElement.querySelector('.point_a');
@@ -916,10 +916,10 @@ function setHeights(data) {
       }
     });
 
-    //console.log('Total max heights:', totalMaxHeights);
+    console.log('Total max heights:', totalMaxHeights);
 
     if (state.activeFilters.length === 0) {
-      //console.log("No active filters. Resetting heights.");
+      console.log("No active filters. Resetting heights.");
       resetHeights();
     } else {
       if (blockCaseContainer) {
