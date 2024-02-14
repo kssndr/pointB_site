@@ -507,6 +507,14 @@ a:hover {
         background-color: var(--gold-color);
     }
 
+    .inn-photo-intr {
+        width: 350.06px;
+        height: 326px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        object-fit: cover;
+        }
+
 }
 
 @media (max-width: 768px) {
