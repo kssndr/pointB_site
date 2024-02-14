@@ -536,7 +536,8 @@ a:hover {
         }
 
         .right-block-intr {
-            margin-top: -35px;
+            grid-column: 2;
+            /* margin-top: -35px; */
             margin-left: 20px;
             margin-right: 20px;
         }
@@ -3769,6 +3770,7 @@ img {
     }
 
     .right-block {
+        
         margin-top: -35px;
         margin-left: 20px;
         margin-right: 20px;
