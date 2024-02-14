@@ -1372,7 +1372,7 @@ function displayClientInfo(caseItem) {
             <div class="mob-reslt-text-cb">${bText}</div>
         </div>
         <div class="mob-reslt-cb">
-            <div class="mob-reslt-title-cb">Результат с превышением</div>
+            <div class="mob-reslt-title-cb">Результаты бонусом</div>
             <div class="mob-reslt-text-cb">${bonusText}</div>
         </div>
         <div class="mob-bottom-cb">
