@@ -86,11 +86,11 @@ function createButton(buttonData, container) {
   buttonTitle.textContent = buttonData.name; // Добавление текста названия в h3
   button.appendChild(buttonTitle); // Добавление h3 в контейнер кнопки
 
-  button.addEventListener("mousedown", () => {
+  button.addEventListener("mouseenter", () => {
     showText(buttonData.text, buttonData.name, container.id);
   });
 
-  button.addEventListener("mouseup", () => {
+  button.addEventListener("mouseleave", () => {
     hideText();
   });
 
