@@ -705,12 +705,12 @@ function createCaseElement(item, casesContainer) {
         //   summaryElement.appendChild(durationTitleElement);
         // }
 
-        if (summaryItem.duration_text) {
-          const durationTextElement = document.createElement('div');
-          durationTextElement.className = 'duration_text';
-          durationTextElement.textContent = summaryItem.duration_text;
-          summaryElement.appendChild(durationTextElement);
-        }
+        // if (summaryItem.duration_text) {
+        //   const durationTextElement = document.createElement('div');
+        //   durationTextElement.className = 'duration_text';
+        //   durationTextElement.textContent = summaryItem.duration_text;
+        //   summaryElement.appendChild(durationTextElement);
+        // }
 
       });
 
