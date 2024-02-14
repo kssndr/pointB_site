@@ -507,13 +507,25 @@ a:hover {
         background-color: var(--gold-color);
     }
 
+    .photo-block-intr {
+        overflow: hidden;
+        border-radius: 30px;
+        width: 350.06px;
+        height: 326px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        /* transform: scale(1.2); */
+        overflow: hidden;
+    }
+
     .inn-photo-intr {
         width: 350.06px;
         height: 326px;
         flex-shrink: 0;
         border-radius: 30px;
-        object-fit: cover;
-        }
+        transform: scale(1.4);
+        overflow: hidden;
+    }
 
 }
 
@@ -1409,13 +1421,14 @@ img {
 
     .program {
         position: fixed;
-left: 0px;
-top: 0px;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.5);
-z-index: 1000;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
     }
+
     .program-container {
         /* width: 1440px;
         height: 740px; */
@@ -3782,7 +3795,7 @@ z-index: 1000;
 
     }
 
-   .members .owl-carousel .owl-item img {
+    .members .owl-carousel .owl-item img {
         display: block;
         width: 44% !important;
     }
@@ -5373,24 +5386,34 @@ p {
 
 
 .modal-term {
-    display: none; /* Скрыть модальное окно по умолчанию */
-    position: fixed; /* Оставаться на месте при прокрутке */
-    z-index: 1; /* Сидеть над всеми другими элементами */
+    display: none;
+    /* Скрыть модальное окно по умолчанию */
+    position: fixed;
+    /* Оставаться на месте при прокрутке */
+    z-index: 1;
+    /* Сидеть над всеми другими элементами */
     left: 0;
     top: 0;
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
-    overflow: auto; /* Включить прокрутку, если необходимо */
-    background-color: rgb(0,0,0); /* Цвет фона */
-    background-color: rgba(0,0,0,0.4); /* Цвет фона с небольшой прозрачностью */
+    width: 100%;
+    /* Полная ширина */
+    height: 100%;
+    /* Полная высота */
+    overflow: auto;
+    /* Включить прокрутку, если необходимо */
+    background-color: rgb(0, 0, 0);
+    /* Цвет фона */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Цвет фона с небольшой прозрачностью */
 }
 
 .modal-content-term {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% от верхней части экрана и центрировано по горизонтали */
+    margin: 15% auto;
+    /* 15% от верхней части экрана и центрировано по горизонтали */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Можно регулировать ширину */
+    width: 80%;
+    /* Можно регулировать ширину */
 }
 
 .close-term {
@@ -5408,9 +5431,12 @@ p {
 }
 
 .modal-text {
-    max-height: 300px; /* Регулируемая максимальная высота */
-    overflow-y: auto; /* Включить прокрутку по вертикали, если текст превышает максимальную высоту */
+    max-height: 300px;
+    /* Регулируемая максимальная высота */
+    overflow-y: auto;
+    /* Включить прокрутку по вертикали, если текст превышает максимальную высоту */
 }
+
 .terms-btn {
     font-family: Inter, sans-serif;
     font-style: normal;
@@ -5418,7 +5444,7 @@ p {
     margin-top: 11px;
     font-size: 16px;
     color: green;
-    }
+}
 
 
 @media (max-width: 769px) {
@@ -5517,19 +5543,28 @@ p {
         justify-content: center;
 
     }
+
     .modal-term {
-        display: none; /* Скрыть модальное окно по умолчанию */
-        position: fixed; /* Оставаться на месте при прокрутке */
-        z-index: 2; /* Сидеть над всеми другими элементами */
+        display: none;
+        /* Скрыть модальное окно по умолчанию */
+        position: fixed;
+        /* Оставаться на месте при прокрутке */
+        z-index: 2;
+        /* Сидеть над всеми другими элементами */
         left: 0;
         top: 0;
-        width: 100%; /* Полная ширина */
-        height: 100%; /* Полная высота */
-        overflow: auto; /* Включить прокрутку, если необходимо */
-        background-color: rgb(0,0,0); /* Цвет фона */
-        background-color: rgba(0,0,0,0.4); /* Цвет фона с небольшой прозрачностью */
+        width: 100%;
+        /* Полная ширина */
+        height: 100%;
+        /* Полная высота */
+        overflow: auto;
+        /* Включить прокрутку, если необходимо */
+        background-color: rgb(0, 0, 0);
+        /* Цвет фона */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Цвет фона с небольшой прозрачностью */
     }
-    
+
     .modal-content-term {
         background-color: #fefefe;
         margin: 20% auto;
@@ -5537,24 +5572,26 @@ p {
         border: 1px solid #888;
         width: 85%;
     }
-    
+
     .close-term {
         color: #aaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
     }
-    
+
     .close-term:hover,
     .close-term:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
     }
-    
+
     .modal-text {
-        max-height: 340px; /* Регулируемая максимальная высота */
-        overflow-y: auto; /* Включить прокрутку по вертикали, если текст превышает максимальную высоту */
+        max-height: 340px;
+        /* Регулируемая максимальная высота */
+        overflow-y: auto;
+        /* Включить прокрутку по вертикали, если текст превышает максимальную высоту */
     }
 
     .modal-text p {
@@ -5564,16 +5601,16 @@ p {
         font-style: normal;
         font-weight: 500;
         line-height: 20px;
-        }
+    }
 
-        .terms-btn {
-            font-family: Inter, sans-serif;
-            font-style: normal;
-            font-weight: 500;
-            margin-top: 11px;
-            font-size: 16px;
-            color: green;
-            }
+    .terms-btn {
+        font-family: Inter, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        margin-top: 11px;
+        font-size: 16px;
+        color: green;
+    }
 
 }
 
