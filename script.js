@@ -1102,12 +1102,13 @@ function findMaxHeightElementInCase(caseElement) {
   const childElements = caseElement.querySelectorAll('*'); // Получаем все дочерние элементы
   childElements.forEach(element => {
     const height = element.offsetHeight;
+    console.log('findMaxHeightElementInCase:',element,height)
     if (height > maxHeight) {
       maxHeight = height;
       maxElement = element;
     }
   });
-  console.log('findMaxHeightElementInCase:',caseElement,maxHeight,maxElement)
+  
   return { maxHeight, maxElement };
 }
 
