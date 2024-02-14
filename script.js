@@ -1107,6 +1107,7 @@ function findMaxHeightElementInCase(caseElement) {
       maxElement = element;
     }
   });
+  console.log('findMaxHeightElementInCase:',caseElement,maxHeight,maxElement)
   return { maxHeight, maxElement };
 }
 
