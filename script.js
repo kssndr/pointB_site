@@ -626,8 +626,6 @@ function createCaseElement(item, casesContainer) {
 
 
 
-
-
   // Создание блока Summary
   item.blocks.forEach(block => {
     if (block.summary) {
@@ -887,7 +885,7 @@ function setHeights(data) {
 
           const summaryElement = caseElement.querySelector('.summary');
           if (summaryElement) {
-            summaryElement.style.height = `${maxHeight}px`;
+            summaryElement.style.height = `calc(${maxHeight}px-150px)`;
           }
 
           const existingAbrElement = caseElement.querySelector('.abr');
