@@ -637,6 +637,26 @@ a:hover {
         background-color: var(--gold-color);
     }
 
+    .photo-block-intr {
+        overflow: hidden;
+        border-radius: 30px;
+        width: 350px;
+        height: 350px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        /* transform: scale(1.2); */
+        overflow: hidden;
+    }
+
+    .inn-photo-intr {
+        width: 350px;
+        height: 350px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        transform: scale(1.4);
+        overflow: hidden;
+    }
+
 }
 
 .picture {
