@@ -375,9 +375,13 @@ a:hover {
         max-width: 1179px;
         height: 382px;
         flex-shrink: 0;
+        margin-bottom: 25px;
 
     }
-
+#intro {
+    margin-bottom: 100px;
+}
+}
     .about {
         /* height: 382px; */
         display: flex;
