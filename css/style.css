@@ -378,10 +378,11 @@ a:hover {
         margin-bottom: 25px;
 
     }
-#intro {
-    margin-bottom: 100px;
-}
-}
+
+    #intro {
+        margin-bottom: 100px;
+    }
+
     .about {
         /* height: 382px; */
         display: flex;
@@ -537,19 +538,19 @@ a:hover {
         position: relative;
         top: 90px;
         align-self: center;
- 
+
         /* margin-top: 30px; */
-        /* left: 50%; */
-        }
+        left: 0px;
+    }
 
-        .right-block-intr {
-            grid-column: 2;
-            /* margin-top: -35px; */
-            margin-left: 20px;
-            margin-right: 20px;
-        }
+    .right-block-intr {
+        grid-column: 2;
+        /* margin-top: -35px; */
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 
-     
+
 
 }
 
@@ -689,15 +690,15 @@ a:hover {
         margin-top: 10px;
         margin: 20px;
         /* left: 50%; */
-        }
+    }
 
-        .right-block-intr {
-            margin-top: 10px;
-            margin-left: 20px;
-            margin-right: 20px;
-            display: flex;
-            flex-direction: column;
-            }
+    .right-block-intr {
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+    }
 
     #intr-titul {
         margin-bottom: 25px !important;
@@ -705,7 +706,7 @@ a:hover {
 
     #intr-text-about p {
         text-align: center !important;
-        }
+    }
 
 }
 
@@ -768,6 +769,7 @@ img {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
     }
 
     .title {
@@ -798,6 +800,7 @@ img {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 7px;
+        margin-top: 25px;
     }
 
     .Logostar_big {
@@ -1011,6 +1014,7 @@ img {
         height: 53px;
         flex-shrink: 0;
         display: block;
+        margin-bottom: 25px;
     }
 
     h5 {
@@ -2638,7 +2642,7 @@ img {
 @media (min-width: 768px) {
     #spesial-head {
         max-width: 1179px;
-        margin-top: 25px;
+        margin-top: 100px;
         background: #fff;
         position: relative;
         display: flex;
@@ -3430,7 +3434,7 @@ img {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 20px;
+        margin-top: 100px;
 
     }
 
@@ -3452,8 +3456,8 @@ img {
         display: grid;
         /* grid-template-columns: repeat(3, 1fr); */
         gap: 10px;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 
     .mission {
@@ -3499,6 +3503,7 @@ img {
     .buttom-block {
         display: inline;
         margin-top: 20px;
+        margin-bottom: 100px;
     }
 
     .team {
@@ -3525,7 +3530,7 @@ img {
     }
 
     #request_about {
-        margin-top: 30px;
+        margin-top: 20px;
         left: 0px;
         top: 0px;
     }
@@ -3550,8 +3555,8 @@ img {
     .labels {
         display: grid;
         grid-template-columns: 20% 30% 20% 30%;
-        margin-bottom: 80px;
-        margin-top: 80px;
+        margin-bottom: 70px;
+        margin-top: 70px;
     }
 
     #labels {
@@ -3583,7 +3588,7 @@ img {
     .members {
         /* display: grid;
         grid-template-columns: repeat(3, 1fr); */
-        margin-top: 20px;
+        margin-top: 60px;
         display: flex;
         max-width: 1179px;
     }
@@ -3791,7 +3796,7 @@ img {
     }
 
     .right-block {
-        
+
         /* margin-top: -35px; */
         margin-left: 20px;
         margin-right: 20px;
@@ -5007,6 +5012,7 @@ img {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-bottom: 100px;
     }
 
     .faqContainer {
@@ -5259,6 +5265,7 @@ img {
         align-items: center;
         flex-direction: column;
         height: 350px;
+        margin-bottom: 100px;
     }
 
     .table-clints-first-row {
