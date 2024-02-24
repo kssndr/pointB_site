@@ -671,8 +671,12 @@ a:hover {
         height: 350px; */
         flex-shrink: 0;
         border-radius: 30px;
-        transform: scale(1.4);
-        overflow: hidden;
+        /* transform: scale(1.4);
+        overflow: hidden; */
+        transform: scale(1);
+overflow: hidden;
+object-fit: cover;
+object-position: top;
     }
 
     #request_about_intr {
