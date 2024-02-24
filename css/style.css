@@ -480,7 +480,7 @@ a:hover {
         border: none;
         cursor: pointer;
         position: relative;
-        left: 127px;
+        /* left: 127px; */
         top: 300px;
     }
 
