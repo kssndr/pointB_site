@@ -500,8 +500,9 @@ a:hover {
         border: none;
         cursor: pointer;
         position: relative;
-        /* left: 127px; */
-        top: 300px;
+left: 400px;
+top: 280px;
+width: 225px;
     }
 
     .request {
@@ -5032,7 +5033,7 @@ img {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-bottom: 100px;
+        margin-top: 100px;
     }
 
     .faqContainer {
