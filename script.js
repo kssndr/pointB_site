@@ -194,10 +194,32 @@ function createReviewCarousel(reviewData) {
 
   // <img src="${data.photo}" alt="Photo of ${data.author}" class="review-photo">
   // <div class="review-author">${data.author}</div>
-  initializeReviewCarousel();
+  // initializeReviewCarousel();
 }
 
-function initializeReviewCarousel() {
+// function initializeReviewCarousel() {
+  // $("#reviewContainer").owlCarousel({
+  //   loop: false,
+  //   margin: 10,
+  //   items: 1, // Изменено для лучшего отображения отзывов
+  //   autoplay: false, // Добавлено автоматическое воспроизведение слайдов
+  //   autoplayTimeout: 5000, // Интервал автоматического воспроизведения (в миллисекундах)
+  //   // nav: true, // Если нужна навигация, раскомментируйте эту строку
+  //   responsive: {
+  //     0: {
+  //       items: 1
+  //     },
+  //     480: {
+  //       items: 1
+  //     },
+  //     768: {
+  //       items: 1
+  //     }
+  //   }
+  // });
+
+
+$(document).ready(function() {
   $("#reviewContainer").owlCarousel({
     loop: false,
     margin: 10,
@@ -217,10 +239,6 @@ function initializeReviewCarousel() {
       }
     }
   });
-}
-
-$(document).ready(function() {
-  createReviewCarousel(reviewData);
 });
 
 
