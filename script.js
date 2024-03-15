@@ -217,6 +217,8 @@ function initializeReviewCarousel() {
   });
 }
 
+createReviewCarousel(reviewData);
+
 
 
 // ==============================================================================
