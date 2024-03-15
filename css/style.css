@@ -584,6 +584,9 @@ a:hover {
     }
     .review-slide {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
     }
 
@@ -1186,6 +1189,7 @@ img {
     }
 
     .owl-carousel {
+        display: flex;
         max-width: 375px;
         /* Измените на желаемую ширину */
     }
