@@ -805,6 +805,7 @@ img {
         font-weight: 500;
         line-height: 67px;
         margin-left: 28px;
+        justify-content: center;
         /* 279.167% */
     }
 
