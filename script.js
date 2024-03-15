@@ -185,13 +185,15 @@ function createReviewCarousel(reviewData) {
     // Добавляем внутреннее содержимое слайда: фотография, текст отзыва и подпись.
     slide.innerHTML = `
       <div class="review-slide">
-        <img src="${data.photo}" alt="Photo of ${data.author}" class="review-photo">
+        
         <div class="review-text">${data.text}</div>
-        <div class="review-author">${data.author}</div>
+      
       </div>`;
     reviewContainer.appendChild(slide);
   });
 
+  // <img src="${data.photo}" alt="Photo of ${data.author}" class="review-photo">
+  // <div class="review-author">${data.author}</div>
   initializeReviewCarousel();
 }
 
@@ -207,10 +209,10 @@ function initializeReviewCarousel() {
       0: {
         items: 1
       },
-      600: {
+      480: {
         items: 1
       },
-      1000: {
+      768: {
         items: 1
       }
     }
