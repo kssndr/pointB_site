@@ -445,6 +445,26 @@ a:hover {
         justify-content: center;
 
     }
+    .what-we-do {
+        position: absolute;
+        top: 245px;
+        width: 600px;
+        height: 35px;
+        /* background-color: #0D4C47; */
+        display: flex;
+        color: #0D4C47;
+        font-family: Inter;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 35px;
+        text-align: end;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 35px;
+        /* top: 200px; */
+        }
 
     .open-request-form-button {
         /* display: flex;
