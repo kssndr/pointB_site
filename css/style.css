@@ -662,6 +662,20 @@ a:hover {
         transition: opacity .2s ease;
         border-radius: 8px;
     }
+    #reviewContainer .owl-dots .owl-dot {
+        display: inline-block;
+        height: 4px;
+        /* Высота полоски */
+        width: 30px;
+        /* Ширина полоски */
+        background: #ccc;
+        /* Цвет полоски */
+        margin: 0 5px;
+        /* Отступы между полосками */
+        border-radius: 2px;
+        /* Скругление углов полоски для более плавного вида */
+        cursor: pointer;
+    }
 
 
 }
@@ -3992,7 +4006,7 @@ img {
 
 
     /* Стиль контейнера точек */
-    .members .owl-carousel .owl-dots {
+    .members .owl-carousel .owl-dot {
         text-align: center;
         -webkit-tap-highlight-color: transparent;
         /* Убирает эффект выделения на мобильных устройствах */
