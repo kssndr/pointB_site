@@ -193,7 +193,26 @@ function createReviewCarousel(reviewData) {
     reviewContainer.appendChild(slide);
   });
 
-
+  $("#reviewContainer").owlCarousel({
+    loop: true,
+    margin: 40,
+    center: true,
+    items: 1, // Изменено для лучшего отображения отзывов
+    autoplay: true, // Добавлено автоматическое воспроизведение слайдов
+    autoplayTimeout: 4000, // Интервал автоматического воспроизведения (в миллисекундах)
+    // nav: true, // Если нужна навигация, раскомментируйте эту строку
+    responsive: {
+      0: {
+        items: 1
+      },
+      480: {
+        items: 1
+      },
+      768: {
+        items: 1
+      }
+    }
+  });
   // initializeReviewCarousel();
 }
 
@@ -220,26 +239,7 @@ function createReviewCarousel(reviewData) {
 
 
 $(document).ready(function() {
-  $("#reviewContainer").owlCarousel({
-    loop: true,
-    margin: 40,
-    center: true,
-    items: 1, // Изменено для лучшего отображения отзывов
-    autoplay: true, // Добавлено автоматическое воспроизведение слайдов
-    autoplayTimeout: 4000, // Интервал автоматического воспроизведения (в миллисекундах)
-    // nav: true, // Если нужна навигация, раскомментируйте эту строку
-    responsive: {
-      0: {
-        items: 1
-      },
-      480: {
-        items: 1
-      },
-      768: {
-        items: 1
-      }
-    }
-  });
+ createReviewCarousel(reviewData);
 });
 
 
