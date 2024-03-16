@@ -644,6 +644,7 @@ a:hover {
     #reviewContainer .owl-dots {
         display: flex;
         justify-content: center;
+        margin-bottom: 30px;
     }
 
     #reviewContainer .owl-dots .owl-dot.active span,
@@ -664,6 +665,7 @@ a:hover {
         transition: opacity .2s ease;
         border-radius: 8px; */
     }
+
     #reviewContainer .owl-dots .owl-dot {
         display: inline-block;
         height: 4px;
@@ -675,20 +677,19 @@ a:hover {
         border: 0;
         cursor: pointer;
     }
-    #reviewContainer .owl-dots {
+    /* #reviewContainer .owl-dots {
         text-align: center;
         -webkit-tap-highlight-color: transparent;
-        /* Убирает эффект выделения на мобильных устройствах */
-    }
+    }  */
 
     #reviewContainer .owl-dots .owl-dot {
         display: inline-block;
         zoom: 1
     }
-    #reviewContainer .owl-dots {
+    /* #reviewContainer .owl-dots {
         text-align: center;
         -webkit-tap-highlight-color: transparent
-    }
+    } */
 
     #reviewContainer .owl-carousel button.owl-dot {
         background: 0 0;
