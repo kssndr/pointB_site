@@ -185,15 +185,15 @@ function createReviewCarousel(reviewData) {
     // Добавляем внутреннее содержимое слайда: фотография, текст отзыва и подпись.
     slide.innerHTML = `
       <div class="review-slide">
-        
+        <img src="${data.photo}" alt="Photo of ${data.author}" class="review-photo">
         <div class="review-text">${data.text}</div>
+        <div class="review-author">${data.author}</div>
       
       </div>`;
     reviewContainer.appendChild(slide);
   });
 
-  // <img src="${data.photo}" alt="Photo of ${data.author}" class="review-photo">
-  // <div class="review-author">${data.author}</div>
+
   // initializeReviewCarousel();
 }
 
@@ -222,10 +222,11 @@ function createReviewCarousel(reviewData) {
 $(document).ready(function() {
   $("#reviewContainer").owlCarousel({
     loop: false,
-    margin: 10,
+    margin: 40,
+    center: true,
     items: 1, // Изменено для лучшего отображения отзывов
-    autoplay: false, // Добавлено автоматическое воспроизведение слайдов
-    autoplayTimeout: 5000, // Интервал автоматического воспроизведения (в миллисекундах)
+    autoplay: true, // Добавлено автоматическое воспроизведение слайдов
+    autoplayTimeout: 4000, // Интервал автоматического воспроизведения (в миллисекундах)
     // nav: true, // Если нужна навигация, раскомментируйте эту строку
     responsive: {
       0: {
