@@ -676,6 +676,20 @@ a:hover {
         /* Скругление углов полоски для более плавного вида */
         cursor: pointer;
     }
+    #reviewContainer .owl-dots {
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+        /* Убирает эффект выделения на мобильных устройствах */
+    }
+
+    #reviewContainer .owl-dots .owl-dot {
+        display: inline-block;
+        zoom: 1
+    }
+    #reviewContainer .owl-dots {
+        text-align: center;
+        -webkit-tap-highlight-color: transparent
+    }
 
 
 }
