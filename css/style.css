@@ -704,6 +704,32 @@ a:hover {
 
 @media (max-width: 768px) {
 
+    .what-we-do {
+        
+            /* position: absolute; */
+            /* top: -2px; */
+            width: auto;
+            height: 103px;
+            /* background-color: #0D4C47; */
+            display: flex;
+            color: #0D4C47;
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 23px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /* left: -13px; */
+        }
+    
+
+    .review {
+        display: none;
+    }
+
     .container_main {
         overflow: hidden;
         max-width: 1179px;
