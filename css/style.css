@@ -619,7 +619,7 @@ a:hover {
     .review-text {
         height: auto;
         text-align: start;
-        padding: 30px;  
+        padding: 30px;
 
     }
 
@@ -641,6 +641,27 @@ a:hover {
         display: none !important;
     }
 
+    #reviewContainer .owl-dots {
+        display: flex;
+        justify-content: center;
+    }
+
+    #reviewContainer .owl-dots .owl-dot.active span,
+    #reviewContainer .owl-dots .owl-dot:hover span {
+        background: #C4A36D !important;
+        width: 70px !important;
+    }
+
+    #reviewContainer .owl-dots .owl-dot span {
+        width: 20px !important;
+        height: 3px !important;
+        margin: 1px 2px !important;
+        background: #E9E9E9 !important;
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity .2s ease;
+        border-radius: 8px;
+    }
 
 
 }
