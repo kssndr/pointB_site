@@ -200,10 +200,10 @@ function createReviewCarousel(reviewData) {
     center: true,
     items: 1, // Изменено для лучшего отображения отзывов
     autoplay: true, // Добавлено автоматическое воспроизведение слайдов
-    smartSpeed:1500,
-    autoplayTimeout: 7000, // Интервал автоматического воспроизведения (в миллисекундах)
-    nav: false, // Если нужна навигация, раскомментируйте эту строку
-    dots:true,
+    smartSpeed:2000,
+    autoplayTimeout: 9000, // Интервал автоматического воспроизведения (в миллисекундах)
+    // nav: false, // Если нужна навигация, раскомментируйте эту строку
+    // dots:true,
     responsive: {
       0: {
         items: 1
