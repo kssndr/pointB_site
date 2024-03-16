@@ -653,14 +653,16 @@ a:hover {
     }
 
     #reviewContainer .owl-dots .owl-dot span {
-        width: 20px !important;
+        display: none;
+
+        /* width: 20px !important;
         height: 3px !important;
         margin: 1px 2px !important;
         background: #E9E9E9 !important;
         display: block;
         -webkit-backface-visibility: visible;
         transition: opacity .2s ease;
-        border-radius: 8px;
+        border-radius: 8px; */
     }
     #reviewContainer .owl-dots .owl-dot {
         display: inline-block;
