@@ -637,6 +637,10 @@ a:hover {
         margin: 15px;
     }
 
+    #reviewContainer .owl-nav {
+        display: none !important;
+    }
+
 
 
 }
