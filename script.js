@@ -187,9 +187,9 @@ function createReviewCarousel(reviewData) {
       <div class="review-slide">
       <div class="author"> 
         <img src="${data.photo}" alt="Photo of ${data.author}" class="review-photo">
-        <div class="review-text">${data.text}</div>
-      </div>
         <div class="review-author">${data.author}</div>
+      </div>
+      <div class="review-text">${data.text}</div>
       </div>`;
     reviewContainer.appendChild(slide);
   });
