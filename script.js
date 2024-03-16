@@ -221,7 +221,7 @@ function createReviewCarousel(reviewData) {
 
 $(document).ready(function() {
   $("#reviewContainer").owlCarousel({
-    loop: false,
+    loop: true,
     margin: 40,
     center: true,
     items: 1, // Изменено для лучшего отображения отзывов
