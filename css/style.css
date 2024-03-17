@@ -582,7 +582,6 @@ a:hover {
         max-width: 1179px;
         /* max-height: 700px; */
         overflow: hidden;
-        display: flex;
     }
 
     .review-slide {
@@ -756,7 +755,6 @@ a:hover {
         max-width: 1179px;
         /* max-height: 700px; */
         overflow: hidden;
-        display: flex;
     }
 
     #reviewContainer .owl-stage-outer {
