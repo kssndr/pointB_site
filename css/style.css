@@ -677,6 +677,7 @@ a:hover {
         border: 0;
         cursor: pointer;
     }
+
     /* #reviewContainer .owl-dots {
         text-align: center;
         -webkit-tap-highlight-color: transparent;
@@ -686,6 +687,7 @@ a:hover {
         display: inline-block;
         zoom: 1
     }
+
     /* #reviewContainer .owl-dots {
         text-align: center;
         -webkit-tap-highlight-color: transparent
@@ -695,9 +697,9 @@ a:hover {
         background: 0 0;
         color: inherit;
         border: none;
-        padding: 0!important;
+        padding: 0 !important;
         font: inherit;
-        }
+    }
 
 
 }
@@ -705,26 +707,26 @@ a:hover {
 @media (max-width: 768px) {
 
     .what-we-do {
-        
-            /* position: absolute; */
-            /* top: -2px; */
-            width: auto;
-            height: 103px;
-            /* background-color: #0D4C47; */
-            display: flex;
-            color: #0D4C47;
-            font-family: Inter;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 23px;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            /* left: -13px; */
-        }
-    
+
+        /* position: absolute; */
+        /* top: -2px; */
+        width: auto;
+        height: 103px;
+        /* background-color: #0D4C47; */
+        display: flex;
+        color: #0D4C47;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 23px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        /* left: -13px; */
+    }
+
 
     .review {
         display: block;
@@ -733,11 +735,58 @@ a:hover {
         overflow: hidden;
     }
 
+    .review .title {
+        display: flex;
+        height: 70px;
+        flex-shrink: 0;
+        color: #B9B9B9;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px;
+        justify-content: center;
+        text-transform: none;
+        align-items: center;
+    }
+
     #reviewContainer {
         max-width: 1179px;
         /* max-height: 700px; */
         overflow: hidden;
     }
+
+    #reviewContainer .owl-stage-outer {
+        display: flex;
+        height: 500px;
+        /* flex-direction: column-reverse; */
+        /* flex-wrap: wrap; */
+    }
+    #reviewContainer .owl-stage {
+        display: flex;
+    }
+
+    .owl-stage {
+        display: flex;
+    }
+
+    #reviewContainer .owl-nav {
+        display: none !important;
+    }
+
+    #reviewContainer .owl-dots {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    #reviewContainer .owl-dots .owl-dot.active span,
+    #reviewContainer .owl-dots .owl-dot:hover span {
+        background: #C4A36D !important;
+        width: 70px !important;
+    }
+
 
     .container_main {
         overflow: hidden;
@@ -745,6 +794,7 @@ a:hover {
         /* height: 382px; */
         flex-shrink: 0;
     }
+
     .review-slide {
         display: flex;
         flex-direction: column;
@@ -762,10 +812,12 @@ a:hover {
         font-size: 16px;
         width: 200px;
     }
+
     .author {
         display: flex;
         flex-direction: column;
     }
+
     .review-photo {
 
         width: 122px;
@@ -774,6 +826,7 @@ a:hover {
         padding: 35px;
 
     }
+
     .review-text {
         height: auto;
         text-align: start;
