@@ -219,31 +219,41 @@ function createReviewCarousel(reviewData) {
   // initializeReviewCarousel();
 }
 
-// function initializeReviewCarousel() {
-  // $("#reviewContainer").owlCarousel({
-  //   loop: false,
-  //   margin: 10,
-  //   items: 1, // Изменено для лучшего отображения отзывов
-  //   autoplay: false, // Добавлено автоматическое воспроизведение слайдов
-  //   autoplayTimeout: 5000, // Интервал автоматического воспроизведения (в миллисекундах)
-  //   // nav: true, // Если нужна навигация, раскомментируйте эту строку
-  //   responsive: {
-  //     0: {
-  //       items: 1
-  //     },
-  //     480: {
-  //       items: 1
-  //     },
-  //     768: {
-  //       items: 1
-  //     }
-  //   }
-  // });
-
 
 $(document).ready(function() {
- createReviewCarousel(reviewData);
+  var autoplayTimeout = 9000; // Интервал автоматического воспроизведения
+  
+  var reviewCarousel = $("#reviewContainer").owlCarousel({
+    loop: true,
+    margin: 40,
+    center: true,
+    items: 1,
+    autoplay: true, // Автоматическое воспроизведение активировано
+    smartSpeed: 2000,
+    autoplayTimeout: autoplayTimeout,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: { items: 1 },
+      480: { items: 1 },
+      768: { items: 1 }
+    }
+  });
+
+  // Отключение автопрокрутки при нажатии
+  $("#reviewContainer").on('mousedown touchstart', function() {
+    reviewCarousel.trigger('stop.owl.autoplay');
+  });
+
+  // Возобновление автопрокрутки при отпускании
+  $("#reviewContainer").on('mouseup touchend', function() {
+    reviewCarousel.trigger('play.owl.autoplay', [autoplayTimeout]);
+  });
+
+  // Вставьте здесь остальной код для создания слайдов из reviewData
+  createReviewCarousel(reviewData);
 });
+
 
 
 // ==============================================================================
