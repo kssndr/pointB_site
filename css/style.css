@@ -763,6 +763,7 @@ a:hover {
         /* flex-direction: column-reverse; */
         /* flex-wrap: wrap; */
     }
+
     #reviewContainer .owl-stage {
         display: flex;
     }
@@ -779,12 +780,25 @@ a:hover {
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
+        gap: 10px;
     }
 
     #reviewContainer .owl-dots .owl-dot.active span,
     #reviewContainer .owl-dots .owl-dot:hover span {
         background: #C4A36D !important;
         width: 70px !important;
+    }
+
+    #reviewContainer .owl-dots .owl-dot {
+        display: inline-block;
+        height: 4px;
+        width: 30px;
+        background: #ccc;
+        margin: 0 5px;
+        border-radius: 2px;
+        cursor: pointer;
+        border: 0;
+        cursor: pointer;
     }
 
 
@@ -795,7 +809,7 @@ a:hover {
         flex-shrink: 0;
     }
 
-    .review-slide {
+    #reviewContainer .review-slide {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -804,13 +818,15 @@ a:hover {
         box-shadow: 0px 4px 20px 0px #BFD8D6;
         color: black;
         text-align: center;
-        padding-top: 25px;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 25px;
+        /* padding-top: 25px; */
+        /* padding-left: 40px; */
+        /* padding-right: 40px; */
+        padding: 10px;
+        margin: 5px;
         box-sizing: border-box;
-        font-size: 16px;
-        width: 200px;
+        font-size: 14px;
+        /* width: 200px; */
+        line-height: 22px;
     }
 
     .author {
@@ -823,16 +839,17 @@ a:hover {
         width: 122px;
         height: 122px;
         border-radius: 118px;
-        padding: 35px;
+        padding: 10px;
 
     }
 
     .review-text {
         height: auto;
-        text-align: start;
-        padding: 30px;
-
-    }
+    text-align: start;
+    /* padding: 30px; */
+    height: 250px;
+    overflow-x: auto;
+}
 
     .review-author {
         height: 50px;
