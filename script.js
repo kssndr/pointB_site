@@ -194,28 +194,28 @@ function createReviewCarousel(reviewData) {
     reviewContainer.appendChild(slide);
   });
 
-  $("#reviewContainer").owlCarousel({
-    loop: true,
-    margin: 40,
-    center: true,
-    items: 1, // Изменено для лучшего отображения отзывов
-    autoplay: true, // Добавлено автоматическое воспроизведение слайдов
-    smartSpeed:2000,
-    autoplayTimeout: 9000, // Интервал автоматического воспроизведения (в миллисекундах)
-    // nav: false, // Если нужна навигация, раскомментируйте эту строку
-    // dots:true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      480: {
-        items: 1
-      },
-      768: {
-        items: 1
-      }
-    }
-  });
+  // $("#reviewContainer").owlCarousel({
+  //   loop: true,
+  //   margin: 40,
+  //   center: true,
+  //   items: 1, // Изменено для лучшего отображения отзывов
+  //   autoplay: true, // Добавлено автоматическое воспроизведение слайдов
+  //   smartSpeed:2000,
+  //   autoplayTimeout: 9000, // Интервал автоматического воспроизведения (в миллисекундах)
+  //   // nav: false, // Если нужна навигация, раскомментируйте эту строку
+  //   // dots:true,
+  //   responsive: {
+  //     0: {
+  //       items: 1
+  //     },
+  //     480: {
+  //       items: 1
+  //     },
+  //     768: {
+  //       items: 1
+  //     }
+  //   }
+  // });
   // initializeReviewCarousel();
 }
 
