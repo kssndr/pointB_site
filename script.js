@@ -200,7 +200,7 @@ function createReviewCarousel(reviewData) {
     center: true,
     items: 1, // Изменено для лучшего отображения отзывов
     autoplay: true, // Добавлено автоматическое воспроизведение слайдов
-    smartSpeed:2000,
+    smartSpeed: 2000,
     autoplayTimeout: 10000, // Интервал автоматического воспроизведения (в миллисекундах)
     // nav: false, // Если нужна навигация, раскомментируйте эту строку
     // dots:true,
@@ -220,29 +220,29 @@ function createReviewCarousel(reviewData) {
 }
 
 // function initializeReviewCarousel() {
-  // $("#reviewContainer").owlCarousel({
-  //   loop: false,
-  //   margin: 10,
-  //   items: 1, // Изменено для лучшего отображения отзывов
-  //   autoplay: false, // Добавлено автоматическое воспроизведение слайдов
-  //   autoplayTimeout: 5000, // Интервал автоматического воспроизведения (в миллисекундах)
-  //   // nav: true, // Если нужна навигация, раскомментируйте эту строку
-  //   responsive: {
-  //     0: {
-  //       items: 1
-  //     },
-  //     480: {
-  //       items: 1
-  //     },
-  //     768: {
-  //       items: 1
-  //     }
-  //   }
-  // });
+// $("#reviewContainer").owlCarousel({
+//   loop: false,
+//   margin: 10,
+//   items: 1, // Изменено для лучшего отображения отзывов
+//   autoplay: false, // Добавлено автоматическое воспроизведение слайдов
+//   autoplayTimeout: 5000, // Интервал автоматического воспроизведения (в миллисекундах)
+//   // nav: true, // Если нужна навигация, раскомментируйте эту строку
+//   responsive: {
+//     0: {
+//       items: 1
+//     },
+//     480: {
+//       items: 1
+//     },
+//     768: {
+//       items: 1
+//     }
+//   }
+// });
 
 
-$(document).ready(function() {
- createReviewCarousel(reviewData);
+$(document).ready(function () {
+  createReviewCarousel(reviewData);
 });
 
 
@@ -1191,13 +1191,13 @@ function findMaxHeightElementInCase(caseElement) {
   const childElements = caseElement.querySelectorAll('*'); // Получаем все дочерние элементы
   childElements.forEach(element => {
     const height = element.offsetHeight;
-    console.log('findMaxHeightElementInCase:',element,height)
+    console.log('findMaxHeightElementInCase:', element, height)
     if (height > maxHeight) {
       maxHeight = height;
       maxElement = element;
     }
   });
-  
+
   return { maxHeight, maxElement };
 }
 
@@ -1342,15 +1342,15 @@ function updateSelectedFilters() {
     filterButton.innerHTML = svgIconFilter + buttonText + svgIconArrow;
   }
 
-    // Добавляем код для отображения/скрытия кнопки filter-mob-cancel
-    // let cancelButton = document.querySelector('.filter-mob-cancel');
-    // if (cancelButton) {
-    //   if (selectedFiltersMob.length > 0) {
-    //     cancelButton.style.display = 'block'; // Показываем кнопку
-    //   } else {
-    //     cancelButton.style.display = 'none'; // Скрываем кнопку
-    //   }
-    // }
+  // Добавляем код для отображения/скрытия кнопки filter-mob-cancel
+  // let cancelButton = document.querySelector('.filter-mob-cancel');
+  // if (cancelButton) {
+  //   if (selectedFiltersMob.length > 0) {
+  //     cancelButton.style.display = 'block'; // Показываем кнопку
+  //   } else {
+  //     cancelButton.style.display = 'none'; // Скрываем кнопку
+  //   }
+  // }
 
   updateCasesContainer(); // Обновляем контейнер с кейсами
 }
@@ -2571,7 +2571,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
     };
 
     // 3. Вставляем контактную информацию на страницу
-    const contactInfo = contactsByCountry[userCountryGlobal] || contactsByCountry['RUS']; // Если страны пользователя нет в списке, используем данные для RUS
+    const contactInfo = contactsByCountry[userCountryGlobal] || contactsByCountry['KZ']; // Если страны пользователя нет в списке, используем данные для RUS
     if (contactInfo) {
       const addressElement = document.getElementById('address');
       const numbersElement = document.getElementById('numbers');
@@ -2628,11 +2628,11 @@ var spans = document.getElementsByClassName("close-term");
 //     termsModal.style.display = "block";
 // }
 
-termsLink.onclick = function(event) {
+termsLink.onclick = function (event) {
   event.preventDefault();
   if (userCountryGlobal === 'RUS') {
-      loadDocument('terms-and-conditions.html', 'termsText');
-      termsModal.style.display = "block";
+    loadDocument('terms-and-conditions.html', 'termsText');
+    termsModal.style.display = "block";
   }
 }
 
@@ -2642,77 +2642,77 @@ termsLink.onclick = function(event) {
 //     privacyModal.style.display = "block";
 // }
 
-privacyLink.onclick = function(event) {
+privacyLink.onclick = function (event) {
   event.preventDefault();
   if (userCountryGlobal === 'RUS') {
-      loadDocument('privacy-policy.html', 'privacyText');
-      privacyModal.style.display = "block";
+    loadDocument('privacy-policy.html', 'privacyText');
+    privacyModal.style.display = "block";
   }
 }
 
-termsLink.onclick = function(event) {
+termsLink.onclick = function (event) {
   event.preventDefault();
   if (userCountryGlobal !== 'RUS') {
-      loadDocument('terms-and--conditions.html', 'termsText');
-      termsModal.style.display = "block";
+    loadDocument('terms-and--conditions.html', 'termsText');
+    termsModal.style.display = "block";
   }
 }
 
-privacyLink.onclick = function(event) {
+privacyLink.onclick = function (event) {
   event.preventDefault();
   if (userCountryGlobal !== 'RUS') {
-      loadDocument('privacy--policy.html', 'privacyText');
-      privacyModal.style.display = "block";
+    loadDocument('privacy--policy.html', 'privacyText');
+    privacyModal.style.display = "block";
   }
 }
 
 
 // Когда пользователь кликает на <span> (x), закрыть модальное окно
 for (var i = 0; i < spans.length; i++) {
-    spans[i].onclick = function() {
-        termsModal.style.display = "none";
-        privacyModal.style.display = "none";
-    }
+  spans[i].onclick = function () {
+    termsModal.style.display = "none";
+    privacyModal.style.display = "none";
+  }
 }
 
 // Загрузка содержимого документа в модальное окно
 function loadDocument(url, elementId) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            document.getElementById(elementId).innerHTML = xhr.responseText;
-        } else {
-            console.error('Ошибка загрузки документа: ', xhr.statusText);
-        }
-    };
-    xhr.open('GET', url);
-    xhr.send();
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      document.getElementById(elementId).innerHTML = xhr.responseText;
+    } else {
+      console.error('Ошибка загрузки документа: ', xhr.statusText);
+    }
+  };
+  xhr.open('GET', url);
+  xhr.send();
 }
 
 // Когда пользователь кликает в любом месте за пределами модального окна, закрыть его
-window.onclick = function(event) {
-    if (event.target == termsModal || event.target == privacyModal) {
-        termsModal.style.display = "none";
-        privacyModal.style.display = "none";
-    }
+window.onclick = function (event) {
+  if (event.target == termsModal || event.target == privacyModal) {
+    termsModal.style.display = "none";
+    privacyModal.style.display = "none";
+  }
 }
 // Получение кнопки "Принять" для Политики конфиденциальности
 var acceptPrivacyBtn = document.getElementById("acceptPrivacy");
 
 // Действие при нажатии на кнопку "Принять"
-acceptPrivacyBtn.onclick = function() {
-    console.log("Пользователь принял Политику конфиденциальности"); // Пример действия: вывод в консоль
-    privacyModal.style.display = "none"; // Закрыть модальное окно
+acceptPrivacyBtn.onclick = function () {
+  console.log("Пользователь принял Политику конфиденциальности"); // Пример действия: вывод в консоль
+  privacyModal.style.display = "none"; // Закрыть модальное окно
 
-    // Здесь можно добавить дополнительный код, например, для сохранения состояния согласия пользователя
+  // Здесь можно добавить дополнительный код, например, для сохранения состояния согласия пользователя
 }
 // Получение кнопки "Принять" для Условий использования
 var acceptTermsBtn = document.getElementById("acceptTerms");
 
 // Действие при нажатии на кнопку "Принять"
-acceptTermsBtn.onclick = function() {
-    console.log("Пользователь принял Условия использования"); // Пример действия: вывод в консоль
-    termsModal.style.display = "none"; // Закрыть модальное окно
+acceptTermsBtn.onclick = function () {
+  console.log("Пользователь принял Условия использования"); // Пример действия: вывод в консоль
+  termsModal.style.display = "none"; // Закрыть модальное окно
 
-    // Здесь можно добавить дополнительный код, например, для сохранения состояния согласия пользователя
+  // Здесь можно добавить дополнительный код, например, для сохранения состояния согласия пользователя
 }
