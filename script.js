@@ -2551,7 +2551,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
 
 
     const contactsByCountry = {
-      RUS: {
+      RU: {
         company_name: "ИП Романовская И.В.",
         numbers: "ИНН: 421409221318, ОГРНИП 320784700298867",
         address: '346550, РОССИЯ, обл РОСТОВСКАЯ,',
@@ -2592,7 +2592,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
   .catch(error => {
     console.error('Ошибка при получении информации о стране пользователя:', error);
 
-    const ruscontactInfo = contactsByCountry['RUS']; // Используем данные для RUS при ошибке
+    const ruscontactInfo = contactsByCountry['RU']; // Используем данные для RUS при ошибке
     if (ruscontactInfo) {
       const addressElement = document.getElementById('address');
       const numbersElement = document.getElementById('numbers');
