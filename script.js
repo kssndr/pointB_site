@@ -2547,6 +2547,8 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
     // 2. После получения информации о стране, используем ее для выбора соответствующей контактной информации
     //const userCountry = data.country; // Предположим, что сервер возвращает страну в формате ISO 3166-1 Alpha-2 (например, "US", "UK")
     userCountryGlobal = data.country;
+    console.log(userCountryGlobal); // Выводим страну в консоль
+
 
     const contactsByCountry = {
       RUS: {
@@ -2571,7 +2573,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
     };
 
     // 3. Вставляем контактную информацию на страницу
-    const contactInfo = contactsByCountry[userCountryGlobal] || contactsByCountry['KZ']; // Если страны пользователя нет в списке, используем данные для RUS
+    const contactInfo = contactsByCountry[userCountryGlobal] || contactsByCountry['OTHER']; // Если страны пользователя нет в списке, используем данные для RUS
     if (contactInfo) {
       const addressElement = document.getElementById('address');
       const numbersElement = document.getElementById('numbers');
@@ -2595,7 +2597,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
       const addressElement = document.getElementById('address');
       const numbersElement = document.getElementById('numbers');
       const companyNameElement = document.getElementById('company_name');
-      const contactsElement = document.getElementById('contacts');
+      const contactsElement = document.getElementById('contacts_email');
 
       companyNameElement.textContent = ruscontactInfo.company_name;
       numbersElement.textContent = ruscontactInfo.numbers;
