@@ -2547,7 +2547,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
     // 2. После получения информации о стране, используем ее для выбора соответствующей контактной информации
     //const userCountry = data.country; // Предположим, что сервер возвращает страну в формате ISO 3166-1 Alpha-2 (например, "US", "UK")
     userCountryGlobal = data.country;
-    console.log(userCountryGlobal); // Выводим страну в консоль
+    //console.log(userCountryGlobal); // Выводим страну в консоль
 
 
     const contactsByCountry = {
@@ -2555,7 +2555,7 @@ fetch('/get-user-country.php') // Здесь '/get-user-country' - это адр
         company_name: "ИП Романовская И.В.",
         numbers: "ИНН: 421409221318, ОГРНИП 320784700298867",
         address: '346550, РОССИЯ, обл РОСТОВСКАЯ,',
-        contacts: 'mail@superday.one',
+        contacts: 'mail@pointb.ltd',
       },
       KZ: {
         company_name: "TOO Point B",
