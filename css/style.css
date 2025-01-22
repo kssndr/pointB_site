@@ -425,6 +425,19 @@ a:hover {
         font-weight: 500;
         line-height: 66px;
     }
+    .text-h1-2 {
+        top: 70px;
+        width: 744px;
+        height: 195px;
+        margin-top: 54px;
+        position: absolute;
+        color: var(--accent-color);
+        font-size: 62px;
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 66px;
+    }
 
 
     .block {
@@ -710,7 +723,7 @@ a:hover {
 
         /* position: absolute; */
         /* top: -2px; */
-        width: auto;
+        width: 280px;
         height: 103px;
         /* background-color: #0D4C47; */
         display: flex;
@@ -901,8 +914,22 @@ a:hover {
         font-weight: 500;
         line-height: 50px;
         /* width: 407px; */
-        height: 160px;
+        /* height: 160px; */
         margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .text-h1-2 {
+        color: #0D4D47;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 50px;
+        /* width: 407px; */
+        /* height: 160px; */
+        /* margin-top: 20px; */
         margin-bottom: 20px;
     }
 

@@ -1740,7 +1740,7 @@ function createQuestions(questionsData) {
   const checkboxContainer = document.createElement('div');
   checkboxContainer.className = "checkbox-container-a";
 
-  ['E-mail', 'WhatsApp', 'Telegram'].forEach((contact, index) => {
+  ['e-mail', 'WhatsApp', 'Telegram'].forEach((contact, index) => {
     const checkboxItem = document.createElement('div');
     checkboxItem.className = "checkbox-item-a";
 
@@ -1752,8 +1752,8 @@ function createQuestions(questionsData) {
 
     let value; // Значение для каждого чекбокса
     switch (contact) {
-      case 'E-mail':
-        value = 'E-mail';
+      case 'e-mail':
+        value = 'e-mail';
         checkbox.checked = true; // Устанавливаем по умолчанию
         break;
       case 'WhatsApp':
@@ -1789,7 +1789,7 @@ function createQuestions(questionsData) {
   requestTrethBlock.className = "anketa-treth-block";
   const settTitleOutput = document.createElement('output');
   settTitleOutput.id = "sett-title-output-a";
-  settTitleOutput.textContent = "E-mail";
+  settTitleOutput.textContent = "e-mail";
   const contactsInput = document.createElement('input');
   contactsInput.type = "text";
   contactsInput.id = "contacts-input-a";
@@ -2513,7 +2513,7 @@ function createCheckboxBlock() {
   container.className = 'checkbox-container-m';
 
   const options = [
-    { id: 'option1', value: 'E-mail', label: 'E-mail' },
+    { id: 'option1', value: 'e-mail', label: 'e-mail' },
     { id: 'option2', value: 'номер', label: 'WhatsApp' },
     { id: 'option3', value: 'ник(+номер)', label: 'Telegram' },
   ];
