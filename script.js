@@ -2280,7 +2280,7 @@ function createRequestForm(initiatingButtonId) {
   // Create text div
   const textDiv = document.createElement('div');
   textDiv.className = 'request-text';
-  textDiv.textContent = 'Запишись на собеседование';
+  textDiv.textContent = 'Запишитесь на Диагностику';
   rootDiv.appendChild(textDiv);
 
   // Create client data div
