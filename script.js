@@ -1347,8 +1347,8 @@ function updateSelectedFilters() {
   let filterButton = document.getElementById('filter-mob');
   if (filterButton) {
     let buttonText = selectedFiltersMob.length > 0 ?
-      `Выбрано модулей (${selectedFiltersMob.length})` :
-      "Выберите модули";
+      `Выбрано программ (${selectedFiltersMob.length})` :
+      "Выберите программы";
     filterButton.innerHTML = svgIconFilter + buttonText + svgIconArrow;
   }
 
@@ -1449,7 +1449,7 @@ function displayClientInfo(caseItem) {
             </div>
             <div class="mob-head-title-cb">Запрос</div>
             <div class="mob-head-text-cb">${goalText}</div>
-            <div class="mob-head-title-cb">Модули</div>
+            <div class="mob-head-title-cb">Программы</div>
             <div class="mob-head-text-cb">${moduleText}</div>
         </div>
         <div class="mob-ab-cb">
