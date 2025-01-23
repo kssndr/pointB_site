@@ -98,8 +98,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 function sendEmail($to, $subject, $message) {
-    $headers = 'From: "PointB: Order" <webmaster@example.com>' . "\r\n" .
-               'Reply-To: "PointB: Order" <webmaster@example.com>'. "\r\n" .
+    $headers = 'From: "PointB: Order" <mail@pointb.ltd>' . "\r\n" .
+               'Reply-To: "PointB: Order" <mail@pointb.ltd>'. "\r\n" .
                'X-Mailer: PHP/' . phpversion();
     mail($to, $subject, $message, $headers);
 }
